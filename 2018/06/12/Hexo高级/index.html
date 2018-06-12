@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:description" content="添加新的页面$ hexo new page about 配置目录在next下的_config.yml 12345678910menu:  home: / || home  archives: /archives || archive  tags: /tags || tags  message: /message || comment  about: /about || user# Enable/D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T06:10:30.045Z">
+<meta property="og:updated_time" content="2018-06-12T07:45:53.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo高级使用">
 <meta name="twitter:description" content="添加新的页面$ hexo new page about 配置目录在next下的_config.yml 12345678910menu:  home: / || home  archives: /archives || archive  tags: /tags || tags  message: /message || comment  about: /about || user# Enable/D">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  51
+                  332
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -420,6 +420,20 @@
         <h3 id="添加新的页面"><a href="#添加新的页面" class="headerlink" title="添加新的页面"></a>添加新的页面</h3><p>$ hexo new page about</p>
 <h3 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h3><p>在next下的_config.yml</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  archives: /archives || archive</span><br><span class="line">  tags: /tags || tags</span><br><span class="line">  message: /message || comment</span><br><span class="line">  about: /about || user</span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line">menu_icons:</span><br><span class="line">  enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="给一篇文章加入各种属性"><a href="#给一篇文章加入各种属性" class="headerlink" title="给一篇文章加入各种属性"></a>给一篇文章加入各种属性</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">在vue中使用less</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-11</span> <span class="number">11</span><span class="string">:15:00</span></span><br><span class="line"><span class="string">categories</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">VUE</span></span><br><span class="line"><span class="string">keywords</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">title:</span> <span class="string">自学编程成功概率有多少可能</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-05</span><span class="bullet">-26</span> <span class="number">19</span><span class="string">:57:47</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[编程,感悟]</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">技术</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h3 id="本地添加搜索菜单（功能）"><a href="#本地添加搜索菜单（功能）" class="headerlink" title="本地添加搜索菜单（功能）"></a>本地添加搜索菜单（功能）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>打开 站点配置文件 找到Extensions在下面添加</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">     path:</span> search.xml</span><br><span class="line"><span class="symbol">     field:</span> post</span><br><span class="line"><span class="symbol">     format:</span> html</span><br><span class="line"><span class="symbol">     limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加字数统计、阅读时长、友情链接"><a href="#添加字数统计、阅读时长、友情链接" class="headerlink" title="添加字数统计、阅读时长、友情链接"></a>添加字数统计、阅读时长、友情链接</h3><ul>
+<li>第一步：安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save</li>
+<li>第二步：在主题配置文件(themes\next\config.yml)中打开wordcount 统计功能</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line">    <span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="attr">    post_wordcount:</span></span><br><span class="line"><span class="attr">        item_text:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        wordcount:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        min2read:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三步： themes\next\layout_macro\post.swig<br>将“字”、“分钟” 字样添加到如下位置即可。</li>
+</ul>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; __('post.wordcount') &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br><span class="line"><span class="xml">     </span><span class="template-variable">&#123;&#123; wordcount(post.content) &#125;&#125;</span><span class="xml"> 字</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    ...</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; __('post.min2read') &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br><span class="line"><span class="xml">     </span><span class="template-variable">&#123;&#123; min2read(post.content) &#125;&#125;</span><span class="xml"> 分钟</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><figure class="highlight flix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在该功能下的<span class="keyword">index</span>.md中添加</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span>: <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -449,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/" rel="next" title="vue全局拦截前端错误（前端异常监控系统+ng4）">
-                <i class="fa fa-chevron-left"></i> vue全局拦截前端错误（前端异常监控系统+ng4）
+              <a href="/2018/06/12/启动和关闭项目脚本/" rel="next" title="启动和关闭项目脚本">
+                <i class="fa fa-chevron-left"></i> 启动和关闭项目脚本
               </a>
             
           </div>
@@ -538,7 +552,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -549,7 +563,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -560,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -593,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新的页面"><span class="nav-number">1.</span> <span class="nav-text">添加新的页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">2.</span> <span class="nav-text">配置目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新的页面"><span class="nav-number">1.</span> <span class="nav-text">添加新的页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">2.</span> <span class="nav-text">配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给一篇文章加入各种属性"><span class="nav-number">3.</span> <span class="nav-text">给一篇文章加入各种属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地添加搜索菜单（功能）"><span class="nav-number">4.</span> <span class="nav-text">本地添加搜索菜单（功能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加字数统计、阅读时长、友情链接"><span class="nav-number">5.</span> <span class="nav-text">添加字数统计、阅读时长、友情链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类和标签"><span class="nav-number">6.</span> <span class="nav-text">分类和标签</span></a></li></ol></div>
             
 
           </div>
@@ -627,7 +641,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.8k</span>
+    <span title="Site words total count">5.4k</span>
   
 </div>
 

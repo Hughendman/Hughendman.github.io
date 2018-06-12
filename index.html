@@ -532,7 +532,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  51
+                  332
                 </span>
               
 
@@ -548,7 +548,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -574,6 +574,20 @@
             <h3 id="添加新的页面"><a href="#添加新的页面" class="headerlink" title="添加新的页面"></a>添加新的页面</h3><p>$ hexo new page about</p>
 <h3 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h3><p>在next下的_config.yml</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  archives: /archives || archive</span><br><span class="line">  tags: /tags || tags</span><br><span class="line">  message: /message || comment</span><br><span class="line">  about: /about || user</span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line">menu_icons:</span><br><span class="line">  enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="给一篇文章加入各种属性"><a href="#给一篇文章加入各种属性" class="headerlink" title="给一篇文章加入各种属性"></a>给一篇文章加入各种属性</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">在vue中使用less</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-11</span> <span class="number">11</span><span class="string">:15:00</span></span><br><span class="line"><span class="string">categories</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">VUE</span></span><br><span class="line"><span class="string">keywords</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">title:</span> <span class="string">自学编程成功概率有多少可能</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-05</span><span class="bullet">-26</span> <span class="number">19</span><span class="string">:57:47</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[编程,感悟]</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">技术</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h3 id="本地添加搜索菜单（功能）"><a href="#本地添加搜索菜单（功能）" class="headerlink" title="本地添加搜索菜单（功能）"></a>本地添加搜索菜单（功能）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>打开 站点配置文件 找到Extensions在下面添加</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">     path:</span> search.xml</span><br><span class="line"><span class="symbol">     field:</span> post</span><br><span class="line"><span class="symbol">     format:</span> html</span><br><span class="line"><span class="symbol">     limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加字数统计、阅读时长、友情链接"><a href="#添加字数统计、阅读时长、友情链接" class="headerlink" title="添加字数统计、阅读时长、友情链接"></a>添加字数统计、阅读时长、友情链接</h3><ul>
+<li>第一步：安装word_count插件，在博客根目录下打开终端:npm install hexo-wordcount –save</li>
+<li>第二步：在主题配置文件(themes\next\config.yml)中打开wordcount 统计功能</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line">    <span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="attr">    post_wordcount:</span></span><br><span class="line"><span class="attr">        item_text:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        wordcount:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        min2read:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三步： themes\next\layout_macro\post.swig<br>将“字”、“分钟” 字样添加到如下位置即可。</li>
+</ul>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; __('post.wordcount') &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br><span class="line"><span class="xml">     </span><span class="template-variable">&#123;&#123; wordcount(post.content) &#125;&#125;</span><span class="xml"> 字</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    ...</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; __('post.min2read') &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></span><br><span class="line"><span class="xml">     </span><span class="template-variable">&#123;&#123; min2read(post.content) &#125;&#125;</span><span class="xml"> 分钟</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><figure class="highlight flix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在该功能下的<span class="keyword">index</span>.md中添加</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span>: <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -621,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/12/启动和关闭项目脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -640,7 +654,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/" itemprop="url">vue全局拦截前端错误（前端异常监控系统+ng4）</a></h1>
+                <a class="post-title-link" href="/2018/06/12/启动和关闭项目脚本/" itemprop="url">启动和关闭项目脚本</a></h1>
         
 
         <div class="post-meta">
@@ -652,8 +666,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T11:15:00+08:00">
+                2018-06-12
               </time>
             
 
@@ -675,8 +689,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
                   </a>
                 </span>
 
@@ -706,7 +720,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  300
+                  93
                 </span>
               
 
@@ -745,18 +759,14 @@
       
         
           
-            <h2 id="errorHandler"><a href="#errorHandler" class="headerlink" title="errorHandler"></a>errorHandler</h2><blockquote>
-<p>一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用</p>
+            <h2 id="代码qality-sh"><a href="#代码qality-sh" class="headerlink" title="代码qality.sh"></a>代码qality.sh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">pIDa=`/usr/sbin/lsof -i :8081|grep -v <span class="string">"PID"</span> | awk <span class="string">'&#123;print $2&#125;'</span>`;</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$pIDa</span>"</span> != <span class="string">""</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">kill</span> -9 $(lsof -i:1900 |awk <span class="string">'&#123;print $2&#125;'</span> | tail -n 2);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    /usr/<span class="built_in">local</span>/nginx/sbin/nginx;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><blockquote>
+<p>如果实在windows上面写的需要进行一次转换</p>
 </blockquote>
 <blockquote>
-<p>这里面我们用errorHandler来进行错误拦截</p>
+<p>dos2unix quality.sh</p>
 </blockquote>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span> <span class="params">(err, vm, info)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// handle error</span></span><br><span class="line">  <span class="comment">// `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子</span></span><br><span class="line">  <span class="comment">// 只在 2.2.0+ 可用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体报错信息</span></span><br><span class="line"></span><br><span class="line"><span class="string">ReferenceError:</span> i is not defined  <span class="comment">//err</span></span><br><span class="line">    at VueComponent.created (bigdata.vue?1536:<span class="number">26</span>)</span><br><span class="line">    at callHook (vue.esm.js?5425:<span class="number">2895</span>)</span><br><span class="line">    at VueComponent.Vue._init (vue.esm.js?5425:<span class="number">4560</span>)</span><br><span class="line">    at <span class="keyword">new</span> VueComponent (vue.esm.js?5425:<span class="number">4728</span>)</span><br><span class="line">    at createComponentInstanceForVnode (vue.esm.js?5425:<span class="number">4242</span>)</span><br><span class="line">    at init (vue.esm.js?5425:<span class="number">4059</span>)</span><br><span class="line">    at createComponent (vue.esm.js?5425:<span class="number">5512</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5460</span>)</span><br><span class="line">    at createChildren (vue.esm.js?5425:<span class="number">5586</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5488</span>)</span><br><span class="line"></span><br><span class="line">VueComponent &#123;<span class="string">_uid:</span> <span class="number">4</span>, <span class="string">_isVue:</span> <span class="literal">true</span>, <span class="string">$options:</span> &#123;…&#125;,  <span class="comment">//vm _renderProxy: Proxy, _self: VueComponent, …&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">created hook  <span class="comment">//info</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://cn.vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">vue2.0参考这里</a></p>
-<p><a href="https://www.angular.cn/api/core/ErrorHandler" target="_blank" rel="noopener">ng4参考这里</a></p>
-<h2 id="接口形式同埋点上传（利用一个gif的形式传递数据）"><a href="#接口形式同埋点上传（利用一个gif的形式传递数据）" class="headerlink" title="接口形式同埋点上传（利用一个gif的形式传递数据）"></a>接口形式同埋点上传（利用一个gif的形式传递数据）</h2><p><a href="http://note.youdao.com/noteshare?id=f3283d431c12eaae4fe962df2b486755&amp;sub=9D6EE15F28F74A6CAFFE096C2B5178BE" target="_blank" rel="noopener">这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)</a></p>
-
+<h2 id="nginx配置前台启动"><a href="#nginx配置前台启动" class="headerlink" title="nginx配置前台启动"></a>nginx配置前台启动</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#user  nobody;</span></span><br><span class="line"><span class="attribute">worker_processes</span>  <span class="number">1</span>;</span><br><span class="line"><span class="comment"># 主要加下面这句话</span></span><br><span class="line"><span class="attribute">daemon</span>  <span class="literal">off</span>;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1000,7 +1010,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/Vuex（关于vue的状态管理模式）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue中自定义指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1019,7 +1029,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/Vuex（关于vue的状态管理模式）/" itemprop="url">Vuex（关于vue的状态管理模式）</a></h1>
+                <a class="post-title-link" href="/2018/06/11/vue中自定义指令/" itemprop="url">vue中自定义指令</a></h1>
         
 
         <div class="post-meta">
@@ -1085,7 +1095,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  303
+                  221
                 </span>
               
 
@@ -1124,30 +1134,17 @@
       
         
           
-            <h2 id="介绍vuex"><a href="#介绍vuex" class="headerlink" title="介绍vuex"></a>介绍vuex</h2><blockquote>
-<p>vuex是一个为了vue开发的状态管理模式，它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化，</p>
-</blockquote>
-<p><a href="http://blog.csdn.net/github_26672553/article/details/53176778" target="_blank" rel="noopener">这篇文章不错</a></p>
-<h3 id="状态管理模式"><a href="#状态管理模式" class="headerlink" title="状态管理模式"></a>状态管理模式</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// state</span></span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="keyword">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// view</span></span><br><span class="line">  template: `</span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;&#123;&#123; <span class="keyword">count</span> &#125;&#125;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  `,</span><br><span class="line">  <span class="comment">// actions</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment () &#123;</span><br><span class="line">      <span class="keyword">this</span>.<span class="keyword">count</span>++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如上所示 state为驱动应用的数据源，view以声明的方式将state映射到视图，actions为响应在view上的用户输入导致的状态变化</p>
-</blockquote>
-<blockquote>
-<p>单向数据流</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR;  </span><br><span class="line"><span class="meta">　　Actions--&gt;</span><span class="bash">State;   </span></span><br><span class="line"><span class="meta">　　State--&gt;</span><span class="bash">View;  </span></span><br><span class="line"><span class="meta">　　View--&gt;</span><span class="bash">Actions;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如上所示为单向数据流，但是当我们有多个组件共享状态时，单向数据流的简洁性很容易被破坏。</p>
-</blockquote>
-<blockquote>
-<p>这时会有两个需求多个视图依赖于同一状态，来自不同视图的行为需要变更同一状态。</p>
-</blockquote>
-<blockquote>
-<p>为了方便我们把组件的共享状态抽取出来，以一个全局单例模式管理（Vuex）</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> vuex --save</span><br></pre></td></tr></table></figure>
-<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2>
+            <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册一个全局自定义指令 `v-focus`</span></span><br><span class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</span><br><span class="line">  <span class="comment">// 当被绑定的元素插入到 DOM 中时……</span></span><br><span class="line">  inserted: <span class="function"><span class="keyword">function</span> <span class="params">(el)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 聚焦元素</span></span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">directives</span>: &#123;</span><br><span class="line">  <span class="attribute">focus</span>: &#123;</span><br><span class="line">    // 指令的定义</span><br><span class="line">    inserted: function (el) &#123;</span><br><span class="line">      el.<span class="built_in">focus</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">input</span> v-focus&gt;</span><br></pre></td></tr></table></figure>
+<p>这里举一个高深的例子</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"hook-arguments-example"</span> v-demo:foo<span class="selector-class">.a</span><span class="selector-class">.b</span>=<span class="string">"message"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'demo'</span>, &#123;</span><br><span class="line">  bind: <span class="function"><span class="keyword">function</span> <span class="params">(el, binding, vnode)</span> &#123;</span></span><br><span class="line">    var s = JSON.stringify</span><br><span class="line">    <span class="keyword">el</span>.innerHTML =</span><br><span class="line">      <span class="string">'name: '</span>       + s(binding.name) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'value: '</span>      + s(binding.value) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'expression: '</span> + s(binding.expression) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'argument: '</span>   + s(binding.arg) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'modifiers: '</span>  + s(binding.modifiers) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'vnode keys: '</span> + Object.<span class="built_in">keys</span>(vnode).<span class="keyword">join</span>(<span class="string">', '</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="keyword">e</span><span class="variable">l:</span> <span class="string">'#hook-arguments-example'</span>,</span><br><span class="line">  dat<span class="variable">a:</span> &#123;</span><br><span class="line">    message: <span class="string">'hello!'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>简写模式</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.directive(<span class="string">'color-swatch'</span>, function (el, binding) &#123;</span><br><span class="line">  el<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = binding.value</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>接收数据</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-demo</span>=<span class="string">"</span></span></span><span class="template-variable">&#123; color: 'white', text: 'hello!' &#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'demo'</span>, <span class="function"><span class="keyword">function</span> (<span class="title">el</span>, <span class="title">binding</span>) &#123;</span></span><br><span class="line">  console.<span class="built_in">log</span>(binding.<span class="built_in">value</span>.color)<span class="comment"> // =&gt; "white"</span></span><br><span class="line">  console.<span class="built_in">log</span>(binding.<span class="built_in">value</span>.<span class="keyword">text</span>) <span class="comment"> // =&gt; "hello!"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1372,7 +1369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue中使用sass/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/Python3基础语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1391,7 +1388,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue中使用sass/" itemprop="url">vue中使用sass</a></h1>
+                <a class="post-title-link" href="/2018/06/11/Python3基础语法/" itemprop="url">Python3基础语法</a></h1>
         
 
         <div class="post-meta">
@@ -1426,8 +1423,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -1457,7 +1454,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  868
                 </span>
               
 
@@ -1473,7 +1470,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -1496,11 +1493,63 @@
       
         
           
-            <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="keyword">node</span><span class="title">-sass</span> --save-dev</span><br><span class="line">npm install sass-loader --save-dev</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
-<p>打开webpack.base.config.js在loaders里面加上  module – rules</p>
+            <h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = 3</span><br><span class="line"><span class="keyword">if</span> age &gt;= 18:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'adult'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;= 6:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'teenager'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'kid'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]:</span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + x</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="built_in">n</span> = <span class="number">99</span></span><br><span class="line">while <span class="built_in">n</span> &gt; <span class="symbol">0:</span></span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + <span class="built_in">n</span></span><br><span class="line">    <span class="built_in">n</span> = <span class="built_in">n</span> - <span class="number">2</span></span><br><span class="line">print(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n &lt;= <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> n &gt; <span class="number">10</span>: # 当n = <span class="number">11</span>时，条件满足，执行<span class="keyword">break</span>语句</span><br><span class="line">        <span class="keyword">break</span> # <span class="keyword">break</span>语句会结束当前循环</span><br><span class="line">    print(n)</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">print(<span class="string">'END'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">10</span>:</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>: # 如果n是偶数，执行<span class="keyword">continue</span>语句</span><br><span class="line">        <span class="keyword">continue</span> # <span class="keyword">continue</span>语句会直接继续下一轮循环，后续的print()语句不会执行</span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure>
+<h2 id="dict-字典"><a href="#dict-字典" class="headerlink" title="dict(字典)"></a>dict(字典)</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">d</span> = &#123;<span class="string">'Michael'</span>: 95, <span class="string">'Bob'</span>: 75, <span class="string">'Tracy'</span>: 85&#125;</span><br><span class="line">d[<span class="string">'Michael'</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h5><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d.<span class="built_in">get</span>(<span class="string">"Michael"</span>);</span><br><span class="line">#<span class="built_in">key</span>不存在返回None，或者自己指定的<span class="built_in">value</span></span><br></pre></td></tr></table></figure>
+<h5 id="pop-key"><a href="#pop-key" class="headerlink" title="pop(key)"></a>pop(key)</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d.<span class="built_in">pop</span>('Bob')</span><br><span class="line"></span><br><span class="line"># 要删除一个<span class="built_in">key</span>，用<span class="built_in">pop</span>(<span class="built_in">key</span>)方法，对应的value也会从dict中删除：</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。</p>
 </blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">rule<span class="variable">s:</span> [</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.vue$/,</span><br><span class="line">        loader: <span class="string">'vue-loader'</span>,</span><br><span class="line">        option<span class="variable">s:</span> vueLoaderConfig</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.js$/,</span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.(png|jpe?g|gif|svg)(\?.*)?$/,</span><br><span class="line">        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">        query: &#123;</span><br><span class="line">          limi<span class="variable">t:</span> <span class="number">10000</span>,</span><br><span class="line">          name: utils.assetsPath(<span class="string">'img/[name].[hash:7].[ext]'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.scss$/,</span><br><span class="line">        loader<span class="variable">s:</span> [<span class="string">"style"</span>, <span class="string">"css"</span>, <span class="string">"sass"</span>]</span><br><span class="line">      &#125;,//这里这里看这里，主要引入这一段</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.(woff2?|eot|ttf|otf)(\?.*)?$/,</span><br><span class="line">        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">        query: &#123;</span><br><span class="line">          limi<span class="variable">t:</span> <span class="number">10000</span>,</span><br><span class="line">          name: utils.assetsPath(<span class="string">'fonts/[name].[hash:7].[ext]'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>和list比较，dict有以下几个特点：</p>
+</blockquote>
+<ul>
+<li>查找和插入的速度极快，不会随着key的增加而变慢；</li>
+<li>需要占用大量的内存，内存浪费多。</li>
+</ul>
+<blockquote>
+<p>而list相反：</p>
+</blockquote>
+<ul>
+<li>查找和插入的时间随着元素的增加而增加；</li>
+<li>占用空间小，浪费内存很少。</li>
+</ul>
+<blockquote>
+<p>所以，dict是用空间来换取时间的一种方法。</p>
+</blockquote>
+<blockquote>
+<p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。</p>
+</blockquote>
+<blockquote>
+<p>这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。</p>
+</blockquote>
+<blockquote>
+<p>要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key</p>
+</blockquote>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><blockquote>
+<p>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+</blockquote>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="add-key"><a href="#add-key" class="headerlink" title="add(key)"></a>add(key)</h5><blockquote>
+<p>通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果：</p>
+</blockquote>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s.add(<span class="number">4</span>)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">&gt;&gt;&gt; s.add(<span class="number">4</span>)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="remove-key"><a href="#remove-key" class="headerlink" title="remove(key)"></a>remove(key)</h5><blockquote>
+<p>通过remove(key)方法可以删除元素：</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; s.remove(<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：</p>
+</blockquote>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s1 = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt;&gt; s2 = set([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&gt;&gt;&gt; s1 &amp; s2</span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt;&gt;&gt; s1 | s2</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。试试把list放入set，看看是否会报错。</p>
+</blockquote>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h5 id="int-函数可以把其他数据类型转换为整数"><a href="#int-函数可以把其他数据类型转换为整数" class="headerlink" title="int()函数可以把其他数据类型转换为整数"></a>int()函数可以把其他数据类型转换为整数</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="string">'123'</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="number">12.34</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; float(<span class="string">'12.34'</span>)</span><br><span class="line"><span class="number">12.34</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; str(<span class="number">1.23</span>)</span><br><span class="line"><span class="string">'1.23'</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; str(<span class="number">100</span>)</span><br><span class="line"><span class="string">'100'</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; bool(<span class="number">1</span>)</span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; bool(<span class="string">''</span>)</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1549,7 +1598,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue中操作DOM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/python2.7执行excel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1568,7 +1617,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue中操作DOM/" itemprop="url">vue中操作DOM</a></h1>
+                <a class="post-title-link" href="/2018/06/11/python2.7执行excel/" itemprop="url">python2.7执行excel</a></h1>
         
 
         <div class="post-meta">
@@ -1603,8 +1652,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -1634,7 +1683,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  153
+                  75
                 </span>
               
 
@@ -1673,10 +1722,11 @@
       
         
           
-            <h2 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h2><blockquote>
-<p>可以在mounted中挂载<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;         <span class="comment">//this.$nextTick是在下次DOM更新循环结束时调用延迟回调函数。异步函数</span></span><br><span class="line">            <span class="keyword">this</span>.loadData();　　　　　　　　　　<span class="comment">//DOM加载就绪，后调用loadData方法进行数据更新&lt;br&gt;　　　　　　　　//想要更新后的获取dom　　　　　　　　　　　　　　//此时若获取更新后dom数据将会报错，数据为undefined；</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.addEventListener)&#123;</span><br><span class="line">                <span class="built_in">document</span>.addEventListener(<span class="string">'DOMMouseScroll'</span>,<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                &#125;,<span class="literal">false</span>);</span><br><span class="line">            &#125;<span class="regexp">//</span>W3C</span><br><span class="line">            <span class="built_in">window</span>.onmousewheel=<span class="built_in">document</span>.onmousewheel=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                let top = <span class="built_in">document</span>.getElementById(<span class="string">"bottoms"</span>).scrollTop;</span><br><span class="line">                <span class="built_in">console</span>.log(top);</span><br><span class="line">                <span class="keyword">this</span>.$refs.add.style.marginTop = top + <span class="number">10</span> + <span class="string">"px"</span>;</span><br><span class="line">                <span class="regexp">//</span> <span class="built_in">document</span>.getElementById(<span class="string">"rights"</span>).style.marginTop = top+<span class="string">"px"</span>;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.add.style);</span><br><span class="line"></span><br><span class="line">            &#125;;<span class="regexp">//</span>IE/Opera/Chrome</span><br></pre></td></tr></table></figure>
+            <h3 id="安装xlrd、xlwt、xlutils"><a href="#安装xlrd、xlwt、xlutils" class="headerlink" title="安装xlrd、xlwt、xlutils"></a>安装xlrd、xlwt、xlutils</h3><p>xlrd：是python从excel读数据的第三方控件；<br>xlwt：是python从excel写数据的第三方控件；<br>xlutils：是python使用xlrd、xlwt的工具箱。若安装不成功，可能原因是需要安装setuptools。</p>
+<p>[root@vm4 python]# pip  install xlrd</p>
+<p>[root@vm4 python]# pip  install xlwt</p>
+<p>[root@vm4 python]# pip  install xlutils</p>
+
           
         
       
@@ -1724,7 +1774,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue中自定义指令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/python 函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1743,7 +1793,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue中自定义指令/" itemprop="url">vue中自定义指令</a></h1>
+                <a class="post-title-link" href="/2018/06/11/python 函数/" itemprop="url">python 函数</a></h1>
         
 
         <div class="post-meta">
@@ -1778,8 +1828,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -1809,7 +1859,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  221
+                  83
                 </span>
               
 
@@ -1848,17 +1898,10 @@
       
         
           
-            <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册一个全局自定义指令 `v-focus`</span></span><br><span class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</span><br><span class="line">  <span class="comment">// 当被绑定的元素插入到 DOM 中时……</span></span><br><span class="line">  inserted: <span class="function"><span class="keyword">function</span> <span class="params">(el)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 聚焦元素</span></span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">directives</span>: &#123;</span><br><span class="line">  <span class="attribute">focus</span>: &#123;</span><br><span class="line">    // 指令的定义</span><br><span class="line">    inserted: function (el) &#123;</span><br><span class="line">      el.<span class="built_in">focus</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">input</span> v-focus&gt;</span><br></pre></td></tr></table></figure>
-<p>这里举一个高深的例子</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"hook-arguments-example"</span> v-demo:foo<span class="selector-class">.a</span><span class="selector-class">.b</span>=<span class="string">"message"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'demo'</span>, &#123;</span><br><span class="line">  bind: <span class="function"><span class="keyword">function</span> <span class="params">(el, binding, vnode)</span> &#123;</span></span><br><span class="line">    var s = JSON.stringify</span><br><span class="line">    <span class="keyword">el</span>.innerHTML =</span><br><span class="line">      <span class="string">'name: '</span>       + s(binding.name) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'value: '</span>      + s(binding.value) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'expression: '</span> + s(binding.expression) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'argument: '</span>   + s(binding.arg) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'modifiers: '</span>  + s(binding.modifiers) + <span class="string">'&lt;br&gt;'</span> +</span><br><span class="line">      <span class="string">'vnode keys: '</span> + Object.<span class="built_in">keys</span>(vnode).<span class="keyword">join</span>(<span class="string">', '</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="keyword">e</span><span class="variable">l:</span> <span class="string">'#hook-arguments-example'</span>,</span><br><span class="line">  dat<span class="variable">a:</span> &#123;</span><br><span class="line">    message: <span class="string">'hello!'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>简写模式</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.directive(<span class="string">'color-swatch'</span>, function (el, binding) &#123;</span><br><span class="line">  el<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = binding.value</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>接收数据</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-demo</span>=<span class="string">"</span></span></span><span class="template-variable">&#123; color: 'white', text: 'hello!' &#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'demo'</span>, <span class="function"><span class="keyword">function</span> (<span class="title">el</span>, <span class="title">binding</span>) &#123;</span></span><br><span class="line">  console.<span class="built_in">log</span>(binding.<span class="built_in">value</span>.color)<span class="comment"> // =&gt; "white"</span></span><br><span class="line">  console.<span class="built_in">log</span>(binding.<span class="built_in">value</span>.<span class="keyword">text</span>) <span class="comment"> // =&gt; "hello!"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+            <h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> -x</span><br></pre></td></tr></table></figure>
+<h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">my_abs</span><span class="params">(-<span class="number">99</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><h5 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enroll</span><span class="params">(name, gender, age=<span class="number">6</span>, city=<span class="string">'Beijing'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">'name:'</span>, name)</span><br><span class="line">    print(<span class="string">'gender:'</span>, gender)</span><br><span class="line">    print(<span class="string">'age:'</span>, age)</span><br><span class="line">    print(<span class="string">'city:'</span>, city)</span><br></pre></td></tr></table></figure>
+<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * fact(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
           
         
       
@@ -2075,7 +2118,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2121,7 +2164,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2132,7 +2175,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2143,7 +2186,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2194,7 +2237,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.8k</span>
+    <span title="Site words total count">5.4k</span>
   
 </div>
 
