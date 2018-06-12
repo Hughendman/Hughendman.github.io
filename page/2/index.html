@@ -228,9 +228,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -259,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/eslint语法解决/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/GitHubPages + Hexo+Next构建你自己的博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -278,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/eslint语法解决/" itemprop="url">eslint语法解决</a></h1>
+                <a class="post-title-link" href="/2018/06/11/GitHubPages + Hexo+Next构建你自己的博客/" itemprop="url">GitHubPages + Hexo+Next构建你自己的博客</a></h1>
         
 
         <div class="post-meta">
@@ -313,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
                   </a>
                 </span>
 
@@ -352,11 +386,30 @@
       
         
           
-            <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在webpack.base.conf.js里面删掉下面:</span><br><span class="line"></span><br><span class="line">preLoaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除以下代码就可以</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">test</span>: /\.(js|vue)$/,</span><br><span class="line">    loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">    enforce: <span class="string">'pre'</span>,</span><br><span class="line">    include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)],</span><br><span class="line">    options: &#123;</span><br><span class="line">      formatter: <span class="built_in">require</span>(<span class="string">'eslint-friendly-formatter'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="github准备"><a href="#github准备" class="headerlink" title="github准备"></a>github准备</h3><p>新建一个项目：你的用户名.github.io（项目名称）</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ul>
+<li>安装node</li>
+<li>npm install hexo-cli -g</li>
+<li>hexo init 你的用户名.github.io // 尽量和Github仓库使用同一个名称</li>
+<li>cd 你的用户名.github.io</li>
+<li>hexo s</li>
+<li>打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></li>
+<li></li>
+</ul>
+<h3 id="Next主题安装"><a href="#Next主题安装" class="headerlink" title="Next主题安装"></a>Next主题安装</h3><ul>
+<li>Next主题是iissnan所创作的一个Hexo主题，以简洁为主</li>
+<li>cd xxx.github.io </li>
+<li>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next</li>
+</ul>
+<h5 id="config-yml站点配置"><a href="#config-yml站点配置" class="headerlink" title="_config.yml站点配置"></a>_config.yml站点配置</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line">    <span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line">    <span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Site</span></span><br><span class="line"><span class="attr">    title:</span> <span class="string">最晚的开始</span>   <span class="comment">#站点名称</span></span><br><span class="line"><span class="attr">    subtitle:</span> <span class="string">所有的为时已晚都是开始的最好时候</span>  <span class="comment">#副标题</span></span><br><span class="line">    <span class="comment">#个人描述</span></span><br><span class="line"><span class="attr">    description:</span> <span class="string">My</span> <span class="string">goal</span> <span class="string">is</span> <span class="string">not</span> <span class="string">write</span> <span class="string">code.if</span> <span class="string">we</span> <span class="string">could</span> <span class="string">ship</span> <span class="string">products</span> <span class="string">and</span> <span class="string">make</span> <span class="string">all</span> <span class="string">this</span> <span class="string">money</span> <span class="string">without</span> <span class="string">writing</span> <span class="string">any</span> <span class="string">code,we</span> <span class="string">could.Your</span> <span class="string">job</span> <span class="string">is</span> <span class="string">ship</span> <span class="string">products</span> <span class="string">EXACTLY</span> <span class="string">on</span> <span class="string">time.It</span> <span class="string">doesn’t</span> <span class="string">matter</span> <span class="string">whether</span> <span class="string">you</span> <span class="string">are</span> <span class="string">a</span> <span class="string">developer,tester,program</span> <span class="string">manager,product</span> <span class="string">manager</span> <span class="string">whatever.Everybody’s</span> <span class="string">job</span> <span class="string">is</span> <span class="string">the</span> <span class="string">same.</span> </span><br><span class="line"><span class="attr">    author:</span> <span class="string">Jack_lin</span>  <span class="comment">#作者</span></span><br><span class="line"><span class="attr">    language:</span> <span class="string">zh-Hans</span>  <span class="comment">#语言</span></span><br><span class="line"><span class="attr">    timezone:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># URL   </span></span><br><span class="line">    <span class="comment">#绑定域名后，要创建 sitemap.xml 时再配置该项 </span></span><br><span class="line">    <span class="comment">## If your site is put in a subdirectory, set url as   'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">    root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">    permalink_defaults:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Directory   #目录不用修改</span></span><br><span class="line"><span class="attr">    source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">    public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">    tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">    archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">    category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">    code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">    i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">    skip_render:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Writing</span></span><br><span class="line">    <span class="comment"># 文章布局、写作格式的定义，不修改</span></span><br><span class="line"><span class="attr">    new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">    default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">    titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">    external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">    filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">    render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    highlight:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    tab_replace:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">    default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">    category_map:</span></span><br><span class="line"><span class="attr">    tag_map:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Date / Time format  #时间格式不用修改</span></span><br><span class="line">    <span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line">    <span class="comment">## You can customize the date format as defined in</span></span><br><span class="line">    <span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">    date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">    time_format:</span> <span class="attr">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pagination   #每页显示文章数，可以自行定义</span></span><br><span class="line">    <span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">    per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">    pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Extensions</span></span><br><span class="line">    <span class="comment">#配置站点时，所使用的主题和插件，切换主题可以在这里设置</span></span><br><span class="line">    <span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line">    <span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">    theme:</span> <span class="string">next</span> <span class="string">//在这里切换主题</span></span><br><span class="line">     <span class="comment"># theme: landscape</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 头像， 在xxx.github.io/source 下相对路径，若source文件夹下没有uploads，就新建一个名为uploads文件夹，具体见下面截图</span></span><br><span class="line"><span class="attr">    avatar:</span> <span class="string">/uploads/images/avatar.png</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Deployment</span></span><br><span class="line">    <span class="comment">#这里是部署到Github上的设置</span></span><br><span class="line">    <span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">    deploy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span>  <span class="comment">#git提交</span></span><br><span class="line"><span class="attr">    repo:</span> <span class="attr">https://github.com/123sunxiaolin/123sunxiaolin.github.io.git</span>  <span class="comment">#已创建的Github仓库</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span> <span class="comment">#提交到的分支</span></span><br></pre></td></tr></table></figure>
+<p>如果报错: ERROR Deployer not found: git</p>
 <blockquote>
-<p>然后需要重新编辑生效</p>
+<p>npm install –save hexo-deployer-git</p>
 </blockquote>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><blockquote>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
+</blockquote>
+<p>打包的项目在public中</p>
 
           
         
@@ -405,7 +458,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue的路由（route）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -424,7 +477,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/" itemprop="url">vue全局拦截前端错误（前端异常监控系统+ng4）</a></h1>
+                <a class="post-title-link" href="/2018/06/11/vue的路由（route）/" itemprop="url">vue的路由（route）</a></h1>
         
 
         <div class="post-meta">
@@ -498,18 +551,10 @@
       
         
           
-            <h2 id="errorHandler"><a href="#errorHandler" class="headerlink" title="errorHandler"></a>errorHandler</h2><blockquote>
-<p>一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用</p>
+            <h2 id="vue的路由"><a href="#vue的路由" class="headerlink" title="vue的路由"></a>vue的路由</h2><blockquote>
+<p>注意： component后面的值不要有引号，父级不要有名字name属性</p>
 </blockquote>
-<blockquote>
-<p>这里面我们用errorHandler来进行错误拦截</p>
-</blockquote>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span> <span class="params">(err, vm, info)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// handle error</span></span><br><span class="line">  <span class="comment">// `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子</span></span><br><span class="line">  <span class="comment">// 只在 2.2.0+ 可用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体报错信息</span></span><br><span class="line"></span><br><span class="line"><span class="string">ReferenceError:</span> i is not defined  <span class="comment">//err</span></span><br><span class="line">    at VueComponent.created (bigdata.vue?1536:<span class="number">26</span>)</span><br><span class="line">    at callHook (vue.esm.js?5425:<span class="number">2895</span>)</span><br><span class="line">    at VueComponent.Vue._init (vue.esm.js?5425:<span class="number">4560</span>)</span><br><span class="line">    at <span class="keyword">new</span> VueComponent (vue.esm.js?5425:<span class="number">4728</span>)</span><br><span class="line">    at createComponentInstanceForVnode (vue.esm.js?5425:<span class="number">4242</span>)</span><br><span class="line">    at init (vue.esm.js?5425:<span class="number">4059</span>)</span><br><span class="line">    at createComponent (vue.esm.js?5425:<span class="number">5512</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5460</span>)</span><br><span class="line">    at createChildren (vue.esm.js?5425:<span class="number">5586</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5488</span>)</span><br><span class="line"></span><br><span class="line">VueComponent &#123;<span class="string">_uid:</span> <span class="number">4</span>, <span class="string">_isVue:</span> <span class="literal">true</span>, <span class="string">$options:</span> &#123;…&#125;,  <span class="comment">//vm _renderProxy: Proxy, _self: VueComponent, …&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">created hook  <span class="comment">//info</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://cn.vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">vue2.0参考这里</a></p>
-<p><a href="https://www.angular.cn/api/core/ErrorHandler" target="_blank" rel="noopener">ng4参考这里</a></p>
-<h2 id="接口形式同埋点上传（利用一个gif的形式传递数据）"><a href="#接口形式同埋点上传（利用一个gif的形式传递数据）" class="headerlink" title="接口形式同埋点上传（利用一个gif的形式传递数据）"></a>接口形式同埋点上传（利用一个gif的形式传递数据）</h2><p><a href="http://note.youdao.com/noteshare?id=f3283d431c12eaae4fe962df2b486755&amp;sub=9D6EE15F28F74A6CAFFE096C2B5178BE" target="_blank" rel="noopener">这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)</a></p>
-
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="symbol">'/</span>',</span><br><span class="line">      component: Bigdata,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: '',</span><br><span class="line">          redirect: &#123; name: <span class="symbol">'Table</span>' &#125;</span><br><span class="line">        &#125;,&#123;</span><br><span class="line">          path: <span class="symbol">'table</span>',</span><br><span class="line">          name: <span class="symbol">'Table</span>' ,</span><br><span class="line">          component: Table</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
           
         
       
@@ -557,7 +602,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue项目移植报错/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/反向代理+axios/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -576,7 +621,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/vue项目移植报错/" itemprop="url">vue项目移植报错</a></h1>
+                <a class="post-title-link" href="/2018/06/11/反向代理+axios/" itemprop="url">反向代理+axios</a></h1>
         
 
         <div class="post-meta">
@@ -650,22 +695,10 @@
       
         
           
-            <p><a href="https://www.cnblogs.com/hexiaobao/p/8260858.html" target="_blank" rel="noopener">按照这个文章解决的</a></p>
+            <p><a href="http://blog.csdn.net/feifanzhuli/article/details/77990661" target="_blank" rel="noopener">反向代理</a></p>
+<p>代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。</p>
 <blockquote>
-<p>npm intall sass-loader –save;</p>
-</blockquote>
-<blockquote>
-<p>npm install node-sass –save;</p>
-</blockquote>
-<blockquote>
-<p>然后运行npm run start就可以 </p>
-</blockquote>
-<h3 id="关于vueTreeDrag这个项目"><a href="#关于vueTreeDrag这个项目" class="headerlink" title="关于vueTreeDrag这个项目"></a>关于vueTreeDrag这个项目</h3><p><a href="https://github.com/Hughendman/vueTreeDrag" target="_blank" rel="noopener">vueTreeDrag</a></p>
-<blockquote>
-<p>使用的node版本是v8.8.1</p>
-</blockquote>
-<blockquote>
-<p>删除当前的node_modules 然后cnpm i重新下载</p>
+<p>听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。</p>
 </blockquote>
 
           
@@ -816,152 +849,6 @@
 </blockquote>
 <blockquote>
 <p>Vue.prototype.$echarts = echarts </p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/反向代理+axios/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/11/反向代理+axios/" itemprop="url">反向代理+axios</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://blog.csdn.net/feifanzhuli/article/details/77990661" target="_blank" rel="noopener">反向代理</a></p>
-<p>代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。</p>
-<blockquote>
-<p>听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。</p>
 </blockquote>
 
           
@@ -1304,171 +1191,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/快速构建vue项目（vue-cli）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/11/快速构建vue项目（vue-cli）/" itemprop="url">快速构建vue项目（vue-cli）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> -g vue-cli</span><br></pre></td></tr></table></figure>
-<h2 id="创建项目-项目名称叫muses"><a href="#创建项目-项目名称叫muses" class="headerlink" title="创建项目(项目名称叫muses)"></a>创建项目(项目名称叫muses)</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vue init webpack muses</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动-默认的是80端"><a href="#启动-默认的是80端" class="headerlink" title="启动(默认的是80端)"></a>启动(默认的是80端)</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> dev</span></span><br></pre></td></tr></table></figure>
-<h2 id="详细讲解"><a href="#详细讲解" class="headerlink" title="详细讲解"></a>详细讲解</h2><blockquote>
-<p>与ng4 的cli 不同 ，vue的cli比较复杂 ，但是实际上只要一直回车对后面没有影响，注意最后一项要选择npm的那个选项</p>
-</blockquote>
-<blockquote>
-<p>build文件里面是一些操作文件,执行 npm run * 时执行的就是这里的文件</p>
-</blockquote>
-<blockquote>
-<p>config 文件是配置文件</p>
-</blockquote>
-<blockquote>
-<p>src 是资源文件，组件等都放在这里</p>
-</blockquote>
-<blockquote>
-<p>assets 资源文件，同ng4 类似，放的是公共的资源，例如图片</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> build</span></span><br></pre></td></tr></table></figure>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote>
-<p>如果你是用的编辑器是webstorm 那么需要在setting中的Language选项里面的JavaScript设置为ECMAScript 6，这样才可以使用，如果还有问题，那么需要在script标签中标注type为es6</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/如何在vue中引入jquery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1708,6 +1430,323 @@
           
             <p>vue-cli 生成的项目里样式插件是自动插入的， 在 build/utils.js 里</p>
 <p>autoprefixer 配置在 .postcssrc.js</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/快速构建vue项目（vue-cli）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/11/快速构建vue项目（vue-cli）/" itemprop="url">快速构建vue项目（vue-cli）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> -g vue-cli</span><br></pre></td></tr></table></figure>
+<h2 id="创建项目-项目名称叫muses"><a href="#创建项目-项目名称叫muses" class="headerlink" title="创建项目(项目名称叫muses)"></a>创建项目(项目名称叫muses)</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vue init webpack muses</span></span><br></pre></td></tr></table></figure>
+<h2 id="启动-默认的是80端"><a href="#启动-默认的是80端" class="headerlink" title="启动(默认的是80端)"></a>启动(默认的是80端)</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> dev</span></span><br></pre></td></tr></table></figure>
+<h2 id="详细讲解"><a href="#详细讲解" class="headerlink" title="详细讲解"></a>详细讲解</h2><blockquote>
+<p>与ng4 的cli 不同 ，vue的cli比较复杂 ，但是实际上只要一直回车对后面没有影响，注意最后一项要选择npm的那个选项</p>
+</blockquote>
+<blockquote>
+<p>build文件里面是一些操作文件,执行 npm run * 时执行的就是这里的文件</p>
+</blockquote>
+<blockquote>
+<p>config 文件是配置文件</p>
+</blockquote>
+<blockquote>
+<p>src 是资源文件，组件等都放在这里</p>
+</blockquote>
+<blockquote>
+<p>assets 资源文件，同ng4 类似，放的是公共的资源，例如图片</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> build</span></span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote>
+<p>如果你是用的编辑器是webstorm 那么需要在setting中的Language选项里面的JavaScript设置为ECMAScript 6，这样才可以使用，如果还有问题，那么需要在script标签中标注type为es6</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/11/vue全局拦截前端错误（前端异常监控系统+ng4）/" itemprop="url">vue全局拦截前端错误（前端异常监控系统+ng4）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="errorHandler"><a href="#errorHandler" class="headerlink" title="errorHandler"></a>errorHandler</h2><blockquote>
+<p>一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用</p>
+</blockquote>
+<blockquote>
+<p>这里面我们用errorHandler来进行错误拦截</p>
+</blockquote>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span> <span class="params">(err, vm, info)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// handle error</span></span><br><span class="line">  <span class="comment">// `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子</span></span><br><span class="line">  <span class="comment">// 只在 2.2.0+ 可用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体报错信息</span></span><br><span class="line"></span><br><span class="line"><span class="string">ReferenceError:</span> i is not defined  <span class="comment">//err</span></span><br><span class="line">    at VueComponent.created (bigdata.vue?1536:<span class="number">26</span>)</span><br><span class="line">    at callHook (vue.esm.js?5425:<span class="number">2895</span>)</span><br><span class="line">    at VueComponent.Vue._init (vue.esm.js?5425:<span class="number">4560</span>)</span><br><span class="line">    at <span class="keyword">new</span> VueComponent (vue.esm.js?5425:<span class="number">4728</span>)</span><br><span class="line">    at createComponentInstanceForVnode (vue.esm.js?5425:<span class="number">4242</span>)</span><br><span class="line">    at init (vue.esm.js?5425:<span class="number">4059</span>)</span><br><span class="line">    at createComponent (vue.esm.js?5425:<span class="number">5512</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5460</span>)</span><br><span class="line">    at createChildren (vue.esm.js?5425:<span class="number">5586</span>)</span><br><span class="line">    at createElm (vue.esm.js?5425:<span class="number">5488</span>)</span><br><span class="line"></span><br><span class="line">VueComponent &#123;<span class="string">_uid:</span> <span class="number">4</span>, <span class="string">_isVue:</span> <span class="literal">true</span>, <span class="string">$options:</span> &#123;…&#125;,  <span class="comment">//vm _renderProxy: Proxy, _self: VueComponent, …&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">created hook  <span class="comment">//info</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://cn.vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">vue2.0参考这里</a></p>
+<p><a href="https://www.angular.cn/api/core/ErrorHandler" target="_blank" rel="noopener">ng4参考这里</a></p>
+<h2 id="接口形式同埋点上传（利用一个gif的形式传递数据）"><a href="#接口形式同埋点上传（利用一个gif的形式传递数据）" class="headerlink" title="接口形式同埋点上传（利用一个gif的形式传递数据）"></a>接口形式同埋点上传（利用一个gif的形式传递数据）</h2><p><a href="http://note.youdao.com/noteshare?id=f3283d431c12eaae4fe962df2b486755&amp;sub=9D6EE15F28F74A6CAFFE096C2B5178BE" target="_blank" rel="noopener">这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)</a></p>
 
           
         
@@ -2020,6 +2059,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
