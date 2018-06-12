@@ -17,6 +17,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[vue中自定义指令]]></title>
+    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[12345678// 注册一个全局自定义指令 `v-focus`Vue.directive('focus', &#123; // 当被绑定的元素插入到 DOM 中时…… inserted: function (el) &#123; // 聚焦元素 el.focus() &#125;&#125;) 12345678directives: &#123; focus: &#123; // 指令的定义 inserted: function (el) &#123; el.focus() &#125; &#125;&#125; 1&lt;input v-focus&gt; 这里举一个高深的例子 1&lt;div id="hook-arguments-example" v-demo:foo.a.b="message"&gt;&lt;/div&gt; 12345678910111213141516171819Vue.directive('demo', &#123; bind: function (el, binding, vnode) &#123; var s = JSON.stringify el.innerHTML = 'name: ' + s(binding.name) + '&lt;br&gt;' + 'value: ' + s(binding.value) + '&lt;br&gt;' + 'expression: ' + s(binding.expression) + '&lt;br&gt;' + 'argument: ' + s(binding.arg) + '&lt;br&gt;' + 'modifiers: ' + s(binding.modifiers) + '&lt;br&gt;' + 'vnode keys: ' + Object.keys(vnode).join(', ') &#125;&#125;)new Vue(&#123; el: '#hook-arguments-example', data: &#123; message: 'hello!' &#125;&#125;) 简写模式 1234Vue.directive('color-swatch', function (el, binding) &#123; el.style.backgroundColor = binding.value&#125;) 接收数据 1&lt;div v-demo="&#123; color: 'white', text: 'hello!' &#125;"&gt;&lt;/div&gt; 1234Vue.directive('demo', function (el, binding) &#123; console.log(binding.value.color) // =&gt; "white" console.log(binding.value.text) // =&gt; "hello!"&#125;)]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[element-ui]]></title>
+    <url>%2F2018%2F06%2F11%2Felement-ui%2F</url>
+    <content type="text"><![CDATA[安装1cnpm i element-ui --save 引入 在main.js 中 123456789101112import Vue from 'vue'import ElementUI from 'element-ui'import 'element-ui/lib/theme-chalk/index.css'import App from './App.vue'Vue.use(ElementUI)new Vue(&#123; el: '#app', render: h =&gt; h(App)&#125;) 使用菜单导航123456&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; index里面添加路由， router是使用路由模式为true 但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下 12345&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; elementUI关于树状图的增删改查，局部刷新问题链接在这里 elementUI关于tree的使用getCheckedKeys不能获取父节点的key]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vuex（关于vue的状态管理模式）]]></title>
     <url>%2F2018%2F06%2F11%2FVuex%EF%BC%88%E5%85%B3%E4%BA%8Evue%E7%9A%84%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%EF%BC%89%2F</url>
     <content type="text"><![CDATA[介绍vuex vuex是一个为了vue开发的状态管理模式，它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化， 这篇文章不错 状态管理模式123456789101112131415161718new Vue(&#123; // state data () &#123; return &#123; count: 0 &#125; &#125;, // view template: ` &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt; `, // actions methods: &#123; increment () &#123; this.count++ &#125; &#125;&#125;) 如上所示 state为驱动应用的数据源，view以声明的方式将state映射到视图，actions为响应在view上的用户输入导致的状态变化 单向数据流 1234graph LR; Actions--&gt;State; State--&gt;View; View--&gt;Actions; 如上所示为单向数据流，但是当我们有多个组件共享状态时，单向数据流的简洁性很容易被破坏。 这时会有两个需求多个视图依赖于同一状态，来自不同视图的行为需要变更同一状态。 为了方便我们把组件的共享状态抽取出来，以一个全局单例模式管理（Vuex） 安装1npm i vuex --save 引入1234import Vue from 'vue'import Vuex from 'vuex'Vue.use(Vuex) 使用]]></content>
@@ -39,9 +61,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[自动补全私有前缀]]></title>
-    <url>%2F2018%2F06%2F11%2F%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80%2F</url>
-    <content type="text"><![CDATA[vue-cli 生成的项目里样式插件是自动插入的， 在 build/utils.js 里 autoprefixer 配置在 .postcssrc.js]]></content>
+    <title><![CDATA[vue中使用富文本编辑器]]></title>
+    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[安装 cnpm install vue-quill-editor –save 引入 import { quillEditor } from ‘vue-quill-editor’]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -50,9 +72,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[element-ui]]></title>
-    <url>%2F2018%2F06%2F11%2Felement-ui%2F</url>
-    <content type="text"><![CDATA[安装1cnpm i element-ui --save 引入 在main.js 中 123456789101112import Vue from 'vue'import ElementUI from 'element-ui'import 'element-ui/lib/theme-chalk/index.css'import App from './App.vue'Vue.use(ElementUI)new Vue(&#123; el: '#app', render: h =&gt; h(App)&#125;) 使用菜单导航123456&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; index里面添加路由， router是使用路由模式为true 但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下 12345&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; elementUI关于树状图的增删改查，局部刷新问题链接在这里 elementUI关于tree的使用getCheckedKeys不能获取父节点的key]]></content>
+    <title><![CDATA[vue中操作DOM]]></title>
+    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E6%93%8D%E4%BD%9CDOM%2F</url>
+    <content type="text"><![CDATA[方案1 可以在mounted中挂载12345mounted:function()&#123; this.$nextTick(function()&#123; //this.$nextTick是在下次DOM更新循环结束时调用延迟回调函数。异步函数 this.loadData(); //DOM加载就绪，后调用loadData方法进行数据更新&lt;br&gt; //想要更新后的获取dom //此时若获取更新后dom数据将会报错，数据为undefined； &#125;) &#125; 方案2123456789101112if(document.addEventListener)&#123; document.addEventListener('DOMMouseScroll',()=&gt;&#123; &#125;,false); &#125;//W3C window.onmousewheel=document.onmousewheel=()=&gt;&#123; let top = document.getElementById("bottoms").scrollTop; console.log(top); this.$refs.add.style.marginTop = top + 10 + "px"; // document.getElementById("rights").style.marginTop = top+"px"; console.log(this.$refs.add.style); &#125;;//IE/Opera/Chrome]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -72,31 +94,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue中使用富文本编辑器]]></title>
-    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[安装 cnpm install vue-quill-editor –save 引入 import { quillEditor } from ‘vue-quill-editor’]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vue中自定义指令]]></title>
-    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[12345678// 注册一个全局自定义指令 `v-focus`Vue.directive('focus', &#123; // 当被绑定的元素插入到 DOM 中时…… inserted: function (el) &#123; // 聚焦元素 el.focus() &#125;&#125;) 12345678directives: &#123; focus: &#123; // 指令的定义 inserted: function (el) &#123; el.focus() &#125; &#125;&#125; 1&lt;input v-focus&gt; 这里举一个高深的例子 1&lt;div id="hook-arguments-example" v-demo:foo.a.b="message"&gt;&lt;/div&gt; 12345678910111213141516171819Vue.directive('demo', &#123; bind: function (el, binding, vnode) &#123; var s = JSON.stringify el.innerHTML = 'name: ' + s(binding.name) + '&lt;br&gt;' + 'value: ' + s(binding.value) + '&lt;br&gt;' + 'expression: ' + s(binding.expression) + '&lt;br&gt;' + 'argument: ' + s(binding.arg) + '&lt;br&gt;' + 'modifiers: ' + s(binding.modifiers) + '&lt;br&gt;' + 'vnode keys: ' + Object.keys(vnode).join(', ') &#125;&#125;)new Vue(&#123; el: '#hook-arguments-example', data: &#123; message: 'hello!' &#125;&#125;) 简写模式 1234Vue.directive('color-swatch', function (el, binding) &#123; el.style.backgroundColor = binding.value&#125;) 接收数据 1&lt;div v-demo="&#123; color: 'white', text: 'hello!' &#125;"&gt;&lt;/div&gt; 1234Vue.directive('demo', function (el, binding) &#123; console.log(binding.value.color) // =&gt; "white" console.log(binding.value.text) // =&gt; "hello!"&#125;)]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vue中操作DOM]]></title>
-    <url>%2F2018%2F06%2F11%2Fvue%E4%B8%AD%E6%93%8D%E4%BD%9CDOM%2F</url>
-    <content type="text"><![CDATA[方案1 可以在mounted中挂载12345mounted:function()&#123; this.$nextTick(function()&#123; //this.$nextTick是在下次DOM更新循环结束时调用延迟回调函数。异步函数 this.loadData(); //DOM加载就绪，后调用loadData方法进行数据更新&lt;br&gt; //想要更新后的获取dom //此时若获取更新后dom数据将会报错，数据为undefined； &#125;) &#125; 方案2123456789101112if(document.addEventListener)&#123; document.addEventListener('DOMMouseScroll',()=&gt;&#123; &#125;,false); &#125;//W3C window.onmousewheel=document.onmousewheel=()=&gt;&#123; let top = document.getElementById("bottoms").scrollTop; console.log(top); this.$refs.add.style.marginTop = top + 10 + "px"; // document.getElementById("rights").style.marginTop = top+"px"; console.log(this.$refs.add.style); &#125;;//IE/Opera/Chrome]]></content>
+    <title><![CDATA[vue全局拦截前端错误（前端异常监控系统+ng4）]]></title>
+    <url>%2F2018%2F06%2F11%2Fvue%E5%85%A8%E5%B1%80%E6%8B%A6%E6%88%AA%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%EF%BC%88%E5%89%8D%E7%AB%AF%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%2Bng4%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[errorHandler 一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用 这里面我们用errorHandler来进行错误拦截 12345Vue.config.errorHandler = function (err, vm, info) &#123; // handle error // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子 // 只在 2.2.0+ 可用&#125; 123456789101112131415161718//具体报错信息ReferenceError: i is not defined //err at VueComponent.created (bigdata.vue?1536:26) at callHook (vue.esm.js?5425:2895) at VueComponent.Vue._init (vue.esm.js?5425:4560) at new VueComponent (vue.esm.js?5425:4728) at createComponentInstanceForVnode (vue.esm.js?5425:4242) at init (vue.esm.js?5425:4059) at createComponent (vue.esm.js?5425:5512) at createElm (vue.esm.js?5425:5460) at createChildren (vue.esm.js?5425:5586) at createElm (vue.esm.js?5425:5488)VueComponent &#123;_uid: 4, _isVue: true, $options: &#123;…&#125;, //vm _renderProxy: Proxy, _self: VueComponent, …&#125;created hook //info vue2.0参考这里 ng4参考这里 接口形式同埋点上传（利用一个gif的形式传递数据）这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -138,9 +138,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[在vue中使用less]]></title>
-    <url>%2F2018%2F06%2F11%2F%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8less%2F</url>
-    <content type="text"><![CDATA[安装 cnpm install less less-loader –save 在webpack.base.config.js在loaders里面加上 12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-loader",&#125;,]]></content>
+    <title><![CDATA[反向代理+axios]]></title>
+    <url>%2F2018%2F06%2F11%2F%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%2Baxios%2F</url>
+    <content type="text"><![CDATA[反向代理 代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。 听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -160,20 +160,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[反向代理+axios]]></title>
-    <url>%2F2018%2F06%2F11%2F%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%2Baxios%2F</url>
-    <content type="text"><![CDATA[反向代理 代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。 听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[在vue中创建局部组件]]></title>
-    <url>%2F2018%2F06%2F11%2F%E5%9C%A8vue%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[在main.js中写入12import sideBar from './components/public/sideBar.vue';Vue.component('side-bar', sideBar); 在使用的时候直接写入]]></content>
+    <title><![CDATA[在vue中使用less]]></title>
+    <url>%2F2018%2F06%2F11%2F%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8less%2F</url>
+    <content type="text"><![CDATA[安装 cnpm install less less-loader –save 在webpack.base.config.js在loaders里面加上 12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-loader",&#125;,]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -193,6 +182,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[在vue中创建局部组件]]></title>
+    <url>%2F2018%2F06%2F11%2F%E5%9C%A8vue%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[在main.js中写入12import sideBar from './components/public/sideBar.vue';Vue.component('side-bar', sideBar); 在使用的时候直接写入]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[快速构建vue项目（vue-cli）]]></title>
     <url>%2F2018%2F06%2F11%2F%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%EF%BC%88vue-cli%EF%BC%89%2F</url>
     <content type="text"><![CDATA[全局安装1npm i -g vue-cli 创建项目(项目名称叫muses)1vue init webpack muses 启动(默认的是80端)1npm run dev 详细讲解 与ng4 的cli 不同 ，vue的cli比较复杂 ，但是实际上只要一直回车对后面没有影响，注意最后一项要选择npm的那个选项 build文件里面是一些操作文件,执行 npm run * 时执行的就是这里的文件 config 文件是配置文件 src 是资源文件，组件等都放在这里 assets 资源文件，同ng4 类似，放的是公共的资源，例如图片 打包1npm run build 注意 如果你是用的编辑器是webstorm 那么需要在setting中的Language选项里面的JavaScript设置为ECMAScript 6，这样才可以使用，如果还有问题，那么需要在script标签中标注type为es6]]></content>
@@ -204,9 +204,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue全局拦截前端错误（前端异常监控系统+ng4）]]></title>
-    <url>%2F2018%2F06%2F11%2Fvue%E5%85%A8%E5%B1%80%E6%8B%A6%E6%88%AA%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%EF%BC%88%E5%89%8D%E7%AB%AF%E5%BC%82%E5%B8%B8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%2Bng4%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[errorHandler 一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用 这里面我们用errorHandler来进行错误拦截 12345Vue.config.errorHandler = function (err, vm, info) &#123; // handle error // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子 // 只在 2.2.0+ 可用&#125; 123456789101112131415161718//具体报错信息ReferenceError: i is not defined //err at VueComponent.created (bigdata.vue?1536:26) at callHook (vue.esm.js?5425:2895) at VueComponent.Vue._init (vue.esm.js?5425:4560) at new VueComponent (vue.esm.js?5425:4728) at createComponentInstanceForVnode (vue.esm.js?5425:4242) at init (vue.esm.js?5425:4059) at createComponent (vue.esm.js?5425:5512) at createElm (vue.esm.js?5425:5460) at createChildren (vue.esm.js?5425:5586) at createElm (vue.esm.js?5425:5488)VueComponent &#123;_uid: 4, _isVue: true, $options: &#123;…&#125;, //vm _renderProxy: Proxy, _self: VueComponent, …&#125;created hook //info vue2.0参考这里 ng4参考这里 接口形式同埋点上传（利用一个gif的形式传递数据）这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)]]></content>
+    <title><![CDATA[自动补全私有前缀]]></title>
+    <url>%2F2018%2F06%2F11%2F%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E7%A7%81%E6%9C%89%E5%89%8D%E7%BC%80%2F</url>
+    <content type="text"><![CDATA[vue-cli 生成的项目里样式插件是自动插入的， 在 build/utils.js 里 autoprefixer 配置在 .postcssrc.js]]></content>
       <categories>
         <category>VUE</category>
       </categories>
