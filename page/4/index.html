@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/10/编程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/47867b98.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/10/编程/" itemprop="url">编程</a></h1>
+                <a class="post-title-link" href="/post/47867b98.html" itemprop="url">编程</a></h1>
         
 
         <div class="post-meta">
@@ -478,7 +478,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/f9ae89b2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -497,204 +497,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node/" itemprop="url">node</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  675
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="node文件整理"><a href="#node文件整理" class="headerlink" title="node文件整理"></a>node文件整理</h1><ul>
-<li><p>链接数据库（Mysql）   </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = mysql.createConnection(&#123;                         <span class="comment">//链接数据库的配置</span></span><br><span class="line">    host: <span class="string">'localhost'</span>,                                                                      <span class="comment">//IP</span></span><br><span class="line">    user: <span class="string">'root'</span>,                                                                              <span class="comment">//用户名</span></span><br><span class="line">    password: <span class="string">'123456'</span>,                                                              <span class="comment">//密码</span></span><br><span class="line">    database: <span class="string">'test'</span>                                                                       <span class="comment">//数据库名</span></span><br><span class="line">&#125;);</span><br><span class="line">connection.connect();                                                               <span class="comment">//开启链接</span></span><br><span class="line">connection.query(<span class="string">'SELECT 1 + 1 AS solution'</span>,                      <span class="comment">//写入sql</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">error, results</span>) </span>&#123;                                                            <span class="comment">//返回的数据（result）报错信息（error）</span></span><br><span class="line">    <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The solution is: '</span>, results[<span class="number">0</span>].solution)；</span><br><span class="line">&#125;);</span><br><span class="line">connection.end();                                                                      <span class="comment">//关闭链接</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="http://blog.csdn.net/u012234915/article/details/54600132" target="_blank" rel="noopener">请求接口</a></p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求musus接口</span></span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>);</span><br><span class="line"><span class="keyword">const</span> hera_api = <span class="built_in">require</span>(<span class="string">'../config/hera'</span>);</span><br><span class="line"></span><br><span class="line">exports.dv_dataset = <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.status(<span class="number">200</span>);</span><br><span class="line">    <span class="keyword">var</span> id= req.url.split(<span class="string">"?"</span>)[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    request(hera_api.hera_api+<span class="string">'lineage/dataset?'</span> + id , <span class="function"><span class="keyword">function</span> (<span class="params">error, response, body</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(hera_api.hera_api+<span class="string">'lineage/dataset?'</span> + id);</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">        res.json(body);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>编写接口</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">var express=require('express');</span><br><span class="line">var app =express();</span><br><span class="line">var bodyParser = require('body-parser');</span><br><span class="line"><span class="attribute">app.use(bodyParser.json(&#123;limit</span>: '1mb'&#125;));  //body-parser 解析json格式数据</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;            //此项必须在 bodyParser.json 下面,为参数编码</span><br><span class="line">    <span class="attribute">extended</span>: true</span><br><span class="line">&#125;));</span><br><span class="line">//mysql</span><br><span class="line">//mysql</span><br><span class="line">const mysql = require('mysql');</span><br><span class="line">const sql = require("../config/mysql");</span><br><span class="line">const client = sql.config_sql;</span><br><span class="line">exports.source_del =function (req,res) &#123;</span><br><span class="line">    var datas = req.body;</span><br><span class="line">    var source_del_sql = "DELETE FROM dict_datasource WHERE id = " + datas.id;</span><br><span class="line">    client.query(source_del_sql, (err,datas) =&gt; &#123;</span><br><span class="line">        <span class="attribute">res.status(200);</span></span><br><span class="line">        if(err == null)&#123;</span><br><span class="line">            <span class="attribute">res.json(&#123;</span></span><br><span class="line">                status: true,</span><br><span class="line">                data : datas</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            <span class="attribute">res.json(&#123;</span></span><br><span class="line">                status: false</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在server.js中引入</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Created by 尹雪松 on 2017/11/15.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> express=<span class="keyword">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app =express();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="keyword">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line">app.<span class="keyword">use</span>(bodyParser.json(&#123;limit: <span class="string">'1mb'</span>&#125;)); <span class="comment">//body-parser 解析json格式数据</span></span><br><span class="line">app.<span class="keyword">use</span>(bodyParser.urlencoded(&#123; <span class="comment">//此项必须在 bodyParser.json 下面,为参数编码</span></span><br><span class="line">extended: <span class="keyword">true</span></span><br><span class="line">&#125;));</span><br><span class="line"><span class="comment">//设置跨域访问</span></span><br><span class="line">app.all(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</span><br><span class="line">res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</span><br><span class="line">res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>);</span><br><span class="line">res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">next();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//引入外部文件接口</span></span><br><span class="line"><span class="keyword">const</span> jobData = <span class="keyword">require</span>(<span class="string">"./job/job"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/api/jobTable'</span>,jobData.job_data);<span class="comment">//job table</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置服务端口</span></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">9092</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">var</span> host = server.address().address;</span><br><span class="line"><span class="keyword">var</span> port = server.address().port;</span><br><span class="line">console.log(<span class="string">'Example app listening at http://%s:%s'</span>;, host, port);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://www.cnblogs.com/chyingp/p/pm2-documentation.html" target="_blank" rel="noopener">管理(pm2)</a></li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">下载：npm -g <span class="selector-tag">i</span> pm2 </span><br><span class="line">查看日志： pm2 logs</span><br><span class="line">监控： pm2 monit</span><br></pre></td></tr></table></figure>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">启动： pm2 +nginx</span><br><span class="line">upstream my_nodejs_upstream &#123;</span><br><span class="line">    server 127.0.0.1<span class="function">:3001</span>;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name my_nodejs_server;</span><br><span class="line">    root <span class="string">/home/www/project_root</span>;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_<span class="keyword">set</span>_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_<span class="keyword">set</span>_header Host $http_host;</span><br><span class="line">        proxy_<span class="keyword">set</span>_header X-NginX-Proxy <span class="literal">true</span>;</span><br><span class="line">        proxy_http_<span class="keyword">version</span> 1.1;</span><br><span class="line">        proxy_<span class="keyword">set</span>_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_<span class="keyword">set</span>_header Connection <span class="string">"upgrade"</span>;</span><br><span class="line">        proxy_max_temp_file_size 0;</span><br><span class="line">        proxy_pass http:<span class="string">//my_nodejs_upstream/</span>;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_read_timeout 240s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>启动服务</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express=<span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app =express();</span><br><span class="line"><span class="comment">//配置服务端口</span></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">9092</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> host = server.address().address;</span><br><span class="line"><span class="keyword">var</span> port = server.address().port;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Example app listening at http://%s:%s'</span>;, host, port);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node版本管理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/node版本管理/" itemprop="url">node版本管理</a></h1>
+                <a class="post-title-link" href="/post/f9ae89b2.html" itemprop="url">node版本管理</a></h1>
         
 
         <div class="post-meta">
@@ -861,7 +664,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node框架（koa2）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/448baf37.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -880,7 +683,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node框架（koa2）/" itemprop="url">node框架简要说明（express）</a></h1>
+                <a class="post-title-link" href="/post/448baf37.html" itemprop="url">node框架简要说明（express）</a></h1>
         
 
         <div class="post-meta">
@@ -1109,7 +912,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node日志/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/448baf37.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1128,190 +931,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node日志/" itemprop="url">node日志</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  956
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在package.json中加入</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">log4js</span>"<span class="selector-pseudo">:"</span>^0<span class="selector-class">.6</span><span class="selector-class">.38</span>"</span><br></pre></td></tr></table></figure>
-<p>在bin下的www中加入以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> logConfig = <span class="built_in">require</span>(<span class="string">'../public/config/log_config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 确定目录是否存在，如果不存在则创建目录</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> confirmPath = <span class="function"><span class="keyword">function</span>(<span class="params">pathStr</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!fs.existsSync(pathStr))&#123;</span><br><span class="line">        fs.mkdirSync(pathStr);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'createPath: '</span> + pathStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在public下的config文件夹下创建log_config.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//日志根目录</span></span><br><span class="line"><span class="keyword">var</span> baseLogPath = path.resolve(__dirname, <span class="string">'../logs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//错误日志目录</span></span><br><span class="line"><span class="keyword">var</span> errorPath = <span class="string">"/error"</span>;</span><br><span class="line"><span class="comment">//错误日志文件名</span></span><br><span class="line"><span class="keyword">var</span> errorFileName = <span class="string">"error"</span>;</span><br><span class="line"><span class="comment">//错误日志输出完整路径</span></span><br><span class="line"><span class="keyword">var</span> errorLogPath = baseLogPath + errorPath + <span class="string">"/"</span> + errorFileName;</span><br><span class="line"><span class="comment">// var errorLogPath = path.resolve(__dirname, "../logs/error/error");</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//响应日志目录</span></span><br><span class="line"><span class="keyword">var</span> responsePath = <span class="string">"/response"</span>;</span><br><span class="line"><span class="comment">//响应日志文件名</span></span><br><span class="line"><span class="keyword">var</span> responseFileName = <span class="string">"response"</span>;</span><br><span class="line"><span class="comment">//响应日志输出完整路径</span></span><br><span class="line"><span class="keyword">var</span> responseLogPath = baseLogPath + responsePath + <span class="string">"/"</span> + responseFileName;</span><br><span class="line"><span class="comment">// var responseLogPath = path.resolve(__dirname, "../logs/response/response");</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"appenders"</span>:</span><br><span class="line">        [</span><br><span class="line">            <span class="comment">//错误日志</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"category"</span>:<span class="string">"errorLogger"</span>,             <span class="comment">//logger名称</span></span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"dateFile"</span>,                   <span class="comment">//日志类型</span></span><br><span class="line">                <span class="string">"filename"</span>: errorLogPath,             <span class="comment">//日志输出位置</span></span><br><span class="line">                <span class="string">"alwaysIncludePattern"</span>:<span class="literal">true</span>,          <span class="comment">//是否总是有后缀名</span></span><br><span class="line">                <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd.log"</span>,      <span class="comment">//后缀，每天创建一个新的日志文件</span></span><br><span class="line">                <span class="string">"path"</span>: errorPath                     <span class="comment">//自定义属性，错误日志的根目录</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">//响应日志</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"category"</span>:<span class="string">"resLogger"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"dateFile"</span>,</span><br><span class="line">                <span class="string">"filename"</span>: responseLogPath,</span><br><span class="line">                <span class="string">"alwaysIncludePattern"</span>:<span class="literal">true</span>,</span><br><span class="line">                <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd.log"</span>,</span><br><span class="line">                <span class="string">"path"</span>: responsePath</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">    <span class="string">"levels"</span>:                                   <span class="comment">//设置logger名称对应的的日志等级</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"errorLogger"</span>:<span class="string">"ERROR"</span>,</span><br><span class="line">            <span class="string">"resLogger"</span>:<span class="string">"ALL"</span></span><br><span class="line">        &#125;,</span><br><span class="line">    <span class="string">"baseLogPath"</span>: baseLogPath                  <span class="comment">//logs根目录</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在主目录下创建utils文件夹，再创建log_util.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> log4js = <span class="built_in">require</span>(<span class="string">'log4js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> log_config = <span class="built_in">require</span>(<span class="string">'../config/log_config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载配置文件</span></span><br><span class="line">log4js.configure(log_config);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> logUtil = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> errorLogger = log4js.getLogger(<span class="string">'errorLogger'</span>);</span><br><span class="line"><span class="keyword">var</span> resLogger = log4js.getLogger(<span class="string">'resLogger'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//封装错误日志</span></span><br><span class="line">logUtil.logError = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, error, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx &amp;&amp; error) &#123;</span><br><span class="line">        errorLogger.error(formatError(ctx, error, resTime));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//封装响应日志</span></span><br><span class="line">logUtil.logResponse = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx) &#123;</span><br><span class="line">        resLogger.info(formatRes(ctx, resTime));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化响应日志</span></span><br><span class="line"><span class="keyword">var</span> formatRes = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应日志开始</span></span><br><span class="line">    logText += <span class="string">"\n"</span> + <span class="string">"*************** response log start ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加请求日志</span></span><br><span class="line">    logText += formatReqLog(ctx.request, resTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应状态码</span></span><br><span class="line">    logText += <span class="string">"response status: "</span> + ctx.status + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应内容</span></span><br><span class="line">    logText += <span class="string">"response body: "</span> + <span class="string">"\n"</span> + <span class="built_in">JSON</span>.stringify(ctx.body) + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应日志结束</span></span><br><span class="line">    logText += <span class="string">"*************** response log end ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化错误日志</span></span><br><span class="line"><span class="keyword">var</span> formatError = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, err, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误信息开始</span></span><br><span class="line">    logText += <span class="string">"\n"</span> + <span class="string">"*************** error log start ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加请求日志</span></span><br><span class="line">    logText += formatReqLog(ctx.request, resTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误名称</span></span><br><span class="line">    logText += <span class="string">"err name: "</span> + err.name + <span class="string">"\n"</span>;</span><br><span class="line">    <span class="comment">//错误信息</span></span><br><span class="line">    logText += <span class="string">"err message: "</span> + err.message + <span class="string">"\n"</span>;</span><br><span class="line">    <span class="comment">//错误详情</span></span><br><span class="line">    logText += <span class="string">"err stack: "</span> + err.stack + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误信息结束</span></span><br><span class="line">    logText += <span class="string">"*************** error log end ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化请求日志</span></span><br><span class="line"><span class="keyword">var</span> formatReqLog = <span class="function"><span class="keyword">function</span> (<span class="params">req, resTime</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> method = req.method;</span><br><span class="line">    <span class="comment">//访问方法</span></span><br><span class="line">    logText += <span class="string">"request method: "</span> + method + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//请求原始地址</span></span><br><span class="line">    logText += <span class="string">"request originalUrl:  "</span> + req.originalUrl + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//客户端ip</span></span><br><span class="line">    logText += <span class="string">"request client ip:  "</span> + req.ip + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始时间</span></span><br><span class="line">    <span class="keyword">var</span> startTime;</span><br><span class="line">    <span class="comment">//请求参数</span></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">        logText += <span class="string">"request query:  "</span> + <span class="built_in">JSON</span>.stringify(req.query) + <span class="string">"\n"</span>;</span><br><span class="line">        <span class="comment">// startTime = req.query.requestStartTime;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        logText += <span class="string">"request body: "</span> + <span class="string">"\n"</span> + <span class="built_in">JSON</span>.stringify(req.body) + <span class="string">"\n"</span>;</span><br><span class="line">        <span class="comment">// startTime = req.body.requestStartTime;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//服务器响应时间</span></span><br><span class="line">    logText += <span class="string">"response time: "</span> + resTime + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = logUtil;</span><br></pre></td></tr></table></figure>
-<p>在app中加入以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> logUtil = <span class="built_in">require</span>(<span class="string">'./public/utils/log_util'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// logger</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">    <span class="comment">//响应开始时间</span></span><br><span class="line">    <span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">//响应间隔时间</span></span><br><span class="line">    <span class="keyword">var</span> ms;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//开始进入到下一个中间件</span></span><br><span class="line">        <span class="keyword">await</span> next();</span><br><span class="line"></span><br><span class="line">        ms = <span class="keyword">new</span> <span class="built_in">Date</span>() - start;</span><br><span class="line">        <span class="comment">//记录响应日志</span></span><br><span class="line">        logUtil.logResponse(ctx, ms);</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line"></span><br><span class="line">        ms = <span class="keyword">new</span> <span class="built_in">Date</span>() - start;</span><br><span class="line">        <span class="comment">//记录异常日志</span></span><br><span class="line">        logUtil.logError(ctx, error, ms);</span><br><span class="line">        </span><br><span class="line">        ctx.body = &#123;</span><br><span class="line">            success: <span class="literal">false</span>,</span><br><span class="line">            data: <span class="literal">null</span>,</span><br><span class="line">            message: error,</span><br><span class="line">            status: <span class="number">101</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>在public文件下面创建logs文件夹，下面创建error以及response文件夹</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node框架简要说明（express）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/node框架简要说明（express）/" itemprop="url">node框架简要说明（express）</a></h1>
+                <a class="post-title-link" href="/post/448baf37.html" itemprop="url">node框架简要说明（express）</a></h1>
         
 
         <div class="post-meta">
@@ -1508,7 +1128,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node启动在一个服务中/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/59c093b0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1527,7 +1147,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node启动在一个服务中/" itemprop="url">node启动在一个服务中</a></h1>
+                <a class="post-title-link" href="/post/59c093b0.html" itemprop="url">node日志</a></h1>
         
 
         <div class="post-meta">
@@ -1593,7 +1213,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  32
+                  956
                 </span>
               
 
@@ -1609,7 +1229,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -1632,8 +1252,17 @@
       
         
           
-            <h2 id="在实验koa2时有这么一句话"><a href="#在实验koa2时有这么一句话" class="headerlink" title="在实验koa2时有这么一句话"></a>在实验koa2时有这么一句话</h2><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="keyword">use</span>(require('koa-<span class="keyword">static</span>')(__dirname + '/<span class="keyword">public</span>/<span class="keyword">static</span>'))</span><br></pre></td></tr></table></figure>
-<p>把打包后的文件放在这里面</p>
+            <p>在package.json中加入</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"<span class="selector-tag">log4js</span>"<span class="selector-pseudo">:"</span>^0<span class="selector-class">.6</span><span class="selector-class">.38</span>"</span><br></pre></td></tr></table></figure>
+<p>在bin下的www中加入以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> logConfig = <span class="built_in">require</span>(<span class="string">'../public/config/log_config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 确定目录是否存在，如果不存在则创建目录</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> confirmPath = <span class="function"><span class="keyword">function</span>(<span class="params">pathStr</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!fs.existsSync(pathStr))&#123;</span><br><span class="line">        fs.mkdirSync(pathStr);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'createPath: '</span> + pathStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在public下的config文件夹下创建log_config.js文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//日志根目录</span></span><br><span class="line"><span class="keyword">var</span> baseLogPath = path.resolve(__dirname, <span class="string">'../logs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//错误日志目录</span></span><br><span class="line"><span class="keyword">var</span> errorPath = <span class="string">"/error"</span>;</span><br><span class="line"><span class="comment">//错误日志文件名</span></span><br><span class="line"><span class="keyword">var</span> errorFileName = <span class="string">"error"</span>;</span><br><span class="line"><span class="comment">//错误日志输出完整路径</span></span><br><span class="line"><span class="keyword">var</span> errorLogPath = baseLogPath + errorPath + <span class="string">"/"</span> + errorFileName;</span><br><span class="line"><span class="comment">// var errorLogPath = path.resolve(__dirname, "../logs/error/error");</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//响应日志目录</span></span><br><span class="line"><span class="keyword">var</span> responsePath = <span class="string">"/response"</span>;</span><br><span class="line"><span class="comment">//响应日志文件名</span></span><br><span class="line"><span class="keyword">var</span> responseFileName = <span class="string">"response"</span>;</span><br><span class="line"><span class="comment">//响应日志输出完整路径</span></span><br><span class="line"><span class="keyword">var</span> responseLogPath = baseLogPath + responsePath + <span class="string">"/"</span> + responseFileName;</span><br><span class="line"><span class="comment">// var responseLogPath = path.resolve(__dirname, "../logs/response/response");</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"appenders"</span>:</span><br><span class="line">        [</span><br><span class="line">            <span class="comment">//错误日志</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"category"</span>:<span class="string">"errorLogger"</span>,             <span class="comment">//logger名称</span></span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"dateFile"</span>,                   <span class="comment">//日志类型</span></span><br><span class="line">                <span class="string">"filename"</span>: errorLogPath,             <span class="comment">//日志输出位置</span></span><br><span class="line">                <span class="string">"alwaysIncludePattern"</span>:<span class="literal">true</span>,          <span class="comment">//是否总是有后缀名</span></span><br><span class="line">                <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd.log"</span>,      <span class="comment">//后缀，每天创建一个新的日志文件</span></span><br><span class="line">                <span class="string">"path"</span>: errorPath                     <span class="comment">//自定义属性，错误日志的根目录</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">//响应日志</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"category"</span>:<span class="string">"resLogger"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"dateFile"</span>,</span><br><span class="line">                <span class="string">"filename"</span>: responseLogPath,</span><br><span class="line">                <span class="string">"alwaysIncludePattern"</span>:<span class="literal">true</span>,</span><br><span class="line">                <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd.log"</span>,</span><br><span class="line">                <span class="string">"path"</span>: responsePath</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">    <span class="string">"levels"</span>:                                   <span class="comment">//设置logger名称对应的的日志等级</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"errorLogger"</span>:<span class="string">"ERROR"</span>,</span><br><span class="line">            <span class="string">"resLogger"</span>:<span class="string">"ALL"</span></span><br><span class="line">        &#125;,</span><br><span class="line">    <span class="string">"baseLogPath"</span>: baseLogPath                  <span class="comment">//logs根目录</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在主目录下创建utils文件夹，再创建log_util.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> log4js = <span class="built_in">require</span>(<span class="string">'log4js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> log_config = <span class="built_in">require</span>(<span class="string">'../config/log_config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载配置文件</span></span><br><span class="line">log4js.configure(log_config);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> logUtil = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> errorLogger = log4js.getLogger(<span class="string">'errorLogger'</span>);</span><br><span class="line"><span class="keyword">var</span> resLogger = log4js.getLogger(<span class="string">'resLogger'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//封装错误日志</span></span><br><span class="line">logUtil.logError = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, error, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx &amp;&amp; error) &#123;</span><br><span class="line">        errorLogger.error(formatError(ctx, error, resTime));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//封装响应日志</span></span><br><span class="line">logUtil.logResponse = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ctx) &#123;</span><br><span class="line">        resLogger.info(formatRes(ctx, resTime));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化响应日志</span></span><br><span class="line"><span class="keyword">var</span> formatRes = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应日志开始</span></span><br><span class="line">    logText += <span class="string">"\n"</span> + <span class="string">"*************** response log start ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加请求日志</span></span><br><span class="line">    logText += formatReqLog(ctx.request, resTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应状态码</span></span><br><span class="line">    logText += <span class="string">"response status: "</span> + ctx.status + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应内容</span></span><br><span class="line">    logText += <span class="string">"response body: "</span> + <span class="string">"\n"</span> + <span class="built_in">JSON</span>.stringify(ctx.body) + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//响应日志结束</span></span><br><span class="line">    logText += <span class="string">"*************** response log end ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化错误日志</span></span><br><span class="line"><span class="keyword">var</span> formatError = <span class="function"><span class="keyword">function</span> (<span class="params">ctx, err, resTime</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误信息开始</span></span><br><span class="line">    logText += <span class="string">"\n"</span> + <span class="string">"*************** error log start ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加请求日志</span></span><br><span class="line">    logText += formatReqLog(ctx.request, resTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误名称</span></span><br><span class="line">    logText += <span class="string">"err name: "</span> + err.name + <span class="string">"\n"</span>;</span><br><span class="line">    <span class="comment">//错误信息</span></span><br><span class="line">    logText += <span class="string">"err message: "</span> + err.message + <span class="string">"\n"</span>;</span><br><span class="line">    <span class="comment">//错误详情</span></span><br><span class="line">    logText += <span class="string">"err stack: "</span> + err.stack + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//错误信息结束</span></span><br><span class="line">    logText += <span class="string">"*************** error log end ***************"</span> + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//格式化请求日志</span></span><br><span class="line"><span class="keyword">var</span> formatReqLog = <span class="function"><span class="keyword">function</span> (<span class="params">req, resTime</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> logText = <span class="keyword">new</span> <span class="built_in">String</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> method = req.method;</span><br><span class="line">    <span class="comment">//访问方法</span></span><br><span class="line">    logText += <span class="string">"request method: "</span> + method + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//请求原始地址</span></span><br><span class="line">    logText += <span class="string">"request originalUrl:  "</span> + req.originalUrl + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//客户端ip</span></span><br><span class="line">    logText += <span class="string">"request client ip:  "</span> + req.ip + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始时间</span></span><br><span class="line">    <span class="keyword">var</span> startTime;</span><br><span class="line">    <span class="comment">//请求参数</span></span><br><span class="line">    <span class="keyword">if</span> (method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">        logText += <span class="string">"request query:  "</span> + <span class="built_in">JSON</span>.stringify(req.query) + <span class="string">"\n"</span>;</span><br><span class="line">        <span class="comment">// startTime = req.query.requestStartTime;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        logText += <span class="string">"request body: "</span> + <span class="string">"\n"</span> + <span class="built_in">JSON</span>.stringify(req.body) + <span class="string">"\n"</span>;</span><br><span class="line">        <span class="comment">// startTime = req.body.requestStartTime;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//服务器响应时间</span></span><br><span class="line">    logText += <span class="string">"response time: "</span> + resTime + <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logText;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = logUtil;</span><br></pre></td></tr></table></figure>
+<p>在app中加入以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> logUtil = <span class="built_in">require</span>(<span class="string">'./public/utils/log_util'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// logger</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">    <span class="comment">//响应开始时间</span></span><br><span class="line">    <span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">//响应间隔时间</span></span><br><span class="line">    <span class="keyword">var</span> ms;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//开始进入到下一个中间件</span></span><br><span class="line">        <span class="keyword">await</span> next();</span><br><span class="line"></span><br><span class="line">        ms = <span class="keyword">new</span> <span class="built_in">Date</span>() - start;</span><br><span class="line">        <span class="comment">//记录响应日志</span></span><br><span class="line">        logUtil.logResponse(ctx, ms);</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line"></span><br><span class="line">        ms = <span class="keyword">new</span> <span class="built_in">Date</span>() - start;</span><br><span class="line">        <span class="comment">//记录异常日志</span></span><br><span class="line">        logUtil.logError(ctx, error, ms);</span><br><span class="line">        </span><br><span class="line">        ctx.body = &#123;</span><br><span class="line">            success: <span class="literal">false</span>,</span><br><span class="line">            data: <span class="literal">null</span>,</span><br><span class="line">            message: error,</span><br><span class="line">            status: <span class="number">101</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在public文件下面创建logs文件夹，下面创建error以及response文件夹</p>
 
           
         
@@ -1682,7 +1311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node中的next()用法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2971356.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1701,7 +1330,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node中的next()用法/" itemprop="url">node中的next()用法</a></h1>
+                <a class="post-title-link" href="/post/2971356.html" itemprop="url">node中的next()用法</a></h1>
         
 
         <div class="post-meta">
@@ -1862,7 +1491,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/82a3d2fb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1881,7 +1510,183 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/redis/" itemprop="url">redis</a></h1>
+                <a class="post-title-link" href="/post/82a3d2fb.html" itemprop="url">node--require（）为什么是同步的</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  116
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、因为使用的是CommonJS标准</p>
+<p>2、作为公共依赖的模块，自然要异步加载到位</p>
+<p>3、模块的个数往往有限制，Node会自动缓存已经加载的模块，再加上访问的都是本地文件，产生的IO开销可以忽略不计</p>
+<p>4、Node运行在服务器端，很少遇见需要频繁重启服务的情况。服务启动时候画上几秒也没有关系</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/7b25d017.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/7b25d017.html" itemprop="url">redis</a></h1>
         
 
         <div class="post-meta">
@@ -2040,7 +1845,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/Lua语言简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bde7ce9f.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -2059,7 +1864,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/Lua语言简介/" itemprop="url">Lua语言简介</a></h1>
+                <a class="post-title-link" href="/post/bde7ce9f.html" itemprop="url">node（koa2）快速创建项目</a></h1>
         
 
         <div class="post-meta">
@@ -2125,7 +1930,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,002
+                  300
                 </span>
               
 
@@ -2141,7 +1946,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -2164,46 +1969,223 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Lua是一门小巧的脚本语言，由巴西里约热内卢天主教大学的Roberto Ierusalimschy等人于1993年开发，在现代企业开发中Lua通常被作为胶水语言，在游戏领域应用尤为频繁。</p>
-<h3 id="Lua中的数据类型"><a href="#Lua中的数据类型" class="headerlink" title="Lua中的数据类型"></a>Lua中的数据类型</h3><p>Lua中定义以下几种数据类型</p>
-<h5 id="1、Nil"><a href="#1、Nil" class="headerlink" title="1、Nil"></a>1、Nil</h5><p>nil是一个特殊的数据类型，它只有一个值，就是nil，他的作用就是为了区别其他的值</p>
-<h5 id="2、Boolean"><a href="#2、Boolean" class="headerlink" title="2、Boolean"></a>2、Boolean</h5><p>和其他语言一样，布尔值只用true和false两个值</p>
-<h5 id="3、Number"><a href="#3、Number" class="headerlink" title="3、Number"></a>3、Number</h5><p>用来表示实数的类型，包含整数和浮点数，Lua中number类型可以表示32位整数</p>
-<h5 id="4、String"><a href="#4、String" class="headerlink" title="4、String"></a>4、String</h5><p>string类型用来表示一个字符串，Lua中的字符串是不可变类型，此外Lua也存在数字和字符串之间的隐式转换<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'10'</span>+<span class="number">1</span>)</span></span>  <span class="comment">//11</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="5、table"><a href="#5、table" class="headerlink" title="5、table"></a>5、table</h5><p>table类型实现了一种特殊的数组，特殊之处在于该数字的索引方式，传统的数组索引是通过数组下标来实现的，二table不仅能以整数来索引，还可以使用字符串和其他类型的值进行索引。<br>table没有固定的大小，可以在里面放入任意数量的元素，下面的例子简单展示了table的用法</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> = &#123;&#125; <span class="comment">//声明一个table</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="string">"name"</span>] = <span class="string">"yinxs"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="number">1</span>])</span></span><span class="comment">//10</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="string">"name"</span>])</span></span><span class="comment">//yinxs</span></span><br></pre></td></tr></table></figure>
-<h3 id="Lua定义一个函数"><a href="#Lua定义一个函数" class="headerlink" title="Lua定义一个函数"></a>Lua定义一个函数</h3><p>Lua没有使用大括号来规定函数的作用域，而是使用end关键字来作为结束的标记</p>
-<p>eg：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="title">a</span>)</span></span><br><span class="line">    <span class="built_in">local</span> sun = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipairs(<span class="keyword">a</span>) <span class="built_in">do</span></span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="literal">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>es6中有关于函数的新特性和Lua中的函数有一些相似之处：</p>
-<ul>
-<li>多重返回值</li>
-<li>变长参数</li>
+            <h1 id="创建项目（但是不支持热加载）"><a href="#创建项目（但是不支持热加载）" class="headerlink" title="创建项目（但是不支持热加载）"></a>创建项目（但是不支持热加载）</h1><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g koa-generator   <span class="comment">//全局安装</span></span><br></pre></td></tr></table></figure>
+<h3 id="一键创建项目"><a href="#一键创建项目" class="headerlink" title="一键创建项目"></a>一键创建项目</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">koa2 koa2-<span class="keyword">test</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cd</span> koa2-<span class="keyword">test</span></span><br><span class="line"></span><br><span class="line">npm <span class="built_in">i</span></span><br></pre></td></tr></table></figure>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> dev</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里可能报错，原因是因为需要安装bable</p>
+</blockquote>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-core </span><span class="keyword">babel-polyfill </span><span class="keyword">babel-preset-es2015 </span><span class="keyword">babel-preset-stage-3</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后在bin/www中使用bable</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">require</span>(<span class="string">"babel-polyfill"</span>);</span><br><span class="line"><span class="selector-tag">require</span>(<span class="string">'babel-core/register'</span>)(&#123;</span><br><span class="line">    <span class="attribute">presets</span>: [<span class="string">'es2015'</span>, <span class="string">'stage-3'</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="如何写接口"><a href="#如何写接口" class="headerlink" title="如何写接口"></a>如何写接口</h3><h4 id="在routes文件夹下创建一个js文件，我们可以起一个yinxs-代码如下，我写了三个关于get的接口-以及一个post接口"><a href="#在routes文件夹下创建一个js文件，我们可以起一个yinxs-代码如下，我写了三个关于get的接口-以及一个post接口" class="headerlink" title="在routes文件夹下创建一个js文件，我们可以起一个yinxs,代码如下，我写了三个关于get的接口,以及一个post接口"></a>在routes文件夹下创建一个js文件，我们可以起一个yinxs,代码如下，我写了三个关于get的接口,以及一个post接口</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)()</span><br><span class="line"></span><br><span class="line">router.prefix(<span class="string">'/yinxs'</span>)</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/yinxs'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    ctx.body = <span class="string">'I am yinxs!'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/father'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    ctx.body = <span class="string">'I am father'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/son'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    ctx.body = <span class="string">'I am son'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">router.post(<span class="string">'/getname'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(ctx.request));</span><br><span class="line">    ctx.body = <span class="string">'I am yinxs post'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在app.js将新写的接口关联进去</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> yinxs = <span class="keyword">require</span>(<span class="string">'./routes/yinxs'</span>)</span><br><span class="line">app.<span class="keyword">use</span>(yinxs.routes(), yinxs.allowedMethods())</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行npm run start<br>访问 /yinxs/yinxs   /yinxs/son  /yinxs/father  可以获取到数据</p>
+</blockquote>
+<p>注：项目启动的是bin目录下面的www，而不是app.js</p>
+<p><a href="https://github.com/zadzbw/koa2-cors" target="_blank" rel="noopener">koa2跨域</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/34655c0e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/34655c0e.html" itemprop="url">node 和 模板引擎（jade）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  139
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过</p>
+</blockquote>
+<blockquote>
+<p>为了解决这一问题，node<br>使用了 next</p>
+</blockquote>
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><ul>
+<li><p>index.js</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/base/pageA'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span></span> &#123;  </span><br><span class="line">    res.send(<span class="string">'index.js.'</span>);  </span><br><span class="line">    <span class="built_in">next</span>();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>base.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/pageA'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;  </span><br><span class="line">    <span class="comment">//res.send('base.js!');  </span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"base.js"</span>)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>一个Lua函数可以返回多个值，值需要在return后面列出需要返回的值即可，用逗号隔开</p>
-<p>eg：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">funcion foo()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a"</span>,<span class="string">"b"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>尝试使用print语句来打印foo函数的执行结果，会输出“a”，“b”。<br>如果使用表达书的形式来调用foo函数，会依照解构赋值额原则来赋值</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">x</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="string">"b"</span>被丢掉</span><br><span class="line">x,<span class="attr">y</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span></span><br><span class="line">x,y,<span class="attr">z</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span>,<span class="attr">z</span> = nil</span><br></pre></td></tr></table></figure>
-<p>可变参数，这个特性即为es6中的spread运算符，函数可以接收任意长度的参数。</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function add(...)</span><br><span class="line">local s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipirs <span class="meta">&#123;...&#125;</span> <span class="keyword">do</span></span><br><span class="line">        s = s+v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">print(add(<span class="number">3</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">25</span>,<span class="number">12</span>) //<span class="number">54</span></span><br></pre></td></tr></table></figure>
-<h3 id="Lua中的协程"><a href="#Lua中的协程" class="headerlink" title="Lua中的协程"></a>Lua中的协程</h3><p>Lua设计之初就提供了对协程的支持，跟同时期的其他编程语言相比无疑是超前的，Lua将所有协程相关的函数放在一个名为coroutine的table中，一个协程其实就是一个特殊线程，它可以由用户控制状态的切换。</p>
-<h5 id="1、coroutine-create"><a href="#1、coroutine-create" class="headerlink" title="1、coroutine.create()"></a>1、coroutine.create()</h5><p>创建一个coroutine 并返回，参数是一个函数。<br>eg:</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line">    <span class="built_in">print</span>(i);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br></pre></td></tr></table></figure>
-<p>我们声明了一个log方法，并用其作为参数创建一个协程，这代表print方法的执行可以被用户终端或恢复。</p>
-<h5 id="2、coroutine-resume"><a href="#2、coroutine-resume" class="headerlink" title="2、coroutine.resume()"></a>2、coroutine.resume()</h5><p>重启coroutine，和create配合使用<br>上面的diamante新建了一个协程之后并不会直接运行，而是要靠resume方法来启动。</p>
-<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coroutine.<span class="keyword">resume</span>(<span class="keyword">c</span><span class="number">0</span>,<span class="number">1</span>) -<span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h5 id="3、coroutine-yield"><a href="#3、coroutine-yield" class="headerlink" title="3、coroutine.yield()"></a>3、coroutine.yield()</h5><p>将coroutine设置为挂起状态，可以由resume来恢复执行</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line"> <span class="keyword">for</span> i=<span class="number">1</span>,<span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    coroutine.yielld()</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">1</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">2</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">status</span>(co) //suspended</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">running</span>()) // thread:<span class="number">0x7fd637c02940</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>coroutine.status()为查看coroutine的状态</p>
-<p>一个协程可以有三种不同的状态</p>
-<ul>
-<li>suspended</li>
-<li>running</li>
-<li>dead</li>
-</ul>
-<p>当创建一个协程后，协程默认处于suspended状态，使用yield挂起后状态同样转换为suspended。</p>
-<h5 id="4、coroutine-running"><a href="#4、coroutine-running" class="headerlink" title="4、coroutine.running()"></a>4、coroutine.running()</h5><p>返回当前协程的线程号</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>轻易的实现中间件</li>
+</ol>
+<p>由</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR<span class="comment">;  </span></span><br><span class="line">　　A--&gt;c<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>变为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR;  </span><br><span class="line"><span class="meta">　　A--&gt;</span><span class="bash">B;   </span></span><br><span class="line"><span class="meta">　　B--&gt;</span><span class="bash">c;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>提高代码的复用性</li>
+</ol>
 
           
         
