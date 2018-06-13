@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[中文乱码问题]]></title>
-    <url>%2Fpost%2F3b99456.html</url>
-    <content type="text"><![CDATA[原因一 原因二 编辑器保存时要用UTF-8应该把记事本点击另存为，在保存左边有个编码 选择utf-8。 然后保存（代码的charset=utf-8 不变）]]></content>
-      <categories>
-        <category>规范</category>
-      </categories>
-      <tags>
-        <tag>规范</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[svg]]></title>
-    <url>%2Fpost%2F3452590.html</url>
-    <content type="text"><![CDATA[svg SVG 意为可缩放矢量图形（Scalable Vector Graphics）。 SVG 使用 XML 格式定义图像。 SVG 是使用 XML 来描述二维图形和绘图程序的语言。 SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 用来定义用于网络的基于矢量的图形 SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 是万维网联盟的标准 SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体 在html中使用SVG 方法一：123&lt;embed src="rect.svg" width="300" height="100" type="image/svg+xml"pluginspage="http://www.adobe.com/svg/viewer/install/" /&gt; 标签被所有主流的浏览器支持，并允许使用脚本。 当在 HTML 页面中嵌入 SVG 时使用 标签是 Adobe SVG Viewer 推荐的方法！然而，如果需要创建合法的 XHTML，就不能使用 。任何 HTML 规范中都没有 标签。 方法二：123&lt;object data="rect.svg" width="300" height="100" type="image/svg+xml"codebase="http://www.adobe.com/svg/viewer/install/" /&gt; 标签是 HTML 4 的标准标签，被所有较新的浏览器支持。它的缺点是不允许使用脚本。 假如您安装了最新版本的 Adobe SVG Viewer，那么当使用 标签时 SVG 文件无法工作（至少不能在 IE 中工作）！ 方法三：使用 标签 标签可工作在大部分的浏览器中。 12&lt;iframe src="rect.svg" width="300" height="100"&gt;&lt;/iframe&gt;]]></content>
-      <categories>
-        <category>数据可视化</category>
-      </categories>
-      <tags>
-        <tag>svg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[python导数据脚本]]></title>
     <url>%2Fpost%2F5dd43de5.html</url>
     <content type="text"><![CDATA[刚刚上手，代码很不优雅，有待优化 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141# encoding: utf-8# get yesterday's dateimport datetimeimport xlwtimport os#import smtplib#from email.mime.text import MIMEText#from email.mime.multipart import MIMEMultipart#from email.header import Headertoday = datetime.date.today()yesterday = today - datetime.timedelta(days=1)day = yesterday.strftime("%Y-%m-%d")# create excelworkbook = xlwt.Workbook(encoding = 'utf-8')worksheet = workbook.add_sheet('My Worksheet')worksheet.col(0).width = 256*20worksheet.col(3).width = 256*20worksheet.col(4).width = 256*20worksheet.write(0, 0, label = '日期')worksheet.write(0, 1, label = 'PV')worksheet.write(0, 2, label = 'UV')worksheet.write(0, 3, label = '生成报告数')worksheet.write(0, 4, label = '生成报告人数')def date(time): rep_data_pv = 0 rep_data_uv = 0 rep_data_report = 0 rep_data_vistor = 0 for index in range(time): flag = index + 1 date_time = today - datetime.timedelta(days=flag) day_time = date_time.strftime("%Y-%m-%d") response_name = 'response-' + day_time + '.log' if os.path.exists(response_name): # Open the file for the day. f = open(response_name,'r') # Gets the statistics of the day's response file. str = f.read() f.close() # Divide by blank lines. arr = str.split('\n'); # whitespace base_data = [] for base in arr: base_data.append(base.split(' ')) # Statistical PV UV page = [] ip = [] for index in range(len(base_data)): for indexs in range(len(base_data[index])): if indexs == 5: ip.append(base_data[index][indexs]) elif indexs == 4: page.append(base_data[index][indexs]) # get page view and report pv = 0 report = 0 for init in page: target = init.split('?')[0].split('/') num = len(target)-1 if target[num] == 'getData': pv = pv + 1 elif target[num] == 'table': report = report + 1 # get unique visitor uv_arr = [] uv = 0 for init in ip: if init not in uv_arr: uv = uv + 1 uv_arr.append(init) # get report visitor view_ip = [] for index in range(len(page)): target = page[index].split('?')[0].split('/') num = len(target)-1 if target[num] == 'table': view_ip.append(ip[index]) vistor_arr = [] vistor = 0 for init in view_ip: if init not in vistor_arr: vistor = vistor + 1 vistor_arr.append(init) rep_data_pv = rep_data_pv + pv rep_data_uv = rep_data_uv + uv rep_data_report = rep_data_report + report rep_data_vistor = rep_data_vistor + vistor worksheet.write(flag, 0, label = day_time) worksheet.write(flag, 1, label = pv) worksheet.write(flag, 2, label = uv) worksheet.write(flag, 3, label = report) worksheet.write(flag, 4, label = vistor) else: data = &#123;'pv':0,'uv':0,'report':0,'vistor':0&#125; worksheet.write(flag, 0, label = day_time) worksheet.write(flag, 1, label = 0) worksheet.write(flag, 2, label = 0) worksheet.write(flag, 3, label = 0) worksheet.write(flag, 4, label = 0) sum = time+1 worksheet.write(sum, 0, label = '合计') worksheet.write(sum, 1, label = rep_data_pv) worksheet.write(sum, 2, label = rep_data_uv) worksheet.write(sum, 3, label = rep_data_report) worksheet.write(sum, 4, label = rep_data_vistor) date(27) workbook.save('报告--'+yesterday.strftime("%Y-%m-%d")+'.xls')]]></content>
@@ -45,6 +23,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[中文乱码问题]]></title>
+    <url>%2Fpost%2F3b99456.html</url>
+    <content type="text"><![CDATA[原因一 原因二 编辑器保存时要用UTF-8应该把记事本点击另存为，在保存左边有个编码 选择utf-8。 然后保存（代码的charset=utf-8 不变）]]></content>
+      <categories>
+        <category>规范</category>
+      </categories>
+      <tags>
+        <tag>规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[svg]]></title>
+    <url>%2Fpost%2F3452590.html</url>
+    <content type="text"><![CDATA[svg SVG 意为可缩放矢量图形（Scalable Vector Graphics）。 SVG 使用 XML 格式定义图像。 SVG 是使用 XML 来描述二维图形和绘图程序的语言。 SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 用来定义用于网络的基于矢量的图形 SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 是万维网联盟的标准 SVG 与诸如 DOM 和 XSL 之类的 W3C 标准是一个整体 在html中使用SVG 方法一：123&lt;embed src="rect.svg" width="300" height="100" type="image/svg+xml"pluginspage="http://www.adobe.com/svg/viewer/install/" /&gt; 标签被所有主流的浏览器支持，并允许使用脚本。 当在 HTML 页面中嵌入 SVG 时使用 标签是 Adobe SVG Viewer 推荐的方法！然而，如果需要创建合法的 XHTML，就不能使用 。任何 HTML 规范中都没有 标签。 方法二：123&lt;object data="rect.svg" width="300" height="100" type="image/svg+xml"codebase="http://www.adobe.com/svg/viewer/install/" /&gt; 标签是 HTML 4 的标准标签，被所有较新的浏览器支持。它的缺点是不允许使用脚本。 假如您安装了最新版本的 Adobe SVG Viewer，那么当使用 标签时 SVG 文件无法工作（至少不能在 IE 中工作）！ 方法三：使用 标签 标签可工作在大部分的浏览器中。 12&lt;iframe src="rect.svg" width="300" height="100"&gt;&lt;/iframe&gt;]]></content>
+      <categories>
+        <category>数据可视化</category>
+      </categories>
+      <tags>
+        <tag>svg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[YINXS]]></title>
     <url>%2Fpost%2Fef393ac8.html</url>
     <content type="text"><![CDATA[信息github https://github.com/Hughendman 微信 : wxid_reb7kk3h8om122 qq : 1490853857]]></content>
@@ -61,14 +61,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[python2.7执行excel]]></title>
-    <url>%2Fpost%2F2e50297d.html</url>
-    <content type="text"><![CDATA[安装xlrd、xlwt、xlutilsxlrd：是python从excel读数据的第三方控件；xlwt：是python从excel写数据的第三方控件；xlutils：是python使用xlrd、xlwt的工具箱。若安装不成功，可能原因是需要安装setuptools。 [root@vm4 python]# pip install xlrd [root@vm4 python]# pip install xlwt [root@vm4 python]# pip install xlutils]]></content>
+    <title><![CDATA[vue中使用sass]]></title>
+    <url>%2Fpost%2Fe10abc6.html</url>
+    <content type="text"><![CDATA[安装12npm install node-sass --save-devnpm install sass-loader --save-dev 配置 打开webpack.base.config.js在loaders里面加上 module – rules 123456789101112131415161718192021222324252627282930313233rules: [ &#123; test: /\.vue$/, loader: 'vue-loader', options: vueLoaderConfig &#125;, &#123; test: /\.js$/, loader: 'babel-loader', include: [resolve('src'), resolve('test')] &#125;, &#123; test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: 'url-loader', query: &#123; limit: 10000, name: utils.assetsPath('img/[name].[hash:7].[ext]') &#125; &#125;, &#123; test: /\.scss$/, loaders: ["style", "css", "sass"] &#125;,//这里这里看这里，主要引入这一段 &#123; test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/, loader: 'url-loader', query: &#123; limit: 10000, name: utils.assetsPath('fonts/[name].[hash:7].[ext]') &#125; &#125; ] &#125;]]></content>
       <categories>
-        <category>python</category>
+        <category>VUE</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[element-ui]]></title>
+    <url>%2Fpost%2Fd0acb7fa.html</url>
+    <content type="text"><![CDATA[安装1cnpm i element-ui --save 引入 在main.js 中 123456789101112import Vue from 'vue'import ElementUI from 'element-ui'import 'element-ui/lib/theme-chalk/index.css'import App from './App.vue'Vue.use(ElementUI)new Vue(&#123; el: '#app', render: h =&gt; h(App)&#125;) 使用菜单导航123456&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; index里面添加路由， router是使用路由模式为true 但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下 12345&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; elementUI关于树状图的增删改查，局部刷新问题链接在这里 elementUI关于tree的使用getCheckedKeys不能获取父节点的key]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
       </tags>
   </entry>
   <entry>
@@ -83,14 +94,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[GitHubPages + Hexo+Next构建你自己的博客]]></title>
-    <url>%2Fpost%2F3609924.html</url>
-    <content type="text"><![CDATA[github准备新建一个项目：你的用户名.github.io（项目名称） Hexo 安装node npm install hexo-cli -g hexo init 你的用户名.github.io // 尽量和Github仓库使用同一个名称 cd 你的用户名.github.io hexo s 打开http://localhost:4000/ Next主题安装 Next主题是iissnan所创作的一个Hexo主题，以简洁为主 cd xxx.github.io git clone https://github.com/iissnan/hexo-theme-next themes/next _config.yml站点配置12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182# Hexo Configuration ## Docs: https://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site title: 最晚的开始 #站点名称 subtitle: 所有的为时已晚都是开始的最好时候 #副标题 #个人描述 description: My goal is not write code.if we could ship products and make all this money without writing any code,we could.Your job is ship products EXACTLY on time.It doesn’t matter whether you are a developer,tester,program manager,product manager whatever.Everybody’s job is the same. author: Jack_lin #作者 language: zh-Hans #语言 timezone: # URL #绑定域名后，要创建 sitemap.xml 时再配置该项 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/' url: http://yoursite.com root: / permalink: :year/:month/:day/:title/ permalink_defaults: # Directory #目录不用修改 source_dir: source public_dir: public tag_dir: tags archive_dir: archives category_dir: categories code_dir: downloads/code i18n_dir: :lang skip_render: # Writing # 文章布局、写作格式的定义，不修改 new_post_name: :title.md # File name of new posts default_layout: post titlecase: false # Transform title into titlecase external_link: true # Open external links in new tab filename_case: 0 render_drafts: false post_asset_folder: false relative_link: false future: true highlight: enable: true line_number: true auto_detect: false tab_replace: # Category &amp; Tag default_category: uncategorized category_map: tag_map: # Date / Time format #时间格式不用修改 ## Hexo uses Moment.js to parse and display date ## You can customize the date format as defined in ## http://momentjs.com/docs/#/displaying/format/ date_format: YYYY-MM-DD time_format: HH:mm:ss # Pagination #每页显示文章数，可以自行定义 ## Set per_page to 0 to disable pagination per_page: 10 pagination_dir: page # Extensions #配置站点时，所使用的主题和插件，切换主题可以在这里设置 ## Plugins: https://hexo.io/plugins/ ## Themes: https://hexo.io/themes/ theme: next //在这里切换主题 # theme: landscape # 头像， 在xxx.github.io/source 下相对路径，若source文件夹下没有uploads，就新建一个名为uploads文件夹，具体见下面截图 avatar: /uploads/images/avatar.png # Deployment #这里是部署到Github上的设置 ## Docs: https://hexo.io/docs/deployment.html deploy: type: git #git提交 repo: https://github.com/123sunxiaolin/123sunxiaolin.github.io.git #已创建的Github仓库 branch: master #提交到的分支 如果报错: ERROR Deployer not found: git npm install –save hexo-deployer-git 部署 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 打包的项目在public中]]></content>
+    <title><![CDATA[eslint语法解决]]></title>
+    <url>%2Fpost%2Fef695a00.html</url>
+    <content type="text"><![CDATA[12345678910111213141516在webpack.base.conf.js里面删掉下面:preLoaders: [ &#123; test: /\.vue$/, loader: 'eslint', include: projectRoot, exclude: [/node_modules/, /ignore_lib/] &#125;, &#123; test: /\.js$/, loader: 'eslint', include: projectRoot, exclude: [/node_modules/, /ignore_lib/] &#125; ] 1234567891011删除以下代码就可以&#123; test: /\.(js|vue)$/, loader: 'eslint-loader', enforce: 'pre', include: [resolve('src'), resolve('test')], options: &#123; formatter: require('eslint-friendly-formatter') &#125; 然后需要重新编辑生效]]></content>
       <categories>
-        <category>博客</category>
+        <category>VUE</category>
       </categories>
       <tags>
-        <tag>构建博客</tag>
+        <tag>VUE</tag>
       </tags>
   </entry>
   <entry>
@@ -116,17 +127,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[在vue中使用less]]></title>
-    <url>%2Fpost%2F16c97c20.html</url>
-    <content type="text"><![CDATA[安装 cnpm install less less-loader –save 在webpack.base.config.js在loaders里面加上 12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-loader",&#125;,]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[在vue中使用Echarts（vue）]]></title>
     <url>%2Fpost%2F303944b.html</url>
     <content type="text"><![CDATA[安装 cnpm install echarts –save 引入 import echarts from ‘echarts’ Vue.prototype.$echarts = echarts]]></content>
@@ -138,9 +138,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue项目移植报错]]></title>
-    <url>%2Fpost%2F4f392df3.html</url>
-    <content type="text"><![CDATA[按照这个文章解决的 npm intall sass-loader –save; npm install node-sass –save; 然后运行npm run start就可以 关于vueTreeDrag这个项目vueTreeDrag 使用的node版本是v8.8.1 删除当前的node_modules 然后cnpm i重新下载]]></content>
+    <title><![CDATA[在vue中使用less]]></title>
+    <url>%2Fpost%2F16c97c20.html</url>
+    <content type="text"><![CDATA[安装 cnpm install less less-loader –save 在webpack.base.config.js在loaders里面加上 12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-loader",&#125;,]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -160,31 +160,42 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue的路由（route）]]></title>
-    <url>%2Fpost%2Fd41be5a0.html</url>
-    <content type="text"><![CDATA[vue的路由 注意： component后面的值不要有引号，父级不要有名字name属性 12345678910111213141516[ &#123; path: '/', component: Bigdata, children: [ &#123; path: '', redirect: &#123; name: 'Table' &#125; &#125;,&#123; path: 'table', name: 'Table' , component: Table &#125; ] &#125; ]]]></content>
+    <title><![CDATA[Python3基础语法]]></title>
+    <url>%2Fpost%2Fe5ac5920.html</url>
+    <content type="text"><![CDATA[条件判断1234567age = 3if age &gt;= 18: print('adult')elif age &gt;= 6: print('teenager')else: print('kid') 循环语句123for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: sum = sum + xprint(sum) 123456sum = 0n = 99while n &gt; 0: sum = sum + n n = n - 2print(sum) 1234567n = 1while n &lt;= 100: if n &gt; 10: # 当n = 11时，条件满足，执行break语句 break # break语句会结束当前循环 print(n) n = n + 1print('END') 123456n = 0while n &lt; 10: n = n + 1 if n % 2 == 0: # 如果n是偶数，执行continue语句 continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行 print(n) dict(字典)12d = &#123;'Michael': 95, 'Bob': 75, 'Tracy': 85&#125;d['Michael'] get()12d.get("Michael");#key不存在返回None，或者自己指定的value pop(key)123d.pop('Bob')# 要删除一个key，用pop(key)方法，对应的value也会从dict中删除： 请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。 和list比较，dict有以下几个特点： 查找和插入的速度极快，不会随着key的增加而变慢； 需要占用大量的内存，内存浪费多。 而list相反： 查找和插入的时间随着元素的增加而增加； 占用空间小，浪费内存很少。 所以，dict是用空间来换取时间的一种方法。 dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。 这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。 要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key set set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。 123&gt;&gt;&gt; s = set([1, 2, 3])&gt;&gt;&gt; s&#123;1, 2, 3&#125; add(key) 通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果： 123456&gt;&gt;&gt; s.add(4)&gt;&gt;&gt; s&#123;1, 2, 3, 4&#125;&gt;&gt;&gt; s.add(4)&gt;&gt;&gt; s&#123;1, 2, 3, 4&#125; remove(key) 通过remove(key)方法可以删除元素： 123&gt;&gt;&gt; s.remove(4)&gt;&gt;&gt; s&#123;1, 2, 3&#125; set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作： 123456&gt;&gt;&gt; s1 = set([1, 2, 3])&gt;&gt;&gt; s2 = set([2, 3, 4])&gt;&gt;&gt; s1 &amp; s2&#123;2, 3&#125;&gt;&gt;&gt; s1 | s2&#123;1, 2, 3, 4&#125; set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。试试把list放入set，看看是否会报错。 数据类型转换int()函数可以把其他数据类型转换为整数1234567891011121314&gt;&gt;&gt; int('123')123&gt;&gt;&gt; int(12.34)12&gt;&gt;&gt; float('12.34')12.34&gt;&gt;&gt; str(1.23)'1.23'&gt;&gt;&gt; str(100)'100'&gt;&gt;&gt; bool(1)True&gt;&gt;&gt; bool('')False]]></content>
       <categories>
-        <category>VUE</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Vuex（关于vue的状态管理模式）]]></title>
-    <url>%2Fpost%2F2fe08ed3.html</url>
-    <content type="text"><![CDATA[介绍vuex vuex是一个为了vue开发的状态管理模式，它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化， 这篇文章不错 状态管理模式123456789101112131415161718new Vue(&#123; // state data () &#123; return &#123; count: 0 &#125; &#125;, // view template: ` &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt; `, // actions methods: &#123; increment () &#123; this.count++ &#125; &#125;&#125;) 如上所示 state为驱动应用的数据源，view以声明的方式将state映射到视图，actions为响应在view上的用户输入导致的状态变化 单向数据流 1234graph LR; Actions--&gt;State; State--&gt;View; View--&gt;Actions; 如上所示为单向数据流，但是当我们有多个组件共享状态时，单向数据流的简洁性很容易被破坏。 这时会有两个需求多个视图依赖于同一状态，来自不同视图的行为需要变更同一状态。 为了方便我们把组件的共享状态抽取出来，以一个全局单例模式管理（Vuex） 安装1npm i vuex --save 引入1234import Vue from 'vue'import Vuex from 'vuex'Vue.use(Vuex) 使用]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[vue全局拦截前端错误（前端异常监控系统+ng4）]]></title>
     <url>%2Fpost%2Fbe8a39c8.html</url>
     <content type="text"><![CDATA[errorHandler 一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用 这里面我们用errorHandler来进行错误拦截 12345Vue.config.errorHandler = function (err, vm, info) &#123; // handle error // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子 // 只在 2.2.0+ 可用&#125; 123456789101112131415161718//具体报错信息ReferenceError: i is not defined //err at VueComponent.created (bigdata.vue?1536:26) at callHook (vue.esm.js?5425:2895) at VueComponent.Vue._init (vue.esm.js?5425:4560) at new VueComponent (vue.esm.js?5425:4728) at createComponentInstanceForVnode (vue.esm.js?5425:4242) at init (vue.esm.js?5425:4059) at createComponent (vue.esm.js?5425:5512) at createElm (vue.esm.js?5425:5460) at createChildren (vue.esm.js?5425:5586) at createElm (vue.esm.js?5425:5488)VueComponent &#123;_uid: 4, _isVue: true, $options: &#123;…&#125;, //vm _renderProxy: Proxy, _self: VueComponent, …&#125;created hook //info vue2.0参考这里 ng4参考这里 接口形式同埋点上传（利用一个gif的形式传递数据）这是我以前写的关于如何进行埋点上传的文章(代码不是我写的)]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue项目移植报错]]></title>
+    <url>%2Fpost%2F4f392df3.html</url>
+    <content type="text"><![CDATA[按照这个文章解决的 npm intall sass-loader –save; npm install node-sass –save; 然后运行npm run start就可以 关于vueTreeDrag这个项目vueTreeDrag 使用的node版本是v8.8.1 删除当前的node_modules 然后cnpm i重新下载]]></content>
+      <categories>
+        <category>VUE</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue的路由（route）]]></title>
+    <url>%2Fpost%2Fd41be5a0.html</url>
+    <content type="text"><![CDATA[vue的路由 注意： component后面的值不要有引号，父级不要有名字name属性 12345678910111213141516[ &#123; path: '/', component: Bigdata, children: [ &#123; path: '', redirect: &#123; name: 'Table' &#125; &#125;,&#123; path: 'table', name: 'Table' , component: Table &#125; ] &#125; ]]]></content>
       <categories>
         <category>VUE</category>
       </categories>
@@ -215,17 +226,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue中使用sass]]></title>
-    <url>%2Fpost%2Fe10abc6.html</url>
-    <content type="text"><![CDATA[安装12npm install node-sass --save-devnpm install sass-loader --save-dev 配置 打开webpack.base.config.js在loaders里面加上 module – rules 123456789101112131415161718192021222324252627282930313233rules: [ &#123; test: /\.vue$/, loader: 'vue-loader', options: vueLoaderConfig &#125;, &#123; test: /\.js$/, loader: 'babel-loader', include: [resolve('src'), resolve('test')] &#125;, &#123; test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: 'url-loader', query: &#123; limit: 10000, name: utils.assetsPath('img/[name].[hash:7].[ext]') &#125; &#125;, &#123; test: /\.scss$/, loaders: ["style", "css", "sass"] &#125;,//这里这里看这里，主要引入这一段 &#123; test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/, loader: 'url-loader', query: &#123; limit: 10000, name: utils.assetsPath('fonts/[name].[hash:7].[ext]') &#125; &#125; ] &#125;]]></content>
-      <categories>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[vue中使用富文本编辑器]]></title>
     <url>%2Fpost%2F8e3fdc01.html</url>
     <content type="text"><![CDATA[安装 cnpm install vue-quill-editor –save 引入 import { quillEditor } from ‘vue-quill-editor’]]></content>
@@ -237,14 +237,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[element-ui]]></title>
-    <url>%2Fpost%2Fd0acb7fa.html</url>
-    <content type="text"><![CDATA[安装1cnpm i element-ui --save 引入 在main.js 中 123456789101112import Vue from 'vue'import ElementUI from 'element-ui'import 'element-ui/lib/theme-chalk/index.css'import App from './App.vue'Vue.use(ElementUI)new Vue(&#123; el: '#app', render: h =&gt; h(App)&#125;) 使用菜单导航123456&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; index里面添加路由， router是使用路由模式为true 但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下 12345&lt;el-menu :router="true" :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"&gt; &lt;el-menu-item index="/table"&gt;表格&lt;/el-menu-item&gt; &lt;el-menu-item index="/form"&gt;表单&lt;/el-menu-item&gt; &lt;el-menu-item index="/graph"&gt;图形&lt;/el-menu-item&gt; &lt;/el-menu&gt; elementUI关于树状图的增删改查，局部刷新问题链接在这里 elementUI关于tree的使用getCheckedKeys不能获取父节点的key]]></content>
+    <title><![CDATA[Vuex（关于vue的状态管理模式）]]></title>
+    <url>%2Fpost%2F2fe08ed3.html</url>
+    <content type="text"><![CDATA[介绍vuex vuex是一个为了vue开发的状态管理模式，它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化， 这篇文章不错 状态管理模式123456789101112131415161718new Vue(&#123; // state data () &#123; return &#123; count: 0 &#125; &#125;, // view template: ` &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt; `, // actions methods: &#123; increment () &#123; this.count++ &#125; &#125;&#125;) 如上所示 state为驱动应用的数据源，view以声明的方式将state映射到视图，actions为响应在view上的用户输入导致的状态变化 单向数据流 1234graph LR; Actions--&gt;State; State--&gt;View; View--&gt;Actions; 如上所示为单向数据流，但是当我们有多个组件共享状态时，单向数据流的简洁性很容易被破坏。 这时会有两个需求多个视图依赖于同一状态，来自不同视图的行为需要变更同一状态。 为了方便我们把组件的共享状态抽取出来，以一个全局单例模式管理（Vuex） 安装1npm i vuex --save 引入1234import Vue from 'vue'import Vuex from 'vuex'Vue.use(Vuex) 使用]]></content>
       <categories>
         <category>VUE</category>
       </categories>
       <tags>
         <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python2.7执行excel]]></title>
+    <url>%2Fpost%2F2e50297d.html</url>
+    <content type="text"><![CDATA[安装xlrd、xlwt、xlutilsxlrd：是python从excel读数据的第三方控件；xlwt：是python从excel写数据的第三方控件；xlutils：是python使用xlrd、xlwt的工具箱。若安装不成功，可能原因是需要安装setuptools。 [root@vm4 python]# pip install xlrd [root@vm4 python]# pip install xlwt [root@vm4 python]# pip install xlutils]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -259,25 +270,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[eslint语法解决]]></title>
-    <url>%2Fpost%2Fef695a00.html</url>
-    <content type="text"><![CDATA[12345678910111213141516在webpack.base.conf.js里面删掉下面:preLoaders: [ &#123; test: /\.vue$/, loader: 'eslint', include: projectRoot, exclude: [/node_modules/, /ignore_lib/] &#125;, &#123; test: /\.js$/, loader: 'eslint', include: projectRoot, exclude: [/node_modules/, /ignore_lib/] &#125; ] 1234567891011删除以下代码就可以&#123; test: /\.(js|vue)$/, loader: 'eslint-loader', enforce: 'pre', include: [resolve('src'), resolve('test')], options: &#123; formatter: require('eslint-friendly-formatter') &#125; 然后需要重新编辑生效]]></content>
+    <title><![CDATA[GitHubPages + Hexo+Next构建你自己的博客]]></title>
+    <url>%2Fpost%2F3609924.html</url>
+    <content type="text"><![CDATA[github准备新建一个项目：你的用户名.github.io（项目名称） Hexo 安装node npm install hexo-cli -g hexo init 你的用户名.github.io // 尽量和Github仓库使用同一个名称 cd 你的用户名.github.io hexo s 打开http://localhost:4000/ Next主题安装 Next主题是iissnan所创作的一个Hexo主题，以简洁为主 cd xxx.github.io git clone https://github.com/iissnan/hexo-theme-next themes/next _config.yml站点配置12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182# Hexo Configuration ## Docs: https://hexo.io/docs/configuration.html ## Source: https://github.com/hexojs/hexo/ # Site title: 最晚的开始 #站点名称 subtitle: 所有的为时已晚都是开始的最好时候 #副标题 #个人描述 description: My goal is not write code.if we could ship products and make all this money without writing any code,we could.Your job is ship products EXACTLY on time.It doesn’t matter whether you are a developer,tester,program manager,product manager whatever.Everybody’s job is the same. author: Jack_lin #作者 language: zh-Hans #语言 timezone: # URL #绑定域名后，要创建 sitemap.xml 时再配置该项 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/' url: http://yoursite.com root: / permalink: :year/:month/:day/:title/ permalink_defaults: # Directory #目录不用修改 source_dir: source public_dir: public tag_dir: tags archive_dir: archives category_dir: categories code_dir: downloads/code i18n_dir: :lang skip_render: # Writing # 文章布局、写作格式的定义，不修改 new_post_name: :title.md # File name of new posts default_layout: post titlecase: false # Transform title into titlecase external_link: true # Open external links in new tab filename_case: 0 render_drafts: false post_asset_folder: false relative_link: false future: true highlight: enable: true line_number: true auto_detect: false tab_replace: # Category &amp; Tag default_category: uncategorized category_map: tag_map: # Date / Time format #时间格式不用修改 ## Hexo uses Moment.js to parse and display date ## You can customize the date format as defined in ## http://momentjs.com/docs/#/displaying/format/ date_format: YYYY-MM-DD time_format: HH:mm:ss # Pagination #每页显示文章数，可以自行定义 ## Set per_page to 0 to disable pagination per_page: 10 pagination_dir: page # Extensions #配置站点时，所使用的主题和插件，切换主题可以在这里设置 ## Plugins: https://hexo.io/plugins/ ## Themes: https://hexo.io/themes/ theme: next //在这里切换主题 # theme: landscape # 头像， 在xxx.github.io/source 下相对路径，若source文件夹下没有uploads，就新建一个名为uploads文件夹，具体见下面截图 avatar: /uploads/images/avatar.png # Deployment #这里是部署到Github上的设置 ## Docs: https://hexo.io/docs/deployment.html deploy: type: git #git提交 repo: https://github.com/123sunxiaolin/123sunxiaolin.github.io.git #已创建的Github仓库 branch: master #提交到的分支 如果报错: ERROR Deployer not found: git npm install –save hexo-deployer-git 部署 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 打包的项目在public中]]></content>
       <categories>
-        <category>VUE</category>
+        <category>博客</category>
       </categories>
       <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python3基础语法]]></title>
-    <url>%2Fpost%2Fe5ac5920.html</url>
-    <content type="text"><![CDATA[条件判断1234567age = 3if age &gt;= 18: print('adult')elif age &gt;= 6: print('teenager')else: print('kid') 循环语句123for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]: sum = sum + xprint(sum) 123456sum = 0n = 99while n &gt; 0: sum = sum + n n = n - 2print(sum) 1234567n = 1while n &lt;= 100: if n &gt; 10: # 当n = 11时，条件满足，执行break语句 break # break语句会结束当前循环 print(n) n = n + 1print('END') 123456n = 0while n &lt; 10: n = n + 1 if n % 2 == 0: # 如果n是偶数，执行continue语句 continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行 print(n) dict(字典)12d = &#123;'Michael': 95, 'Bob': 75, 'Tracy': 85&#125;d['Michael'] get()12d.get("Michael");#key不存在返回None，或者自己指定的value pop(key)123d.pop('Bob')# 要删除一个key，用pop(key)方法，对应的value也会从dict中删除： 请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。 和list比较，dict有以下几个特点： 查找和插入的速度极快，不会随着key的增加而变慢； 需要占用大量的内存，内存浪费多。 而list相反： 查找和插入的时间随着元素的增加而增加； 占用空间小，浪费内存很少。 所以，dict是用空间来换取时间的一种方法。 dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。 这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。 要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key set set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。 123&gt;&gt;&gt; s = set([1, 2, 3])&gt;&gt;&gt; s&#123;1, 2, 3&#125; add(key) 通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果： 123456&gt;&gt;&gt; s.add(4)&gt;&gt;&gt; s&#123;1, 2, 3, 4&#125;&gt;&gt;&gt; s.add(4)&gt;&gt;&gt; s&#123;1, 2, 3, 4&#125; remove(key) 通过remove(key)方法可以删除元素： 123&gt;&gt;&gt; s.remove(4)&gt;&gt;&gt; s&#123;1, 2, 3&#125; set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作： 123456&gt;&gt;&gt; s1 = set([1, 2, 3])&gt;&gt;&gt; s2 = set([2, 3, 4])&gt;&gt;&gt; s1 &amp; s2&#123;2, 3&#125;&gt;&gt;&gt; s1 | s2&#123;1, 2, 3, 4&#125; set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。试试把list放入set，看看是否会报错。 数据类型转换int()函数可以把其他数据类型转换为整数1234567891011121314&gt;&gt;&gt; int('123')123&gt;&gt;&gt; int(12.34)12&gt;&gt;&gt; float('12.34')12.34&gt;&gt;&gt; str(1.23)'1.23'&gt;&gt;&gt; str(100)'100'&gt;&gt;&gt; bool(1)True&gt;&gt;&gt; bool('')False]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
+        <tag>构建博客</tag>
       </tags>
   </entry>
   <entry>
@@ -314,17 +314,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[编码规范]]></title>
-    <url>%2Fpost%2F1adaadca.html</url>
-    <content type="text"><![CDATA[1234567891011121314151617SUCCESS: 0, URL_INVALID: 1001, //请求地址无效 AUTH_FAIL: 1002, //鉴权失败 NO_PERMISSION: 1003, //无此权限 PARAM_INVALID: 1004, //参数无效 SMS_SEND_FAIL: 1005, //短信发送失败 ACT_CODE_INVALID: 1006, //验证码无效 ACCOUNT_INVALID: 1007, //帐号或密码错误 SESSION_TIMEOUT: 1009, //未登录或登录超时 DATA_EXIST: 1011, //数据已存在 DATA_INEXIST: 1012, //数据不存在 DATA_INEXIST_ON_CURR_CONDITIONS: 1013, //当前条件下数据不存在 DB_OPER: 9001, //数据库操作异常 DB_CONN: 9002, //数据库连接异常 UNKNOW: 9999 //未知异常]]></content>
-      <categories>
-        <category>规范</category>
-      </categories>
-      <tags>
-        <tag>规范</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[编程]]></title>
     <url>%2Fpost%2F47867b98.html</url>
     <content type="text"><![CDATA[尊重对象所有权 避免全局变量 避免与null进行比较 12345678910111213function sortSArray(values)&#123; if(values != null)&#123; //这是不可取的 &#125;&#125;//修改function sortArray(values)&#123; if(values instanceof Array)&#123; //这是可取的 &#125;&#125; 使用常量 123456789101112var time = &#123; time1: 12, time2: 13&#125;console.log(time.time1);console.log(time.time2);//而不是使用console.log(12);console.log(13);//关键在于重复值，用户界面字符串，URLs，任意可能会更改的值 避免全局查找（document等等）]]></content>
@@ -336,26 +325,38 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node版本管理]]></title>
-    <url>%2Fpost%2Ff9ae89b2.html</url>
-    <content type="text"><![CDATA[linux下使用nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 1wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 安装完后，如果是用xshell连远程主机的话，先重连一次，不然会发现提示找不到nvm命令 1source ~/.bashrc 列出所有版本号12nvm ls-remote 安装指定版本 1nvm install v7.9.0 切换版本 1nvm use v7.8.0 切换版本 1nvm current 查看版本 1nvm ls]]></content>
+    <title><![CDATA[编码规范]]></title>
+    <url>%2Fpost%2F1adaadca.html</url>
+    <content type="text"><![CDATA[1234567891011121314151617SUCCESS: 0, URL_INVALID: 1001, //请求地址无效 AUTH_FAIL: 1002, //鉴权失败 NO_PERMISSION: 1003, //无此权限 PARAM_INVALID: 1004, //参数无效 SMS_SEND_FAIL: 1005, //短信发送失败 ACT_CODE_INVALID: 1006, //验证码无效 ACCOUNT_INVALID: 1007, //帐号或密码错误 SESSION_TIMEOUT: 1009, //未登录或登录超时 DATA_EXIST: 1011, //数据已存在 DATA_INEXIST: 1012, //数据不存在 DATA_INEXIST_ON_CURR_CONDITIONS: 1013, //当前条件下数据不存在 DB_OPER: 9001, //数据库操作异常 DB_CONN: 9002, //数据库连接异常 UNKNOW: 9999 //未知异常]]></content>
       <categories>
-        <category>node</category>
+        <category>规范</category>
       </categories>
       <tags>
-        <tag>node</tag>
+        <tag>规范</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node框架简要说明（express）]]></title>
-    <url>%2Fpost%2F448baf37.html</url>
-    <content type="text"><![CDATA[介绍 如官网所说要使用koa就要使得node的版本在7以上，但是本人亲测6也是可以的(当然只是一部分，如果要用异步等函数，还是需要升级的) node 版本管理 如此那么对于不同版本的node，我们有一种方式可以对其进行管理nvm 安装nvm（还有一种n，暂不做介绍，但是nvm只支持mac以及linux）(安了半天，才发现n也不支持window ==)(所以windows下要使用GNVM)12345安装方式有两种：$ curl https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh或者$ wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh 123456nvm install 0.10 //下载0.10版本nodenvm use 0.10 // 使用指定的版本nvm ls.nvm //查看已安装版本nvm currentv //当前版本nvm run 0.10.24 server.js //指定版本运行rm -rf ~/.nvm 卸载 GNVM(需要使用管理员权限才可以使用)下载32位64位 安装 把下载下来的gnvm.exe放到node.exe所在的目录下执行gnvm version 检查是否安装成功 命令12345678910111、初始化gnvm gnvm config INIT2、查看本地安装了什么版本 gnvm ls3、安装需要的版本 gnvm 4.4.0 6.9.2 7.3.04、 gnvm ls查看所有版本后 切换到想要的版本 gnvm use 6.9.2 123456789version :: Print the version number of gnvm.exeinstall :: Install any node.exe versionuninstall :: Uninstall local node.exe versionuse :: Use any version of the local already existsupdate :: Update latest node.exels :: List show all &lt;local&gt; &lt;remote&gt; node.exe versionnode-version :: Show &lt;global&gt; &lt;latest&gt; node.exe versionconfig :: Setter and getter registryhelp [command] :: Help about any command 代码 注意koa使用了es6语法，所有需要引入bable（在node大于版本7.6以上的是这么使用） 123456789101112131415161718192021const Koa = require('koa');const app = new Koa();const main = ctx =&gt; &#123; if (ctx.request.accepts('xml')) &#123; ctx.response.type = 'xml'; ctx.response.body = '&lt;data&gt;Hello World&lt;/data&gt;'; &#125; else if (ctx.request.accepts('json')) &#123; ctx.response.type = 'json'; ctx.response.body = &#123; data: 'Hello World' &#125;; &#125; else if (ctx.request.accepts('html')) &#123; ctx.response.type = 'html'; ctx.response.body = '&lt;p&gt;Hello World&lt;/p&gt;'; &#125; else &#123; ctx.response.type = 'text'; ctx.response.body = 'Hello World'; &#125;&#125;;app.use(main);app.listen(3000); 详解假设HTTP服务(和express没有太大区别)1234const Koa = require('koa');const app = new Koa();app.listen(3000); Context 对象 koa提供一个Context 对象，表示一次对话的上下文（res,req）。 123456789const Koa = require('koa');const app = new Koa();const main = ctx =&gt; &#123; //main函数用来设置ctx.response.body ctx.response.body = 'res';&#125;;app.use(main);//加载main函数app.listen(3000); ctx.response是响应 ctx.request是请求 response的类型 ctx.response.type可以判断类型 类型 xml json html text 文件(同express类似，koa也是fs)123456const fs = require('fs');const main = ctx =&gt; &#123; ctx.response.type = 'html'; ctx.response.body = fs.createReadStream('./demos/template.html');&#125;; 获取href ctx.request.path //这个可以用来获取get方式传参过来的参数 路由（koa-route）模块12345678910111213const route = require('koa-route');const about = ctx =&gt; &#123; ctx.response.type = 'html'; ctx.response.body = '&lt;a href="/"&gt;Index Page&lt;/a&gt;';&#125;;const main = ctx =&gt; &#123; ctx.response.body = 'Hello World';&#125;;app.use(route.get('/', main));//调用到的main函数app.use(route.get('/about', about));//调用的about函数 静态资源(路由)12345const path = require('path');const serve = require('koa-static');const main = serve(path.join(__dirname));app.use(main); 重定向12345const redirect = ctx =&gt; &#123; ctx.response.redirect('/');&#125;;app.use(route.get('/redirect', redirect)); 日志123const main = ctx =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`);&#125;; 中间件12345const logger = (ctx, next) =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`); next();&#125;app.use(logger); 中间件栈 多个中间件会形成一个栈结构（middle stack），以”先进后出”（first-in-last-out）的顺序执行。 最外层的中间件首先执行。 调用next函数，把执行权交给下一个中间件。 … 最内层的中间件最后执行。 执行结束后，把执行权交回上一层的中间件。 … 最外层的中间件收回执行权之后，执行next函数后面的代码 123456789101112131415161718192021const one = (ctx, next) =&gt; &#123; console.log('&gt;&gt; one'); next(); console.log('&lt;&lt; one');&#125;const two = (ctx, next) =&gt; &#123; console.log('&gt;&gt; two'); next(); console.log('&lt;&lt; two');&#125;const three = (ctx, next) =&gt; &#123; console.log('&gt;&gt; three'); next(); console.log('&lt;&lt; three');&#125;app.use(one);app.use(two);app.use(three); 输出：&gt;&gt; one&gt;&gt; two&gt;&gt; three&lt;&lt; three&lt;&lt; two&lt;&lt; one 异步中间件(async函数)1234const main = async function (ctx, next) &#123; ctx.response.type = 'html'; ctx.response.body = await fs.readFile('./demos/template.html', 'utf8');&#125;; 合成中间件(koa-compose)12345678910111213const compose = require('koa-compose');const logger = (ctx, next) =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`); next();&#125;const main = ctx =&gt; &#123; ctx.response.body = 'Hello World';&#125;;const middlewares = compose([logger, main]);//将logger和main合并成一个中间件app.use(middlewares); 500 错误1ctx.throw(500)//用来抛出500错误 返回状态1ctx.response.status = 200; 中间件错误处理1234567891011121314151617const handler = async (ctx, next) =&gt; &#123; try &#123; await next(); &#125; catch (err) &#123; ctx.response.status = err.statusCode || err.status || 500; ctx.response.body = &#123; message: err.message &#125;; &#125;&#125;;const main = ctx =&gt; &#123; ctx.throw(500);&#125;;app.use(handler);app.use(main); 运行出错会监听一个error事件123app.on('error', (err, ctx) =&gt; console.error('server error', err);); 使用try catch 是不能使用上面的方法的，这时候使用的是ctx.app.emit(‘error’, err, ctx);手动释放error 使用cookie12const n = Number(ctx.cookies.get('view') || 0) + 1;ctx.cookies.set('view', n); 获取post的请求参数123456789const koaBody = require('koa-body');const main = async function(ctx) &#123; const body = ctx.request.body; if (!body.name) ctx.throw(400, '.name required'); ctx.body = &#123; name: body.name &#125;;&#125;;app.use(koaBody()); 利用koa-body进行文件上传12345678910111213141516171819202122const os = require('os');const path = require('path');const koaBody = require('koa-body');const main = async function(ctx) &#123; const tmpdir = os.tmpdir(); const filePaths = []; const files = ctx.request.body.files || &#123;&#125;; for (let key in files) &#123; const file = files[key]; const filePath = path.join(tmpdir, file.name); const reader = fs.createReadStream(file.path); const writer = fs.createWriteStream(filePath); reader.pipe(writer); filePaths.push(filePath); &#125; ctx.body = filePaths;&#125;;app.use(koaBody(&#123; multipart: true &#125;)); 参考文献阮一峰教程 koa workshop kick-off-koa Koa Examples]]></content>
+    <title><![CDATA[node 和 模板引擎（jade）]]></title>
+    <url>%2Fpost%2F34655c0e.html</url>
+    <content type="text"><![CDATA[express 框架里内嵌了Jade模板引擎。 安装 npm install jade –global 执行 创建一个 index.jade 的文件，然后执行 jade index.jade 这样做就会将jade文件转换为html文件 jade还有一些参数 jade -P index.jade 这样编辑出来的index.html文件是没有进行过压缩的 jade -P -w index.jade -w 只要保存就自动编辑 jade -P -w sample.jade -O sample.json -O 用来给jade文件传递对象或JSON文件，用来替换模板内的变量 语法编辑前12345doctype htmlhtml head body h1.titleClass#titleID My First Jade Page 编辑后1234567&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt;&lt;/head&gt; &lt;body&gt; &lt;h1 id="titleID" class="titleClass"&gt;My First Jade Page&lt;/h1&gt; &lt;/body&gt;&lt;/html&gt;]]></content>
       <categories>
         <category>node</category>
       </categories>
       <tags>
         <tag>node</tag>
         <tag>koa2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[node编码规范]]></title>
+    <url>%2Fpost%2F46cb4dd.html</url>
+    <content type="text"><![CDATA[node编码规范 一、缩进&gt; 两个空格缩进，而不是tab缩进 二、变量声明&gt; 每一行声明必须带有var 三、空格&gt; 在操作符前后需要加空格（+，——，*，%，=等等）。此外小括号前后要加空格 123if (true) &#123; // some code&#125; 四、单双引号的使用&gt; 字符串使用单引号，json使用双引号 五、大括号的位置&gt; 大括号无需另起一行 六、逗号&gt; 逗号如果不在行尾，需要一个空格。 123var help = &#123; foo: 'hep', bar: 'me'&#125; 七、分号&gt; 给表达式结尾添加分号，不在行尾需要一个空格 八、命名规范&gt; 命名的主要范畴有变量，常量，方法，类，文件，包等 1、变量命名&gt; 采用小驼峰命名 adminUser等等 2、方法命名&gt; 方法名也是小驼峰法，但是采用的是动词或者判断性词语 3、类命名&gt; 采用大驼峰法命名 AdminUser 4、常量命名&gt; 单词的所有字母大写，用下划线分割 5、文件命名&gt; 小写，下划线分割 6、包名&gt; 不要包含node或者js的字样 九、比较操作&gt; 如果是无容忍的情况，请使用‘===’代替‘==’ 十、字面量&gt; 使用{}【】代替new Object（）和new Array（），不要调用string，bool，number对象类型。 十一、作用域&gt; 慎用with和eval · 十二、数组和对象1、字面格式量&gt; 如果对象中分行，一行只能有一个元素 2、for in循环&gt; 请对对象使用，不要对数组使用 3、 不要把数组当做对象来使用十二、异步&gt; 异步回调的第一个参数应该是错误提示 123function （err，data）&#123; &#125; &gt; 执行传入的回调函数，不能执行多次 十三、类与模块1、类继承&gt; 一般情况下，我们采用Node推荐的类继承方式 2、导出&gt; module.exports = Class; 十四、注解规范&gt; dox的注释规范。]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>规范</tag>
       </tags>
   </entry>
   <entry>
@@ -383,14 +384,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node中的next()用法]]></title>
-    <url>%2Fpost%2F2971356.html</url>
-    <content type="text"><![CDATA[next()函数是用来调用下一个中间件的。 什么是中间件：位于中间，为两侧提供服务的软件 举个例子 12345678910111213app.use((ctx,next)=&gt;&#123; ctx.name = 'yixns', next();&#125;)app.use((ctx,next)=&gt;&#123; ctx.age = '24', next();&#125;)app.use((ctx,next)=&gt;&#123; console.log(`$&#123;ctx.name) is $&#123;ctx.age&#125; years old.`) next();&#125;)app.go(&#123;&#125;); ctx 参数就是 app.go 接受的对象。调用 app.go 其实会调用目标函数 app.callback，但是调用 app.callback 之前我们可以先让参数 ctx 通过一系列的中间件，最后才会传递给 app.callback。 使用 app.use 插入任意中间件，中间件是一个函数，可以被传入一个 ctx 和 next；调用 next 的时候会执行下一个中间件。如果不调用 next 会阻止接下来所有的中间件的执行，也不会执行 app.callback。 简单的来说，中间件就是流水线，流水线徐亚统一接口进行工序对接，而这个借接口，就是next koa2中间件]]></content>
+    <title><![CDATA[node启动在一个服务中]]></title>
+    <url>%2Fpost%2Fea010e66.html</url>
+    <content type="text"><![CDATA[在实验koa2时有这么一句话1app.use(require('koa-static')(__dirname + '/public/static')) 把打包后的文件放在这里面]]></content>
       <categories>
         <category>node</category>
       </categories>
       <tags>
         <tag>node</tag>
+        <tag>koa2</tag>
       </tags>
   </entry>
   <entry>
@@ -406,21 +408,43 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[redis]]></title>
-    <url>%2Fpost%2F7b25d017.html</url>
-    <content type="text"><![CDATA[下载需要下载一个redis，或者是连接的那个服务器有redis cnpm i redis 我的本机安装目录C:\Program Files\Redis 执行：redis-server.exe 1234567891011121314151617//使用redis，用来缓存数据const redis = require('redis');const client = redis.createClient(&#123;host:'192.168.14.6', port: 6379,no_ready_check:true&#125;);client.on("error", function (err) &#123; console.log("redis client连接失败",err);&#125;);client.on('ready', function (res) &#123; console.log('client ready');&#125;);client.on('connect', function () &#123; client.set("var_2", "var_2_val", function () &#123; var read_var_2=client.get("var_2"); console.log("第二次读取到的值："+read_var_2); &#125;); client.quit();&#125;); 这个里面设置了过期时间使用的redis.expire12345678910router.get('/', function (ctx, next) &#123; let render = null; render = tableData.tableData(tableJson); render.count = render.data.length; render.num = 10; redis.set('var_2', JSON.stringify(render)); redis.expire('var_2', 300); render.data = render.data.slice(0,9); ctx.body = render;&#125;);]]></content>
+    <title><![CDATA[node中的next()用法]]></title>
+    <url>%2Fpost%2F2971356.html</url>
+    <content type="text"><![CDATA[next()函数是用来调用下一个中间件的。 什么是中间件：位于中间，为两侧提供服务的软件 举个例子 12345678910111213app.use((ctx,next)=&gt;&#123; ctx.name = 'yixns', next();&#125;)app.use((ctx,next)=&gt;&#123; ctx.age = '24', next();&#125;)app.use((ctx,next)=&gt;&#123; console.log(`$&#123;ctx.name) is $&#123;ctx.age&#125; years old.`) next();&#125;)app.go(&#123;&#125;); ctx 参数就是 app.go 接受的对象。调用 app.go 其实会调用目标函数 app.callback，但是调用 app.callback 之前我们可以先让参数 ctx 通过一系列的中间件，最后才会传递给 app.callback。 使用 app.use 插入任意中间件，中间件是一个函数，可以被传入一个 ctx 和 next；调用 next 的时候会执行下一个中间件。如果不调用 next 会阻止接下来所有的中间件的执行，也不会执行 app.callback。 简单的来说，中间件就是流水线，流水线徐亚统一接口进行工序对接，而这个借接口，就是next koa2中间件]]></content>
       <categories>
-        <category>redis</category>
+        <category>node</category>
       </categories>
       <tags>
-        <tag>服务器</tag>
-        <tag>redis</tag>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[node（koa2）快速创建项目]]></title>
     <url>%2Fpost%2Fbde7ce9f.html</url>
     <content type="text"><![CDATA[创建项目（但是不支持热加载）1npm install -g koa-generator //全局安装 一键创建项目12345koa2 koa2-testcd koa2-testnpm i 执行1npm run dev 这里可能报错，原因是因为需要安装bable 1npm install --save-dev babel-core babel-polyfill babel-preset-es2015 babel-preset-stage-3 然后在bin/www中使用bable 1234require("babel-polyfill");require('babel-core/register')(&#123; presets: ['es2015', 'stage-3']&#125;); 如何写接口在routes文件夹下创建一个js文件，我们可以起一个yinxs,代码如下，我写了三个关于get的接口,以及一个post接口12345678910111213141516171819202122const router = require('koa-router')()router.prefix('/yinxs')router.get('/yinxs', function (ctx, next) &#123; ctx.body = 'I am yinxs!'&#125;)router.get('/father', function (ctx, next) &#123; ctx.body = 'I am father'&#125;)router.get('/son', function (ctx, next) &#123; ctx.body = 'I am son'&#125;)router.post('/getname', function(ctx, next) &#123; console.log(JSON.stringify(ctx.request)); ctx.body = 'I am yinxs post'&#125;)module.exports = router 在app.js将新写的接口关联进去 12const yinxs = require('./routes/yinxs')app.use(yinxs.routes(), yinxs.allowedMethods()) 执行npm run start访问 /yinxs/yinxs /yinxs/son /yinxs/father 可以获取到数据 注：项目启动的是bin目录下面的www，而不是app.js koa2跨域]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>koa2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[node]]></title>
+    <url>%2Fpost%2F857fe845.html</url>
+    <content type="text"><![CDATA[node文件整理 链接数据库（Mysql） 1234567891011121314var mysql = require('mysql');var connection = mysql.createConnection(&#123; //链接数据库的配置 host: 'localhost', //IP user: 'root', //用户名 password: '123456', //密码 database: 'test' //数据库名&#125;);connection.connect(); //开启链接connection.query('SELECT 1 + 1 AS solution', //写入sqlfunction(error, results) &#123; //返回的数据（result）报错信息（error） if (error) throw error; console.log('The solution is: ', results[0].solution)；&#125;);connection.end(); //关闭链接 请求接口 1234567891011121314//请求musus接口const request = require('request');const hera_api = require('../config/hera');exports.dv_dataset = function (req,res)&#123; res.status(200); var id= req.url.split("?")[1]; request(hera_api.hera_api+'lineage/dataset?' + id , function (error, response, body) &#123; console.log(hera_api.hera_api+'lineage/dataset?' + id); console.log(error); res.json(body); &#125;);&#125;; 编写接口 12345678910111213141516171819202122232425262728293031var express=require('express');var app =express();var bodyParser = require('body-parser');app.use(bodyParser.json(&#123;limit: '1mb'&#125;)); //body-parser 解析json格式数据app.use(bodyParser.urlencoded(&#123; //此项必须在 bodyParser.json 下面,为参数编码 extended: true&#125;));//mysql//mysqlconst mysql = require('mysql');const sql = require("../config/mysql");const client = sql.config_sql;exports.source_del =function (req,res) &#123; var datas = req.body; var source_del_sql = "DELETE FROM dict_datasource WHERE id = " + datas.id; client.query(source_del_sql, (err,datas) =&gt; &#123; res.status(200); if(err == null)&#123; res.json(&#123; status: true, data : datas &#125;); &#125;else &#123; res.json(&#123; status: false &#125;); &#125;&#125;);&#125;; 在server.js中引入 12345678910111213141516171819202122232425262728293031323334353637/*** Created by 尹雪松 on 2017/11/15.*/var express=require('express');var app =express();var bodyParser = require('body-parser');app.use(bodyParser.json(&#123;limit: '1mb'&#125;)); //body-parser 解析json格式数据app.use(bodyParser.urlencoded(&#123; //此项必须在 bodyParser.json 下面,为参数编码extended: true&#125;));//设置跨域访问app.all('*', function(req, res, next) &#123;res.header("Access-Control-Allow-Origin", "*");res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");res.header("X-Powered-By",' 3.2.1');res.header("Content-Type", "application/json;charset=utf-8");next();&#125;);//引入外部文件接口const jobData = require("./job/job");app.post('/api/jobTable',jobData.job_data);//job table//配置服务端口var server = app.listen(9092, function () &#123;var host = server.address().address;var port = server.address().port;console.log('Example app listening at http://%s:%s';, host, port);&#125;); 管理(pm2) 123下载：npm -g i pm2 查看日志： pm2 logs监控： pm2 monit 12345678910111213141516171819202122启动： pm2 +nginxupstream my_nodejs_upstream &#123; server 127.0.0.1:3001;&#125;server &#123; listen 80; server_name my_nodejs_server; root /home/www/project_root; location / &#123; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginX-Proxy true; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade"; proxy_max_temp_file_size 0; proxy_pass http://my_nodejs_upstream/; proxy_redirect off; proxy_read_timeout 240s; &#125;&#125; 启动服务 12345678var express=require('express');var app =express();//配置服务端口var server = app.listen(9092, function () &#123;var host = server.address().address;var port = server.address().port;console.log('Example app listening at http://%s:%s';, host, port);&#125;);]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[node框架简要说明（express）]]></title>
+    <url>%2Fpost%2F448baf37.html</url>
+    <content type="text"><![CDATA[介绍 如官网所说要使用koa就要使得node的版本在7以上，但是本人亲测6也是可以的(当然只是一部分，如果要用异步等函数，还是需要升级的) node 版本管理 如此那么对于不同版本的node，我们有一种方式可以对其进行管理nvm 安装nvm（还有一种n，暂不做介绍，但是nvm只支持mac以及linux）(安了半天，才发现n也不支持window ==)(所以windows下要使用GNVM)12345安装方式有两种：$ curl https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh或者$ wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh 123456nvm install 0.10 //下载0.10版本nodenvm use 0.10 // 使用指定的版本nvm ls.nvm //查看已安装版本nvm currentv //当前版本nvm run 0.10.24 server.js //指定版本运行rm -rf ~/.nvm 卸载 GNVM(需要使用管理员权限才可以使用)下载32位64位 安装 把下载下来的gnvm.exe放到node.exe所在的目录下执行gnvm version 检查是否安装成功 命令12345678910111、初始化gnvm gnvm config INIT2、查看本地安装了什么版本 gnvm ls3、安装需要的版本 gnvm 4.4.0 6.9.2 7.3.04、 gnvm ls查看所有版本后 切换到想要的版本 gnvm use 6.9.2 123456789version :: Print the version number of gnvm.exeinstall :: Install any node.exe versionuninstall :: Uninstall local node.exe versionuse :: Use any version of the local already existsupdate :: Update latest node.exels :: List show all &lt;local&gt; &lt;remote&gt; node.exe versionnode-version :: Show &lt;global&gt; &lt;latest&gt; node.exe versionconfig :: Setter and getter registryhelp [command] :: Help about any command 代码 注意koa使用了es6语法，所有需要引入bable（在node大于版本7.6以上的是这么使用） 123456789101112131415161718192021const Koa = require('koa');const app = new Koa();const main = ctx =&gt; &#123; if (ctx.request.accepts('xml')) &#123; ctx.response.type = 'xml'; ctx.response.body = '&lt;data&gt;Hello World&lt;/data&gt;'; &#125; else if (ctx.request.accepts('json')) &#123; ctx.response.type = 'json'; ctx.response.body = &#123; data: 'Hello World' &#125;; &#125; else if (ctx.request.accepts('html')) &#123; ctx.response.type = 'html'; ctx.response.body = '&lt;p&gt;Hello World&lt;/p&gt;'; &#125; else &#123; ctx.response.type = 'text'; ctx.response.body = 'Hello World'; &#125;&#125;;app.use(main);app.listen(3000); 详解假设HTTP服务(和express没有太大区别)1234const Koa = require('koa');const app = new Koa();app.listen(3000); Context 对象 koa提供一个Context 对象，表示一次对话的上下文（res,req）。 123456789const Koa = require('koa');const app = new Koa();const main = ctx =&gt; &#123; //main函数用来设置ctx.response.body ctx.response.body = 'res';&#125;;app.use(main);//加载main函数app.listen(3000); ctx.response是响应 ctx.request是请求 response的类型 ctx.response.type可以判断类型 类型 xml json html text 文件(同express类似，koa也是fs)123456const fs = require('fs');const main = ctx =&gt; &#123; ctx.response.type = 'html'; ctx.response.body = fs.createReadStream('./demos/template.html');&#125;; 获取href ctx.request.path //这个可以用来获取get方式传参过来的参数 路由（koa-route）模块12345678910111213const route = require('koa-route');const about = ctx =&gt; &#123; ctx.response.type = 'html'; ctx.response.body = '&lt;a href="/"&gt;Index Page&lt;/a&gt;';&#125;;const main = ctx =&gt; &#123; ctx.response.body = 'Hello World';&#125;;app.use(route.get('/', main));//调用到的main函数app.use(route.get('/about', about));//调用的about函数 静态资源(路由)12345const path = require('path');const serve = require('koa-static');const main = serve(path.join(__dirname));app.use(main); 重定向12345const redirect = ctx =&gt; &#123; ctx.response.redirect('/');&#125;;app.use(route.get('/redirect', redirect)); 日志123const main = ctx =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`);&#125;; 中间件12345const logger = (ctx, next) =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`); next();&#125;app.use(logger); 中间件栈 多个中间件会形成一个栈结构（middle stack），以”先进后出”（first-in-last-out）的顺序执行。 最外层的中间件首先执行。 调用next函数，把执行权交给下一个中间件。 … 最内层的中间件最后执行。 执行结束后，把执行权交回上一层的中间件。 … 最外层的中间件收回执行权之后，执行next函数后面的代码 123456789101112131415161718192021const one = (ctx, next) =&gt; &#123; console.log('&gt;&gt; one'); next(); console.log('&lt;&lt; one');&#125;const two = (ctx, next) =&gt; &#123; console.log('&gt;&gt; two'); next(); console.log('&lt;&lt; two');&#125;const three = (ctx, next) =&gt; &#123; console.log('&gt;&gt; three'); next(); console.log('&lt;&lt; three');&#125;app.use(one);app.use(two);app.use(three); 输出：&gt;&gt; one&gt;&gt; two&gt;&gt; three&lt;&lt; three&lt;&lt; two&lt;&lt; one 异步中间件(async函数)1234const main = async function (ctx, next) &#123; ctx.response.type = 'html'; ctx.response.body = await fs.readFile('./demos/template.html', 'utf8');&#125;; 合成中间件(koa-compose)12345678910111213const compose = require('koa-compose');const logger = (ctx, next) =&gt; &#123; console.log(`$&#123;Date.now()&#125; $&#123;ctx.request.method&#125; $&#123;ctx.request.url&#125;`); next();&#125;const main = ctx =&gt; &#123; ctx.response.body = 'Hello World';&#125;;const middlewares = compose([logger, main]);//将logger和main合并成一个中间件app.use(middlewares); 500 错误1ctx.throw(500)//用来抛出500错误 返回状态1ctx.response.status = 200; 中间件错误处理1234567891011121314151617const handler = async (ctx, next) =&gt; &#123; try &#123; await next(); &#125; catch (err) &#123; ctx.response.status = err.statusCode || err.status || 500; ctx.response.body = &#123; message: err.message &#125;; &#125;&#125;;const main = ctx =&gt; &#123; ctx.throw(500);&#125;;app.use(handler);app.use(main); 运行出错会监听一个error事件123app.on('error', (err, ctx) =&gt; console.error('server error', err);); 使用try catch 是不能使用上面的方法的，这时候使用的是ctx.app.emit(‘error’, err, ctx);手动释放error 使用cookie12const n = Number(ctx.cookies.get('view') || 0) + 1;ctx.cookies.set('view', n); 获取post的请求参数123456789const koaBody = require('koa-body');const main = async function(ctx) &#123; const body = ctx.request.body; if (!body.name) ctx.throw(400, '.name required'); ctx.body = &#123; name: body.name &#125;;&#125;;app.use(koaBody()); 利用koa-body进行文件上传12345678910111213141516171819202122const os = require('os');const path = require('path');const koaBody = require('koa-body');const main = async function(ctx) &#123; const tmpdir = os.tmpdir(); const filePaths = []; const files = ctx.request.body.files || &#123;&#125;; for (let key in files) &#123; const file = files[key]; const filePath = path.join(tmpdir, file.name); const reader = fs.createReadStream(file.path); const writer = fs.createWriteStream(filePath); reader.pipe(writer); filePaths.push(filePath); &#125; ctx.body = filePaths;&#125;;app.use(koaBody(&#123; multipart: true &#125;)); 参考文献阮一峰教程 koa workshop kick-off-koa Koa Examples]]></content>
       <categories>
         <category>node</category>
       </categories>
@@ -438,30 +462,6 @@
       </categories>
       <tags>
         <tag>node</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[node 和 模板引擎（jade）]]></title>
-    <url>%2Fpost%2F34655c0e.html</url>
-    <content type="text"><![CDATA[express 框架里内嵌了Jade模板引擎。 安装 npm install jade –global 执行 创建一个 index.jade 的文件，然后执行 jade index.jade 这样做就会将jade文件转换为html文件 jade还有一些参数 jade -P index.jade 这样编辑出来的index.html文件是没有进行过压缩的 jade -P -w index.jade -w 只要保存就自动编辑 jade -P -w sample.jade -O sample.json -O 用来给jade文件传递对象或JSON文件，用来替换模板内的变量 语法编辑前12345doctype htmlhtml head body h1.titleClass#titleID My First Jade Page 编辑后1234567&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt;&lt;/head&gt; &lt;body&gt; &lt;h1 id="titleID" class="titleClass"&gt;My First Jade Page&lt;/h1&gt; &lt;/body&gt;&lt;/html&gt;]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>koa2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[koa2跨域]]></title>
-    <url>%2Fpost%2F8385bb90.html</url>
-    <content type="text"><![CDATA[“koa2-cors”: “^2.0.5”, 123456789101112131415const cors = require('koa2-cors');app.use(cors(&#123; origin: function(ctx) &#123; if (ctx.url === '/test') &#123; return false; &#125; return '*'; &#125;, exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'], maxAge: 5, credentials: true, allowMethods: ['GET', 'POST', 'DELETE'], allowHeaders: ['Content-Type', 'Authorization', 'Accept'],&#125;));]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>koa2</tag>
       </tags>
   </entry>
   <entry>
@@ -488,6 +488,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[koa2跨域]]></title>
+    <url>%2Fpost%2F8385bb90.html</url>
+    <content type="text"><![CDATA[“koa2-cors”: “^2.0.5”, 123456789101112131415const cors = require('koa2-cors');app.use(cors(&#123; origin: function(ctx) &#123; if (ctx.url === '/test') &#123; return false; &#125; return '*'; &#125;, exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'], maxAge: 5, credentials: true, allowMethods: ['GET', 'POST', 'DELETE'], allowHeaders: ['Content-Type', 'Authorization', 'Accept'],&#125;));]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+        <tag>koa2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[正则表达基础]]></title>
     <url>%2Fpost%2Fbf9483c3.html</url>
     <content type="text"><![CDATA[案例以*开始 “^The”：表示所有以”The”开始的字符串（”There”，”The cat”等）； 以*结束 “of despair$”：表示所以以”of despair”结尾的字符串； 严格匹配 “^abc$”：严格匹配，只有abc自己 包含（可以在中间位置） “notice”：表示任何包含”notice”的字符串。 重复 （无限制）（*）（代表0到无限个） “ab*”：表示一个字符串有一个a后面跟着零个或若干个b。（”a”, “ab”, “abbb”,……）； 重复（至少一个）（+）（代表1到无限个） “ab+”：表示一个字符串有一个a后面跟着至少一个b或者更多； 重复（0或者一个）（？）（代表0到一个） “ab?”：表示一个字符串有一个a后面跟着零个或者一个b； 重复（综合） “a?b+$”：表示在字符串的末尾有零个或一个a跟着一个或几个b。 可以利用{}表示重复的范围 “ab{2}”：表示一个字符串有一个a跟着2个b（”abb”）； “ab{2,}”：表示一个字符串有一个a跟着至少2个b； “ab{3,5}”：表示一个字符串有一个a跟着3到5个b。 ‘*’，’+’和’?’相当于”{0,}”，”{1,}”和”{0,1}”。 “|”表示或‘.’可以替代任何字符：[] 表示任意一个 “a.[0-9]”：表示一个字符串有一个”a”后面跟着一个任意字符和一个数字； “^.{3}$”：表示有任意三个字符的字符串（长度为3个字符）； “[ab]”：表示一个字符串有一个”a”或”b”（相当于”a¦b”）； “[a-d]”：表示一个字符串包含小写的’a’到’d’中的一个（相当于”a¦b¦c¦d”或者”[abcd]”）； “^[a-zA-Z]”：表示一个以字母开头的字符串； “[0-9]%”：表示一个百分号前有一位的数字； “,[a-zA-Z0-9]$”：表示一个字符串以一个逗号后面跟着一个字母或数字结束。]]></content>
@@ -499,15 +511,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node编码规范]]></title>
-    <url>%2Fpost%2F46cb4dd.html</url>
-    <content type="text"><![CDATA[node编码规范 一、缩进&gt; 两个空格缩进，而不是tab缩进 二、变量声明&gt; 每一行声明必须带有var 三、空格&gt; 在操作符前后需要加空格（+，——，*，%，=等等）。此外小括号前后要加空格 123if (true) &#123; // some code&#125; 四、单双引号的使用&gt; 字符串使用单引号，json使用双引号 五、大括号的位置&gt; 大括号无需另起一行 六、逗号&gt; 逗号如果不在行尾，需要一个空格。 123var help = &#123; foo: 'hep', bar: 'me'&#125; 七、分号&gt; 给表达式结尾添加分号，不在行尾需要一个空格 八、命名规范&gt; 命名的主要范畴有变量，常量，方法，类，文件，包等 1、变量命名&gt; 采用小驼峰命名 adminUser等等 2、方法命名&gt; 方法名也是小驼峰法，但是采用的是动词或者判断性词语 3、类命名&gt; 采用大驼峰法命名 AdminUser 4、常量命名&gt; 单词的所有字母大写，用下划线分割 5、文件命名&gt; 小写，下划线分割 6、包名&gt; 不要包含node或者js的字样 九、比较操作&gt; 如果是无容忍的情况，请使用‘===’代替‘==’ 十、字面量&gt; 使用{}【】代替new Object（）和new Array（），不要调用string，bool，number对象类型。 十一、作用域&gt; 慎用with和eval · 十二、数组和对象1、字面格式量&gt; 如果对象中分行，一行只能有一个元素 2、for in循环&gt; 请对对象使用，不要对数组使用 3、 不要把数组当做对象来使用十二、异步&gt; 异步回调的第一个参数应该是错误提示 123function （err，data）&#123; &#125; &gt; 执行传入的回调函数，不能执行多次 十三、类与模块1、类继承&gt; 一般情况下，我们采用Node推荐的类继承方式 2、导出&gt; module.exports = Class; 十四、注解规范&gt; dox的注释规范。]]></content>
+    <title><![CDATA[node版本管理]]></title>
+    <url>%2Fpost%2Ff9ae89b2.html</url>
+    <content type="text"><![CDATA[linux下使用nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 1wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash 安装完后，如果是用xshell连远程主机的话，先重连一次，不然会发现提示找不到nvm命令 1source ~/.bashrc 列出所有版本号12nvm ls-remote 安装指定版本 1nvm install v7.9.0 切换版本 1nvm use v7.8.0 切换版本 1nvm current 查看版本 1nvm ls]]></content>
       <categories>
         <category>node</category>
       </categories>
       <tags>
         <tag>node</tag>
-        <tag>规范</tag>
       </tags>
   </entry>
   <entry>
@@ -534,26 +545,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[node启动在一个服务中]]></title>
-    <url>%2Fpost%2Fea010e66.html</url>
-    <content type="text"><![CDATA[在实验koa2时有这么一句话1app.use(require('koa-static')(__dirname + '/public/static')) 把打包后的文件放在这里面]]></content>
+    <title><![CDATA[redis]]></title>
+    <url>%2Fpost%2F7b25d017.html</url>
+    <content type="text"><![CDATA[下载需要下载一个redis，或者是连接的那个服务器有redis cnpm i redis 我的本机安装目录C:\Program Files\Redis 执行：redis-server.exe 1234567891011121314151617//使用redis，用来缓存数据const redis = require('redis');const client = redis.createClient(&#123;host:'192.168.14.6', port: 6379,no_ready_check:true&#125;);client.on("error", function (err) &#123; console.log("redis client连接失败",err);&#125;);client.on('ready', function (res) &#123; console.log('client ready');&#125;);client.on('connect', function () &#123; client.set("var_2", "var_2_val", function () &#123; var read_var_2=client.get("var_2"); console.log("第二次读取到的值："+read_var_2); &#125;); client.quit();&#125;); 这个里面设置了过期时间使用的redis.expire12345678910router.get('/', function (ctx, next) &#123; let render = null; render = tableData.tableData(tableJson); render.count = render.data.length; render.num = 10; redis.set('var_2', JSON.stringify(render)); redis.expire('var_2', 300); render.data = render.data.slice(0,9); ctx.body = render;&#125;);]]></content>
       <categories>
-        <category>node</category>
+        <category>redis</category>
       </categories>
       <tags>
-        <tag>node</tag>
-        <tag>koa2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[node]]></title>
-    <url>%2Fpost%2F857fe845.html</url>
-    <content type="text"><![CDATA[node文件整理 链接数据库（Mysql） 1234567891011121314var mysql = require('mysql');var connection = mysql.createConnection(&#123; //链接数据库的配置 host: 'localhost', //IP user: 'root', //用户名 password: '123456', //密码 database: 'test' //数据库名&#125;);connection.connect(); //开启链接connection.query('SELECT 1 + 1 AS solution', //写入sqlfunction(error, results) &#123; //返回的数据（result）报错信息（error） if (error) throw error; console.log('The solution is: ', results[0].solution)；&#125;);connection.end(); //关闭链接 请求接口 1234567891011121314//请求musus接口const request = require('request');const hera_api = require('../config/hera');exports.dv_dataset = function (req,res)&#123; res.status(200); var id= req.url.split("?")[1]; request(hera_api.hera_api+'lineage/dataset?' + id , function (error, response, body) &#123; console.log(hera_api.hera_api+'lineage/dataset?' + id); console.log(error); res.json(body); &#125;);&#125;; 编写接口 12345678910111213141516171819202122232425262728293031var express=require('express');var app =express();var bodyParser = require('body-parser');app.use(bodyParser.json(&#123;limit: '1mb'&#125;)); //body-parser 解析json格式数据app.use(bodyParser.urlencoded(&#123; //此项必须在 bodyParser.json 下面,为参数编码 extended: true&#125;));//mysql//mysqlconst mysql = require('mysql');const sql = require("../config/mysql");const client = sql.config_sql;exports.source_del =function (req,res) &#123; var datas = req.body; var source_del_sql = "DELETE FROM dict_datasource WHERE id = " + datas.id; client.query(source_del_sql, (err,datas) =&gt; &#123; res.status(200); if(err == null)&#123; res.json(&#123; status: true, data : datas &#125;); &#125;else &#123; res.json(&#123; status: false &#125;); &#125;&#125;);&#125;; 在server.js中引入 12345678910111213141516171819202122232425262728293031323334353637/*** Created by 尹雪松 on 2017/11/15.*/var express=require('express');var app =express();var bodyParser = require('body-parser');app.use(bodyParser.json(&#123;limit: '1mb'&#125;)); //body-parser 解析json格式数据app.use(bodyParser.urlencoded(&#123; //此项必须在 bodyParser.json 下面,为参数编码extended: true&#125;));//设置跨域访问app.all('*', function(req, res, next) &#123;res.header("Access-Control-Allow-Origin", "*");res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");res.header("X-Powered-By",' 3.2.1');res.header("Content-Type", "application/json;charset=utf-8");next();&#125;);//引入外部文件接口const jobData = require("./job/job");app.post('/api/jobTable',jobData.job_data);//job table//配置服务端口var server = app.listen(9092, function () &#123;var host = server.address().address;var port = server.address().port;console.log('Example app listening at http://%s:%s';, host, port);&#125;); 管理(pm2) 123下载：npm -g i pm2 查看日志： pm2 logs监控： pm2 monit 12345678910111213141516171819202122启动： pm2 +nginxupstream my_nodejs_upstream &#123; server 127.0.0.1:3001;&#125;server &#123; listen 80; server_name my_nodejs_server; root /home/www/project_root; location / &#123; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginX-Proxy true; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade"; proxy_max_temp_file_size 0; proxy_pass http://my_nodejs_upstream/; proxy_redirect off; proxy_read_timeout 240s; &#125;&#125; 启动服务 12345678var express=require('express');var app =express();//配置服务端口var server = app.listen(9092, function () &#123;var host = server.address().address;var port = server.address().port;console.log('Example app listening at http://%s:%s';, host, port);&#125;);]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
+        <tag>服务器</tag>
+        <tag>redis</tag>
       </tags>
   </entry>
 </search>

@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/e10abc6.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/e7f1df7b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/e10abc6.html" itemprop="url">vue中使用sass</a></h1>
+                <a class="post-title-link" href="/post/e7f1df7b.html" itemprop="url">vue中操作DOM</a></h1>
         
 
         <div class="post-meta">
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  153
                 </span>
               
 
@@ -417,12 +417,10 @@
       
         
           
-            <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="keyword">node</span><span class="title">-sass</span> --save-dev</span><br><span class="line">npm install sass-loader --save-dev</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
-<p>打开webpack.base.config.js在loaders里面加上  module – rules</p>
+            <h2 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h2><blockquote>
+<p>可以在mounted中挂载<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;         <span class="comment">//this.$nextTick是在下次DOM更新循环结束时调用延迟回调函数。异步函数</span></span><br><span class="line">            <span class="keyword">this</span>.loadData();　　　　　　　　　　<span class="comment">//DOM加载就绪，后调用loadData方法进行数据更新&lt;br&gt;　　　　　　　　//想要更新后的获取dom　　　　　　　　　　　　　　//此时若获取更新后dom数据将会报错，数据为undefined；</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">rule<span class="variable">s:</span> [</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.vue$/,</span><br><span class="line">        loader: <span class="string">'vue-loader'</span>,</span><br><span class="line">        option<span class="variable">s:</span> vueLoaderConfig</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.js$/,</span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.(png|jpe?g|gif|svg)(\?.*)?$/,</span><br><span class="line">        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">        query: &#123;</span><br><span class="line">          limi<span class="variable">t:</span> <span class="number">10000</span>,</span><br><span class="line">          name: utils.assetsPath(<span class="string">'img/[name].[hash:7].[ext]'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.scss$/,</span><br><span class="line">        loader<span class="variable">s:</span> [<span class="string">"style"</span>, <span class="string">"css"</span>, <span class="string">"sass"</span>]</span><br><span class="line">      &#125;,//这里这里看这里，主要引入这一段</span><br><span class="line">      &#123;</span><br><span class="line">        tes<span class="variable">t:</span> /\.(woff2?|eot|ttf|otf)(\?.*)?$/,</span><br><span class="line">        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">        query: &#123;</span><br><span class="line">          limi<span class="variable">t:</span> <span class="number">10000</span>,</span><br><span class="line">          name: utils.assetsPath(<span class="string">'fonts/[name].[hash:7].[ext]'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.addEventListener)&#123;</span><br><span class="line">                <span class="built_in">document</span>.addEventListener(<span class="string">'DOMMouseScroll'</span>,<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                &#125;,<span class="literal">false</span>);</span><br><span class="line">            &#125;<span class="regexp">//</span>W3C</span><br><span class="line">            <span class="built_in">window</span>.onmousewheel=<span class="built_in">document</span>.onmousewheel=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                let top = <span class="built_in">document</span>.getElementById(<span class="string">"bottoms"</span>).scrollTop;</span><br><span class="line">                <span class="built_in">console</span>.log(top);</span><br><span class="line">                <span class="keyword">this</span>.$refs.add.style.marginTop = top + <span class="number">10</span> + <span class="string">"px"</span>;</span><br><span class="line">                <span class="regexp">//</span> <span class="built_in">document</span>.getElementById(<span class="string">"rights"</span>).style.marginTop = top+<span class="string">"px"</span>;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.add.style);</span><br><span class="line"></span><br><span class="line">            &#125;;<span class="regexp">//</span>IE/Opera/Chrome</span><br></pre></td></tr></table></figure>
           
         
       
@@ -648,7 +646,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d0acb7fa.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2fe08ed3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -667,7 +665,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/d0acb7fa.html" itemprop="url">element-ui</a></h1>
+                <a class="post-title-link" href="/post/2fe08ed3.html" itemprop="url">Vuex（关于vue的状态管理模式）</a></h1>
         
 
         <div class="post-meta">
@@ -733,7 +731,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  253
+                  303
                 </span>
               
 
@@ -772,21 +770,205 @@
       
         
           
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i <span class="keyword">element</span>-ui <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><blockquote>
-<p>在main.js 中</p>
+            <h2 id="介绍vuex"><a href="#介绍vuex" class="headerlink" title="介绍vuex"></a>介绍vuex</h2><blockquote>
+<p>vuex是一个为了vue开发的状态管理模式，它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化，</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="使用菜单导航"><a href="#使用菜单导航" class="headerlink" title="使用菜单导航"></a><a href="https://segmentfault.com/a/1190000007810151" target="_blank" rel="noopener">使用菜单导航</a></h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/github_26672553/article/details/53176778" target="_blank" rel="noopener">这篇文章不错</a></p>
+<h3 id="状态管理模式"><a href="#状态管理模式" class="headerlink" title="状态管理模式"></a>状态管理模式</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// state</span></span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="keyword">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// view</span></span><br><span class="line">  template: `</span><br><span class="line">    &lt;<span class="keyword">div</span>&gt;&#123;&#123; <span class="keyword">count</span> &#125;&#125;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  `,</span><br><span class="line">  <span class="comment">// actions</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment () &#123;</span><br><span class="line">      <span class="keyword">this</span>.<span class="keyword">count</span>++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>index里面添加路由，  router是使用路由模式为true</p>
+<p>如上所示 state为驱动应用的数据源，view以声明的方式将state映射到视图，actions为响应在view上的用户输入导致的状态变化</p>
 </blockquote>
 <blockquote>
-<p>但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下</p>
+<p>单向数据流</p>
 </blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="elementUI关于树状图的增删改查，局部刷新问题"><a href="#elementUI关于树状图的增删改查，局部刷新问题" class="headerlink" title="elementUI关于树状图的增删改查，局部刷新问题"></a>elementUI关于树状图的增删改查，局部刷新问题</h2><p><a href="https://segmentfault.com/a/1190000011574698" target="_blank" rel="noopener">链接在这里</a></p>
-<h2 id="elementUI关于tree的使用"><a href="#elementUI关于tree的使用" class="headerlink" title="elementUI关于tree的使用"></a>elementUI关于tree的使用</h2><p><a href="https://segmentfault.com/q/1010000012345769/a-1020000012347029" target="_blank" rel="noopener">getCheckedKeys不能获取父节点的key</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR;  </span><br><span class="line"><span class="meta">　　Actions--&gt;</span><span class="bash">State;   </span></span><br><span class="line"><span class="meta">　　State--&gt;</span><span class="bash">View;  </span></span><br><span class="line"><span class="meta">　　View--&gt;</span><span class="bash">Actions;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如上所示为单向数据流，但是当我们有多个组件共享状态时，单向数据流的简洁性很容易被破坏。</p>
+</blockquote>
+<blockquote>
+<p>这时会有两个需求多个视图依赖于同一状态，来自不同视图的行为需要变更同一状态。</p>
+</blockquote>
+<blockquote>
+<p>为了方便我们把组件的共享状态抽取出来，以一个全局单例模式管理（Vuex）</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> vuex --save</span><br></pre></td></tr></table></figure>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2e50297d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/2e50297d.html" itemprop="url">python2.7执行excel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  75
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装xlrd、xlwt、xlutils"><a href="#安装xlrd、xlwt、xlutils" class="headerlink" title="安装xlrd、xlwt、xlutils"></a>安装xlrd、xlwt、xlutils</h3><p>xlrd：是python从excel读数据的第三方控件；<br>xlwt：是python从excel写数据的第三方控件；<br>xlutils：是python使用xlrd、xlwt的工具箱。若安装不成功，可能原因是需要安装setuptools。</p>
+<p>[root@vm4 python]# pip  install xlrd</p>
+<p>[root@vm4 python]# pip  install xlwt</p>
+<p>[root@vm4 python]# pip  install xlutils</p>
 
           
         
@@ -1010,7 +1192,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ef695a00.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3609924.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1029,7 +1211,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/ef695a00.html" itemprop="url">eslint语法解决</a></h1>
+                <a class="post-title-link" href="/post/3609924.html" itemprop="url">GitHubPages + Hexo+Next构建你自己的博客</a></h1>
         
 
         <div class="post-meta">
@@ -1064,8 +1246,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
                   </a>
                 </span>
 
@@ -1095,7 +1277,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  95
+                  674
                 </span>
               
 
@@ -1111,7 +1293,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -1134,240 +1316,30 @@
       
         
           
-            <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在webpack.base.conf.js里面删掉下面:</span><br><span class="line"></span><br><span class="line">preLoaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除以下代码就可以</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">test</span>: /\.(js|vue)$/,</span><br><span class="line">    loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">    enforce: <span class="string">'pre'</span>,</span><br><span class="line">    include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)],</span><br><span class="line">    options: &#123;</span><br><span class="line">      formatter: <span class="built_in">require</span>(<span class="string">'eslint-friendly-formatter'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>然后需要重新编辑生效</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/e5ac5920.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/e5ac5920.html" itemprop="url">Python3基础语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  868
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = 3</span><br><span class="line"><span class="keyword">if</span> age &gt;= 18:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'adult'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;= 6:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'teenager'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'kid'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]:</span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + x</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="built_in">n</span> = <span class="number">99</span></span><br><span class="line">while <span class="built_in">n</span> &gt; <span class="symbol">0:</span></span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + <span class="built_in">n</span></span><br><span class="line">    <span class="built_in">n</span> = <span class="built_in">n</span> - <span class="number">2</span></span><br><span class="line">print(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n &lt;= <span class="number">100</span>:</span><br><span class="line">    <span class="keyword">if</span> n &gt; <span class="number">10</span>: # 当n = <span class="number">11</span>时，条件满足，执行<span class="keyword">break</span>语句</span><br><span class="line">        <span class="keyword">break</span> # <span class="keyword">break</span>语句会结束当前循环</span><br><span class="line">    print(n)</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">print(<span class="string">'END'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">10</span>:</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>: # 如果n是偶数，执行<span class="keyword">continue</span>语句</span><br><span class="line">        <span class="keyword">continue</span> # <span class="keyword">continue</span>语句会直接继续下一轮循环，后续的print()语句不会执行</span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure>
-<h2 id="dict-字典"><a href="#dict-字典" class="headerlink" title="dict(字典)"></a>dict(字典)</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">d</span> = &#123;<span class="string">'Michael'</span>: 95, <span class="string">'Bob'</span>: 75, <span class="string">'Tracy'</span>: 85&#125;</span><br><span class="line">d[<span class="string">'Michael'</span>]</span><br></pre></td></tr></table></figure>
-<h5 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h5><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d.<span class="built_in">get</span>(<span class="string">"Michael"</span>);</span><br><span class="line">#<span class="built_in">key</span>不存在返回None，或者自己指定的<span class="built_in">value</span></span><br></pre></td></tr></table></figure>
-<h5 id="pop-key"><a href="#pop-key" class="headerlink" title="pop(key)"></a>pop(key)</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d.<span class="built_in">pop</span>('Bob')</span><br><span class="line"></span><br><span class="line"># 要删除一个<span class="built_in">key</span>，用<span class="built_in">pop</span>(<span class="built_in">key</span>)方法，对应的value也会从dict中删除：</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。</p>
-</blockquote>
-<blockquote>
-<p>和list比较，dict有以下几个特点：</p>
-</blockquote>
-<ul>
-<li>查找和插入的速度极快，不会随着key的增加而变慢；</li>
-<li>需要占用大量的内存，内存浪费多。</li>
+            <h3 id="github准备"><a href="#github准备" class="headerlink" title="github准备"></a>github准备</h3><p>新建一个项目：你的用户名.github.io（项目名称）</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ul>
+<li>安装node</li>
+<li>npm install hexo-cli -g</li>
+<li>hexo init 你的用户名.github.io // 尽量和Github仓库使用同一个名称</li>
+<li>cd 你的用户名.github.io</li>
+<li>hexo s</li>
+<li>打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></li>
+<li></li>
 </ul>
-<blockquote>
-<p>而list相反：</p>
-</blockquote>
-<ul>
-<li>查找和插入的时间随着元素的增加而增加；</li>
-<li>占用空间小，浪费内存很少。</li>
+<h3 id="Next主题安装"><a href="#Next主题安装" class="headerlink" title="Next主题安装"></a>Next主题安装</h3><ul>
+<li>Next主题是iissnan所创作的一个Hexo主题，以简洁为主</li>
+<li>cd xxx.github.io </li>
+<li>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next</li>
 </ul>
+<h5 id="config-yml站点配置"><a href="#config-yml站点配置" class="headerlink" title="_config.yml站点配置"></a>_config.yml站点配置</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line">    <span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line">    <span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Site</span></span><br><span class="line"><span class="attr">    title:</span> <span class="string">最晚的开始</span>   <span class="comment">#站点名称</span></span><br><span class="line"><span class="attr">    subtitle:</span> <span class="string">所有的为时已晚都是开始的最好时候</span>  <span class="comment">#副标题</span></span><br><span class="line">    <span class="comment">#个人描述</span></span><br><span class="line"><span class="attr">    description:</span> <span class="string">My</span> <span class="string">goal</span> <span class="string">is</span> <span class="string">not</span> <span class="string">write</span> <span class="string">code.if</span> <span class="string">we</span> <span class="string">could</span> <span class="string">ship</span> <span class="string">products</span> <span class="string">and</span> <span class="string">make</span> <span class="string">all</span> <span class="string">this</span> <span class="string">money</span> <span class="string">without</span> <span class="string">writing</span> <span class="string">any</span> <span class="string">code,we</span> <span class="string">could.Your</span> <span class="string">job</span> <span class="string">is</span> <span class="string">ship</span> <span class="string">products</span> <span class="string">EXACTLY</span> <span class="string">on</span> <span class="string">time.It</span> <span class="string">doesn’t</span> <span class="string">matter</span> <span class="string">whether</span> <span class="string">you</span> <span class="string">are</span> <span class="string">a</span> <span class="string">developer,tester,program</span> <span class="string">manager,product</span> <span class="string">manager</span> <span class="string">whatever.Everybody’s</span> <span class="string">job</span> <span class="string">is</span> <span class="string">the</span> <span class="string">same.</span> </span><br><span class="line"><span class="attr">    author:</span> <span class="string">Jack_lin</span>  <span class="comment">#作者</span></span><br><span class="line"><span class="attr">    language:</span> <span class="string">zh-Hans</span>  <span class="comment">#语言</span></span><br><span class="line"><span class="attr">    timezone:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># URL   </span></span><br><span class="line">    <span class="comment">#绑定域名后，要创建 sitemap.xml 时再配置该项 </span></span><br><span class="line">    <span class="comment">## If your site is put in a subdirectory, set url as   'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">    root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">    permalink_defaults:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Directory   #目录不用修改</span></span><br><span class="line"><span class="attr">    source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">    public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">    tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">    archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">    category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">    code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">    i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">    skip_render:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Writing</span></span><br><span class="line">    <span class="comment"># 文章布局、写作格式的定义，不修改</span></span><br><span class="line"><span class="attr">    new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">    default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">    titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">    external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">    filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">    render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    highlight:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    tab_replace:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">    default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">    category_map:</span></span><br><span class="line"><span class="attr">    tag_map:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Date / Time format  #时间格式不用修改</span></span><br><span class="line">    <span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line">    <span class="comment">## You can customize the date format as defined in</span></span><br><span class="line">    <span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">    date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">    time_format:</span> <span class="attr">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pagination   #每页显示文章数，可以自行定义</span></span><br><span class="line">    <span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">    per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">    pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Extensions</span></span><br><span class="line">    <span class="comment">#配置站点时，所使用的主题和插件，切换主题可以在这里设置</span></span><br><span class="line">    <span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line">    <span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">    theme:</span> <span class="string">next</span> <span class="string">//在这里切换主题</span></span><br><span class="line">     <span class="comment"># theme: landscape</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 头像， 在xxx.github.io/source 下相对路径，若source文件夹下没有uploads，就新建一个名为uploads文件夹，具体见下面截图</span></span><br><span class="line"><span class="attr">    avatar:</span> <span class="string">/uploads/images/avatar.png</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Deployment</span></span><br><span class="line">    <span class="comment">#这里是部署到Github上的设置</span></span><br><span class="line">    <span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">    deploy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span>  <span class="comment">#git提交</span></span><br><span class="line"><span class="attr">    repo:</span> <span class="attr">https://github.com/123sunxiaolin/123sunxiaolin.github.io.git</span>  <span class="comment">#已创建的Github仓库</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span> <span class="comment">#提交到的分支</span></span><br></pre></td></tr></table></figure>
+<p>如果报错: ERROR Deployer not found: git</p>
 <blockquote>
-<p>所以，dict是用空间来换取时间的一种方法。</p>
+<p>npm install –save hexo-deployer-git</p>
 </blockquote>
-<blockquote>
-<p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><blockquote>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
 </blockquote>
-<blockquote>
-<p>这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。</p>
-</blockquote>
-<blockquote>
-<p>要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key</p>
-</blockquote>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><blockquote>
-<p>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="add-key"><a href="#add-key" class="headerlink" title="add(key)"></a>add(key)</h5><blockquote>
-<p>通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果：</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s.add(<span class="number">4</span>)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line">&gt;&gt;&gt; s.add(<span class="number">4</span>)</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="remove-key"><a href="#remove-key" class="headerlink" title="remove(key)"></a>remove(key)</h5><blockquote>
-<p>通过remove(key)方法可以删除元素：</p>
-</blockquote>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; s.remove(<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; s</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s1 = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">&gt;&gt;&gt; s2 = set([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">&gt;&gt;&gt; s1 &amp; s2</span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt;&gt;&gt; s1 | s2</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。试试把list放入set，看看是否会报错。</p>
-</blockquote>
-<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h5 id="int-函数可以把其他数据类型转换为整数"><a href="#int-函数可以把其他数据类型转换为整数" class="headerlink" title="int()函数可以把其他数据类型转换为整数"></a>int()函数可以把其他数据类型转换为整数</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="string">'123'</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="number">12.34</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; float(<span class="string">'12.34'</span>)</span><br><span class="line"><span class="number">12.34</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; str(<span class="number">1.23</span>)</span><br><span class="line"><span class="string">'1.23'</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; str(<span class="number">100</span>)</span><br><span class="line"><span class="string">'100'</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; bool(<span class="number">1</span>)</span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; bool(<span class="string">''</span>)</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+<p>打包的项目在public中</p>
 
           
         
@@ -1959,7 +1931,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1adaadca.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/47867b98.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1978,7 +1950,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/1adaadca.html" itemprop="url">编码规范</a></h1>
+                <a class="post-title-link" href="/post/47867b98.html" itemprop="url">编程</a></h1>
         
 
         <div class="post-meta">
@@ -2044,7 +2016,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  129
+                  134
                 </span>
               
 
@@ -2083,7 +2055,20 @@
       
         
           
-            <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attribute">SUCCESS</span>: 0,</span><br><span class="line">   <span class="attribute">URL_INVALID</span>: 1001, //请求地址无效</span><br><span class="line">   <span class="attribute">AUTH_FAIL</span>: 1002, //鉴权失败</span><br><span class="line">   <span class="attribute">NO_PERMISSION</span>: 1003, //无此权限</span><br><span class="line">   <span class="attribute">PARAM_INVALID</span>: 1004, //参数无效</span><br><span class="line">   <span class="attribute">SMS_SEND_FAIL</span>: 1005, //短信发送失败</span><br><span class="line">   <span class="attribute">ACT_CODE_INVALID</span>: 1006, //验证码无效</span><br><span class="line">   <span class="attribute">ACCOUNT_INVALID</span>: 1007, //帐号或密码错误</span><br><span class="line">   <span class="attribute">SESSION_TIMEOUT</span>: 1009, //未登录或登录超时</span><br><span class="line">   <span class="attribute">DATA_EXIST</span>: 1011, //数据已存在</span><br><span class="line">   <span class="attribute">DATA_INEXIST</span>: 1012, //数据不存在</span><br><span class="line">   <span class="attribute">DATA_INEXIST_ON_CURR_CONDITIONS</span>: 1013, //当前条件下数据不存在</span><br><span class="line">   <span class="attribute">DB_OPER</span>: 9001, //数据库操作异常</span><br><span class="line">   <span class="attribute">DB_CONN</span>: 9002, //数据库连接异常</span><br><span class="line">   <span class="attribute">UNKNOW</span>: 9999 //未知异常</span><br></pre></td></tr></table></figure>
+            <ul>
+<li>尊重对象所有权</li>
+<li>避免全局变量</li>
+<li><p>避免与null进行比较</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortSArray</span>(<span class="params">values</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(values != <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="comment">//这是不可取的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortArray</span>(<span class="params">values</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(values <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line">        <span class="comment">//这是可取的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用常量</p>
+</li>
+</ul>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">time</span> = &#123;</span><br><span class="line">    time1: <span class="number">12</span>,</span><br><span class="line">    time2: <span class="number">13</span></span><br><span class="line">&#125;</span><br><span class="line">console.<span class="built_in">log</span>(<span class="built_in">time</span>.time1);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="built_in">time</span>.time2);</span><br><span class="line"><span class="comment">//而不是使用</span></span><br><span class="line"></span><br><span class="line">console.<span class="built_in">log</span>(<span class="number">12</span>);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="number">13</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//关键在于重复值，用户界面字符串，URLs，任意可能会更改的值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>避免全局查找（document等等）</li>
+</ul>
+
           
         
       
@@ -2264,6 +2249,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>  本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
