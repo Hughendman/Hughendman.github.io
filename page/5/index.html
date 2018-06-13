@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/Lua语言简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/koa2跨域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/Lua语言简介/" itemprop="url">Lua语言简介</a></h1>
+                <a class="post-title-link" href="/2018/06/09/koa2跨域/" itemprop="url">koa2跨域</a></h1>
         
 
         <div class="post-meta">
@@ -378,219 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,002
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Lua是一门小巧的脚本语言，由巴西里约热内卢天主教大学的Roberto Ierusalimschy等人于1993年开发，在现代企业开发中Lua通常被作为胶水语言，在游戏领域应用尤为频繁。</p>
-<h3 id="Lua中的数据类型"><a href="#Lua中的数据类型" class="headerlink" title="Lua中的数据类型"></a>Lua中的数据类型</h3><p>Lua中定义以下几种数据类型</p>
-<h5 id="1、Nil"><a href="#1、Nil" class="headerlink" title="1、Nil"></a>1、Nil</h5><p>nil是一个特殊的数据类型，它只有一个值，就是nil，他的作用就是为了区别其他的值</p>
-<h5 id="2、Boolean"><a href="#2、Boolean" class="headerlink" title="2、Boolean"></a>2、Boolean</h5><p>和其他语言一样，布尔值只用true和false两个值</p>
-<h5 id="3、Number"><a href="#3、Number" class="headerlink" title="3、Number"></a>3、Number</h5><p>用来表示实数的类型，包含整数和浮点数，Lua中number类型可以表示32位整数</p>
-<h5 id="4、String"><a href="#4、String" class="headerlink" title="4、String"></a>4、String</h5><p>string类型用来表示一个字符串，Lua中的字符串是不可变类型，此外Lua也存在数字和字符串之间的隐式转换<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'10'</span>+<span class="number">1</span>)</span></span>  <span class="comment">//11</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="5、table"><a href="#5、table" class="headerlink" title="5、table"></a>5、table</h5><p>table类型实现了一种特殊的数组，特殊之处在于该数字的索引方式，传统的数组索引是通过数组下标来实现的，二table不仅能以整数来索引，还可以使用字符串和其他类型的值进行索引。<br>table没有固定的大小，可以在里面放入任意数量的元素，下面的例子简单展示了table的用法</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> = &#123;&#125; <span class="comment">//声明一个table</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="string">"name"</span>] = <span class="string">"yinxs"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="number">1</span>])</span></span><span class="comment">//10</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="string">"name"</span>])</span></span><span class="comment">//yinxs</span></span><br></pre></td></tr></table></figure>
-<h3 id="Lua定义一个函数"><a href="#Lua定义一个函数" class="headerlink" title="Lua定义一个函数"></a>Lua定义一个函数</h3><p>Lua没有使用大括号来规定函数的作用域，而是使用end关键字来作为结束的标记</p>
-<p>eg：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="title">a</span>)</span></span><br><span class="line">    <span class="built_in">local</span> sun = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipairs(<span class="keyword">a</span>) <span class="built_in">do</span></span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="literal">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>es6中有关于函数的新特性和Lua中的函数有一些相似之处：</p>
-<ul>
-<li>多重返回值</li>
-<li>变长参数</li>
-</ul>
-<p>一个Lua函数可以返回多个值，值需要在return后面列出需要返回的值即可，用逗号隔开</p>
-<p>eg：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">funcion foo()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a"</span>,<span class="string">"b"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>尝试使用print语句来打印foo函数的执行结果，会输出“a”，“b”。<br>如果使用表达书的形式来调用foo函数，会依照解构赋值额原则来赋值</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">x</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="string">"b"</span>被丢掉</span><br><span class="line">x,<span class="attr">y</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span></span><br><span class="line">x,y,<span class="attr">z</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span>,<span class="attr">z</span> = nil</span><br></pre></td></tr></table></figure>
-<p>可变参数，这个特性即为es6中的spread运算符，函数可以接收任意长度的参数。</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function add(...)</span><br><span class="line">local s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipirs <span class="meta">&#123;...&#125;</span> <span class="keyword">do</span></span><br><span class="line">        s = s+v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">print(add(<span class="number">3</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">25</span>,<span class="number">12</span>) //<span class="number">54</span></span><br></pre></td></tr></table></figure>
-<h3 id="Lua中的协程"><a href="#Lua中的协程" class="headerlink" title="Lua中的协程"></a>Lua中的协程</h3><p>Lua设计之初就提供了对协程的支持，跟同时期的其他编程语言相比无疑是超前的，Lua将所有协程相关的函数放在一个名为coroutine的table中，一个协程其实就是一个特殊线程，它可以由用户控制状态的切换。</p>
-<h5 id="1、coroutine-create"><a href="#1、coroutine-create" class="headerlink" title="1、coroutine.create()"></a>1、coroutine.create()</h5><p>创建一个coroutine 并返回，参数是一个函数。<br>eg:</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line">    <span class="built_in">print</span>(i);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br></pre></td></tr></table></figure>
-<p>我们声明了一个log方法，并用其作为参数创建一个协程，这代表print方法的执行可以被用户终端或恢复。</p>
-<h5 id="2、coroutine-resume"><a href="#2、coroutine-resume" class="headerlink" title="2、coroutine.resume()"></a>2、coroutine.resume()</h5><p>重启coroutine，和create配合使用<br>上面的diamante新建了一个协程之后并不会直接运行，而是要靠resume方法来启动。</p>
-<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coroutine.<span class="keyword">resume</span>(<span class="keyword">c</span><span class="number">0</span>,<span class="number">1</span>) -<span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h5 id="3、coroutine-yield"><a href="#3、coroutine-yield" class="headerlink" title="3、coroutine.yield()"></a>3、coroutine.yield()</h5><p>将coroutine设置为挂起状态，可以由resume来恢复执行</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line"> <span class="keyword">for</span> i=<span class="number">1</span>,<span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    coroutine.yielld()</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">1</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">2</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">status</span>(co) //suspended</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">running</span>()) // thread:<span class="number">0x7fd637c02940</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>coroutine.status()为查看coroutine的状态</p>
-<p>一个协程可以有三种不同的状态</p>
-<ul>
-<li>suspended</li>
-<li>running</li>
-<li>dead</li>
-</ul>
-<p>当创建一个协程后，协程默认处于suspended状态，使用yield挂起后状态同样转换为suspended。</p>
-<h5 id="4、coroutine-running"><a href="#4、coroutine-running" class="headerlink" title="4、coroutine.running()"></a>4、coroutine.running()</h5><p>返回当前协程的线程号</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node  和 文件（file）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/node  和 文件（file）/" itemprop="url">node  和 文件（file）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  160
+                  56
                 </span>
               
 
@@ -629,200 +417,8 @@
       
         
           
-            <h2 id="fs"><a href="#fs" class="headerlink" title="fs"></a>fs</h2><h4 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h4><blockquote>
-<p>实现方法<br>首先创建一个file.txt的文件</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);  </span><br><span class="line">  </span><br><span class="line">fs.readFile(<span class="string">'file.txt'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (err) &#123;  </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"读取错误："</span> + err);  </span><br><span class="line">        <span class="keyword">return</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="built_in">console</span>.log(data);  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意这里需要指定第二个参数，否则的话会默认输出十六进制字节的格式</p>
-</blockquote>
-<blockquote>
-<p>注意如果文件编码为ANSI格式，还用‘utf-8’会读取出错</p>
-</blockquote>
-<blockquote>
-<p>还用这些格式utf8, ucs2,ascii, binary, base64, hex可以供我们使用</p>
-</blockquote>
-<h4 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h4><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> fs = <span class="keyword">require</span>(<span class="string">'fs'</span>);  </span><br><span class="line"><span class="built_in">var</span> <span class="built_in">data</span> = fs.readFileSync(<span class="string">'test.txt'</span>, <span class="string">'utf-8'</span>);  </span><br><span class="line">console.<span class="keyword">log</span>(<span class="built_in">data</span>);</span><br></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/qq20004604/article/details/51646689" target="_blank" rel="noopener">具体的 操作可以看这里</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/redis/" itemprop="url">redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  201
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>需要下载一个redis，或者是连接的那个服务器有redis</p>
-<p>cnpm i redis</p>
-<p>我的本机安装目录C:\Program Files\Redis</p>
-<p>执行：redis-server.exe</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用redis，用来缓存数据</span></span><br><span class="line"><span class="keyword">const</span> redis   = <span class="built_in">require</span>(<span class="string">'redis'</span>);</span><br><span class="line"><span class="keyword">const</span> client  = redis.createClient(&#123;<span class="attr">host</span>:<span class="string">'192.168.14.6'</span>, <span class="attr">port</span>: <span class="number">6379</span>,<span class="attr">no_ready_check</span>:<span class="literal">true</span>&#125;);</span><br><span class="line">client.on(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"redis client连接失败"</span>,err);</span><br><span class="line">&#125;);</span><br><span class="line">client.on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'client ready'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">client.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    client.set(<span class="string">"var_2"</span>, <span class="string">"var_2_val"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> read_var_2=client.get(<span class="string">"var_2"</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"第二次读取到的值："</span>+read_var_2);</span><br><span class="line">    &#125;);</span><br><span class="line">    client.quit();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这个里面设置了过期时间使用的redis.expire<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/'</span>, function (ctx, next) &#123;</span><br><span class="line">	let render = null<span class="comment">;</span></span><br><span class="line">	render = tableData.tableData(tableJson)<span class="comment">;</span></span><br><span class="line">    render.count = render<span class="meta">.data</span>.length<span class="comment">;</span></span><br><span class="line">    render.num = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">    redis<span class="meta">.set</span>(<span class="string">'var_2'</span>, <span class="keyword">JSON.stringify(render));</span></span><br><span class="line"><span class="keyword"> </span>   redis.expire(<span class="string">'var_2'</span>, <span class="number">300</span>)<span class="comment">;</span></span><br><span class="line">    render<span class="meta">.data</span> = render<span class="meta">.data</span>.slice(<span class="number">0</span>,<span class="number">9</span>)<span class="comment">;</span></span><br><span class="line">    ctx.<span class="keyword">body </span>= render<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-
+            <p>“koa2-cors”: “^2.0.5”,</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cors = <span class="keyword">require</span>(<span class="string">'koa2-cors'</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="keyword">use</span>(cors(&#123;</span><br><span class="line">    origin: <span class="function"><span class="keyword">function</span><span class="params">(ctx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ctx.url === <span class="string">'/test'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'*'</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    exposeHeaders: [<span class="string">'WWW-Authenticate'</span>, <span class="string">'Server-Authorization'</span>],</span><br><span class="line">    maxAge: <span class="number">5</span>,</span><br><span class="line">    credentials: <span class="keyword">true</span>,</span><br><span class="line">    allowMethods: [<span class="string">'GET'</span>, <span class="string">'POST'</span>, <span class="string">'DELETE'</span>],</span><br><span class="line">    allowHeaders: [<span class="string">'Content-Type'</span>, <span class="string">'Authorization'</span>, <span class="string">'Accept'</span>],</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1099,7 +695,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node 和 控制权限转移（next）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node编码规范/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1118,7 +714,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node 和 控制权限转移（next）/" itemprop="url">node 和 模板引擎（jade）</a></h1>
+                <a class="post-title-link" href="/2018/06/09/node编码规范/" itemprop="url">node编码规范</a></h1>
         
 
         <div class="post-meta">
@@ -1184,7 +780,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  139
+                  482
                 </span>
               
 
@@ -1200,7 +796,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1223,31 +819,36 @@
       
         
           
-            <blockquote>
-<p>注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过</p>
-</blockquote>
-<blockquote>
-<p>为了解决这一问题，node<br>使用了 next</p>
-</blockquote>
-<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><ul>
-<li><p>index.js</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/base/pageA'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span></span> &#123;  </span><br><span class="line">    res.send(<span class="string">'index.js.'</span>);  </span><br><span class="line">    <span class="built_in">next</span>();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>base.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/pageA'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;  </span><br><span class="line">    <span class="comment">//res.send('base.js!');  </span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"base.js"</span>)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li>轻易的实现中间件</li>
-</ol>
-<p>由</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR<span class="comment">;  </span></span><br><span class="line">　　A--&gt;c<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>变为</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR;  </span><br><span class="line"><span class="meta">　　A--&gt;</span><span class="bash">B;   </span></span><br><span class="line"><span class="meta">　　B--&gt;</span><span class="bash">c;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>提高代码的复用性</li>
-</ol>
+            <p><a href="https://www.jianshu.com/p/df57bb7f2acf" target="_blank" rel="noopener">node编码规范</a></p>
+<h3 id="一、缩进"><a href="#一、缩进" class="headerlink" title="一、缩进"></a>一、缩进</h3><pre><code>&gt; 两个空格缩进，而不是tab缩进
+</code></pre><h3 id="二、变量声明"><a href="#二、变量声明" class="headerlink" title="二、变量声明"></a>二、变量声明</h3><pre><code>&gt; 每一行声明必须带有var
+</code></pre><h3 id="三、空格"><a href="#三、空格" class="headerlink" title="三、空格"></a>三、空格</h3><pre><code>&gt; 在操作符前后需要加空格（+，——，*，%，=等等）。此外小括号前后要加空格
+</code></pre><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="comment">// some code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四、单双引号的使用"><a href="#四、单双引号的使用" class="headerlink" title="四、单双引号的使用"></a>四、单双引号的使用</h3><pre><code>&gt; 字符串使用单引号，json使用双引号
+</code></pre><h3 id="五、大括号的位置"><a href="#五、大括号的位置" class="headerlink" title="五、大括号的位置"></a>五、大括号的位置</h3><pre><code>&gt; 大括号无需另起一行
+</code></pre><h3 id="六、逗号"><a href="#六、逗号" class="headerlink" title="六、逗号"></a>六、逗号</h3><pre><code>&gt; 逗号如果不在行尾，需要一个空格。 
 
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> help = &#123;</span><br><span class="line">    foo: <span class="string">'hep'</span>, bar: <span class="string">'me'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="七、分号"><a href="#七、分号" class="headerlink" title="七、分号"></a>七、分号</h3><pre><code>&gt; 给表达式结尾添加分号，不在行尾需要一个空格
+</code></pre><h3 id="八、命名规范"><a href="#八、命名规范" class="headerlink" title="八、命名规范"></a>八、命名规范</h3><pre><code>&gt; 命名的主要范畴有变量，常量，方法，类，文件，包等
+</code></pre><h5 id="1、变量命名"><a href="#1、变量命名" class="headerlink" title="1、变量命名"></a>1、变量命名</h5><pre><code>&gt; 采用小驼峰命名 adminUser等等
+</code></pre><h5 id="2、方法命名"><a href="#2、方法命名" class="headerlink" title="2、方法命名"></a>2、方法命名</h5><pre><code>&gt; 方法名也是小驼峰法，但是采用的是动词或者判断性词语
+</code></pre><h5 id="3、类命名"><a href="#3、类命名" class="headerlink" title="3、类命名"></a>3、类命名</h5><pre><code>&gt; 采用大驼峰法命名 AdminUser
+</code></pre><h5 id="4、常量命名"><a href="#4、常量命名" class="headerlink" title="4、常量命名"></a>4、常量命名</h5><pre><code>&gt; 单词的所有字母大写，用下划线分割
+</code></pre><h5 id="5、文件命名"><a href="#5、文件命名" class="headerlink" title="5、文件命名"></a>5、文件命名</h5><pre><code>&gt; 小写，下划线分割
+</code></pre><h5 id="6、包名"><a href="#6、包名" class="headerlink" title="6、包名"></a>6、包名</h5><pre><code>&gt; 不要包含node或者js的字样
+</code></pre><h3 id="九、比较操作"><a href="#九、比较操作" class="headerlink" title="九、比较操作"></a>九、比较操作</h3><pre><code>&gt; 如果是无容忍的情况，请使用‘===’代替‘==’
+</code></pre><h3 id="十、字面量"><a href="#十、字面量" class="headerlink" title="十、字面量"></a>十、字面量</h3><pre><code>&gt; 使用{}【】代替new Object（）和new Array（），不要调用string，bool，number对象类型。
+</code></pre><h3 id="十一、作用域"><a href="#十一、作用域" class="headerlink" title="十一、作用域"></a>十一、作用域</h3><pre><code>&gt; 慎用with和eval    ·
+</code></pre><h3 id="十二、数组和对象"><a href="#十二、数组和对象" class="headerlink" title="十二、数组和对象"></a>十二、数组和对象</h3><h5 id="1、字面格式量"><a href="#1、字面格式量" class="headerlink" title="1、字面格式量"></a>1、字面格式量</h5><pre><code>&gt; 如果对象中分行，一行只能有一个元素
+</code></pre><h5 id="2、for-in循环"><a href="#2、for-in循环" class="headerlink" title="2、for in循环"></a>2、for in循环</h5><pre><code>&gt; 请对对象使用，不要对数组使用
+</code></pre><h5 id="3、-不要把数组当做对象来使用"><a href="#3、-不要把数组当做对象来使用" class="headerlink" title="3、 不要把数组当做对象来使用"></a>3、 不要把数组当做对象来使用</h5><h3 id="十二、异步"><a href="#十二、异步" class="headerlink" title="十二、异步"></a>十二、异步</h3><pre><code>&gt; 异步回调的第一个参数应该是错误提示
+</code></pre><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span></span> （err，<span class="keyword">data</span>）&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>&gt; 执行传入的回调函数，不能执行多次
+</code></pre><h3 id="十三、类与模块"><a href="#十三、类与模块" class="headerlink" title="十三、类与模块"></a>十三、类与模块</h3><h5 id="1、类继承"><a href="#1、类继承" class="headerlink" title="1、类继承"></a>1、类继承</h5><pre><code>&gt; 一般情况下，我们采用Node推荐的类继承方式
+</code></pre><h5 id="2、导出"><a href="#2、导出" class="headerlink" title="2、导出"></a>2、导出</h5><pre><code>&gt; module.exports = Class;
+</code></pre><h3 id="十四、注解规范"><a href="#十四、注解规范" class="headerlink" title="十四、注解规范"></a>十四、注解规范</h3><pre><code>&gt; dox的注释规范。
+</code></pre>
           
         
       
@@ -1295,7 +896,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node 和 模板引擎（jade）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/node版本管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1314,7 +915,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/node 和 模板引擎（jade）/" itemprop="url">node 和 模板引擎（jade）</a></h1>
+                <a class="post-title-link" href="/2018/06/09/node版本管理/" itemprop="url">node版本管理</a></h1>
         
 
         <div class="post-meta">
@@ -1380,7 +981,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178
+                  119
                 </span>
               
 
@@ -1419,39 +1020,21 @@
       
         
           
-            <blockquote>
-<p>express 框架里内嵌了Jade模板引擎。</p>
-</blockquote>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
-<p>npm install jade –global</p>
-</blockquote>
-<h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><blockquote>
-<p>创建一个 index.jade 的文件，<br>然后执行 jade index.jade</p>
-</blockquote>
+            <h4 id="linux下使用nvm"><a href="#linux下使用nvm" class="headerlink" title="linux下使用nvm"></a>linux下使用nvm</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.33.1/i</span>nstall.sh | bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.33.1/i</span>nstall.sh | bash</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>这样做就会将jade文件转换为html文件</p>
+<p>安装完后，如果是用xshell连远程主机的话，先重连一次，不然会发现提示找不到nvm命令</p>
 </blockquote>
-<h3 id="jade还有一些参数"><a href="#jade还有一些参数" class="headerlink" title="jade还有一些参数"></a>jade还有一些参数</h3><blockquote>
-<p>jade -P index.jade</p>
-</blockquote>
-<blockquote>
-<p>这样编辑出来的index.html文件是没有进行过压缩的</p>
-</blockquote>
-<blockquote>
-<p>jade -P -w index.jade</p>
-</blockquote>
-<blockquote>
-<p>-w 只要保存就自动编辑</p>
-</blockquote>
-<blockquote>
-<p>jade -P -w sample.jade -O sample.json</p>
-</blockquote>
-<blockquote>
-<p>-O 用来给jade文件传递对象或JSON文件，用来替换模板内的变量</p>
-</blockquote>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>编辑前<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">  body</span><br><span class="line">    <span class="selector-tag">h1</span>.titleClass<span class="selector-id">#titleID</span> My First Jade Page</span><br></pre></td></tr></table></figure></p>
-<p>编辑后<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"titleID"</span> <span class="attr">class</span>=<span class="string">"titleClass"</span>&gt;</span>My First Jade Page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>列出所有版本号<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">nvm ls-remote</span></span><br></pre></td></tr></table></figure></p>
+<p>安装指定版本</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nvm</span> <span class="selector-tag">install</span> <span class="selector-tag">v7</span><span class="selector-class">.9</span><span class="selector-class">.0</span></span><br></pre></td></tr></table></figure>
+<p>切换版本</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nvm</span> <span class="selector-tag">use</span> <span class="selector-tag">v7</span><span class="selector-class">.8</span><span class="selector-class">.0</span></span><br></pre></td></tr></table></figure>
+<p>切换版本</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nvm current</span></span><br></pre></td></tr></table></figure>
+<p>查看版本</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nvm ls</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -1681,6 +1264,218 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/Lua语言简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/Lua语言简介/" itemprop="url">Lua语言简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,002
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Lua是一门小巧的脚本语言，由巴西里约热内卢天主教大学的Roberto Ierusalimschy等人于1993年开发，在现代企业开发中Lua通常被作为胶水语言，在游戏领域应用尤为频繁。</p>
+<h3 id="Lua中的数据类型"><a href="#Lua中的数据类型" class="headerlink" title="Lua中的数据类型"></a>Lua中的数据类型</h3><p>Lua中定义以下几种数据类型</p>
+<h5 id="1、Nil"><a href="#1、Nil" class="headerlink" title="1、Nil"></a>1、Nil</h5><p>nil是一个特殊的数据类型，它只有一个值，就是nil，他的作用就是为了区别其他的值</p>
+<h5 id="2、Boolean"><a href="#2、Boolean" class="headerlink" title="2、Boolean"></a>2、Boolean</h5><p>和其他语言一样，布尔值只用true和false两个值</p>
+<h5 id="3、Number"><a href="#3、Number" class="headerlink" title="3、Number"></a>3、Number</h5><p>用来表示实数的类型，包含整数和浮点数，Lua中number类型可以表示32位整数</p>
+<h5 id="4、String"><a href="#4、String" class="headerlink" title="4、String"></a>4、String</h5><p>string类型用来表示一个字符串，Lua中的字符串是不可变类型，此外Lua也存在数字和字符串之间的隐式转换<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'10'</span>+<span class="number">1</span>)</span></span>  <span class="comment">//11</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="5、table"><a href="#5、table" class="headerlink" title="5、table"></a>5、table</h5><p>table类型实现了一种特殊的数组，特殊之处在于该数字的索引方式，传统的数组索引是通过数组下标来实现的，二table不仅能以整数来索引，还可以使用字符串和其他类型的值进行索引。<br>table没有固定的大小，可以在里面放入任意数量的元素，下面的例子简单展示了table的用法</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> = &#123;&#125; <span class="comment">//声明一个table</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line"><span class="selector-tag">a</span>[<span class="string">"name"</span>] = <span class="string">"yinxs"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="number">1</span>])</span></span><span class="comment">//10</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a[<span class="string">"name"</span>])</span></span><span class="comment">//yinxs</span></span><br></pre></td></tr></table></figure>
+<h3 id="Lua定义一个函数"><a href="#Lua定义一个函数" class="headerlink" title="Lua定义一个函数"></a>Lua定义一个函数</h3><p>Lua没有使用大括号来规定函数的作用域，而是使用end关键字来作为结束的标记</p>
+<p>eg：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="title">a</span>)</span></span><br><span class="line">    <span class="built_in">local</span> sun = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipairs(<span class="keyword">a</span>) <span class="built_in">do</span></span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="literal">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>es6中有关于函数的新特性和Lua中的函数有一些相似之处：</p>
+<ul>
+<li>多重返回值</li>
+<li>变长参数</li>
+</ul>
+<p>一个Lua函数可以返回多个值，值需要在return后面列出需要返回的值即可，用逗号隔开</p>
+<p>eg：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">funcion foo()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a"</span>,<span class="string">"b"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>尝试使用print语句来打印foo函数的执行结果，会输出“a”，“b”。<br>如果使用表达书的形式来调用foo函数，会依照解构赋值额原则来赋值</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">x</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="string">"b"</span>被丢掉</span><br><span class="line">x,<span class="attr">y</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span></span><br><span class="line">x,y,<span class="attr">z</span> = foo() //<span class="attr">x</span> = <span class="string">"a"</span>,<span class="attr">y</span> = <span class="string">"b"</span>,<span class="attr">z</span> = nil</span><br></pre></td></tr></table></figure>
+<p>可变参数，这个特性即为es6中的spread运算符，函数可以接收任意长度的参数。</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function add(...)</span><br><span class="line">local s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i,v <span class="keyword">in</span> ipirs <span class="meta">&#123;...&#125;</span> <span class="keyword">do</span></span><br><span class="line">        s = s+v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">print(add(<span class="number">3</span>,<span class="number">4</span>,<span class="number">10</span>,<span class="number">25</span>,<span class="number">12</span>) //<span class="number">54</span></span><br></pre></td></tr></table></figure>
+<h3 id="Lua中的协程"><a href="#Lua中的协程" class="headerlink" title="Lua中的协程"></a>Lua中的协程</h3><p>Lua设计之初就提供了对协程的支持，跟同时期的其他编程语言相比无疑是超前的，Lua将所有协程相关的函数放在一个名为coroutine的table中，一个协程其实就是一个特殊线程，它可以由用户控制状态的切换。</p>
+<h5 id="1、coroutine-create"><a href="#1、coroutine-create" class="headerlink" title="1、coroutine.create()"></a>1、coroutine.create()</h5><p>创建一个coroutine 并返回，参数是一个函数。<br>eg:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line">    <span class="built_in">print</span>(i);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br></pre></td></tr></table></figure>
+<p>我们声明了一个log方法，并用其作为参数创建一个协程，这代表print方法的执行可以被用户终端或恢复。</p>
+<h5 id="2、coroutine-resume"><a href="#2、coroutine-resume" class="headerlink" title="2、coroutine.resume()"></a>2、coroutine.resume()</h5><p>重启coroutine，和create配合使用<br>上面的diamante新建了一个协程之后并不会直接运行，而是要靠resume方法来启动。</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">coroutine.<span class="keyword">resume</span>(<span class="keyword">c</span><span class="number">0</span>,<span class="number">1</span>) -<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<h5 id="3、coroutine-yield"><a href="#3、coroutine-yield" class="headerlink" title="3、coroutine.yield()"></a>3、coroutine.yield()</h5><p>将coroutine设置为挂起状态，可以由resume来恢复执行</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span><span class="params">(i)</span></span></span><br><span class="line"> <span class="keyword">for</span> i=<span class="number">1</span>,<span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    coroutine.yielld()</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">co = coroutine.<span class="built_in">create</span>(<span class="built_in">log</span>)</span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">1</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">2</span></span><br><span class="line"></span><br><span class="line">coroutine.<span class="built_in">resume</span>(co) //<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">status</span>(co) //suspended</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(coroutine.<span class="built_in">running</span>()) // thread:<span class="number">0x7fd637c02940</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>coroutine.status()为查看coroutine的状态</p>
+<p>一个协程可以有三种不同的状态</p>
+<ul>
+<li>suspended</li>
+<li>running</li>
+<li>dead</li>
+</ul>
+<p>当创建一个协程后，协程默认处于suspended状态，使用yield挂起后状态同样转换为suspended。</p>
+<h5 id="4、coroutine-running"><a href="#4、coroutine-running" class="headerlink" title="4、coroutine.running()"></a>4、coroutine.running()</h5><p>返回当前协程的线程号</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1731,7 +1526,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1742,7 +1537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1753,7 +1548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1804,7 +1599,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.5k</span>
+    <span title="Site words total count">21.4k</span>
   
 </div>
 
