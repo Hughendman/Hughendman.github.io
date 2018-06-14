@@ -293,6 +293,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/fd43a581.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/fd43a581.html" itemprop="url">大O表示法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  235
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><blockquote>
+<p>用来衡量算法的效率</p>
+</blockquote>
+<blockquote>
+<p>通常是用资源，例如CPU(时间)占用，内存占用，硬盘占用，网络占用</p>
+</blockquote>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li>O(1)</li>
+</ul>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">o1</span>(num)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">++num</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 运行这个函数，执行时间是X ，不用管num值是多少，它的运行时间都是X，，因此它的复杂度是O(1)（常数）</p>
+</blockquote>
+<ul>
+<li>O(n)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sequentialSearch</span><span class="params">(array,item)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">array</span>.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( item == <span class="keyword">array</span>[i])&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    retuen <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个函数的执行的总开销取决于数组元素的个数，而且和搜索的值有关，所以它的时间复杂度是O(n);</p>
+</blockquote>
+<ul>
+<li>O(n^2)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span> <span class="params">(array,index1,index2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = <span class="keyword">array</span>[index1];</span><br><span class="line">    <span class="keyword">array</span>[index1] = <span class="keyword">array</span>[index2];</span><br><span class="line">    <span class="keyword">array</span>[index2] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span> <span class="params">(array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length = <span class="keyword">array</span>.lenth;</span><br><span class="line">    <span class="keyword">var</span> cost = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;length; i++)&#123;</span><br><span class="line">        cost ++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;length<span class="number">-1</span>; j++)&#123;</span><br><span class="line">            cost ++;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">array</span>[i] &gt; <span class="keyword">array</span>[j])&#123;</span><br><span class="line">                swap(<span class="keyword">array</span>,i,j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/a80d0031.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -808,7 +1003,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  52
+                  64
                 </span>
               
 
@@ -847,9 +1042,7 @@
       
         
           
-            <h2 id="原因一"><a href="#原因一" class="headerlink" title="原因一"></a>原因一</h2><blockquote>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</blockquote>
+            <h2 id="原因一"><a href="#原因一" class="headerlink" title="原因一"></a>原因一</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attribute">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="原因二"><a href="#原因二" class="headerlink" title="原因二"></a>原因二</h2><blockquote>
 <p>编辑器保存时要用UTF-8<br>应该把记事本点击另存为，在保存左边有个编码 选择utf-8。 然后保存（代码的charset=utf-8 不变）</p>
 </blockquote>
@@ -1624,7 +1817,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bc683d2d.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1466267d.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1643,7 +1836,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/bc683d2d.html" itemprop="url">自动补全私有前缀</a></h1>
+                <a class="post-title-link" href="/post/1466267d.html" itemprop="url">添加统计功能</a></h1>
         
 
         <div class="post-meta">
@@ -1678,8 +1871,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
                   </a>
                 </span>
 
@@ -1709,7 +1902,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  29
+                  69
                 </span>
               
 
@@ -1748,9 +1941,10 @@
       
         
           
-            <p>vue-cli 生成的项目里样式插件是自动插入的， 在 build/utils.js 里</p>
-<p>autoprefixer 配置在 .postcssrc.js</p>
-
+            <h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p>busuanzi_count的配置项下enable: true</p>
+<h2 id="站点UV配置"><a href="#站点UV配置" class="headerlink" title="站点UV配置"></a>站点UV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">site_uv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">site_uv_header:</span> <span class="string">本站访客数</span></span><br><span class="line"><span class="attr">site_uv_footer:</span> <span class="string">人次</span></span><br></pre></td></tr></table></figure>
+<h2 id="站点PV配置"><a href="#站点PV配置" class="headerlink" title="站点PV配置"></a>站点PV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">site_pv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">site_pv_header:</span> <span class="string">本站总访问量</span></span><br><span class="line"><span class="attr">site_pv_footer:</span> <span class="string">次</span></span><br></pre></td></tr></table></figure>
+<h2 id="单页面PV配置"><a href="#单页面PV配置" class="headerlink" title="单页面PV配置"></a>单页面PV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">page_pv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">page_pv_header:</span> <span class="string">本文总阅读量</span></span><br><span class="line"><span class="attr">page_pv_footer:</span> <span class="string">次</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -1798,7 +1992,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d0acb7fa.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1466265d.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1817,7 +2011,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/d0acb7fa.html" itemprop="url">element-ui</a></h1>
+                <a class="post-title-link" href="/post/1466265d.html" itemprop="url">反向代理+axios</a></h1>
         
 
         <div class="post-meta">
@@ -1883,7 +2077,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  253
+                  91
                 </span>
               
 
@@ -1922,197 +2116,10 @@
       
         
           
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i <span class="keyword">element</span>-ui <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><blockquote>
-<p>在main.js 中</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="使用菜单导航"><a href="#使用菜单导航" class="headerlink" title="使用菜单导航"></a><a href="https://segmentfault.com/a/1190000007810151" target="_blank" rel="noopener">使用菜单导航</a></h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+            <p><a href="http://blog.csdn.net/feifanzhuli/article/details/77990661" target="_blank" rel="noopener">反向代理</a></p>
+<p>代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。</p>
 <blockquote>
-<p>index里面添加路由，  router是使用路由模式为true</p>
-</blockquote>
-<blockquote>
-<p>但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下</p>
-</blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="elementUI关于树状图的增删改查，局部刷新问题"><a href="#elementUI关于树状图的增删改查，局部刷新问题" class="headerlink" title="elementUI关于树状图的增删改查，局部刷新问题"></a>elementUI关于树状图的增删改查，局部刷新问题</h2><p><a href="https://segmentfault.com/a/1190000011574698" target="_blank" rel="noopener">链接在这里</a></p>
-<h2 id="elementUI关于tree的使用"><a href="#elementUI关于tree的使用" class="headerlink" title="elementUI关于tree的使用"></a>elementUI关于tree的使用</h2><p><a href="https://segmentfault.com/q/1010000012345769/a-1020000012347029" target="_blank" rel="noopener">getCheckedKeys不能获取父节点的key</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ef695a00.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/ef695a00.html" itemprop="url">eslint语法解决</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  95
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在webpack.base.conf.js里面删掉下面:</span><br><span class="line"></span><br><span class="line">preLoaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除以下代码就可以</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">test</span>: /\.(js|vue)$/,</span><br><span class="line">    loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">    enforce: <span class="string">'pre'</span>,</span><br><span class="line">    include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)],</span><br><span class="line">    options: &#123;</span><br><span class="line">      formatter: <span class="built_in">require</span>(<span class="string">'eslint-friendly-formatter'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>然后需要重新编辑生效</p>
+<p>听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。</p>
 </blockquote>
 
           
@@ -2203,7 +2210,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2276,7 +2283,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.3k</span>
+    <span title="Site words total count">26.8k</span>
   
 </div>
 
