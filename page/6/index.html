@@ -477,7 +477,7 @@ application.js
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/448baf37.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/8385bb90.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -496,7 +496,7 @@ application.js
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/448baf37.html" itemprop="url">node框架简要说明（express）</a></h1>
+                <a class="post-title-link" href="/post/8385bb90.html" itemprop="url">koa2跨域</a></h1>
         
 
         <div class="post-meta">
@@ -562,7 +562,7 @@ application.js
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,276
+                  56
                 </span>
               
 
@@ -578,7 +578,7 @@ application.js
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -601,193 +601,12 @@ application.js
       
         
           
-          最基础的两个后端框架（express和koa）
-这两个是 Node.js 最基础的后端框架。因为太基础，所以构建一个 app 仍需要写很多脚手架代码，于是在它们基础之上出现了很多其他框架来减少编写这类代码。Express 应该是装机量最多的，而 Koa 更新一些, 使用的技术更新颖，例如 promi
+          “koa2-cors”: “^2.0.5”,
+123456789101112131415const cors = require('koa2-cors');app.use(cors(&#123;    origin: function(ctx) &#123;        if (ctx.url =
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/448baf37.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1f21691d.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/1f21691d.html" itemprop="url">Lua语言简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,002
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          简介Lua是一门小巧的脚本语言，由巴西里约热内卢天主教大学的Roberto Ierusalimschy等人于1993年开发，在现代企业开发中Lua通常被作为胶水语言，在游戏领域应用尤为频繁。
-Lua中的数据类型Lua中定义以下几种数据类型
-1、Nilnil是一个特殊的数据类型，它只有一个值，就是ni
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/1f21691d.html#more" rel="contents">
+            <a class="btn" href="/post/8385bb90.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1202,7 +1021,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bde7ce9f.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1ca0c96a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1221,7 +1040,197 @@ Lua中的数据类型Lua中定义以下几种数据类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/bde7ce9f.html" itemprop="url">node（koa2）快速创建项目</a></h1>
+                <a class="post-title-link" href="/post/1ca0c96a.html" itemprop="url">正则表达如何模糊查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/正则/" itemprop="url" rel="index">
+                    <span itemprop="name">正则</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8,149
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  50
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          首先将汉字转换为拼音的方法这里有一个案例可以使用
+如何在vue中引入
+首先我使用的是vue框架，直接写进去也可以但是有些不美观，所以来看一看如何在vue中引入js文件
+
+
+首先先将需要引入的模块抛出
+
+123export &#123;    function&#125;
+
+然后我们进行导入
+
+12i
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/1ca0c96a.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/82a3d2fb.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/82a3d2fb.html" itemprop="url">node--require（）为什么是同步的</a></h1>
         
 
         <div class="post-meta">
@@ -1287,7 +1296,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  300
+                  116
                 </span>
               
 
@@ -1303,7 +1312,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -1326,17 +1335,15 @@ Lua中的数据类型Lua中定义以下几种数据类型
       
         
           
-          创建项目（但是不支持热加载）1npm install -g koa-generator   //全局安装
-一键创建项目12345koa2 koa2-testcd koa2-testnpm i
-执行1npm run dev
+          1、因为使用的是CommonJS标准
+2、作为公共依赖的模块，自然要异步加载到位
+3、模块的个数往往有限制，Node会自动缓存已经加载的模块，再加上访问的都是本地文件，产生的IO开销可以忽略不计
+4、Node运行在服务器端，很少遇见需要频繁重启服务的情况。服务启动时候画上几秒也没有关系
 
-这里可能报错，原因是因为需要安装bable
-
-1npm install --
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/bde7ce9f.html#more" rel="contents">
+            <a class="btn" href="/post/82a3d2fb.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1947,7 +1954,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/16c97c20.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/303944b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1966,7 +1973,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/16c97c20.html" itemprop="url">在vue中使用less</a></h1>
+                <a class="post-title-link" href="/post/303944b.html" itemprop="url">在vue中使用Echarts（vue）</a></h1>
         
 
         <div class="post-meta">
@@ -2032,7 +2039,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  35
+                  16
                 </span>
               
 
@@ -2072,16 +2079,19 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
         
           
           安装
-cnpm install less less-loader –save
+cnpm install echarts –save
+
+引入
+import echarts from ‘echarts’
 
 
-在webpack.base.config.js在loaders里面加上
+Vue.prototype.$echarts = echarts 
 
-12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-load
-          ...
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/16c97c20.html#more" rel="contents">
+            <a class="btn" href="/post/303944b.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
