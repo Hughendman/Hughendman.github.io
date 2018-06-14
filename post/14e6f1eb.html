@@ -74,23 +74,25 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
 
 
 
 
 
-<meta name="description" content="原理 依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。时间复杂度，空间复杂度，稳定性   平均时间复杂度O(n*n)   最好情况O(n)   最差情况O(n*n)   空间复杂度O(1)   稳定性：稳定  123456789101112131415var examplearr=[8,94,15,88,55,76,21,39];">
+
+<meta name="description" content="原理 其基本思想是分治策略，先进行划分，然后再进行合并  12345678910111213141516171819202122function merge(left, right) &amp;#123;       var result = [];      	while(left.length &amp;gt; 0 &amp;amp;&amp;amp; right.length &amp;gt; 0) &amp;#123;">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="冒泡排序">
+<meta property="og:title" content="归并排序">
 <meta property="og:url" content="http://yoursite.com/post/14e6f1eb.html">
 <meta property="og:site_name" content="YINXS的博客">
-<meta property="og:description" content="原理 依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。时间复杂度，空间复杂度，稳定性   平均时间复杂度O(n*n)   最好情况O(n)   最差情况O(n*n)   空间复杂度O(1)   稳定性：稳定  123456789101112131415var examplearr=[8,94,15,88,55,76,21,39];">
+<meta property="og:description" content="原理 其基本思想是分治策略，先进行划分，然后再进行合并  12345678910111213141516171819202122function merge(left, right) &amp;#123;       var result = [];      	while(left.length &amp;gt; 0 &amp;amp;&amp;amp; right.length &amp;gt; 0) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T11:46:57.954Z">
+<meta property="og:updated_time" content="2018-06-14T01:49:18.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冒泡排序">
-<meta name="twitter:description" content="原理 依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。时间复杂度，空间复杂度，稳定性   平均时间复杂度O(n*n)   最好情况O(n)   最差情况O(n*n)   空间复杂度O(1)   稳定性：稳定  123456789101112131415var examplearr=[8,94,15,88,55,76,21,39];">
+<meta name="twitter:title" content="归并排序">
+<meta name="twitter:description" content="原理 其基本思想是分治策略，先进行划分，然后再进行合并  12345678910111213141516171819202122function merge(left, right) &amp;#123;       var result = [];      	while(left.length &amp;gt; 0 &amp;amp;&amp;amp; right.length &amp;gt; 0) &amp;#123;">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <title>冒泡排序 | YINXS的博客</title>
+  <title>归并排序 | YINXS的博客</title>
   
 
 
@@ -314,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">冒泡排序</h1>
+          <h1 class="post-title" itemprop="name headline">归并排序</h1>
         
 
         <div class="post-meta">
@@ -395,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  174
+                  153
                 </span>
               
 
@@ -433,24 +435,9 @@
 
       
         <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。<br>时间复杂度，空间复杂度，稳定性</p>
+<p>其基本思想是分治策略，先进行划分，然后再进行合并</p>
 </blockquote>
-<blockquote>
-<p>平均时间复杂度O(n*n)</p>
-</blockquote>
-<blockquote>
-<p>最好情况O(n)</p>
-</blockquote>
-<blockquote>
-<p>最差情况O(n*n)</p>
-</blockquote>
-<blockquote>
-<p>空间复杂度O(1)</p>
-</blockquote>
-<blockquote>
-<p>稳定性：稳定</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var examplearr=[<span class="number">8</span>,<span class="number">94</span>,<span class="number">15</span>,<span class="number">88</span>,<span class="number">55</span>,<span class="number">76</span>,<span class="number">21</span>,<span class="number">39</span>];</span><br><span class="line">function sortarr(arr)&#123;</span><br><span class="line">    for(i=<span class="number">0</span>;i&lt;arr.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        for(j=<span class="number">0</span>;j&lt;arr.length<span class="number">-1</span>-i;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                var temp=arr[j];</span><br><span class="line">                arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">sortarr(examplearr);</span><br><span class="line">console.log(examplearr);</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function merge(left, right) &#123;</span><br><span class="line">       <span class="built_in">var</span> result = [];</span><br><span class="line">      	<span class="keyword">while</span>(left.<span class="built_in">length</span> &gt; <span class="number">0</span> &amp;&amp; right.<span class="built_in">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span>(left[<span class="number">0</span>] &lt; right[<span class="number">0</span>]) &#123;</span><br><span class="line">              result.<span class="built_in">push</span>(left.shift());</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">              result.<span class="built_in">push</span>(right.shift());</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/* 当左右数组长度不等.将比较完后剩下的数组项链接起来即可 */</span></span><br><span class="line">      <span class="built_in">return</span> result.<span class="built_in">concat</span>(left).<span class="built_in">concat</span>(right);</span><br><span class="line">   &#125;</span><br><span class="line">function mergeSort(arr)&#123;</span><br><span class="line">	<span class="keyword">if</span>(arr.<span class="built_in">length</span>==<span class="number">1</span>) &#123;<span class="built_in">return</span> arr&#125;;</span><br><span class="line">	<span class="built_in">var</span> mid=Math.<span class="built_in">floor</span>(arr.<span class="built_in">length</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">var</span> left_arr=arr.slice(<span class="number">0</span>,mid),right_arr=arr.slice(mid);</span><br><span class="line">	<span class="built_in">return</span> merge(mergeSort(left_arr),mergeSort(right_arr));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> arr=[<span class="number">12</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">21</span>,<span class="number">15</span>,<span class="number">33</span>,<span class="number">26</span>,<span class="number">19</span>,<span class="number">40</span>,<span class="number">25</span>];</span><br><span class="line">console.<span class="built_in">log</span>(mergeSort(arr));</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -480,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/c6654282.html" rel="next" title="递归">
-                <i class="fa fa-chevron-left"></i> 递归
+              <a href="/post/4f9a43e7.html" rel="next" title="数组方法">
+                <i class="fa fa-chevron-left"></i> 数组方法
               </a>
             
           </div>
@@ -490,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/96555fb2.html" rel="prev" title="插入排序">
-                插入排序 <i class="fa fa-chevron-right"></i>
+              <a href="/post/98b35abd.html" rel="prev" title="二分搜索">
+                二分搜索 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -612,6 +599,13 @@
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
 
@@ -670,7 +664,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.8k</span>
+    <span title="Site words total count">26.9k</span>
   
 </div>
 

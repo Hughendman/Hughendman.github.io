@@ -74,6 +74,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
+
 
 
 
@@ -87,7 +89,7 @@
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:description" content="添加新的页面$ hexo new page about 配置目录在next下的_config.yml 12345678910menu:  home: / || home  archives: /archives || archive  tags: /tags || tags  message: /message || comment  about: /about || user# Enable/D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T01:58:51.581Z">
+<meta property="og:updated_time" content="2018-06-14T02:17:03.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo高级使用">
 <meta name="twitter:description" content="添加新的页面$ hexo new page about 配置目录在next下的_config.yml 12345678910menu:  home: / || home  archives: /archives || archive  tags: /tags || tags  message: /message || comment  about: /about || user# Enable/D">
@@ -395,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  340
+                  410
                 </span>
               
 
@@ -454,6 +456,11 @@
 <li>搜索”auto_excerpt”：</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Automatically Excerpt. Not recommand.</span><br><span class="line"># Please use <span class="comment">&lt;!-- more --&gt;</span> in the post to control excerpt accurately.</span><br><span class="line">auto_excerpt:</span><br><span class="line">  enable: false</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+<h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>打开 站点配置文件 找到Extensions在下面添加</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta"># RSS订阅</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">  type:</span> atom</span><br><span class="line"><span class="symbol">  path:</span> atom.xml</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">20</span></span><br><span class="line"><span class="symbol">  hub:</span></span><br><span class="line"><span class="symbol">  content:</span></span><br><span class="line"><span class="symbol">  content_limit:</span> <span class="number">140</span></span><br><span class="line"><span class="symbol">  content_limit_delim:</span> <span class="string">' '</span></span><br></pre></td></tr></table></figure>
+<p>打开 主题配置文件 找到rss，设置为</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -483,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/c9c130c3.html" rel="next" title="python 函数">
-                <i class="fa fa-chevron-left"></i> python 函数
+              <a href="/post/ef695a00.html" rel="next" title="eslint语法解决">
+                <i class="fa fa-chevron-left"></i> eslint语法解决
               </a>
             
           </div>
@@ -615,6 +622,13 @@
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
 
@@ -639,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新的页面"><span class="nav-number">1.</span> <span class="nav-text">添加新的页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">2.</span> <span class="nav-text">配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给一篇文章加入各种属性"><span class="nav-number">3.</span> <span class="nav-text">给一篇文章加入各种属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地添加搜索菜单（功能）"><span class="nav-number">4.</span> <span class="nav-text">本地添加搜索菜单（功能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加字数统计、阅读时长、友情链接"><span class="nav-number">5.</span> <span class="nav-text">添加字数统计、阅读时长、友情链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类和标签"><span class="nav-number">6.</span> <span class="nav-text">分类和标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示一部分"><span class="nav-number">7.</span> <span class="nav-text">首页显示一部分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新的页面"><span class="nav-number">1.</span> <span class="nav-text">添加新的页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置目录"><span class="nav-number">2.</span> <span class="nav-text">配置目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给一篇文章加入各种属性"><span class="nav-number">3.</span> <span class="nav-text">给一篇文章加入各种属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地添加搜索菜单（功能）"><span class="nav-number">4.</span> <span class="nav-text">本地添加搜索菜单（功能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加字数统计、阅读时长、友情链接"><span class="nav-number">5.</span> <span class="nav-text">添加字数统计、阅读时长、友情链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类和标签"><span class="nav-number">6.</span> <span class="nav-text">分类和标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示一部分"><span class="nav-number">7.</span> <span class="nav-text">首页显示一部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加RSS"><span class="nav-number">8.</span> <span class="nav-text">添加RSS</span></a></li></ol></div>
             
 
           </div>
@@ -673,7 +687,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.8k</span>
+    <span title="Site words total count">26.9k</span>
   
 </div>
 
