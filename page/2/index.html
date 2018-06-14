@@ -293,6 +293,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/14e6f1eb.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/14e6f1eb.html" itemprop="url">归并排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  153
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p>其基本思想是分治策略，先进行划分，然后再进行合并</p>
+</blockquote>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function merge(left, right) &#123;</span><br><span class="line">       <span class="built_in">var</span> result = [];</span><br><span class="line">      	<span class="keyword">while</span>(left.<span class="built_in">length</span> &gt; <span class="number">0</span> &amp;&amp; right.<span class="built_in">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span>(left[<span class="number">0</span>] &lt; right[<span class="number">0</span>]) &#123;</span><br><span class="line">              result.<span class="built_in">push</span>(left.shift());</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">              result.<span class="built_in">push</span>(right.shift());</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/* 当左右数组长度不等.将比较完后剩下的数组项链接起来即可 */</span></span><br><span class="line">      <span class="built_in">return</span> result.<span class="built_in">concat</span>(left).<span class="built_in">concat</span>(right);</span><br><span class="line">   &#125;</span><br><span class="line">function mergeSort(arr)&#123;</span><br><span class="line">	<span class="keyword">if</span>(arr.<span class="built_in">length</span>==<span class="number">1</span>) &#123;<span class="built_in">return</span> arr&#125;;</span><br><span class="line">	<span class="built_in">var</span> mid=Math.<span class="built_in">floor</span>(arr.<span class="built_in">length</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">var</span> left_arr=arr.slice(<span class="number">0</span>,mid),right_arr=arr.slice(mid);</span><br><span class="line">	<span class="built_in">return</span> merge(mergeSort(left_arr),mergeSort(right_arr));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> arr=[<span class="number">12</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">21</span>,<span class="number">15</span>,<span class="number">33</span>,<span class="number">26</span>,<span class="number">19</span>,<span class="number">40</span>,<span class="number">25</span>];</span><br><span class="line">console.<span class="built_in">log</span>(mergeSort(arr));</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/fd43a581.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -488,7 +663,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/a80d0031.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3b99456.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -507,7 +682,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/a80d0031.html" itemprop="url">动态规划</a></h1>
+                <a class="post-title-link" href="/post/3b99456.html" itemprop="url">中文乱码问题</a></h1>
         
 
         <div class="post-meta">
@@ -519,8 +694,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
-                2018-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
+                2018-06-13
               </time>
             
 
@@ -542,8 +717,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/规范/" itemprop="url" rel="index">
+                    <span itemprop="name">规范</span>
                   </a>
                 </span>
 
@@ -573,7 +748,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  469
+                  64
                 </span>
               
 
@@ -589,7 +764,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -612,32 +787,184 @@
       
         
           
-            <h2 id="漫画"><a href="#漫画" class="headerlink" title="漫画"></a>漫画</h2><p><a href="http://www.sohu.com/a/153858619_466939" target="_blank" rel="noopener">什么是动态规划</a></p>
-<blockquote>
-<p>所谓的动态规划就是将复杂问题分解成更小的子问题来解决的优化技术,大事化小，小事化了。</p>
+            <h2 id="原因一"><a href="#原因一" class="headerlink" title="原因一"></a>原因一</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attribute">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="原因二"><a href="#原因二" class="headerlink" title="原因二"></a>原因二</h2><blockquote>
+<p>编辑器保存时要用UTF-8<br>应该把记事本点击另存为，在保存左边有个编码 选择utf-8。 然后保存（代码的charset=utf-8 不变）</p>
 </blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>定义子问题</p>
-</blockquote>
-<blockquote>
-<p>实现要反复执行而解决子问题的部分</p>
-</blockquote>
-<blockquote>
-<p>识别并求解出边界条件</p>
-</blockquote>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>有一座高度是10级台阶的楼梯，从下往上走，每跨一步只能向上1级或者2级台阶。要求用程序来求出一共有多少种走法。</p>
-</blockquote>
-<blockquote>
-<p>第一步，假设现在是最后一步，那么有两种情况，一种是你在第八阶，另一种是你在第九阶，假设走到第八阶有X种走法，走到第九阶有Y种走法，那么总共有X+Y种走法，以此类推。递归</p>
-</blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">F(n) = F(n<span class="number">-1</span>)+F(n<span class="number">-2</span>)  (n&gt;=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function step(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> step(n<span class="number">-1</span>) + step (n<span class="number">-2</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的解法类似一个二叉树，树的高度是n-1个，节点个数是2的n-1次方，时间复杂度O(2^n);</p>
-</blockquote>
-<h2 id="备忘录算法"><a href="#备忘录算法" class="headerlink" title="备忘录算法"></a>备忘录算法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line">    <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> value;</span><br><span class="line">            <span class="keyword">if</span>(map[n<span class="number">-1</span>] != <span class="literal">undefined</span>)&#123;</span><br><span class="line">                value = map[n<span class="number">-1</span>] + step (n<span class="number">-2</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                value = step(n<span class="number">-1</span>) + step (n<span class="number">-2</span>);</span><br><span class="line">                map[n] = value;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(step(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function step(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> temp = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=n; i++)&#123;</span><br><span class="line">            temp = a+b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/5dd43de5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/5dd43de5.html" itemprop="url">python导数据脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
+                2018-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  621
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>刚刚上手，代码很不优雅，有待优化</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="comment"># get yesterday's date</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">import</span> datetime</span><br><span class="line"><span class="built_in">import</span> xlwt</span><br><span class="line"><span class="built_in">import</span> os</span><br><span class="line"><span class="comment">#import smtplib</span></span><br><span class="line"><span class="comment">#from email.mime.text import MIMEText</span></span><br><span class="line"><span class="comment">#from email.mime.multipart import MIMEMultipart</span></span><br><span class="line"><span class="comment">#from email.header import Header</span></span><br><span class="line"></span><br><span class="line"><span class="attr">today</span> = datetime.date.today()</span><br><span class="line"></span><br><span class="line"><span class="attr">yesterday</span> = today - datetime.timedelta(<span class="attr">days=1)</span></span><br><span class="line"><span class="attr">day</span> = yesterday.strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create excel</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workbook</span> = xlwt.Workbook(<span class="attr">encoding</span> = 'utf-<span class="number">8</span>')</span><br><span class="line"></span><br><span class="line"><span class="attr">worksheet</span> = workbook.add_sheet('My Worksheet')</span><br><span class="line">worksheet.col(<span class="number">0</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.col(<span class="number">3</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.col(<span class="number">4</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">0</span>, <span class="attr">label</span> = '日期')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">1</span>, <span class="attr">label</span> = 'PV')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">2</span>, <span class="attr">label</span> = 'UV')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">3</span>, <span class="attr">label</span> = '生成报告数')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">4</span>, <span class="attr">label</span> = '生成报告人数')</span><br><span class="line"></span><br><span class="line">def date(time):</span><br><span class="line">	<span class="attr">rep_data_pv</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_uv</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_report</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_vistor</span> = <span class="number">0</span></span><br><span class="line">	for index <span class="keyword">in</span> range(time):</span><br><span class="line">	</span><br><span class="line">		<span class="attr">flag</span> = index + <span class="number">1</span></span><br><span class="line">		<span class="attr">date_time</span> = today - datetime.timedelta(<span class="attr">days=flag)</span></span><br><span class="line">		<span class="attr">day_time</span> = date_time.strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line">		<span class="attr">response_name</span> = 'response-' + day_time + '.log'</span><br><span class="line">		<span class="keyword">if</span> os.path.exists(response_name):</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Open the file for the day.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">f</span> = open(response_name,'r')</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Gets the statistics of the day's response file.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">str</span> = f.read()</span><br><span class="line"></span><br><span class="line">			f.close()</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Divide by blank lines.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">arr</span> = str.split('\n');</span><br><span class="line"></span><br><span class="line">			<span class="comment"># whitespace</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">base_data</span> =  []</span><br><span class="line">			for base <span class="keyword">in</span> arr:</span><br><span class="line">				base_data.append(base.split(' '))</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Statistical PV UV</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">page</span> = []</span><br><span class="line">			<span class="attr">ip</span> = []</span><br><span class="line">				</span><br><span class="line">			for index <span class="keyword">in</span> range(len(base_data)):</span><br><span class="line">				for indexs <span class="keyword">in</span> range(len(base_data[index])):</span><br><span class="line">					<span class="keyword">if</span> <span class="attr">indexs</span> == <span class="number">5</span>:</span><br><span class="line">						ip.append(base_data[index][indexs])</span><br><span class="line">					elif <span class="attr">indexs</span> == <span class="number">4</span>:</span><br><span class="line">						page.append(base_data[index][indexs])</span><br><span class="line"></span><br><span class="line">			<span class="comment"># get page view and report</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">pv</span> = <span class="number">0</span></span><br><span class="line">			<span class="attr">report</span> = <span class="number">0</span></span><br><span class="line">			for init <span class="keyword">in</span> page:</span><br><span class="line">				<span class="attr">target</span> = init.split('?')[<span class="number">0</span>].split('/')</span><br><span class="line">				<span class="attr">num</span> = len(target)-<span class="number">1</span></span><br><span class="line">				<span class="keyword">if</span> target[num] == 'getData':</span><br><span class="line">					<span class="attr">pv</span> = pv + <span class="number">1</span></span><br><span class="line">				elif target[num] == 'table':</span><br><span class="line">					<span class="attr">report</span> = report + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># get unique visitor</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">uv_arr</span> = []</span><br><span class="line">			<span class="attr">uv</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">			for init <span class="keyword">in</span> ip:</span><br><span class="line">				<span class="keyword">if</span> init not <span class="keyword">in</span> uv_arr:</span><br><span class="line">					<span class="attr">uv</span> = uv + <span class="number">1</span></span><br><span class="line">					uv_arr.append(init)</span><br><span class="line"></span><br><span class="line">			<span class="comment"># get report visitor</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">view_ip</span> = []</span><br><span class="line">			for index <span class="keyword">in</span> range(len(page)):</span><br><span class="line">				<span class="attr">target</span> = page[index].split('?')[<span class="number">0</span>].split('/')</span><br><span class="line">				<span class="attr">num</span> = len(target)-<span class="number">1</span></span><br><span class="line">				<span class="keyword">if</span> target[num] == 'table':</span><br><span class="line">					view_ip.append(ip[index])</span><br><span class="line">					</span><br><span class="line">			<span class="attr">vistor_arr</span> = []</span><br><span class="line">			<span class="attr">vistor</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">			for init <span class="keyword">in</span> view_ip:</span><br><span class="line">				<span class="keyword">if</span> init not <span class="keyword">in</span> vistor_arr:</span><br><span class="line">					<span class="attr">vistor</span> = vistor + <span class="number">1</span></span><br><span class="line">					vistor_arr.append(init)</span><br><span class="line">			<span class="attr">rep_data_pv</span> = rep_data_pv + pv</span><br><span class="line">			<span class="attr">rep_data_uv</span> = rep_data_uv + uv</span><br><span class="line">			<span class="attr">rep_data_report</span> = rep_data_report  + report</span><br><span class="line">			<span class="attr">rep_data_vistor</span> = rep_data_vistor + vistor</span><br><span class="line">			</span><br><span class="line">			worksheet.write(flag, <span class="number">0</span>, <span class="attr">label</span> = day_time)</span><br><span class="line">			worksheet.write(flag, <span class="number">1</span>, <span class="attr">label</span> = pv)</span><br><span class="line">			worksheet.write(flag, <span class="number">2</span>, <span class="attr">label</span> = uv)</span><br><span class="line">			worksheet.write(flag, <span class="number">3</span>, <span class="attr">label</span> = report)</span><br><span class="line">			worksheet.write(flag, <span class="number">4</span>, <span class="attr">label</span> = vistor)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="attr">data</span> = &#123;'pv':<span class="number">0</span>,'uv':<span class="number">0</span>,'report':<span class="number">0</span>,'vistor':<span class="number">0</span>&#125;</span><br><span class="line">			worksheet.write(flag, <span class="number">0</span>, <span class="attr">label</span> = day_time)</span><br><span class="line">			worksheet.write(flag, <span class="number">1</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">2</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">3</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">4</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">	<span class="attr">sum</span> = time+<span class="number">1</span></span><br><span class="line">	worksheet.write(sum, <span class="number">0</span>, <span class="attr">label</span> = '合计')</span><br><span class="line">	worksheet.write(sum, <span class="number">1</span>, <span class="attr">label</span> = rep_data_pv)</span><br><span class="line">	worksheet.write(sum, <span class="number">2</span>, <span class="attr">label</span> = rep_data_uv)</span><br><span class="line">	worksheet.write(sum, <span class="number">3</span>, <span class="attr">label</span> = rep_data_report)</span><br><span class="line">	worksheet.write(sum, <span class="number">4</span>, <span class="attr">label</span> = rep_data_vistor)</span><br><span class="line">			</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">date(<span class="number">27</span>)		</span><br><span class="line">workbook.save('报告--'+yesterday.strftime(<span class="string">"%Y-%m-%d"</span>)+'.xls')</span><br></pre></td></tr></table></figure>
           
         
       
@@ -918,182 +1245,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3b99456.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/3b99456.html" itemprop="url">中文乱码问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
-                2018-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/规范/" itemprop="url" rel="index">
-                    <span itemprop="name">规范</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  64
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="原因一"><a href="#原因一" class="headerlink" title="原因一"></a>原因一</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attribute">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="原因二"><a href="#原因二" class="headerlink" title="原因二"></a>原因二</h2><blockquote>
-<p>编辑器保存时要用UTF-8<br>应该把记事本点击另存为，在保存左边有个编码 选择utf-8。 然后保存（代码的charset=utf-8 不变）</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3452590.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1255,179 +1406,6 @@
 </blockquote>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">iframe</span> src=<span class="string">"rect.svg"</span> <span class="attribute">width</span>=<span class="string">"300"</span> height=<span class="string">"100"</span>&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/5dd43de5.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/5dd43de5.html" itemprop="url">python导数据脚本</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
-                2018-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  621
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>刚刚上手，代码很不优雅，有待优化</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="comment"># get yesterday's date</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">import</span> datetime</span><br><span class="line"><span class="built_in">import</span> xlwt</span><br><span class="line"><span class="built_in">import</span> os</span><br><span class="line"><span class="comment">#import smtplib</span></span><br><span class="line"><span class="comment">#from email.mime.text import MIMEText</span></span><br><span class="line"><span class="comment">#from email.mime.multipart import MIMEMultipart</span></span><br><span class="line"><span class="comment">#from email.header import Header</span></span><br><span class="line"></span><br><span class="line"><span class="attr">today</span> = datetime.date.today()</span><br><span class="line"></span><br><span class="line"><span class="attr">yesterday</span> = today - datetime.timedelta(<span class="attr">days=1)</span></span><br><span class="line"><span class="attr">day</span> = yesterday.strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create excel</span></span><br><span class="line"></span><br><span class="line"><span class="attr">workbook</span> = xlwt.Workbook(<span class="attr">encoding</span> = 'utf-<span class="number">8</span>')</span><br><span class="line"></span><br><span class="line"><span class="attr">worksheet</span> = workbook.add_sheet('My Worksheet')</span><br><span class="line">worksheet.col(<span class="number">0</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.col(<span class="number">3</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.col(<span class="number">4</span>).<span class="attr">width</span> = <span class="number">256</span>*<span class="number">20</span></span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">0</span>, <span class="attr">label</span> = '日期')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">1</span>, <span class="attr">label</span> = 'PV')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">2</span>, <span class="attr">label</span> = 'UV')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">3</span>, <span class="attr">label</span> = '生成报告数')</span><br><span class="line">worksheet.write(<span class="number">0</span>, <span class="number">4</span>, <span class="attr">label</span> = '生成报告人数')</span><br><span class="line"></span><br><span class="line">def date(time):</span><br><span class="line">	<span class="attr">rep_data_pv</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_uv</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_report</span> = <span class="number">0</span></span><br><span class="line">	<span class="attr">rep_data_vistor</span> = <span class="number">0</span></span><br><span class="line">	for index <span class="keyword">in</span> range(time):</span><br><span class="line">	</span><br><span class="line">		<span class="attr">flag</span> = index + <span class="number">1</span></span><br><span class="line">		<span class="attr">date_time</span> = today - datetime.timedelta(<span class="attr">days=flag)</span></span><br><span class="line">		<span class="attr">day_time</span> = date_time.strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line">		<span class="attr">response_name</span> = 'response-' + day_time + '.log'</span><br><span class="line">		<span class="keyword">if</span> os.path.exists(response_name):</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Open the file for the day.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">f</span> = open(response_name,'r')</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Gets the statistics of the day's response file.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">str</span> = f.read()</span><br><span class="line"></span><br><span class="line">			f.close()</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Divide by blank lines.</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">arr</span> = str.split('\n');</span><br><span class="line"></span><br><span class="line">			<span class="comment"># whitespace</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">base_data</span> =  []</span><br><span class="line">			for base <span class="keyword">in</span> arr:</span><br><span class="line">				base_data.append(base.split(' '))</span><br><span class="line"></span><br><span class="line">			<span class="comment"># Statistical PV UV</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">page</span> = []</span><br><span class="line">			<span class="attr">ip</span> = []</span><br><span class="line">				</span><br><span class="line">			for index <span class="keyword">in</span> range(len(base_data)):</span><br><span class="line">				for indexs <span class="keyword">in</span> range(len(base_data[index])):</span><br><span class="line">					<span class="keyword">if</span> <span class="attr">indexs</span> == <span class="number">5</span>:</span><br><span class="line">						ip.append(base_data[index][indexs])</span><br><span class="line">					elif <span class="attr">indexs</span> == <span class="number">4</span>:</span><br><span class="line">						page.append(base_data[index][indexs])</span><br><span class="line"></span><br><span class="line">			<span class="comment"># get page view and report</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">pv</span> = <span class="number">0</span></span><br><span class="line">			<span class="attr">report</span> = <span class="number">0</span></span><br><span class="line">			for init <span class="keyword">in</span> page:</span><br><span class="line">				<span class="attr">target</span> = init.split('?')[<span class="number">0</span>].split('/')</span><br><span class="line">				<span class="attr">num</span> = len(target)-<span class="number">1</span></span><br><span class="line">				<span class="keyword">if</span> target[num] == 'getData':</span><br><span class="line">					<span class="attr">pv</span> = pv + <span class="number">1</span></span><br><span class="line">				elif target[num] == 'table':</span><br><span class="line">					<span class="attr">report</span> = report + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># get unique visitor</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">uv_arr</span> = []</span><br><span class="line">			<span class="attr">uv</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">			for init <span class="keyword">in</span> ip:</span><br><span class="line">				<span class="keyword">if</span> init not <span class="keyword">in</span> uv_arr:</span><br><span class="line">					<span class="attr">uv</span> = uv + <span class="number">1</span></span><br><span class="line">					uv_arr.append(init)</span><br><span class="line"></span><br><span class="line">			<span class="comment"># get report visitor</span></span><br><span class="line"></span><br><span class="line">			<span class="attr">view_ip</span> = []</span><br><span class="line">			for index <span class="keyword">in</span> range(len(page)):</span><br><span class="line">				<span class="attr">target</span> = page[index].split('?')[<span class="number">0</span>].split('/')</span><br><span class="line">				<span class="attr">num</span> = len(target)-<span class="number">1</span></span><br><span class="line">				<span class="keyword">if</span> target[num] == 'table':</span><br><span class="line">					view_ip.append(ip[index])</span><br><span class="line">					</span><br><span class="line">			<span class="attr">vistor_arr</span> = []</span><br><span class="line">			<span class="attr">vistor</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">			for init <span class="keyword">in</span> view_ip:</span><br><span class="line">				<span class="keyword">if</span> init not <span class="keyword">in</span> vistor_arr:</span><br><span class="line">					<span class="attr">vistor</span> = vistor + <span class="number">1</span></span><br><span class="line">					vistor_arr.append(init)</span><br><span class="line">			<span class="attr">rep_data_pv</span> = rep_data_pv + pv</span><br><span class="line">			<span class="attr">rep_data_uv</span> = rep_data_uv + uv</span><br><span class="line">			<span class="attr">rep_data_report</span> = rep_data_report  + report</span><br><span class="line">			<span class="attr">rep_data_vistor</span> = rep_data_vistor + vistor</span><br><span class="line">			</span><br><span class="line">			worksheet.write(flag, <span class="number">0</span>, <span class="attr">label</span> = day_time)</span><br><span class="line">			worksheet.write(flag, <span class="number">1</span>, <span class="attr">label</span> = pv)</span><br><span class="line">			worksheet.write(flag, <span class="number">2</span>, <span class="attr">label</span> = uv)</span><br><span class="line">			worksheet.write(flag, <span class="number">3</span>, <span class="attr">label</span> = report)</span><br><span class="line">			worksheet.write(flag, <span class="number">4</span>, <span class="attr">label</span> = vistor)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="attr">data</span> = &#123;'pv':<span class="number">0</span>,'uv':<span class="number">0</span>,'report':<span class="number">0</span>,'vistor':<span class="number">0</span>&#125;</span><br><span class="line">			worksheet.write(flag, <span class="number">0</span>, <span class="attr">label</span> = day_time)</span><br><span class="line">			worksheet.write(flag, <span class="number">1</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">2</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">3</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">			worksheet.write(flag, <span class="number">4</span>, <span class="attr">label</span> = <span class="number">0</span>)</span><br><span class="line">	<span class="attr">sum</span> = time+<span class="number">1</span></span><br><span class="line">	worksheet.write(sum, <span class="number">0</span>, <span class="attr">label</span> = '合计')</span><br><span class="line">	worksheet.write(sum, <span class="number">1</span>, <span class="attr">label</span> = rep_data_pv)</span><br><span class="line">	worksheet.write(sum, <span class="number">2</span>, <span class="attr">label</span> = rep_data_uv)</span><br><span class="line">	worksheet.write(sum, <span class="number">3</span>, <span class="attr">label</span> = rep_data_report)</span><br><span class="line">	worksheet.write(sum, <span class="number">4</span>, <span class="attr">label</span> = rep_data_vistor)</span><br><span class="line">			</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">date(<span class="number">27</span>)		</span><br><span class="line">workbook.save('报告--'+yesterday.strftime(<span class="string">"%Y-%m-%d"</span>)+'.xls')</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1714,7 +1692,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  332
+                  295
                 </span>
               
 
@@ -1730,7 +1708,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -1756,7 +1734,7 @@
             <h3 id="添加新的页面"><a href="#添加新的页面" class="headerlink" title="添加新的页面"></a>添加新的页面</h3><p>$ hexo new page about</p>
 <h3 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h3><p>在next下的_config.yml</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  archives: /archives || archive</span><br><span class="line">  tags: /tags || tags</span><br><span class="line">  message: /message || comment</span><br><span class="line">  about: /about || user</span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line">menu_icons:</span><br><span class="line">  enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="给一篇文章加入各种属性"><a href="#给一篇文章加入各种属性" class="headerlink" title="给一篇文章加入各种属性"></a>给一篇文章加入各种属性</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">在vue中使用less</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-11</span> <span class="number">11</span><span class="string">:15:00</span></span><br><span class="line"><span class="string">categories</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">VUE</span></span><br><span class="line"><span class="string">keywords</span> <span class="string">:</span> <span class="string">VUE</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">title:</span> <span class="string">自学编程成功概率有多少可能</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-05</span><span class="bullet">-26</span> <span class="number">19</span><span class="string">:57:47</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[编程,感悟]</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">技术</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h3 id="给一篇文章加入各种属性"><a href="#给一篇文章加入各种属性" class="headerlink" title="给一篇文章加入各种属性"></a>给一篇文章加入各种属性</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">归并排序</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">算法</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">算法</span></span><br><span class="line"><span class="attr">abbrlink:</span> <span class="number">14e6</span><span class="string">f1eb</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-06</span><span class="bullet">-14</span> <span class="number">11</span><span class="string">:15:00</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <h3 id="本地添加搜索菜单（功能）"><a href="#本地添加搜索菜单（功能）" class="headerlink" title="本地添加搜索菜单（功能）"></a>本地添加搜索菜单（功能）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
 <p>打开 站点配置文件 找到Extensions在下面添加</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">     path:</span> search.xml</span><br><span class="line"><span class="symbol">     field:</span> post</span><br><span class="line"><span class="symbol">     format:</span> html</span><br><span class="line"><span class="symbol">     limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
@@ -1817,7 +1795,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1466267d.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d0acb7fa.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1836,182 +1814,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/1466267d.html" itemprop="url">添加统计功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  69
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><p>busuanzi_count的配置项下enable: true</p>
-<h2 id="站点UV配置"><a href="#站点UV配置" class="headerlink" title="站点UV配置"></a>站点UV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">site_uv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">site_uv_header:</span> <span class="string">本站访客数</span></span><br><span class="line"><span class="attr">site_uv_footer:</span> <span class="string">人次</span></span><br></pre></td></tr></table></figure>
-<h2 id="站点PV配置"><a href="#站点PV配置" class="headerlink" title="站点PV配置"></a>站点PV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">site_pv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">site_pv_header:</span> <span class="string">本站总访问量</span></span><br><span class="line"><span class="attr">site_pv_footer:</span> <span class="string">次</span></span><br></pre></td></tr></table></figure>
-<h2 id="单页面PV配置"><a href="#单页面PV配置" class="headerlink" title="单页面PV配置"></a>单页面PV配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">page_pv:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">page_pv_header:</span> <span class="string">本文总阅读量</span></span><br><span class="line"><span class="attr">page_pv_footer:</span> <span class="string">次</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1466265d.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/1466265d.html" itemprop="url">反向代理+axios</a></h1>
+                <a class="post-title-link" href="/post/d0acb7fa.html" itemprop="url">element-ui</a></h1>
         
 
         <div class="post-meta">
@@ -2077,7 +1880,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  91
+                  253
                 </span>
               
 
@@ -2116,10 +1919,197 @@
       
         
           
-            <p><a href="http://blog.csdn.net/feifanzhuli/article/details/77990661" target="_blank" rel="noopener">反向代理</a></p>
-<p>代理有两种一种是正向代理，一种是反向代理，正向代理代理的书客户端，反向代理代理的是服务端。</p>
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i <span class="keyword">element</span>-ui <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><blockquote>
+<p>在main.js 中</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="使用菜单导航"><a href="#使用菜单导航" class="headerlink" title="使用菜单导航"></a><a href="https://segmentfault.com/a/1190000007810151" target="_blank" rel="noopener">使用菜单导航</a></h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>听过一个有意思的解释，凶手&gt;&gt; 毛利叔叔 &gt;&gt; 柯南，这里面毛利叔叔就是反向代理。也就是说真正的服务端是不可见的。</p>
+<p>index里面添加路由，  router是使用路由模式为true</p>
+</blockquote>
+<blockquote>
+<p>但是还会发现一个新的问题，它不默认选中了，所以这里要修改一下</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">el</span>-<span class="keyword">menu</span> :router=<span class="string">"true"</span> :default-active=<span class="string">"$route.path"</span> class=<span class="string">"el-menu-demo"</span> <span class="keyword">mode</span>=<span class="string">"horizontal"</span> @select=<span class="string">"handleSelect"</span>&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/table"</span>&gt;表格&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/form"</span>&gt;表单&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-<span class="keyword">menu</span>-item <span class="built_in">index</span>=<span class="string">"/graph"</span>&gt;图形&lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>-item&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="elementUI关于树状图的增删改查，局部刷新问题"><a href="#elementUI关于树状图的增删改查，局部刷新问题" class="headerlink" title="elementUI关于树状图的增删改查，局部刷新问题"></a>elementUI关于树状图的增删改查，局部刷新问题</h2><p><a href="https://segmentfault.com/a/1190000011574698" target="_blank" rel="noopener">链接在这里</a></p>
+<h2 id="elementUI关于tree的使用"><a href="#elementUI关于tree的使用" class="headerlink" title="elementUI关于tree的使用"></a>elementUI关于tree的使用</h2><p><a href="https://segmentfault.com/q/1010000012345769/a-1020000012347029" target="_blank" rel="noopener">getCheckedKeys不能获取父节点的key</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ef695a00.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/ef695a00.html" itemprop="url">eslint语法解决</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  95
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在webpack.base.conf.js里面删掉下面:</span><br><span class="line"></span><br><span class="line">preLoaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        loader: <span class="string">'eslint'</span>,</span><br><span class="line">        <span class="keyword">include</span>: projectRoot,</span><br><span class="line">        <span class="keyword">exclude</span>: [<span class="regexp">/node_modules/</span>, <span class="regexp">/ignore_lib/</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除以下代码就可以</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">test</span>: /\.(js|vue)$/,</span><br><span class="line">    loader: <span class="string">'eslint-loader'</span>,</span><br><span class="line">    enforce: <span class="string">'pre'</span>,</span><br><span class="line">    include: [<span class="built_in">resolve</span>(<span class="string">'src'</span>), <span class="built_in">resolve</span>(<span class="string">'test'</span>)],</span><br><span class="line">    options: &#123;</span><br><span class="line">      formatter: <span class="built_in">require</span>(<span class="string">'eslint-friendly-formatter'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>然后需要重新编辑生效</p>
 </blockquote>
 
           
@@ -2283,7 +2273,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.8k</span>
+    <span title="Site words total count">26.7k</span>
   
 </div>
 
