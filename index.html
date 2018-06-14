@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ff8068c0.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/14e6f1eb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/ff8068c0.html" itemprop="url">快速排序</a></h1>
+                <a class="post-title-link" href="/post/14e6f1eb.html" itemprop="url">归并排序</a></h1>
         
 
         <div class="post-meta">
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  164
+                  153
                 </span>
               
 
@@ -417,17 +417,18 @@
       
         
           
-            <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>1、找基准（一般是以中间项为基准）</p>
-</blockquote>
-<blockquote>
-<p>2、遍历数组，小于基准的放在left，大于基准的放在right</p>
-</blockquote>
-<blockquote>
-<p>3、递归</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function <span class="built_in">quickSort</span>(arr)&#123;</span><br><span class="line">    <span class="comment">//如果数组&lt;=1,则直接返回</span></span><br><span class="line">    <span class="keyword">if</span>(arr.length&lt;=<span class="number">1</span>)&#123;<span class="keyword">return</span> arr;&#125;</span><br><span class="line">    <span class="keyword">var</span> pivotIndex=<span class="type">Math</span>.floor(arr.length/<span class="number">2</span>);</span><br><span class="line">    <span class="comment">//找基准，并把基准从原数组删除</span></span><br><span class="line">    <span class="keyword">var</span> pivot=arr.splice(pivotIndex,<span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//定义左右数组</span></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">left</span>=[];</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">right</span>=[];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//比基准小的放在left，比基准大的放在right</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]&lt;=pivot)&#123;</span><br><span class="line">            <span class="keyword">left</span>.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">right</span>.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//递归</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">quickSort</span>(<span class="keyword">left</span>).concat([pivot],<span class="built_in">quickSort</span>(<span class="keyword">right</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          原理
+其基本思想是分治策略，先进行划分，然后再进行合并
+
+12345678910111213141516171819202122function merge(left, right) &#123;       var result = [];      	while(left.length &gt;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/14e6f1eb.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -598,201 +599,18 @@
       
         
           
-            <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>顺序或线性搜索是最基本的搜索算法。它的机制是将每一个数据结构中的元素和我们要找的元素做比较。效率低下</p>
-</blockquote>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">search</span><span class="params">(item)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">array</span>.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(item === <span class="keyword">array</span>[i])&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
+          原理
+顺序或线性搜索是最基本的搜索算法。它的机制是将每一个数据结构中的元素和我们要找的元素做比较。效率低下
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/14e6f1eb.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/14e6f1eb.html" itemprop="url">冒泡排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
-                2018-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  174
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。<br>时间复杂度，空间复杂度，稳定性</p>
-</blockquote>
-<blockquote>
-<p>平均时间复杂度O(n*n)</p>
-</blockquote>
-<blockquote>
-<p>最好情况O(n)</p>
-</blockquote>
-<blockquote>
-<p>最差情况O(n*n)</p>
-</blockquote>
-<blockquote>
-<p>空间复杂度O(1)</p>
-</blockquote>
-<blockquote>
-<p>稳定性：稳定</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var examplearr=[<span class="number">8</span>,<span class="number">94</span>,<span class="number">15</span>,<span class="number">88</span>,<span class="number">55</span>,<span class="number">76</span>,<span class="number">21</span>,<span class="number">39</span>];</span><br><span class="line">function sortarr(arr)&#123;</span><br><span class="line">    for(i=<span class="number">0</span>;i&lt;arr.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        for(j=<span class="number">0</span>;j&lt;arr.length<span class="number">-1</span>-i;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                var temp=arr[j];</span><br><span class="line">                arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">sortarr(examplearr);</span><br><span class="line">console.log(examplearr);</span><br></pre></td></tr></table></figure>
-          
+12345678function search(item)&#123;    for(var i=0; i&lt;array.length; i++)&#123;        if(ite
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/bc56fb70.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -963,204 +781,30 @@
       
         
           
-            <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><blockquote>
-<p>需要被搜索的数据结构进行过排序</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>选择数组的中间值</p>
-</blockquote>
-<blockquote>
-<p>如果选中值是待搜索值，那么算法执行完毕（值找到了）</p>
-</blockquote>
-<blockquote>
-<p>如果待搜索值比选中值要小，则返回步骤一并在选中值左边的子数组中寻找</p>
-</blockquote>
-<blockquote>
-<p>如果待搜索值比选中值要大，则返回步骤一并在选中值右边的子数组中寻找。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.quickSort();<span class="comment">//首先需要进行排序，这里选择了快速排序</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> low = <span class="number">0</span>,</span><br><span class="line">        high =array.length - <span class="number">1</span>;</span><br><span class="line">        mid,element;</span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high)&#123;</span><br><span class="line">        mid = <span class="built_in">Math</span>.floor(low + high)/<span class="number">2</span>;</span><br><span class="line">        element = array(mid);</span><br><span class="line">        <span class="keyword">if</span>(element &lt; item)&#123;</span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (element &gt; item)&#123;</span><br><span class="line">            high = mid <span class="number">-1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
+          需求
+需要被搜索的数据结构进行过排序
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
+步骤
+选择数组的中间值
 
 
-    
-      
+如果选中值是待搜索值，那么算法执行完毕（值找到了）
 
-  
 
-  
-  
-  
+如果待搜索值比选中值要小，则返回步骤一并在选中值左边的子数组中寻找
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/c6654282.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
+如果待搜索值比选中值要大，则返回步骤一并在选中值右边的子数组中寻找。
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/c6654282.html" itemprop="url">递归</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
-                2018-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  132
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="函数调用自身"><a href="#函数调用自身" class="headerlink" title="函数调用自身"></a>函数调用自身</h2><blockquote>
-<p>比较著名的斐波那契</p>
-</blockquote>
-<blockquote>
-<p>js调用栈大小的限制</p>
-</blockquote>
-<blockquote>
-<p>chrome 20955 firefox 343429</p>
-</blockquote>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="keyword">fn</span></span>(n)&#123;</span><br><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>|n==<span class="number">2</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;&#125;</span><br><span class="line"><span class="comment">//因为斐波那契数列格式为：1、1、2、3、5、8、13、21、34、......,n=1和n=2的时候都是输出1</span></span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">fn</span></span>(n-<span class="number">1</span>)+<span class="function"><span class="keyword">fn</span></span>(n-<span class="number">2</span>);</span><br><span class="line"><span class="comment">//不断调用自身函数，n-1是穿进去的参数的前一次，就是最后n的前一个数字。所以n-2是最后传入参数的前两个数字。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+1234567891011121
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/98b35abd.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1331,20 +975,26 @@
       
         
           
-            <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
-</blockquote>
-<blockquote>
-<p>最佳情况：T(n) = O(n2)</p>
-</blockquote>
-<blockquote>
-<p>最差情况：T(n) = O(n2)</p>
-</blockquote>
-<blockquote>
-<p>平均情况：T(n) = O(n2)</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function selectSort(arr)&#123; </span><br><span class="line"> var len = arr.length; </span><br><span class="line"> var index,temp; </span><br><span class="line"> for(var i = <span class="number">0</span>; i &lt; len<span class="number">-1</span> ;i++)&#123; </span><br><span class="line">  index = i; </span><br><span class="line">  for(var j = i + <span class="number">1</span> ; j&lt;len; j++)&#123; </span><br><span class="line">   if(arr[j] &lt; arr[index])&#123;<span class="comment">//寻找最小的数 </span></span><br><span class="line">    index = j;<span class="comment">//保存最小数的索引 </span></span><br><span class="line">   &#125; </span><br><span class="line">  &#125; </span><br><span class="line">  temp = arr[i]; </span><br><span class="line">  arr[i] = arr[index]; </span><br><span class="line">  arr[index] = temp; </span><br><span class="line"> &#125; </span><br><span class="line"> return arr; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">var arr=[<span class="number">1</span>,<span class="number">45</span>,<span class="number">37</span>,<span class="number">5</span>,<span class="number">48</span>,<span class="number">15</span>,<span class="number">37</span>,<span class="number">26</span>,<span class="number">29</span>,<span class="number">2</span>,<span class="number">46</span>,<span class="number">4</span>,<span class="number">17</span>,<span class="number">50</span>,<span class="number">52</span>]; </span><br><span class="line">console.log(selectSort(arr));</span><br></pre></td></tr></table></figure>
-          
+          原理
+先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。
+
+
+最佳情况：T(n) = O(n2)
+
+
+最差情况：T(n) = O(n2)
+
+
+平均情况：T(n) = O(n2)
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/43d00a99.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1515,14 +1165,21 @@
       
         
           
-            <h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><blockquote>
-<p>贪心是一种特殊的动态规划，动态规划的本质是独立的子问题，而贪心则是每次可以找到最优的独立子问题。</p>
-</blockquote>
-<blockquote>
-<p>贪心和动归不是互斥的，而是包含的，贪心更快，但约束更强，适应范围更小。</p>
-</blockquote>
-<h4 id="最小硬币找零法"><a href="#最小硬币找零法" class="headerlink" title="最小硬币找零法"></a>最小硬币找零法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mincoinchange</span>(<span class="params">coins,amount</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> change = [],</span><br><span class="line">        total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=coins.length; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">var</span> coin = coins[i];</span><br><span class="line">        <span class="keyword">while</span> (total + coin &lt;= amount)&#123;</span><br><span class="line">            change.push(coin);</span><br><span class="line">            total += coin;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> change ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Mincoinchange([<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">100</span>],<span class="number">516</span>));</span><br></pre></td></tr></table></figure>
-          
+          理解
+贪心是一种特殊的动态规划，动态规划的本质是独立的子问题，而贪心则是每次可以找到最优的独立子问题。
+
+
+贪心和动归不是互斥的，而是包含的，贪心更快，但约束更强，适应范围更小。
+
+最小硬币找零法12345678910111213function Mincoinchange(coins,amount
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/34811d5f.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1693,51 +1350,18 @@
       
         
           
-            <h3 id="迭代器函数"><a href="#迭代器函数" class="headerlink" title="迭代器函数"></a>迭代器函数</h3><h5 id="every"><a href="#every" class="headerlink" title="every"></a>every</h5><blockquote>
-<p>会返回第一个false后中断执行</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">    <span class="keyword">return</span> (x % <span class="number">2</span> == <span class="number">0</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line">num.every(isEven);</span><br></pre></td></tr></table></figure>
-<h5 id="some"><a href="#some" class="headerlink" title="some"></a>some</h5><blockquote>
-<p>会返回第一个true后中断执行</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">    <span class="keyword">return</span> (x % <span class="number">2</span> == <span class="number">0</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line">num.some(isEven);</span><br></pre></td></tr></table></figure>
-<h5 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h5><blockquote>
-<p>与for的结果相同</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line">num.forEach(function(item,index)&#123;</span><br><span class="line"></span><br><span class="line">    console.log(x % <span class="number">2</span> == <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><blockquote>
-<p>myMap的值为[false,true,false,true,false,true,false,true,false,true,false,true,false,true,false],它保存了传入map方法的isEven函数的运行结果。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">    <span class="keyword">return</span> (x % <span class="number">2</span> == <span class="number">0</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myMap = num.map(isEven);</span><br></pre></td></tr></table></figure>
-<h5 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h5><blockquote>
-<p>myFilter返回的值为 [2,4,6,8,10,12,14]</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">    <span class="keyword">return</span> (x % <span class="number">2</span> == <span class="number">0</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myFilter = num.filter(isEven);</span><br></pre></td></tr></table></figure>
-<h5 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h5><blockquote>
-<p>targ 的值为200 ，可以获取前一个和后一个值</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line">let targ = num.reduce(function (previsor, current, index) &#123;</span><br><span class="line">    return previsor + current;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="搜索和排序"><a href="#搜索和排序" class="headerlink" title="搜索和排序"></a>搜索和排序</h3><h5 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h5><blockquote>
-<p>res为 [<br>    15,<br>    14,<br>    13,<br>    12,<br>    11,<br>    10,<br>    9,<br>    8,<br>    7,<br>    6,<br>    5,<br>    4,<br>    3,<br>    2,<br>    1<br>]，数组内的元素发生反序</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line">let res = num.reverse();</span><br></pre></td></tr></table></figure>
-<h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><blockquote>
-<p>排序</p>
-</blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line">function compare(a,b) &#123;</span><br><span class="line">    return a-b;</span><br><span class="line">&#125;</span><br><span class="line">num.sort(compare);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>自定义排序</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let info = [</span><br><span class="line">    &#123;<span class="string">name:</span><span class="string">'yinxs'</span>,<span class="string">age:</span><span class="number">25</span>&#125;,</span><br><span class="line">    &#123;<span class="string">name:</span><span class="string">'yu'</span>,<span class="string">age:</span><span class="number">28</span>&#125;,</span><br><span class="line">    &#123;<span class="string">name:</span><span class="string">'pan'</span>,<span class="string">age:</span><span class="number">27</span>&#125;</span><br><span class="line">];</span><br><span class="line">function compare(a,b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a.age - b.age;</span><br><span class="line">&#125;</span><br><span class="line">info.sort(compare);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>字符串排序</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> info = [<span class="string">'Ana'</span>,<span class="string">'John'</span>,<span class="string">'ana'</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.toLowerCase() &lt; b.toLowerCase())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a.toLowerCase() &gt; b.toLowerCase())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">info.sort(compare);</span><br></pre></td></tr></table></figure>
-<h5 id="搜索-lastIndexOf-indexOf"><a href="#搜索-lastIndexOf-indexOf" class="headerlink" title="搜索(lastIndexOf,indexOf)"></a>搜索(lastIndexOf,indexOf)</h5><blockquote>
-<p>indexOf返回第一个匹配的索引，lastIndexOf返回最后一个匹配的索引</p>
-</blockquote>
+          迭代器函数every
+会返回第一个false后中断执行
 
-          
+12345678function isEven(x) &#123;    console.log(x);    return (x % 2 == 0) ? true : false;&#125;let num = [1,2,3,4,5,6,7
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/4f9a43e7.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1908,21 +1532,24 @@
       
         
           
-            <blockquote>
-<p>效率：</p>
-</blockquote>
-<blockquote>
-<p>最好：n</p>
-</blockquote>
-<blockquote>
-<p>最坏：O(n^2)</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">elements</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//假设第0个元素是一个有序的数列，第1个以后的是无序的序列，</span></span><br><span class="line">  <span class="comment">//所以从第1个元素开始将无序数列的元素插入到有序数列中</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; elements.length; i++)&#123;</span><br><span class="line">    <span class="comment">//升序</span></span><br><span class="line">    <span class="keyword">if</span>(elements[i] &lt; elements[i<span class="number">-1</span>])&#123;</span><br><span class="line">      <span class="comment">//取出无序数列中的第i个作为被插入元素</span></span><br><span class="line">      <span class="keyword">var</span> guard = elements[i];</span><br><span class="line">      <span class="comment">//记住有序数列的最后一个位置，并且将有序数列位置扩大一个</span></span><br><span class="line">      <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">      elements[i] = elements[j];</span><br><span class="line">      </span><br><span class="line">      <span class="comment">//比大小，找到被插入元素所在的位置</span></span><br><span class="line">      <span class="keyword">while</span>(j &gt;= <span class="number">0</span> &amp;&amp; guard &lt; elements[j])&#123;</span><br><span class="line">        elements[j+<span class="number">1</span>] = elements[j];</span><br><span class="line">        j--;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//插入</span></span><br><span class="line">      elements[j+<span class="number">1</span>] = guard;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> elements = [<span class="number">10</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'before: '</span> + elements);</span><br><span class="line">sort(elements);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">' after: '</span> + elements);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果目标是把n个元素的序列升序排列，那么采用插入排序存在最好情况和最坏情况。最好情况就是，序列已经是升序排列了，在这种情况下，需要进行的比较操作需（n-1）次即可。最坏情况就是，序列是降序排列，那么此时需要进行的比较共有n(n-1)/2次。插入排序的赋值操作是比较操作的次数加上 (n-1）次。平均来说插入排序算法的时间复杂度为O(n^2）。因而，插入排序不适合对于数据量比较大的排序应用。但是，如果需要排序的数据量很小，例如，量级小于千，那么插入排序还是一个不错的选择。</p>
-</blockquote>
-
           
+效率：
+
+
+最好：n
+
+
+最坏：O(n^2)
+
+12345678910111213141516171819202122232425262728function sort(elements)&#123;  //假设第0个元素是一个有序的数列，第1个以后的是无序的序列，  //所以从第1个元素开始将无
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/96555fb2.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1969,7 +1596,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/a80d0031.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/14e6f1eb.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1988,7 +1615,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/a80d0031.html" itemprop="url">动态规划</a></h1>
+                <a class="post-title-link" href="/post/14e6f1eb.html" itemprop="url">冒泡排序</a></h1>
         
 
         <div class="post-meta">
@@ -2054,7 +1681,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  469
+                  174
                 </span>
               
 
@@ -2070,7 +1697,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -2093,33 +1720,409 @@
       
         
           
-            <h2 id="漫画"><a href="#漫画" class="headerlink" title="漫画"></a>漫画</h2><p><a href="http://www.sohu.com/a/153858619_466939" target="_blank" rel="noopener">什么是动态规划</a></p>
-<blockquote>
-<p>所谓的动态规划就是将复杂问题分解成更小的子问题来解决的优化技术,大事化小，小事化了。</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
-<p>定义子问题</p>
-</blockquote>
-<blockquote>
-<p>实现要反复执行而解决子问题的部分</p>
-</blockquote>
-<blockquote>
-<p>识别并求解出边界条件</p>
-</blockquote>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>有一座高度是10级台阶的楼梯，从下往上走，每跨一步只能向上1级或者2级台阶。要求用程序来求出一共有多少种走法。</p>
-</blockquote>
-<blockquote>
-<p>第一步，假设现在是最后一步，那么有两种情况，一种是你在第八阶，另一种是你在第九阶，假设走到第八阶有X种走法，走到第九阶有Y种走法，那么总共有X+Y种走法，以此类推。递归</p>
-</blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">F(n) = F(n<span class="number">-1</span>)+F(n<span class="number">-2</span>)  (n&gt;=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function step(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> step(n<span class="number">-1</span>) + step (n<span class="number">-2</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的解法类似一个二叉树，树的高度是n-1个，节点个数是2的n-1次方，时间复杂度O(2^n);</p>
-</blockquote>
-<h2 id="备忘录算法"><a href="#备忘录算法" class="headerlink" title="备忘录算法"></a>备忘录算法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line">    <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> value;</span><br><span class="line">            <span class="keyword">if</span>(map[n<span class="number">-1</span>] != <span class="literal">undefined</span>)&#123;</span><br><span class="line">                value = map[n<span class="number">-1</span>] + step (n<span class="number">-2</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                value = step(n<span class="number">-1</span>) + step (n<span class="number">-2</span>);</span><br><span class="line">                map[n] = value;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(step(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function step(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> temp = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=n; i++)&#123;</span><br><span class="line">            temp = a+b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          原理
+依次比较相邻的两个值，如果后面的比前面的小，则将小的元素排到前面。依照这个规则进行多次并且递减的迭代，直到顺序正确。时间复杂度，空间复杂度，稳定性
+
+
+平均时间复杂度O(n*n)
+
+
+最好情况O(n)
+
+
+最差情况O(n*n)
+
+
+空间复杂度O(1)
+
+
+稳定性：稳定
+
+12345678910
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/14e6f1eb.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/c6654282.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/c6654282.html" itemprop="url">递归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  132
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          函数调用自身
+比较著名的斐波那契
+
+
+js调用栈大小的限制
+
+
+chrome 20955 firefox 343429
+
+1234567function fn(n)&#123;if(n==1|n==2)&#123;return 1;&#125;//因为斐波那契数列格式为：1、1、2、3、5、8、13
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/c6654282.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ff8068c0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/ff8068c0.html" itemprop="url">快速排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  164
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          原理
+1、找基准（一般是以中间项为基准）
+
+
+2、遍历数组，小于基准的放在left，大于基准的放在right
+
+
+3、递归
+
+12345678910111213141516171819202122function quickSort(arr)&#123;    //如果数组&lt;=1,则直接返回 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/ff8068c0.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2280,7 +2283,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.7k</span>
+    <span title="Site words total count">26.8k</span>
   
 </div>
 
