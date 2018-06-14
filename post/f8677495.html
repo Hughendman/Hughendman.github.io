@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据结构" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript 算法与数据结构中的数据结构的中文翻译 链表 在计算机科学中，链表是数据元素的线性集合，其中线性顺序不是由它们在内存中的物理位置所给出的。相反，每个元素指向下一个元素。它是由一组节点组成的数据结构，这些节点一起表示一个序列。在最简单的形式下，每个节点由数据和指向序列中下一个节点的引用(换句话说，链接)组成。这种结构允许在迭代过程中从序列的任何位置高效地插入或删除元素。更复杂的变">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构的中文翻译">
+<meta property="og:url" content="http://yoursite.com/post/f8677495.html">
+<meta property="og:site_name" content="YINXS的博客">
+<meta property="og:description" content="JavaScript 算法与数据结构中的数据结构的中文翻译 链表 在计算机科学中，链表是数据元素的线性集合，其中线性顺序不是由它们在内存中的物理位置所给出的。相反，每个元素指向下一个元素。它是由一组节点组成的数据结构，这些节点一起表示一个序列。在最简单的形式下，每个节点由数据和指向序列中下一个节点的引用(换句话说，链接)组成。这种结构允许在迭代过程中从序列的任何位置高效地插入或删除元素。更复杂的变">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://camo.githubusercontent.com/37013b59008ed49a6701968da6b182eb6a9d24c8/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36642f53696e676c792d6c696e6b65642d6c6973742e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/7fecf0b843d5f7b26e4514b4e9e047d6c84ee76b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f352f35322f446174615f51756575652e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/464c4087d283619fe8e8c77cf5805e45faa54ca9/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62342f4c69666f5f737461636b2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/2b2b396c714c8344d3928c46d6b0f6be47d3d8c8/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37642f486173685f7461626c655f335f315f315f305f315f305f305f53502e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/404b54bac0302f96ef42dcd4c9bc4fc5ea03ec0b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f642f64302f486173685f7461626c655f355f305f315f315f315f315f315f4c4c2e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/cf3c66d0d2ed67af70a8bc500fc215526d266a0d/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f332f33382f4d61782d486561702e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/3815e61b976f8ca1fee251556ac80b3acb25cefc/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62652f547269655f6578616d706c652e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/38340edffe661998f395184c2ac1578aea636788/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f42696e6172795f747265652e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/cd4bc41832630c9db51a7216109ac209e23d97a7/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f642f64612f42696e6172795f7365617263685f747265652e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/fa696e8874d67cb7b8a4af1bf8ea37d4f27106ce/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66642f41564c5f547265655f4578616d706c652e676966">
+<meta property="og:image" content="https://camo.githubusercontent.com/74348f31202de4c1c0cff901ecaf1000da8a25a0/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f612f61642f41564c2d747265652d7742616c616e63655f4b2e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/d43370c06444a7cbb82d07a2448429f767762ff2/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f4c4c253230526f746174696f6e2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/13100e6ba748d409fdebd50cb0f5f58a07364b80/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f5252253230526f746174696f6e2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/e520bde629adba0a1bb7de468380d5a8ed9705b3/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f4c52253230526f746174696f6e2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/87d7c1ba6057cbaeb1382fedf154cf0fce8e42bc/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f524c253230526f746174696f6e2e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/beb5550ebdf066ff1854d58001805a8c47c758fa/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36362f5265642d626c61636b5f747265655f6578616d706c652e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/a0bdc824f16d3a0d5da90ea777ffdd1e5049c3ad/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b43617365322e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/b6c6b8333bbd4b0c771c03de36da66e174ed004d/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b436173653361312e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/0af0b085e6adf62ac606733f9cbfda96c9d748dc/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533642e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/b4ddf374259a0e12f6d6fae3b7629048b50ab64a/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533632e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/b4ddf374259a0e12f6d6fae3b7629048b50ab64a/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533632e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/62127c391ad4573b5058ff35e3245fbd95b7c75c/68747470733a2f2f7777772e7475746f7269616c73706f696e742e636f6d2f646174615f737472756374757265735f616c676f726974686d732f696d616765732f67726170682e6a7067">
+<meta property="og:image" content="https://camo.githubusercontent.com/2b372d0010b6e9cdf82a5c726c1259fc8ede2162/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36372f4473755f6469736a6f696e745f736574735f696e69742e737667">
+<meta property="og:image" content="https://camo.githubusercontent.com/9147cb69d083021cf9abd8d8c09f2dc6ca0d09db/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f612f61632f4473755f6469736a6f696e745f736574735f66696e616c2e737667">
+<meta property="og:updated_time" content="2018-06-14T08:40:08.226Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构的中文翻译">
+<meta name="twitter:description" content="JavaScript 算法与数据结构中的数据结构的中文翻译 链表 在计算机科学中，链表是数据元素的线性集合，其中线性顺序不是由它们在内存中的物理位置所给出的。相反，每个元素指向下一个元素。它是由一组节点组成的数据结构，这些节点一起表示一个序列。在最简单的形式下，每个节点由数据和指向序列中下一个节点的引用(换句话说，链接)组成。这种结构允许在迭代过程中从序列的任何位置高效地插入或删除元素。更复杂的变">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/37013b59008ed49a6701968da6b182eb6a9d24c8/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36642f53696e676c792d6c696e6b65642d6c6973742e737667">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/post/f8677495.html"/>
+
+
+
+
+
+  <title>数据结构的中文翻译 | YINXS的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YINXS的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端工程师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/f8677495.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构的中文翻译</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T11:15:00+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/f8677495.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/f8677495.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,110
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md" target="_blank" rel="noopener">JavaScript 算法与数据结构</a>中的数据结构的中文翻译</p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><blockquote>
+<p>在计算机科学中，链表是数据元素的线性集合，其中线性顺序不是由它们在内存中的物理位置所给出的。相反，每个元素指向下一个元素。它是由一组节点组成的数据结构，这些节点一起表示一个序列。在最简单的形式下，每个节点由数据和指向序列中下一个节点的引用(换句话说，链接)组成。这种结构允许在迭代过程中从序列的任何位置高效地插入或删除元素。更复杂的变体添加额外的链接，允许有效地插入或删除任意元素引用。链表的一个缺点是访问时间是线性的(并且很难进行流水线操作)。更快的访问，如随机访问，是不可行的。与链表相比，数组具有更好的缓存局部性。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/37013b59008ed49a6701968da6b182eb6a9d24c8/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36642f53696e676c792d6c696e6b65642d6c6973742e737667" alt=""></p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><blockquote>
+<p>在计算机科学中,一个队列是一种特殊的抽象数据类型或集合的实体集保存在秩序和原则(或)操作集合的实体后终端位置,称为排队,从前面和删除实体终端位置,称为出列。这使队列成为先进先出(FIFO)数据结构。在FIFO数据结构中，添加到队列的第一个元素将是要删除的第一个元素。这等价于一旦添加了一个新元素，之前添加的所有元素都必须在新元素删除之前删除。通常还会输入一个peek或front操作，返回front元素的值，而不需要对其进行排序。队列是线性数据结构的一个例子，或者更抽象地说是顺序集合。</p>
+</blockquote>
+<p>表示一个FIFO(先入先出)队列:</p>
+<p><img src="https://camo.githubusercontent.com/7fecf0b843d5f7b26e4514b4e9e047d6c84ee76b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f352f35322f446174615f51756575652e737667" alt=""></p>
+<h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><blockquote>
+<p>在计算机科学中，堆栈是一种抽象的数据类型，作为元素的集合，有两个主要操作:</p>
+<ul>
+<li>push，将元素添加到集合中</li>
+<li>pop，它删除了尚未删除的最近添加的元素。<br>元素从堆栈中出来的顺序产生了它的替代名称LIFO(最后一个进入，首先退出)。此外，peek操作可以在不修改堆栈的情况下访问顶部。这种类型的结构“堆栈”这个名字来自于类比一组物理产品堆叠在彼此之上,这使得它很容易把一件事情从堆栈的顶部,在开始一个项目深入堆栈可能需要多个其他项目第一次起飞<br>栈运行时的简单表示，带有push和pop操作。</li>
+</ul>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/464c4087d283619fe8e8c77cf5805e45faa54ca9/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62342f4c69666f5f737461636b2e706e67" alt=""></p>
+<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><blockquote>
+<p>在计算中，哈希表是实现关联数组抽象数据类型的数据结构，可以将键映射到值。哈希表使用哈希函数将索引计算到桶或槽数组中，从中可以找到所需的值</p>
+</blockquote>
+<blockquote>
+<p>理想情况下，哈希函数会将每个键分配给一个唯一的桶，但是大多数哈希表设计都使用不完美的哈希函数，这可能导致哈希函数为多个键生成相同的索引，从而导致哈希冲突。这种碰撞必须以某种方式加以适应。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/2b2b396c714c8344d3928c46d6b0f6be47d3d8c8/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37642f486173685f7461626c655f335f315f315f305f315f305f305f53502e737667" alt=""></p>
+<p>通过单独的链接解决哈希冲突:</p>
+<p><img src="https://camo.githubusercontent.com/404b54bac0302f96ef42dcd4c9bc4fc5ea03ec0b/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f642f64302f486173685f7461626c655f355f305f315f315f315f315f315f4c4c2e737667" alt=""></p>
+<h2 id="堆-数据结构"><a href="#堆-数据结构" class="headerlink" title="堆(数据结构)"></a>堆(数据结构)</h2><blockquote>
+<p>在计算机科学中,堆是专门的树型数据结构,满足堆属性:如果P是C的父节点,那么关键(P值)是大于或等于(max堆)或小于或等于(在一个最小堆)C的关键节点的“顶级”堆(没有父母)称为根节点。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/cf3c66d0d2ed67af70a8bc500fc215526d266a0d/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f332f33382f4d61782d486561702e737667" alt=""></p>
+<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2><blockquote>
+<p>在计算机科学中，优先级队列是一种抽象数据类型，它类似于常规队列或堆栈数据结构，但是每个元素都有与之相关联的“优先级”。在优先级队列中，高优先级的元素在低优先级的元素之前被服务。如果两个元素具有相同的优先级，则根据它们在队列中的顺序提供服务。</p>
+</blockquote>
+<blockquote>
+<p>虽然优先级队列通常使用堆实现，但它们在概念上与堆是不同的。优先队列是一个抽象概念，如“列表”或“地图”;正如可以使用链表或数组实现列表一样，可以使用堆或其他方法(如无序数组)实现优先级队列。</p>
+</blockquote>
+<h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><blockquote>
+<p>在计算机科学中，trie也称为数字树，有时也称为基数树或前缀树(可以用前缀搜索)，是一种搜索树——一种有序的树数据结构，用于存储动态集或关联数组，其中的键通常是字符串。与二叉搜索树不同，树中没有节点存储与该节点关联的键;相反，它在树中的位置定义了关联的键。节点的所有后代都有与该节点相关联的字符串的公共前缀，而根则与空字符串相关联。值不一定与每个节点相关联。相反，值往往只与叶子和一些与感兴趣的键相对应的内部节点相关联。有关前缀树的空间优化表示，请参见紧凑前缀树。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/3815e61b976f8ca1fee251556ac80b3acb25cefc/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62652f547269655f6578616d706c652e737667" alt=""></p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
+<li>二叉搜索树</li>
+<li>AVL树</li>
+</ul>
+<blockquote>
+<p>在计算机科学中，树是一种广泛使用的抽象数据类型(ADT)——或实现此ADT的数据结构——它模拟一个层次树结构，具有根值，子树带有父节点，表示为一组链接节点。<br>树的数据结构可以定义递归(本地)作为节点的集合(从根节点开始),其中每个节点是一种数据结构组成的一个值,与参考节点的列表(“孩子”),与约束,没有引用是重复的,没有根。</p>
+</blockquote>
+<blockquote>
+<p>一个简单的无序树;在这个图中，标记为7的节点有两个子节点，标记为2和6，一个父节点标记为2。顶部的根节点没有父节点。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/38340edffe661998f395184c2ac1578aea636788/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f42696e6172795f747265652e737667" alt=""></p>
+<h4 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h4><blockquote>
+<p>在计算机科学中，二叉搜索树(BST)，有时被称为有序或排序的二叉树，是一种特殊类型的容器:数据结构，在内存中存储“项目”(如数字、名称等)。它们允许快速查找、添加和删除项，并且可以用于实现动态项集，或者查找表，以便按键查找项(例如，按人名查找某人的电话号码)。</p>
+</blockquote>
+<blockquote>
+<p>二叉搜索树保持键排序顺序,以便查找和其他操作可以使用二分查找的原则:在寻找钥匙在树上(或插入一个新的密钥)的地方,他们遍历这棵树从根到叶,使比较键存储在树的节点和决定,比较的基础上,继续向左或向右子树中搜索。平均而言，这意味着每次比较都允许操作跳过树的大约一半，因此每次查找、插入或删除所花费的时间与树中存储的项的数量的对数成正比。这比在一个(未排序的)数组中按键查找项所需的线性时间要好得多，但比在哈希表上对应的操作要慢。</p>
+</blockquote>
+<blockquote>
+<p>一个大小为9和深度为3的二叉搜索树，根为8。树叶没有被画出来。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/cd4bc41832630c9db51a7216109ac209e23d97a7/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f642f64612f42696e6172795f7365617263685f747265652e737667" alt=""></p>
+<h4 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h4><blockquote>
+<p>在计算机科学中，AVL树(以发明者Adelson-Velsky和Landis命名)是一种自平衡的二叉搜索树。这是第一个被发明的数据结构。在AVL树中，任何节点的两个子树的高度在最多的时候是不同的;如果在任何时候，它们之间的差异不止一个，那么重新平衡就是为了恢复这一资产。查找、插入和删除在平均和最坏的情况下都需要O(log n)时间，其中n是操作之前树中的节点数。插入和删除可能需要树被一个或多个树旋转重新平衡。</p>
+</blockquote>
+<blockquote>
+<p>显示在AVL树中插入几个元素的动画。它包括左、右、左、右和左旋转。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/fa696e8874d67cb7b8a4af1bf8ea37d4f27106ce/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66642f41564c5f547265655f4578616d706c652e676966" alt=""></p>
+<p>AVL树平衡因子(绿色)</p>
+<p><img src="https://camo.githubusercontent.com/74348f31202de4c1c0cff901ecaf1000da8a25a0/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f612f61642f41564c2d747265652d7742616c616e63655f4b2e737667" alt=""></p>
+<h6 id="AVL树旋转"><a href="#AVL树旋转" class="headerlink" title="AVL树旋转"></a>AVL树旋转</h6><p>Left-Left Rotation</p>
+<p><img src="https://camo.githubusercontent.com/d43370c06444a7cbb82d07a2448429f767762ff2/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f4c4c253230526f746174696f6e2e706e67" alt=""></p>
+<p>Right-Right Rotation</p>
+<p><img src="https://camo.githubusercontent.com/13100e6ba748d409fdebd50cb0f5f58a07364b80/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f5252253230526f746174696f6e2e706e67" alt=""></p>
+<p>Left-Right Rotation</p>
+<p><img src="https://camo.githubusercontent.com/e520bde629adba0a1bb7de468380d5a8ed9705b3/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f4c52253230526f746174696f6e2e706e67" alt=""></p>
+<p>Right-Left Rotation</p>
+<p><img src="https://camo.githubusercontent.com/87d7c1ba6057cbaeb1382fedf154cf0fce8e42bc/687474703a2f2f6274656368736d617274636c6173732e636f6d2f44532f696d616765732f524c253230526f746174696f6e2e706e67" alt=""></p>
+<h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><blockquote>
+<p>红黑树是计算机科学中的一种自平衡二叉搜索树。<br>二叉树的每个节点都有一个额外的位，这个位通常被解释为节点的颜色(红色或黑色)。<br>这些颜色位用于确保树在插入和删除过程中保持近似平衡。</p>
+</blockquote>
+<blockquote>
+<p>平衡是通过用两种颜色中的一种来绘制树的每个节点，以满足某些属性，这些属性共同限制了树在最坏情况下的不平衡程度。<br>当修改树时，新树随后被重新排列并重新绘制，以恢复着色属性。<br>这些属性的设计方式使重新排列和重新上色能够有效地进行。</p>
+</blockquote>
+<blockquote>
+<p>树的平衡并不完美，但是它足够好，可以保证在O(log n)时间内进行搜索，其中n是树中元素的总数。<br>插入和删除操作以及树的重新排列和重新上色也在O(log n)时间内执行。</p>
+</blockquote>
+<p>红黑树的一个例子:</p>
+<p><img src="https://camo.githubusercontent.com/beb5550ebdf066ff1854d58001805a8c47c758fa/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36362f5265642d626c61636b5f747265655f6578616d706c652e737667" alt=""></p>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><blockquote>
+<p>除了对二叉搜索树施加的要求之外，红黑树还必须满足以下条件:</p>
+</blockquote>
+<ul>
+<li>每个节点要么是红色的，要么是黑色的。</li>
+<li>根是黑色的。这条规则有时被省略。因为根总是可以从红色变为黑色，但也不一定相反，这个规则对分析没有什么影响。</li>
+<li>所有的叶子(NIL)都是黑色的。</li>
+<li>如果一个节点是红色的，那么它的子节点都是黑色的。</li>
+<li>从给定节点到其任何子代NIL节点的每条路径都包含相同数量的黑节点。</li>
+</ul>
+<blockquote>
+<p>一些定义:从根节点到节点的黑节点数是节点的黑深度;<br>从根到叶的所有路径中黑色节点的统一数量称为红黑树的黑高度。</p>
+</blockquote>
+<blockquote>
+<p>这些约束强化了红黑树的一个关键属性:从根到最远叶子的路径不超过从根到最近叶子的路径的两倍。<br>结果是，这棵树大概是高度平衡的。<br>由于插入、删除和查找值等操作需要最坏情况下的时间与树的高度成正比，因此在最坏情况下，与普通的二叉搜索树不同，红黑树在树的高度上的理论上界允许红黑树高效工作。</p>
+</blockquote>
+<h5 id="平衡插入"><a href="#平衡插入" class="headerlink" title="平衡插入"></a>平衡插入</h5><p>If uncle is RED</p>
+<p><img src="https://camo.githubusercontent.com/a0bdc824f16d3a0d5da90ea777ffdd1e5049c3ad/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b43617365322e706e67" alt=""></p>
+<p>If uncle is BLACK</p>
+<ul>
+<li>Left Left Case (p is left child of g and x is left child of p)</li>
+<li>Left Right Case (p is left child of g and x is right child of p)</li>
+<li>Right Right Case (p is right child of g and x is right child of p)</li>
+<li>Right Left Case (p is right child of g and x is left child of p)</li>
+</ul>
+<p>– Left Left Case (See g, p and x)<br><img src="https://camo.githubusercontent.com/b6c6b8333bbd4b0c771c03de36da66e174ed004d/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b436173653361312e706e67" alt=""></p>
+<p>– Left Right Case (See g, p and x)<br><img src="https://camo.githubusercontent.com/0af0b085e6adf62ac606733f9cbfda96c9d748dc/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533642e706e67" alt=""></p>
+<p>– Right Right Case (See g, p and x)<br><img src="https://camo.githubusercontent.com/b4ddf374259a0e12f6d6fae3b7629048b50ab64a/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533632e706e67" alt=""></p>
+<p>– Right Left Case (See g, p and x)<br><img src="https://camo.githubusercontent.com/b4ddf374259a0e12f6d6fae3b7629048b50ab64a/68747470733a2f2f7777772e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f75706c6f6164732f726564426c61636b4361736533632e706e67" alt=""></p>
+<h2 id="图-有向图与无向图"><a href="#图-有向图与无向图" class="headerlink" title="图(有向图与无向图)"></a>图(有向图与无向图)</h2><blockquote>
+<p>在计算机科学中，图是一种抽象的数据类型，用于实现数学中的无向图和有向图概念，特别是图论领域</p>
+</blockquote>
+<blockquote>
+<p>图数据结构由一个有限的(且可能是可变的)顶点或节点或点集组成，以及一组非向图或一组有向图的有序对。<br>这些对称为无向图的边、弧或线，以及有向图的箭头、有向边、有向弧或有向线。<br>顶点可以是图结构的一部分，也可以是由整数索引或引用表示的外部实体。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/62127c391ad4573b5058ff35e3245fbd95b7c75c/68747470733a2f2f7777772e7475746f7269616c73706f696e742e636f6d2f646174615f737472756374757265735f616c676f726974686d732f696d616765732f67726170682e6a7067" alt=""></p>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><blockquote>
+<p>非联合集数据结构(也称为单点查找数据结构或合并查找集)是一种数据结构，它跟踪一组划分为若干不相交(不重叠)子集的元素。<br>它提供near-constant-time操作(由阿克曼的逆函数有界)添加新的集,合并现有集,并确定是否在同一组元素。除了许多其他用途(请参见应用部分),分离集扮演着一个关键角色,克鲁斯卡算法寻找图的最小生成树。</p>
+</blockquote>
+<p><img src="https://camo.githubusercontent.com/2b372d0010b6e9cdf82a5c726c1259fc8ede2162/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36372f4473755f6469736a6f696e745f736574735f696e69742e737667" alt=""></p>
+<p>MakeSet创建8单例</p>
+<p><img src="https://camo.githubusercontent.com/9147cb69d083021cf9abd8d8c09f2dc6ca0d09db/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f612f61632f4473755f6469736a6f696e745f736574735f66696e616c2e737667" alt=""></p>
+<p>在联合的一些操作之后，一些集合被分组在一起。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/fa1a30ae.html" rel="next" title="数据埋点代码结构">
+                <i class="fa fa-chevron-left"></i> 数据埋点代码结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="yinxs" />
+            
+              <p class="site-author-name" itemprop="name">yinxs</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">1.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈"><span class="nav-number">3.</span> <span class="nav-text">堆栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希表"><span class="nav-number">4.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆-数据结构"><span class="nav-number">5.</span> <span class="nav-text">堆(数据结构)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先队列"><span class="nav-number">6.</span> <span class="nav-text">优先队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典树"><span class="nav-number">7.</span> <span class="nav-text">字典树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树"><span class="nav-number">8.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">8.0.1.</span> <span class="nav-text">二叉搜索树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AVL树"><span class="nav-number">8.0.2.</span> <span class="nav-text">AVL树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#AVL树旋转"><span class="nav-number">8.0.2.0.1.</span> <span class="nav-text">AVL树旋转</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#红黑树"><span class="nav-number">8.0.3.</span> <span class="nav-text">红黑树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">8.0.3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#平衡插入"><span class="nav-number">8.0.3.2.</span> <span class="nav-text">平衡插入</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图-有向图与无向图"><span class="nav-number">9.</span> <span class="nav-text">图(有向图与无向图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并查集"><span class="nav-number">10.</span> <span class="nav-text">并查集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yinxs</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">31.0k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>  本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Hughendman',
+            repo: 'Hughendman.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6559418c2c8da3379abf373e0efcb3910990f63a',
+            
+                client_id: 'adee08756dcabcc1f120'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
