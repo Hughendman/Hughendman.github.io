@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bc56fb70.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/c6654282.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/bc56fb70.html" itemprop="url">顺序搜索</a></h1>
+                <a class="post-title-link" href="/post/c6654282.html" itemprop="url">递归</a></h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  77
+                  132
                 </span>
               
 
@@ -419,14 +419,20 @@
       
         
           
-          原理
-顺序或线性搜索是最基本的搜索算法。它的机制是将每一个数据结构中的元素和我们要找的元素做比较。效率低下
+          函数调用自身
+比较著名的斐波那契
 
-12345678function search(item)&#123;    for(var i=0; i&lt;array.length; i++)&#123;        if(ite
+
+js调用栈大小的限制
+
+
+chrome 20955 firefox 343429
+
+1234567function fn(n)&#123;if(n==1|n==2)&#123;return 1;&#125;//因为斐波那契数列格式为：1、1、2、3、5、8、13
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/bc56fb70.html#more" rel="contents">
+            <a class="btn" href="/post/c6654282.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -659,7 +665,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3fb51549.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/98b35abd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -678,7 +684,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/3fb51549.html" itemprop="url">react中的dva的使用</a></h1>
+                <a class="post-title-link" href="/post/98b35abd.html" itemprop="url">二分搜索</a></h1>
         
 
         <div class="post-meta">
@@ -713,8 +719,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -744,7 +750,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  296
+                  193
                 </span>
               
 
@@ -783,13 +789,26 @@
       
         
           
-          参考参考
-dva介绍
-框架: dva是个框架，集成了redux、redux-saga、react-router-redux、react-router快速初始化: 可以快速实现项目的初始化，不需要繁琐地配置简化开发：将initState、saga、reducer集成到一个model里面统一管理，避免文
+          需求
+需要被搜索的数据结构进行过排序
+
+步骤
+选择数组的中间值
+
+
+如果选中值是待搜索值，那么算法执行完毕（值找到了）
+
+
+如果待搜索值比选中值要小，则返回步骤一并在选中值左边的子数组中寻找
+
+
+如果待搜索值比选中值要大，则返回步骤一并在选中值右边的子数组中寻找。
+
+1234567891011121
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/3fb51549.html#more" rel="contents">
+            <a class="btn" href="/post/98b35abd.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -840,7 +859,7 @@ dva介绍
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/5dd43de5.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/34811d5f.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -859,7 +878,7 @@ dva介绍
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/5dd43de5.html" itemprop="url">python导数据脚本</a></h1>
+                <a class="post-title-link" href="/post/34811d5f.html" itemprop="url">贪心</a></h1>
         
 
         <div class="post-meta">
@@ -871,8 +890,8 @@ dva介绍
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
-                2018-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
               </time>
             
 
@@ -894,8 +913,8 @@ dva介绍
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -925,7 +944,7 @@ dva介绍
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  621
+                  137
                 </span>
               
 
@@ -941,7 +960,7 @@ dva介绍
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  1
                 </span>
               
             </div>
@@ -964,12 +983,17 @@ dva介绍
       
         
           
-          刚刚上手，代码很不优雅，有待优化
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071
+          理解
+贪心是一种特殊的动态规划，动态规划的本质是独立的子问题，而贪心则是每次可以找到最优的独立子问题。
+
+
+贪心和动归不是互斥的，而是包含的，贪心更快，但约束更强，适应范围更小。
+
+最小硬币找零法12345678910111213function Mincoinchange(coins,amount
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/5dd43de5.html#more" rel="contents">
+            <a class="btn" href="/post/34811d5f.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1020,7 +1044,7 @@ dva介绍
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3452590.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1e0e36a0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1039,7 +1063,7 @@ dva介绍
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/3452590.html" itemprop="url">svg</a></h1>
+                <a class="post-title-link" href="/post/1e0e36a0.html" itemprop="url">DOM操作和数据操作</a></h1>
         
 
         <div class="post-meta">
@@ -1051,8 +1075,8 @@ dva介绍
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
-                2018-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T11:15:00+08:00">
+                2018-06-14
               </time>
             
 
@@ -1074,8 +1098,8 @@ dva介绍
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据可视化/" itemprop="url" rel="index">
-                    <span itemprop="name">数据可视化</span>
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
                   </a>
                 </span>
 
@@ -1105,7 +1129,7 @@ dva介绍
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  368
+                  255
                 </span>
               
 
@@ -1121,7 +1145,7 @@ dva介绍
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -1144,22 +1168,15 @@ dva介绍
       
         
           
-          svg
-SVG 意为可缩放矢量图形（Scalable Vector Graphics）。
+          js的DOM操作
+DOM操作会导致导致用户阻塞的重构(reflow)和重绘(repaint).在页面上的任何操作都是有代价的.reflow和repaint就是我们在改变页面或者说操作DOM时,会带来的两种后果.
 
 
-SVG 使用 XML 格式定义图像。
-
-
-SVG 是使用 XML 来描述二维图形和绘图程序的语言。
-
-
-SVG 指可伸缩矢量图形 (Scalable Vector Graphics)
-SVG 用来定义用于网
+reflow意味着结构的改变,比如一堆元素堆叠,改变其中一个的宽高,那么相应的所有元
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/3452590.html#more" rel="contents">
+            <a class="btn" href="/post/1e0e36a0.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1573,7 +1590,7 @@ SVG 用来定义用于网
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3fb51549.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/3452590.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1592,7 +1609,7 @@ SVG 用来定义用于网
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/3fb51549.html" itemprop="url">Hexo高级使用</a></h1>
+                <a class="post-title-link" href="/post/3452590.html" itemprop="url">svg</a></h1>
         
 
         <div class="post-meta">
@@ -1604,8 +1621,8 @@ SVG 用来定义用于网
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T11:15:00+08:00">
-                2018-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
+                2018-06-13
               </time>
             
 
@@ -1627,8 +1644,8 @@ SVG 用来定义用于网
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/数据可视化/" itemprop="url" rel="index">
+                    <span itemprop="name">数据可视化</span>
                   </a>
                 </span>
 
@@ -1658,7 +1675,7 @@ SVG 用来定义用于网
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  410
+                  368
                 </span>
               
 
@@ -1697,13 +1714,202 @@ SVG 用来定义用于网
       
         
           
-          添加新的页面$ hexo new page about
-配置目录在next下的_config.yml
-12345678910menu:  home: / || home  archives: /archives || archive  tags: /tags || tags  message: /m
+          svg
+SVG 意为可缩放矢量图形（Scalable Vector Graphics）。
+
+
+SVG 使用 XML 格式定义图像。
+
+
+SVG 是使用 XML 来描述二维图形和绘图程序的语言。
+
+
+SVG 指可伸缩矢量图形 (Scalable Vector Graphics)
+SVG 用来定义用于网
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/3fb51549.html#more" rel="contents">
+            <a class="btn" href="/post/3452590.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/5dd43de5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/5dd43de5.html" itemprop="url">python导数据脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T11:15:00+08:00">
+                2018-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  621
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          刚刚上手，代码很不优雅，有待优化
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/5dd43de5.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1932,188 +2138,6 @@ node中es（elastic
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1466266d.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/1466266d.html" itemprop="url">为博客添加评论功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T11:15:00+08:00">
-                2018-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  208
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          注册https://github.com/settings/applications/new
-在Authorization callback URL填写自己的网站
-记录下来Client ID 和 Client Secret
-在themes/next/_config.yml进行配置1234567891
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/1466266d.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2168,7 +2192,7 @@ node中es（elastic
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2248,7 +2272,7 @@ node中es（elastic
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.2k</span>
+    <span title="Site words total count">43.3k</span>
   
 </div>
 
