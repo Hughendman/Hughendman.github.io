@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-22T03:21:32.146Z</updated>
+  <updated>2018-06-26T03:22:30.567Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>手把手教你做数据埋点</title>
+    <link href="http://yoursite.com/post/19e24b69.html"/>
+    <id>http://yoursite.com/post/19e24b69.html</id>
+    <published>2018-06-26T08:15:00.000Z</published>
+    <updated>2018-06-26T03:22:30.567Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前端&quot;&gt;&lt;a href=&quot;#前端&quot; class=&quot;headerlink&quot; title=&quot;前端&quot;&gt;&lt;/a&gt;前端&lt;/h2&gt;&lt;p&gt;埋点代码&lt;/p&gt;
+&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="埋点" scheme="http://yoursite.com/categories/%E5%9F%8B%E7%82%B9/"/>
+    
+    
+      <category term="埋点" scheme="http://yoursite.com/tags/%E5%9F%8B%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>egg.js</title>
+    <link href="http://yoursite.com/post/d593ec.html"/>
+    <id>http://yoursite.com/post/d593ec.html</id>
+    <published>2018-06-22T10:15:00.000Z</published>
+    <updated>2018-06-22T08:31:56.016Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;http://eggjs.org/zh-cn/intro/quickstart.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;egg.js&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="node" scheme="http://yoursite.com/categories/node/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nginx日志导出pv，uv（python版本）</title>
     <link href="http://yoursite.com/post/cda56fe8.html"/>
     <id>http://yoursite.com/post/cda56fe8.html</id>
     <published>2018-06-22T08:15:00.000Z</published>
-    <updated>2018-06-22T03:21:32.146Z</updated>
+    <updated>2018-06-22T06:56:40.094Z</updated>
     
     <summary type="html">
     
@@ -47,7 +101,7 @@
     <link href="http://yoursite.com/post/2a41bd63.html"/>
     <id>http://yoursite.com/post/2a41bd63.html</id>
     <published>2018-06-22T03:15:00.000Z</published>
-    <updated>2018-06-22T06:54:01.755Z</updated>
+    <updated>2018-06-22T06:56:40.091Z</updated>
     
     <summary type="html">
     
@@ -122,33 +176,6 @@
   </entry>
   
   <entry>
-    <title>VUE公共组件的使用</title>
-    <link href="http://yoursite.com/post/8d07ac1f.html"/>
-    <id>http://yoursite.com/post/8d07ac1f.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VUE中使用埋点（如何使用外部js）</title>
     <link href="http://yoursite.com/post/1a9bc311.html"/>
     <id>http://yoursite.com/post/1a9bc311.html</id>
@@ -176,11 +203,11 @@
   </entry>
   
   <entry>
-    <title>报错信息</title>
-    <link href="http://yoursite.com/post/624671ed.html"/>
-    <id>http://yoursite.com/post/624671ed.html</id>
-    <published>2018-06-19T08:15:00.000Z</published>
-    <updated>2018-06-19T08:56:08.622Z</updated>
+    <title>VUE公共组件的使用</title>
+    <link href="http://yoursite.com/post/8d07ac1f.html"/>
+    <id>http://yoursite.com/post/8d07ac1f.html</id>
+    <published>2018-06-20T08:15:00.000Z</published>
+    <updated>2018-06-21T02:04:33.301Z</updated>
     
     <summary type="html">
     
@@ -188,16 +215,17 @@
       
         
         
-          &lt;h1 id=&quot;报错项目&quot;&gt;&lt;a href=&quot;#报错项目&quot; class=&quot;headerlink&quot; title=&quot;报错项目&quot;&gt;&lt;/a&gt;&lt;a
+          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
+&lt;figure class=&quot;highlight
         
       
     
     </summary>
     
-      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
     
     
-      <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
     
   </entry>
   
@@ -218,6 +246,32 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;JAVA_HOME    &lt;/p&gt;
 &lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>报错信息</title>
+    <link href="http://yoursite.com/post/624671ed.html"/>
+    <id>http://yoursite.com/post/624671ed.html</id>
+    <published>2018-06-19T08:15:00.000Z</published>
+    <updated>2018-06-19T08:56:08.622Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;报错项目&quot;&gt;&lt;a href=&quot;#报错项目&quot; class=&quot;headerlink&quot; title=&quot;报错项目&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
@@ -313,11 +367,11 @@
   </entry>
   
   <entry>
-    <title>冒泡排序</title>
-    <link href="http://yoursite.com/post/14e6f1eb.html"/>
-    <id>http://yoursite.com/post/14e6f1eb.html</id>
+    <title>快速排序</title>
+    <link href="http://yoursite.com/post/ff8068c0.html"/>
+    <id>http://yoursite.com/post/ff8068c0.html</id>
     <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.954Z</updated>
+    <updated>2018-06-13T11:46:57.980Z</updated>
     
     <summary type="html">
     
@@ -339,11 +393,63 @@
   </entry>
   
   <entry>
-    <title>快速排序</title>
-    <link href="http://yoursite.com/post/ff8068c0.html"/>
-    <id>http://yoursite.com/post/ff8068c0.html</id>
+    <title>动态规划</title>
+    <link href="http://yoursite.com/post/a80d0031.html"/>
+    <id>http://yoursite.com/post/a80d0031.html</id>
     <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.980Z</updated>
+    <updated>2018-06-13T11:46:57.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;漫画&quot;&gt;&lt;a href=&quot;#漫画&quot; class=&quot;headerlink&quot; title=&quot;漫画&quot;&gt;&lt;/a&gt;漫画&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.sohu.com/a/153858619_466939&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组方法</title>
+    <link href="http://yoursite.com/post/4f9a43e7.html"/>
+    <id>http://yoursite.com/post/4f9a43e7.html</id>
+    <published>2018-06-14T03:15:00.000Z</published>
+    <updated>2018-06-13T11:46:57.989Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;迭代器函数&quot;&gt;&lt;a href=&quot;#迭代器函数&quot; class=&quot;headerlink&quot; title=&quot;迭代器函数&quot;&gt;&lt;/a&gt;迭代器函数&lt;/h3&gt;&lt;h5 id=&quot;every&quot;&gt;&lt;a href=&quot;#every&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>顺序搜索</title>
+    <link href="http://yoursite.com/post/bc56fb70.html"/>
+    <id>http://yoursite.com/post/bc56fb70.html</id>
+    <published>2018-06-14T03:15:00.000Z</published>
+    <updated>2018-06-13T11:46:57.974Z</updated>
     
     <summary type="html">
     
@@ -400,87 +506,6 @@
   </entry>
   
   <entry>
-    <title>顺序搜索</title>
-    <link href="http://yoursite.com/post/bc56fb70.html"/>
-    <id>http://yoursite.com/post/bc56fb70.html</id>
-    <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.974Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>归并排序</title>
-    <link href="http://yoursite.com/post/14e6f1eb.html"/>
-    <id>http://yoursite.com/post/14e6f1eb.html</id>
-    <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-14T01:49:18.750Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;其基本思想是分治策略，先进行划分，然后再进行合并&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>选择排序</title>
-    <link href="http://yoursite.com/post/43d00a99.html"/>
-    <id>http://yoursite.com/post/43d00a99.html</id>
-    <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.962Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>react中的dva的使用</title>
     <link href="http://yoursite.com/post/3fb51549.html"/>
     <id>http://yoursite.com/post/3fb51549.html</id>
@@ -507,11 +532,11 @@
   </entry>
   
   <entry>
-    <title>大O表示法</title>
-    <link href="http://yoursite.com/post/fd43a581.html"/>
-    <id>http://yoursite.com/post/fd43a581.html</id>
+    <title>二分搜索</title>
+    <link href="http://yoursite.com/post/98b35abd.html"/>
+    <id>http://yoursite.com/post/98b35abd.html</id>
     <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.951Z</updated>
+    <updated>2018-06-13T11:46:57.948Z</updated>
     
     <summary type="html">
     
@@ -519,33 +544,10 @@
       
         
         
-          &lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划</title>
-    <link href="http://yoursite.com/post/a80d0031.html"/>
-    <id>http://yoursite.com/post/a80d0031.html</id>
-    <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;漫画&quot;&gt;&lt;a href=&quot;#漫画&quot; class=&quot;headerlink&quot; title=&quot;漫画&quot;&gt;&lt;/a&gt;漫画&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.sohu.com/a/153858619_466939&quot; target=&quot;_blank&quot;
+          &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;需要被搜索的数据结构进行过排序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;步骤&quot;&gt;&lt;a
         
       
     
