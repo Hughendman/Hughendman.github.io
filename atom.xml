@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-29T07:18:44.657Z</updated>
+  <updated>2018-07-02T04:07:56.579Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端错误日志监听</title>
+    <link href="http://yoursite.com/post/74ae734e.html"/>
+    <id>http://yoursite.com/post/74ae734e.html</id>
+    <published>2018-07-02T08:15:00.000Z</published>
+    <updated>2018-07-02T04:07:56.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
+    
+    
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux定时任务(crontab)</title>
     <link href="http://yoursite.com/post/c156bde1.html"/>
     <id>http://yoursite.com/post/c156bde1.html</id>
     <published>2018-06-29T08:15:00.000Z</published>
-    <updated>2018-06-29T07:18:44.657Z</updated>
+    <updated>2018-06-29T07:20:22.734Z</updated>
     
     <summary type="html">
     
@@ -258,33 +284,6 @@
   </entry>
   
   <entry>
-    <title>VUE中使用埋点（如何使用外部js）</title>
-    <link href="http://yoursite.com/post/1a9bc311.html"/>
-    <id>http://yoursite.com/post/1a9bc311.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.305Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VUE公共组件的使用</title>
     <link href="http://yoursite.com/post/8d07ac1f.html"/>
     <id>http://yoursite.com/post/8d07ac1f.html</id>
@@ -312,11 +311,11 @@
   </entry>
   
   <entry>
-    <title>win10配置JAVA环境变量</title>
-    <link href="http://yoursite.com/post/6b40fbfe.html"/>
-    <id>http://yoursite.com/post/6b40fbfe.html</id>
-    <published>2018-06-19T08:15:00.000Z</published>
-    <updated>2018-06-19T08:56:08.624Z</updated>
+    <title>VUE中使用埋点（如何使用外部js）</title>
+    <link href="http://yoursite.com/post/1a9bc311.html"/>
+    <id>http://yoursite.com/post/1a9bc311.html</id>
+    <published>2018-06-20T08:15:00.000Z</published>
+    <updated>2018-06-21T02:04:33.305Z</updated>
     
     <summary type="html">
     
@@ -324,19 +323,17 @@
       
         
         
-          &lt;p&gt;在系统变量中添加&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;JAVA_HOME    &lt;/p&gt;
-&lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
+&lt;h2
         
       
     
     </summary>
     
-      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
     
     
-      <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
     
   </entry>
   
@@ -354,6 +351,35 @@
         
         
           &lt;h1 id=&quot;报错项目&quot;&gt;&lt;a href=&quot;#报错项目&quot; class=&quot;headerlink&quot; title=&quot;报错项目&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10配置JAVA环境变量</title>
+    <link href="http://yoursite.com/post/6b40fbfe.html"/>
+    <id>http://yoursite.com/post/6b40fbfe.html</id>
+    <published>2018-06-19T08:15:00.000Z</published>
+    <updated>2018-06-19T08:56:08.624Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在系统变量中添加&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;JAVA_HOME    &lt;/p&gt;
+&lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
@@ -484,40 +510,11 @@
   </entry>
   
   <entry>
-    <title>二分搜索</title>
-    <link href="http://yoursite.com/post/98b35abd.html"/>
-    <id>http://yoursite.com/post/98b35abd.html</id>
+    <title>选择排序</title>
+    <link href="http://yoursite.com/post/43d00a99.html"/>
+    <id>http://yoursite.com/post/43d00a99.html</id>
     <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.948Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;需要被搜索的数据结构进行过排序&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;步骤&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>顺序搜索</title>
-    <link href="http://yoursite.com/post/bc56fb70.html"/>
-    <id>http://yoursite.com/post/bc56fb70.html</id>
-    <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.974Z</updated>
+    <updated>2018-06-13T11:46:57.962Z</updated>
     
     <summary type="html">
     
@@ -539,11 +536,11 @@
   </entry>
   
   <entry>
-    <title>贪心</title>
-    <link href="http://yoursite.com/post/34811d5f.html"/>
-    <id>http://yoursite.com/post/34811d5f.html</id>
+    <title>快速排序</title>
+    <link href="http://yoursite.com/post/ff8068c0.html"/>
+    <id>http://yoursite.com/post/ff8068c0.html</id>
     <published>2018-06-14T03:15:00.000Z</published>
-    <updated>2018-06-13T11:46:57.964Z</updated>
+    <updated>2018-06-13T11:46:57.980Z</updated>
     
     <summary type="html">
     
@@ -551,7 +548,7 @@
       
         
         
-          &lt;h2 id=&quot;理解&quot;&gt;&lt;a href=&quot;#理解&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot;
         
       
     
