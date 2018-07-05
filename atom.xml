@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-04T09:17:30.121Z</updated>
+  <updated>2018-07-05T09:12:22.873Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/post/0.html"/>
+    <id>http://yoursite.com/post/0.html</id>
+    <published>2018-07-05T09:13:15.377Z</published>
+    <updated>2018-07-05T09:12:22.873Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight subunit&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>sql基础常用</title>
@@ -362,33 +384,6 @@
   </entry>
   
   <entry>
-    <title>VUE公共组件的使用</title>
-    <link href="http://yoursite.com/post/8d07ac1f.html"/>
-    <id>http://yoursite.com/post/8d07ac1f.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VUE中使用埋点（如何使用外部js）</title>
     <link href="http://yoursite.com/post/1a9bc311.html"/>
     <id>http://yoursite.com/post/1a9bc311.html</id>
@@ -403,6 +398,33 @@
         
           &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
 &lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
+    
+    
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VUE公共组件的使用</title>
+    <link href="http://yoursite.com/post/8d07ac1f.html"/>
+    <id>http://yoursite.com/post/8d07ac1f.html</id>
+    <published>2018-06-20T08:15:00.000Z</published>
+    <updated>2018-06-21T02:04:33.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
+&lt;figure class=&quot;highlight
         
       
     
@@ -496,33 +518,6 @@
     
     
       <category term="趣闻" scheme="http://yoursite.com/tags/%E8%B6%A3%E9%97%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据埋点代码结构</title>
-    <link href="http://yoursite.com/post/fa1a30ae.html"/>
-    <id>http://yoursite.com/post/fa1a30ae.html</id>
-    <published>2018-06-15T03:15:00.000Z</published>
-    <updated>2018-06-14T07:39:38.278Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;http://naotu.baidu.com/file/97428915619a72bf80432c5da44f1a74&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;埋点原始数分析&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;技术选型&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="埋点" scheme="http://yoursite.com/categories/%E5%9F%8B%E7%82%B9/"/>
-    
-    
-      <category term="埋点" scheme="http://yoursite.com/tags/%E5%9F%8B%E7%82%B9/"/>
     
   </entry>
   
