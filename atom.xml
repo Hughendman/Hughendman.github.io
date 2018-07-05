@@ -362,33 +362,6 @@
   </entry>
   
   <entry>
-    <title>VUE中使用埋点（如何使用外部js）</title>
-    <link href="http://yoursite.com/post/1a9bc311.html"/>
-    <id>http://yoursite.com/post/1a9bc311.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.305Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VUE公共组件的使用</title>
     <link href="http://yoursite.com/post/8d07ac1f.html"/>
     <id>http://yoursite.com/post/8d07ac1f.html</id>
@@ -403,6 +376,33 @@
         
           &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
 &lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
+    
+    
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VUE中使用埋点（如何使用外部js）</title>
+    <link href="http://yoursite.com/post/1a9bc311.html"/>
+    <id>http://yoursite.com/post/1a9bc311.html</id>
+    <published>2018-06-20T08:15:00.000Z</published>
+    <updated>2018-06-21T02:04:33.305Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
+&lt;h2
         
       
     
