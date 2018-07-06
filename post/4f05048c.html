@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:description" content="日期格式化(DATE_FORMAT() 函数)1234567DATE_FORMAT(date,format)DATE_FORMAT(NOW(),&apos;%Y%m%d&apos;)//20180704DATE_FORMAT(NOW(),&apos;%b %d %Y %h:%i %p&apos;)DATE_FORMAT(NOW(),&apos;%m-%d-%Y&apos;)DATE_FORMAT(NOW(),&apos;%d %b %y&apos;)DATE_FORMAT(N">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-04T09:17:30.121Z">
+<meta property="og:updated_time" content="2018-07-06T06:36:07.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql基础常用">
 <meta name="twitter:description" content="日期格式化(DATE_FORMAT() 函数)1234567DATE_FORMAT(date,format)DATE_FORMAT(NOW(),&apos;%Y%m%d&apos;)//20180704DATE_FORMAT(NOW(),&apos;%b %d %Y %h:%i %p&apos;)DATE_FORMAT(NOW(),&apos;%m-%d-%Y&apos;)DATE_FORMAT(NOW(),&apos;%d %b %y&apos;)DATE_FORMAT(N">
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  673
+                  747
                 </span>
               
 
@@ -455,6 +455,9 @@
 <h3 id="UNION-amp-amp-UNION-ALL"><a href="#UNION-amp-amp-UNION-ALL" class="headerlink" title="UNION  &amp;&amp; UNION ALL"></a>UNION  &amp;&amp; UNION ALL</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info <span class="keyword">UNION</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info <span class="keyword">UNION</span> <span class="keyword">ALL</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info</span><br></pre></td></tr></table></figure>
 <h3 id="AND-amp-OR"><a href="#AND-amp-OR" class="headerlink" title="AND &amp; OR"></a>AND &amp; OR</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">1</span> <span class="keyword">AND</span> age = <span class="number">24</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_info <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">1</span> <span class="keyword">OR</span> age = <span class="number">24</span></span><br></pre></td></tr></table></figure>
 <h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> user_info <span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> user_info <span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">not</span> <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="case-when-zhen"><a href="#case-when-zhen" class="headerlink" title="case when zhen"></a>case when zhen</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--简单case函数</span></span><br><span class="line"><span class="keyword">case</span> sex</span><br><span class="line">  <span class="keyword">when</span> <span class="string">'1'</span> <span class="keyword">then</span> <span class="string">'男'</span></span><br><span class="line">  <span class="keyword">when</span> <span class="string">'2'</span> <span class="keyword">then</span> '女’</span><br><span class="line">  <span class="keyword">else</span> '其他' <span class="keyword">end</span></span><br><span class="line"><span class="comment">--case搜索函数</span></span><br><span class="line"><span class="keyword">case</span> <span class="keyword">when</span> sex = <span class="string">'1'</span> <span class="keyword">then</span> <span class="string">'男'</span></span><br><span class="line">     <span class="keyword">when</span> sex = <span class="string">'2'</span> <span class="keyword">then</span> <span class="string">'女'</span></span><br><span class="line">     <span class="keyword">else</span> '其他' <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">CASE</span> <span class="keyword">when</span> uid = <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">'男'</span> <span class="keyword">WHEN</span> uid = <span class="number">2</span> <span class="keyword">THEN</span> <span class="string">'女'</span> <span class="keyword">ELSE</span> <span class="string">'其他'</span> <span class="keyword">END</span>)性别  <span class="keyword">FROM</span> <span class="string">`session`</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -484,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/bf58f078.html" rel="next" title="node读写json文件&Buff（nginx日志中文解决方案）">
-                <i class="fa fa-chevron-left"></i> node读写json文件&Buff（nginx日志中文解决方案）
+              <a href="/post/afab67f.html" rel="next" title="python27常用">
+                <i class="fa fa-chevron-left"></i> python27常用
               </a>
             
           </div>
@@ -494,8 +497,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/9bf77d3f.html" rel="prev" title="google扩展程序">
-                google扩展程序 <i class="fa fa-chevron-right"></i>
+              <a href="/post/bf58f078.html" rel="prev" title="node读写json文件&Buff（nginx日志中文解决方案）">
+                node读写json文件&Buff（nginx日志中文解决方案） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -647,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期格式化-DATE-FORMAT-函数"><span class="nav-number">1.</span> <span class="nav-text">日期格式化(DATE_FORMAT() 函数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置自增日期"><span class="nav-number">2.</span> <span class="nav-text">设置自增日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CREATE"><span class="nav-number">3.</span> <span class="nav-text">CREATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSERT"><span class="nav-number">4.</span> <span class="nav-text">INSERT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-join"><span class="nav-number">5.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING"><span class="nav-number">6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join"><span class="nav-number">7.</span> <span class="nav-text">inner join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#right-join"><span class="nav-number">8.</span> <span class="nav-text">right join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">9.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE"><span class="nav-number">10.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISTINCT"><span class="nav-number">11.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LIKE"><span class="nav-number">12.</span> <span class="nav-text">LIKE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">13.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-SQL-Server"><span class="nav-number">14.</span> <span class="nav-text">function(SQL Server)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">15.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION-amp-amp-UNION-ALL"><span class="nav-number">16.</span> <span class="nav-text">UNION  &amp;&amp; UNION ALL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AND-amp-OR"><span class="nav-number">17.</span> <span class="nav-text">AND &amp; OR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in"><span class="nav-number">18.</span> <span class="nav-text">in</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期格式化-DATE-FORMAT-函数"><span class="nav-number">1.</span> <span class="nav-text">日期格式化(DATE_FORMAT() 函数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置自增日期"><span class="nav-number">2.</span> <span class="nav-text">设置自增日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CREATE"><span class="nav-number">3.</span> <span class="nav-text">CREATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSERT"><span class="nav-number">4.</span> <span class="nav-text">INSERT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#left-join"><span class="nav-number">5.</span> <span class="nav-text">left join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING"><span class="nav-number">6.</span> <span class="nav-text">HAVING</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join"><span class="nav-number">7.</span> <span class="nav-text">inner join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#right-join"><span class="nav-number">8.</span> <span class="nav-text">right join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">9.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE"><span class="nav-number">10.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISTINCT"><span class="nav-number">11.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LIKE"><span class="nav-number">12.</span> <span class="nav-text">LIKE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">13.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-SQL-Server"><span class="nav-number">14.</span> <span class="nav-text">function(SQL Server)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUP-BY"><span class="nav-number">15.</span> <span class="nav-text">GROUP BY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION-amp-amp-UNION-ALL"><span class="nav-number">16.</span> <span class="nav-text">UNION  &amp;&amp; UNION ALL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AND-amp-OR"><span class="nav-number">17.</span> <span class="nav-text">AND &amp; OR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in"><span class="nav-number">18.</span> <span class="nav-text">in</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#case-when-zhen"><span class="nav-number">19.</span> <span class="nav-text">case when zhen</span></a></li></ol></div>
             
 
           </div>
@@ -681,7 +684,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52.1k</span>
+    <span title="Site words total count">52.2k</span>
   
 </div>
 
