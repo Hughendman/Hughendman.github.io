@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-06T06:47:51.575Z</updated>
+  <updated>2018-07-10T09:31:36.201Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>es9</title>
+    <link href="http://yoursite.com/post/ea4a72e4.html"/>
+    <id>http://yoursite.com/post/ea4a72e4.html</id>
+    <published>2018-07-10T08:15:00.000Z</published>
+    <updated>2018-07-10T09:31:36.201Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;除了es9(es2018)其他只是简单谈谈&lt;/p&gt;
+&lt;h2 id=&quot;es2016&quot;&gt;&lt;a href=&quot;#es2016&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sql基础常用</title>
     <link href="http://yoursite.com/post/4f05048c.html"/>
     <id>http://yoursite.com/post/4f05048c.html</id>
     <published>2018-07-06T08:15:00.000Z</published>
-    <updated>2018-07-06T06:47:51.575Z</updated>
+    <updated>2018-07-06T06:48:21.298Z</updated>
     
     <summary type="html">
     
@@ -415,33 +442,6 @@
   </entry>
   
   <entry>
-    <title>VUE公共组件的使用</title>
-    <link href="http://yoursite.com/post/8d07ac1f.html"/>
-    <id>http://yoursite.com/post/8d07ac1f.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VUE中使用埋点（如何使用外部js）</title>
     <link href="http://yoursite.com/post/1a9bc311.html"/>
     <id>http://yoursite.com/post/1a9bc311.html</id>
@@ -456,6 +456,33 @@
         
           &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;说是使用无痕埋点，只是因为遇见了这种情况，因为现在前端有非常多的框架，我们想要把外部的js引进来就需要多一步的操作：&lt;/p&gt;
 &lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
+    
+    
+      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VUE公共组件的使用</title>
+    <link href="http://yoursite.com/post/8d07ac1f.html"/>
+    <id>http://yoursite.com/post/8d07ac1f.html</id>
+    <published>2018-06-20T08:15:00.000Z</published>
+    <updated>2018-06-21T02:04:33.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
+&lt;figure class=&quot;highlight
         
       
     
@@ -520,35 +547,6 @@
     
     
       <category term="JAVA" scheme="http://yoursite.com/tags/JAVA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vbs文件</title>
-    <link href="http://yoursite.com/post/4ff37e9a.html"/>
-    <id>http://yoursite.com/post/4ff37e9a.html</id>
-    <published>2018-06-19T03:15:00.000Z</published>
-    <updated>2018-06-19T04:11:14.234Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;从某知名短视频网站学习到的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="趣闻" scheme="http://yoursite.com/categories/%E8%B6%A3%E9%97%BB/"/>
-    
-    
-      <category term="趣闻" scheme="http://yoursite.com/tags/%E8%B6%A3%E9%97%BB/"/>
     
   </entry>
   
