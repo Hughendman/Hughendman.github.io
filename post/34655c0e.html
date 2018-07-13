@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="express 框架里内嵌了Jade模板引擎。  安装 npm install jade –global  执行 创建一个 index.jade 的文件，然后执行 jade index.jade   这样做就会将jade文件转换为html文件  jade还有一些参数 jade -P index.jade   这样编辑出来的index.html文件是没有进行过压缩的   jade -P -w in">
+<meta name="description" content="注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过   为了解决这一问题，node使用了 next  具体用法 index.js 1234router.get(&apos;/base/pageA&apos;, function (req, res, next) &amp;#123;      res.send(&apos;index.js.&apos;);      next();  &amp;#1">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node 和 模板引擎（jade）">
 <meta property="og:url" content="http://yoursite.com/post/34655c0e.html">
 <meta property="og:site_name" content="YINXS的博客">
-<meta property="og:description" content="express 框架里内嵌了Jade模板引擎。  安装 npm install jade –global  执行 创建一个 index.jade 的文件，然后执行 jade index.jade   这样做就会将jade文件转换为html文件  jade还有一些参数 jade -P index.jade   这样编辑出来的index.html文件是没有进行过压缩的   jade -P -w in">
+<meta property="og:description" content="注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过   为了解决这一问题，node使用了 next  具体用法 index.js 1234router.get(&apos;/base/pageA&apos;, function (req, res, next) &amp;#123;      res.send(&apos;index.js.&apos;);      next();  &amp;#1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T08:06:24.885Z">
+<meta property="og:updated_time" content="2018-06-13T08:06:24.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node 和 模板引擎（jade）">
-<meta name="twitter:description" content="express 框架里内嵌了Jade模板引擎。  安装 npm install jade –global  执行 创建一个 index.jade 的文件，然后执行 jade index.jade   这样做就会将jade文件转换为html文件  jade还有一些参数 jade -P index.jade   这样编辑出来的index.html文件是没有进行过压缩的   jade -P -w in">
+<meta name="twitter:description" content="注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过   为了解决这一问题，node使用了 next  具体用法 index.js 1234router.get(&apos;/base/pageA&apos;, function (req, res, next) &amp;#123;      res.send(&apos;index.js.&apos;);      next();  &amp;#1">
 
 
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178
+                  139
                 </span>
               
 
@@ -435,37 +435,29 @@
 
       
         <blockquote>
-<p>express 框架里内嵌了Jade模板引擎。</p>
-</blockquote>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
-<p>npm install jade –global</p>
-</blockquote>
-<h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><blockquote>
-<p>创建一个 index.jade 的文件，<br>然后执行 jade index.jade</p>
+<p>注意：在node中假如同一路径有两个方法来对其进行处理，那么只有匹配到的第一个方法会被执行，剩余的略过</p>
 </blockquote>
 <blockquote>
-<p>这样做就会将jade文件转换为html文件</p>
+<p>为了解决这一问题，node<br>使用了 next</p>
 </blockquote>
-<h3 id="jade还有一些参数"><a href="#jade还有一些参数" class="headerlink" title="jade还有一些参数"></a>jade还有一些参数</h3><blockquote>
-<p>jade -P index.jade</p>
-</blockquote>
-<blockquote>
-<p>这样编辑出来的index.html文件是没有进行过压缩的</p>
-</blockquote>
-<blockquote>
-<p>jade -P -w index.jade</p>
-</blockquote>
-<blockquote>
-<p>-w 只要保存就自动编辑</p>
-</blockquote>
-<blockquote>
-<p>jade -P -w sample.jade -O sample.json</p>
-</blockquote>
-<blockquote>
-<p>-O 用来给jade文件传递对象或JSON文件，用来替换模板内的变量</p>
-</blockquote>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>编辑前<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">  body</span><br><span class="line">    <span class="selector-tag">h1</span>.titleClass<span class="selector-id">#titleID</span> My First Jade Page</span><br></pre></td></tr></table></figure></p>
-<p>编辑后<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"titleID"</span> <span class="attr">class</span>=<span class="string">"titleClass"</span>&gt;</span>My First Jade Page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><ul>
+<li><p>index.js</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/base/pageA'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span></span> &#123;  </span><br><span class="line">    res.send(<span class="string">'index.js.'</span>);  </span><br><span class="line">    <span class="built_in">next</span>();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>base.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/pageA'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;  </span><br><span class="line">    <span class="comment">//res.send('base.js!');  </span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"base.js"</span>)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>轻易的实现中间件</li>
+</ol>
+<p>由</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR<span class="comment">;  </span></span><br><span class="line">　　A--&gt;c<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>变为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR;  </span><br><span class="line"><span class="meta">　　A--&gt;</span><span class="bash">B;   </span></span><br><span class="line"><span class="meta">　　B--&gt;</span><span class="bash">c;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>提高代码的复用性</li>
+</ol>
 
       
     </div>
@@ -483,8 +475,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/koa2/" rel="tag"># koa2</a>
-          
             <a href="/tags/node/" rel="tag"># node</a>
           
         </div>
@@ -498,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/857fe845.html" rel="next" title="node">
-                <i class="fa fa-chevron-left"></i> node
+              <a href="/post/f9ae89b2.html" rel="next" title="node版本管理">
+                <i class="fa fa-chevron-left"></i> node版本管理
               </a>
             
           </div>
@@ -508,8 +498,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/ea010e66.html" rel="prev" title="node启动在一个服务中">
-                node启动在一个服务中 <i class="fa fa-chevron-right"></i>
+              <a href="/post/bf9483c3.html" rel="prev" title="正则表达基础">
+                正则表达基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行"><span class="nav-number">2.</span> <span class="nav-text">执行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jade还有一些参数"><span class="nav-number"></span> <span class="nav-text">jade还有一些参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体用法"><span class="nav-number">1.</span> <span class="nav-text">具体用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.</span> <span class="nav-text">优点</span></a></li></ol></div>
             
 
           </div>
