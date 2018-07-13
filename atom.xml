@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-13T03:50:40.675Z</updated>
+  <updated>2018-07-13T08:51:36.992Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,8 +20,61 @@
     <title>API Gateway</title>
     <link href="http://yoursite.com/post/83d1d1c.html"/>
     <id>http://yoursite.com/post/83d1d1c.html</id>
+    <published>2018-07-13T11:15:00.000Z</published>
+    <updated>2018-07-13T08:51:36.992Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前面两篇从其他地方抄来的文章主要是介绍以下微服务以及API Gateway ，以下就是我实现的API Gateway主要的功能以及实现的思路&lt;/p&gt;
+&lt;h2 id=&quot;技术选型&quot;&gt;&lt;a href=&quot;#技术选型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="微服务" scheme="http://yoursite.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="微服务" scheme="http://yoursite.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue+koa2+mysql</title>
+    <link href="http://yoursite.com/post/c688e256.html"/>
+    <id>http://yoursite.com/post/c688e256.html</id>
+    <published>2018-07-13T11:15:00.000Z</published>
+    <updated>2018-07-13T07:28:15.562Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;koa2-vue&quot;&gt;&lt;a href=&quot;#koa2-vue&quot; class=&quot;headerlink&quot; title=&quot;koa2_vue&quot;&gt;&lt;/a&gt;koa2_vue&lt;/h1&gt;&lt;p&gt;git：&lt;a href=&quot;mailto:git@github.com&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="koa2" scheme="http://yoursite.com/categories/koa2/"/>
+    
+    
+      <category term="koa2" scheme="http://yoursite.com/tags/koa2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>API Gateway</title>
+    <link href="http://yoursite.com/post/83d1d1c.html"/>
+    <id>http://yoursite.com/post/83d1d1c.html</id>
     <published>2018-07-13T10:15:00.000Z</published>
-    <updated>2018-07-13T03:50:40.675Z</updated>
+    <updated>2018-07-13T03:54:30.025Z</updated>
     
     <summary type="html">
     
@@ -49,7 +102,7 @@
     <link href="http://yoursite.com/post/460c1130.html"/>
     <id>http://yoursite.com/post/460c1130.html</id>
     <published>2018-07-13T08:15:00.000Z</published>
-    <updated>2018-07-13T03:15:55.562Z</updated>
+    <updated>2018-07-13T03:54:30.027Z</updated>
     
     <summary type="html">
     
@@ -493,59 +546,6 @@
     
     
       <category term="打包工具" scheme="http://yoursite.com/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>node小知识（1）</title>
-    <link href="http://yoursite.com/post/da8c6d93.html"/>
-    <id>http://yoursite.com/post/da8c6d93.html</id>
-    <published>2018-06-21T03:15:00.000Z</published>
-    <updated>2018-06-21T03:57:45.743Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Nodejs优缺点&quot;&gt;&lt;a href=&quot;#Nodejs优缺点&quot; class=&quot;headerlink&quot; title=&quot;Nodejs优缺点&quot;&gt;&lt;/a&gt;Nodejs优缺点&lt;/h3&gt;&lt;h4 id=&quot;优点&quot;&gt;&lt;a href=&quot;#优点&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="node" scheme="http://yoursite.com/categories/node/"/>
-    
-    
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VUE公共组件的使用</title>
-    <link href="http://yoursite.com/post/8d07ac1f.html"/>
-    <id>http://yoursite.com/post/8d07ac1f.html</id>
-    <published>2018-06-20T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;创建一个组件&quot;&gt;&lt;a href=&quot;#创建一个组件&quot; class=&quot;headerlink&quot; title=&quot;创建一个组件&quot;&gt;&lt;/a&gt;创建一个组件&lt;/h2&gt;&lt;p&gt;imgTarg.vue&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
     
   </entry>
   
