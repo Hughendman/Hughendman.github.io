@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-13T09:08:02.180Z</updated>
+  <updated>2018-07-16T03:48:55.688Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>术语总结</title>
+    <link href="http://yoursite.com/post/facec4eb.html"/>
+    <id>http://yoursite.com/post/facec4eb.html</id>
+    <published>2018-07-16T11:15:00.000Z</published>
+    <updated>2018-07-16T03:48:55.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;发布&quot;&gt;&lt;a href=&quot;#发布&quot; class=&quot;headerlink&quot; title=&quot;发布&quot;&gt;&lt;/a&gt;发布&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;蓝绿部署&lt;/li&gt;
+&lt;li&gt;A/B测试&lt;/li&gt;
+&lt;li&gt;灰度发布&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;蓝绿部署&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="微服务" scheme="http://yoursite.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="微服务" scheme="http://yoursite.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>API Gateway功能</title>
     <link href="http://yoursite.com/post/b8717e5.html"/>
     <id>http://yoursite.com/post/b8717e5.html</id>
     <published>2018-07-13T11:15:00.000Z</published>
-    <updated>2018-07-13T09:08:02.180Z</updated>
+    <updated>2018-07-13T09:08:28.165Z</updated>
     
     <summary type="html">
     
@@ -178,32 +209,6 @@
   </entry>
   
   <entry>
-    <title>sql基础常用</title>
-    <link href="http://yoursite.com/post/4f05048c.html"/>
-    <id>http://yoursite.com/post/4f05048c.html</id>
-    <published>2018-07-06T08:15:00.000Z</published>
-    <updated>2018-07-06T06:48:21.298Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;日期格式化-DATE-FORMAT-函数&quot;&gt;&lt;a href=&quot;#日期格式化-DATE-FORMAT-函数&quot; class=&quot;headerlink&quot; title=&quot;日期格式化(DATE_FORMAT() 函数)&quot;&gt;&lt;/a&gt;日期格式化(DATE_FORMAT()
-        
-      
-    
-    </summary>
-    
-      <category term="sql" scheme="http://yoursite.com/categories/sql/"/>
-    
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue知识杂项</title>
     <link href="http://yoursite.com/post/a3fa9686.html"/>
     <id>http://yoursite.com/post/a3fa9686.html</id>
@@ -226,6 +231,32 @@
     
     
       <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sql基础常用</title>
+    <link href="http://yoursite.com/post/4f05048c.html"/>
+    <id>http://yoursite.com/post/4f05048c.html</id>
+    <published>2018-07-06T08:15:00.000Z</published>
+    <updated>2018-07-06T06:48:21.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;日期格式化-DATE-FORMAT-函数&quot;&gt;&lt;a href=&quot;#日期格式化-DATE-FORMAT-函数&quot; class=&quot;headerlink&quot; title=&quot;日期格式化(DATE_FORMAT() 函数)&quot;&gt;&lt;/a&gt;日期格式化(DATE_FORMAT()
+        
+      
+    
+    </summary>
+    
+      <category term="sql" scheme="http://yoursite.com/categories/sql/"/>
+    
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   
@@ -520,32 +551,6 @@
     
     
       <category term="node" scheme="http://yoursite.com/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rollup.js的使用</title>
-    <link href="http://yoursite.com/post/d0055c9e.html"/>
-    <id>http://yoursite.com/post/d0055c9e.html</id>
-    <published>2018-06-21T08:15:00.000Z</published>
-    <updated>2018-06-21T02:04:33.306Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;全局安装rollup&quot;&gt;&lt;a href=&quot;#全局安装rollup&quot; class=&quot;headerlink&quot; title=&quot;全局安装rollup&quot;&gt;&lt;/a&gt;全局安装rollup&lt;/h3&gt;&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="打包工具" scheme="http://yoursite.com/categories/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="打包工具" scheme="http://yoursite.com/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
