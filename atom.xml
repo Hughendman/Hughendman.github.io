@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-16T03:48:55.688Z</updated>
+  <updated>2018-07-19T10:33:33.413Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>API文档自动生成工具apiDoc</title>
+    <link href="http://yoursite.com/post/652bf3bd.html"/>
+    <id>http://yoursite.com/post/652bf3bd.html</id>
+    <published>2018-07-19T10:15:00.000Z</published>
+    <updated>2018-07-19T10:33:33.413Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近写项目的时候不打算一边写接口一边写前端，感觉这样写很混乱，所以打算先把后端的接口完成，前端先放在后面，但是写完了接口时经常发现自己忘记写了哪些，所以要写一个API的文档，下面我来介绍一个非常方便的工具，API文档自动生成工具apiDoc。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="node" scheme="http://yoursite.com/categories/node/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
     <title>术语总结</title>
     <link href="http://yoursite.com/post/facec4eb.html"/>
     <id>http://yoursite.com/post/facec4eb.html</id>
     <published>2018-07-16T11:15:00.000Z</published>
-    <updated>2018-07-16T03:48:55.688Z</updated>
+    <updated>2018-07-16T06:12:44.658Z</updated>
     
     <summary type="html">
     
@@ -524,33 +551,6 @@
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>koa的一些模块的使用</title>
-    <link href="http://yoursite.com/post/2a41bd63.html"/>
-    <id>http://yoursite.com/post/2a41bd63.html</id>
-    <published>2018-06-22T03:15:00.000Z</published>
-    <updated>2018-06-22T06:56:40.091Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2017/08/koa.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;文章摘抄自&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;架设HTTP服务&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="node" scheme="http://yoursite.com/categories/node/"/>
-    
-    
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
     
   </entry>
   
