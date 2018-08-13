@@ -159,7 +159,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">前端工程师</p>
+        <p class="site-subtitle">WEB全栈</p>
       
   </div>
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d41be5a0.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/e7f1df7b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/d41be5a0.html" itemprop="url">vue的路由（route）</a></h1>
+                <a class="post-title-link" href="/post/e7f1df7b.html" itemprop="url">vue中操作DOM</a></h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  56
+                  153
                 </span>
               
 
@@ -419,14 +419,12 @@
       
         
           
-          vue的路由
-注意： component后面的值不要有引号，父级不要有名字name属性
-
-12345678910111213141516[    &#123;      path: '/',      component: Bigdata,      children: [        &#123
+          方案1
+可以在mounted中挂载12345mounted:function()&#123;        this.$nextTick(function()&#123;         //this.$nextTick是在下次DOM更新循环结束时调用延迟回调函数。异步函数            t
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/d41be5a0.html#more" rel="contents">
+            <a class="btn" href="/post/e7f1df7b.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -660,7 +658,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/8e3fdc01.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d41be5a0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -679,7 +677,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/8e3fdc01.html" itemprop="url">vue中使用富文本编辑器</a></h1>
+                <a class="post-title-link" href="/post/d41be5a0.html" itemprop="url">vue的路由（route）</a></h1>
         
 
         <div class="post-meta">
@@ -745,7 +743,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  16
+                  56
                 </span>
               
 
@@ -784,17 +782,14 @@
       
         
           
-          安装
-cnpm install vue-quill-editor –save
+          vue的路由
+注意： component后面的值不要有引号，父级不要有名字name属性
 
-引入
-import { quillEditor } from ‘vue-quill-editor’
-
-
-          
+12345678910111213141516[    &#123;      path: '/',      component: Bigdata,      children: [        &#123
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/8e3fdc01.html#more" rel="contents">
+            <a class="btn" href="/post/d41be5a0.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -845,7 +840,7 @@ import { quillEditor } from ‘vue-quill-editor’
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/e10abc6.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/4f392df3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -864,7 +859,7 @@ import { quillEditor } from ‘vue-quill-editor’
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/e10abc6.html" itemprop="url">vue中使用sass</a></h1>
+                <a class="post-title-link" href="/post/4f392df3.html" itemprop="url">vue项目移植报错</a></h1>
         
 
         <div class="post-meta">
@@ -930,7 +925,7 @@ import { quillEditor } from ‘vue-quill-editor’
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  141
+                  60
                 </span>
               
 
@@ -969,15 +964,26 @@ import { quillEditor } from ‘vue-quill-editor’
       
         
           
-          安装12npm install node-sass --save-devnpm install sass-loader --save-dev
-配置
-打开webpack.base.config.js在loaders里面加上  module – rules
+          按照这个文章解决的
 
-1234567891011121314151
+npm intall sass-loader –save;
+
+
+npm install node-sass –save;
+
+
+然后运行npm run start就可以 
+
+关于vueTreeDrag这个项目vueTreeDrag
+
+使用的node版本是v8.8.1
+
+
+删除当前
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/e10abc6.html#more" rel="contents">
+            <a class="btn" href="/post/4f392df3.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1211,7 +1217,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/4f392df3.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/8e3fdc01.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1230,7 +1236,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/4f392df3.html" itemprop="url">vue项目移植报错</a></h1>
+                <a class="post-title-link" href="/post/8e3fdc01.html" itemprop="url">vue中使用富文本编辑器</a></h1>
         
 
         <div class="post-meta">
@@ -1296,7 +1302,7 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  60
+                  16
                 </span>
               
 
@@ -1335,26 +1341,17 @@ vuex是一个为了vue开发的状态管理模式，它采用集中式存储管�
       
         
           
-          按照这个文章解决的
+          安装
+cnpm install vue-quill-editor –save
 
-npm intall sass-loader –save;
-
-
-npm install node-sass –save;
-
-
-然后运行npm run start就可以 
-
-关于vueTreeDrag这个项目vueTreeDrag
-
-使用的node版本是v8.8.1
+引入
+import { quillEditor } from ‘vue-quill-editor’
 
 
-删除当前
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/4f392df3.html#more" rel="contents">
+            <a class="btn" href="/post/8e3fdc01.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
