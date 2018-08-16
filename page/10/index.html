@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/59c093b0.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/ea010e66.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/59c093b0.html" itemprop="url">node日志</a></h1>
+                <a class="post-title-link" href="/post/ea010e66.html" itemprop="url">node启动在一个服务中</a></h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  956
+                  32
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -419,14 +419,13 @@
       
         
           
-          在package.json中加入
-1"log4js":"^0.6.38"
-在bin下的www中加入以下代码
-12345678910111213var fs = require('fs');var logConfig = require('../public/config/log_config');/
-          ...
+          在实验koa2时有这么一句话1app.use(require('koa-static')(__dirname + '/public/static'))
+把打包后的文件放在这里面
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/59c093b0.html#more" rel="contents">
+            <a class="btn" href="/post/ea010e66.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -477,7 +476,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bde7ce9f.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/7b25d017.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -496,7 +495,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/bde7ce9f.html" itemprop="url">node（koa2）快速创建项目</a></h1>
+                <a class="post-title-link" href="/post/7b25d017.html" itemprop="url">redis</a></h1>
         
 
         <div class="post-meta">
@@ -531,8 +530,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
                   </a>
                 </span>
 
@@ -562,7 +561,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  300
+                  201
                 </span>
               
 
@@ -578,7 +577,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -601,17 +600,15 @@
       
         
           
-          创建项目（但是不支持热加载）1npm install -g koa-generator   //全局安装
-一键创建项目12345koa2 koa2-testcd koa2-testnpm i
-执行1npm run dev
-
-这里可能报错，原因是因为需要安装bable
-
-1npm install --
+          下载需要下载一个redis，或者是连接的那个服务器有redis
+cnpm i redis
+我的本机安装目录C:\Program Files\Redis
+执行：redis-server.exe
+1234567891011121314151617//使用redis，用来缓存数据const redis  
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/bde7ce9f.html#more" rel="contents">
+            <a class="btn" href="/post/7b25d017.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -846,7 +843,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/1ca0c96a.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2971356.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -865,7 +862,189 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/1ca0c96a.html" itemprop="url">正则表达如何模糊查询</a></h1>
+                <a class="post-title-link" href="/post/2971356.html" itemprop="url">node中的next()用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  259
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          next()函数是用来调用下一个中间件的。
+什么是中间件：位于中间，为两侧提供服务的软件
+举个例子
+12345678910111213app.use((ctx,next)=&gt;&#123;    ctx.name = 'yixns',    next();&#125;)app.use((ctx,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/2971356.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/bf9483c3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/bf9483c3.html" itemprop="url">正则表达基础</a></h1>
         
 
         <div class="post-meta">
@@ -931,7 +1110,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  8,149
+                  464
                 </span>
               
 
@@ -947,7 +1126,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  50
+                  2
                 </span>
               
             </div>
@@ -970,22 +1149,21 @@
       
         
           
-          首先将汉字转换为拼音的方法这里有一个案例可以使用
-如何在vue中引入
-首先我使用的是vue框架，直接写进去也可以但是有些不美观，所以来看一看如何在vue中引入js文件
+          案例以*开始
+“^The”：表示所有以”The”开始的字符串（”There”，”The cat”等）；
 
+以*结束
+“of despair$”：表示所以以”of despair”结尾的字符串；
 
-首先先将需要引入的模块抛出
+严格匹配
+“^abc$”：严格匹配，只有abc自己
 
-123export &#123;    function&#125;
-
-然后我们进行导入
-
-12i
+包含（可以在中间位置）
+“notice”：表示任何
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/1ca0c96a.html#more" rel="contents">
+            <a class="btn" href="/post/bf9483c3.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1398,7 +1576,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/303944b.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/be8a39c8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1417,7 +1595,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/303944b.html" itemprop="url">在vue中使用Echarts（vue）</a></h1>
+                <a class="post-title-link" href="/post/be8a39c8.html" itemprop="url">vue全局拦截前端错误（前端异常监控系统+ng4）</a></h1>
         
 
         <div class="post-meta">
@@ -1483,7 +1661,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  16
+                  300
                 </span>
               
 
@@ -1522,205 +1700,15 @@
       
         
           
-          安装
-cnpm install echarts –save
-
-引入
-import echarts from ‘echarts’
+          errorHandler
+一般来讲，前端的异常处理使用的是try catch 和window.onerror 但是在框架中就不可以了，三大前端框架只有react可以这么使用，vue中有自己的errorHandler，ng也有自己的属性可以这么用
 
 
-Vue.prototype.$echarts = echarts 
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/303944b.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/16c97c20.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/16c97c20.html" itemprop="url">在vue中使用less</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T11:15:00+08:00">
-                2017-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  35
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          安装
-cnpm install less less-loader –save
-
-
-在webpack.base.config.js在loaders里面加上
-
-12345678&#123;test: /\.less$/,loader: "style-loader!css-loader!less-load
+这里面我们用errorHandler来进行错误拦截
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/16c97c20.html#more" rel="contents">
+            <a class="btn" href="/post/be8a39c8.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1771,7 +1759,7 @@ cnpm install less less-loader –save
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/a29b86a7.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/d41be5a0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1790,7 +1778,7 @@ cnpm install less less-loader –save
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/a29b86a7.html" itemprop="url">在vue中创建局部组件</a></h1>
+                <a class="post-title-link" href="/post/d41be5a0.html" itemprop="url">vue的路由（route）</a></h1>
         
 
         <div class="post-meta">
@@ -1856,7 +1844,7 @@ cnpm install less less-loader –save
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  30
+                  56
                 </span>
               
 
@@ -1895,197 +1883,208 @@ cnpm install less less-loader –save
       
         
           
-          在main.js中写入12import sideBar from './components/public/sideBar.vue';Vue.component('side-bar', sideBar);
+          vue的路由
+注意： component后面的值不要有引号，父级不要有名字name属性
 
-在使用的时候直接写入
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/a29b86a7.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/f35d3e0b.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/f35d3e0b.html" itemprop="url">如何在vue中引入jquery</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T11:15:00+08:00">
-                2017-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VUE/" itemprop="url" rel="index">
-                    <span itemprop="name">VUE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  87
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          安装
-在package.json里的dependencies加入”jquery” : “^2.2.3”，然后install 或者直接安装也可以
-
-12345678910111213141516在webpack.base.conf.js里加入var webpack = require("webpack
+12345678910111213141516[    &#123;      path: '/',      component: Bigdata,      children: [        &#123
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/f35d3e0b.html#more" rel="contents">
+            <a class="btn" href="/post/d41be5a0.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/4f392df3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/4f392df3.html" itemprop="url">vue项目移植报错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T11:15:00+08:00">
+                2017-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VUE/" itemprop="url" rel="index">
+                    <span itemprop="name">VUE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  60
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          按照这个文章解决的
+
+npm intall sass-loader –save;
+
+
+npm install node-sass –save;
+
+
+然后运行npm run start就可以 
+
+关于vueTreeDrag这个项目vueTreeDrag
+
+使用的node版本是v8.8.1
+
+
+删除当前
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/4f392df3.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2177,7 +2176,7 @@ cnpm install less less-loader –save
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2257,7 +2256,7 @@ cnpm install less less-loader –save
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.1k</span>
+    <span title="Site words total count">65.3k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-13T07:24:09.884Z</updated>
+  <updated>2018-08-16T11:22:13.539Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node中webservice的使用</title>
+    <link href="http://yoursite.com/post/81a0d70b.html"/>
+    <id>http://yoursite.com/post/81a0d70b.html</id>
+    <published>2018-08-16T08:15:00.000Z</published>
+    <updated>2018-08-16T11:22:13.539Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;easy-soap-request&quot;&gt;&lt;a href=&quot;#easy-soap-request&quot; class=&quot;headerlink&quot; title=&quot;easy-soap-request&quot;&gt;&lt;/a&gt;easy-soap-request&lt;/h3&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="node" scheme="http://yoursite.com/categories/node/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>构建mibew项目（开源人工客服系统）</title>
@@ -492,32 +518,6 @@
     
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue知识杂项</title>
-    <link href="http://yoursite.com/post/a3fa9686.html"/>
-    <id>http://yoursite.com/post/a3fa9686.html</id>
-    <published>2018-07-06T08:15:00.000Z</published>
-    <updated>2018-07-06T05:50:56.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;快速构建项目&quot;&gt;&lt;a href=&quot;#快速构建项目&quot; class=&quot;headerlink&quot; title=&quot;快速构建项目&quot;&gt;&lt;/a&gt;快速构建项目&lt;/h2&gt;&lt;h3 id=&quot;全局安装&quot;&gt;&lt;a href=&quot;#全局安装&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="http://yoursite.com/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="http://yoursite.com/tags/VUE/"/>
     
   </entry>
   
