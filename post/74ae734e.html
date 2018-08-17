@@ -85,7 +85,7 @@
 <meta name="keywords" content="VUE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端错误日志监听">
-<meta property="og:url" content="http://yoursite.com/post/74ae734e.html">
+<meta property="og:url" content="https://hughendman.github.io/post/74ae734e.html">
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:description" content="前言后台有日志，会把一些错误的原记录下来，但是前端没有办法记录下来，所以我们利用和埋点类似的方式来记录这些错误，方便我们对项目进行优化 在这里我只是提供一个思路，一个方案。我用vue来举个例子 可能有的人看过我关于数据埋点的那套方案，这套方案我们来沿用它 vue中在2.5之前可以使用全局的 config.errorHandler 设置来为应用提供一个监听未知异常的函数，2.5 中，组件内提供了一个">
 <meta property="og:locale" content="zh-Hans">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/post/74ae734e.html"/>
+  <link rel="canonical" href="https://hughendman.github.io/post/74ae734e.html"/>
 
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/74ae734e.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/74ae734e.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -442,8 +442,8 @@
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">errorCaptured (<span class="keyword">err</span>, vm, info) &#123; </span><br><span class="line"> <span class="built_in">log</span>(<span class="keyword">err</span>,vm,info)<span class="comment">//处理错误函数</span></span><br><span class="line"> <span class="keyword">return</span> false</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>处理错误函数代码<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">log</span> (<span class="params">err,vm,info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">params</span> = &#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">params</span>.err = err||<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">params</span>.vm = vm||<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">params</span>.info = info||<span class="literal">null</span></span><br><span class="line">    <span class="comment">//拼接参数串</span></span><br><span class="line">    <span class="keyword">var</span> args = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> <span class="keyword">params</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(args != <span class="string">''</span>) &#123;</span><br><span class="line">            args += <span class="string">'&amp;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        args += i + <span class="string">'='</span> + encodeURIComponent(<span class="keyword">params</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//通过Image对象请求后端脚本</span></span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    img.src = <span class="string">'http://127.0.0.1:9100/log.gif?'</span> + args;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>之后的代码请参考我的埋点方案</p>
-<p><a href="https://hughendman.github.io/post/19e24b69.html" target="_blank" rel="noopener">手把手教你做数据埋点</a></p>
-<p><a href="https://hughendman.github.io/post/dccb0cee.html" target="_blank" rel="noopener">python-nginx日志埋点导入mysql</a></p>
+<p><a href="https://hughendman.github.io/post/19e24b69.html">手把手教你做数据埋点</a></p>
+<p><a href="https://hughendman.github.io/post/dccb0cee.html">python-nginx日志埋点导入mysql</a></p>
 
       
     </div>
