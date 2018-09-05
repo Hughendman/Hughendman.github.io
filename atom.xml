@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-08-16T11:24:26.258Z</updated>
+  <updated>2018-09-05T03:00:52.652Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>form-data接口 git错误 正则验证</title>
+    <link href="https://hughendman.github.io/post/f9641aa3.html"/>
+    <id>https://hughendman.github.io/post/f9641aa3.html</id>
+    <published>2018-09-05T08:15:00.000Z</published>
+    <updated>2018-09-05T03:00:52.652Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;koa2-formdata接口&quot;&gt;&lt;a href=&quot;#koa2-formdata接口&quot; class=&quot;headerlink&quot; title=&quot;koa2 formdata接口&quot;&gt;&lt;/a&gt;koa2
+        
+      
+    
+    </summary>
+    
+      <category term="node" scheme="https://hughendman.github.io/categories/node/"/>
+    
+    
+      <category term="node" scheme="https://hughendman.github.io/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>node中webservice的使用</title>
@@ -361,32 +387,6 @@
   </entry>
   
   <entry>
-    <title>vue+koa2+mysql</title>
-    <link href="https://hughendman.github.io/post/c688e256.html"/>
-    <id>https://hughendman.github.io/post/c688e256.html</id>
-    <published>2018-07-13T11:15:00.000Z</published>
-    <updated>2018-07-13T08:54:33.650Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;koa2-vue&quot;&gt;&lt;a href=&quot;#koa2-vue&quot; class=&quot;headerlink&quot; title=&quot;koa2_vue&quot;&gt;&lt;/a&gt;koa2_vue&lt;/h1&gt;&lt;p&gt;git：&lt;a href=&quot;mailto:git@github.com&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="koa2" scheme="https://hughendman.github.io/categories/koa2/"/>
-    
-    
-      <category term="koa2" scheme="https://hughendman.github.io/tags/koa2/"/>
-    
-  </entry>
-  
-  <entry>
     <title>API Gateway功能</title>
     <link href="https://hughendman.github.io/post/b8717e5.html"/>
     <id>https://hughendman.github.io/post/b8717e5.html</id>
@@ -410,6 +410,32 @@
     
     
       <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue+koa2+mysql</title>
+    <link href="https://hughendman.github.io/post/c688e256.html"/>
+    <id>https://hughendman.github.io/post/c688e256.html</id>
+    <published>2018-07-13T11:15:00.000Z</published>
+    <updated>2018-07-13T08:54:33.650Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;koa2-vue&quot;&gt;&lt;a href=&quot;#koa2-vue&quot; class=&quot;headerlink&quot; title=&quot;koa2_vue&quot;&gt;&lt;/a&gt;koa2_vue&lt;/h1&gt;&lt;p&gt;git：&lt;a href=&quot;mailto:git@github.com&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="koa2" scheme="https://hughendman.github.io/categories/koa2/"/>
+    
+    
+      <category term="koa2" scheme="https://hughendman.github.io/tags/koa2/"/>
     
   </entry>
   
@@ -518,32 +544,6 @@
     
     
       <category term="javascript" scheme="https://hughendman.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue知识杂项</title>
-    <link href="https://hughendman.github.io/post/a3fa9686.html"/>
-    <id>https://hughendman.github.io/post/a3fa9686.html</id>
-    <published>2018-07-06T08:15:00.000Z</published>
-    <updated>2018-07-06T05:50:56.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;快速构建项目&quot;&gt;&lt;a href=&quot;#快速构建项目&quot; class=&quot;headerlink&quot; title=&quot;快速构建项目&quot;&gt;&lt;/a&gt;快速构建项目&lt;/h2&gt;&lt;h3 id=&quot;全局安装&quot;&gt;&lt;a href=&quot;#全局安装&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="VUE" scheme="https://hughendman.github.io/categories/VUE/"/>
-    
-    
-      <category term="VUE" scheme="https://hughendman.github.io/tags/VUE/"/>
     
   </entry>
   
