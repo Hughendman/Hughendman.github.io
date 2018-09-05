@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="koa2 formdata接口今天在尝试目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form- git问题报">
+<meta name="description" content="koa2 formdata接口今天在尝试项目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form-data g">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="form-data接口 git错误 正则验证">
 <meta property="og:url" content="https://hughendman.github.io/post/f9641aa3.html">
 <meta property="og:site_name" content="YINXS的博客">
-<meta property="og:description" content="koa2 formdata接口今天在尝试目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form- git问题报">
+<meta property="og:description" content="koa2 formdata接口今天在尝试项目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form-data g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T03:00:52.652Z">
+<meta property="og:updated_time" content="2018-09-05T03:22:21.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="form-data接口 git错误 正则验证">
-<meta name="twitter:description" content="koa2 formdata接口今天在尝试目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form- git问题报">
+<meta name="twitter:description" content="koa2 formdata接口今天在尝试项目koa-bodyparser 不解析 form-data接口传过来的参数 在网上查了一下解决方案 1cnpm i --save koa-body 1234const koaBody = require(&apos;koa-body&apos;);app.use(koaBody(&amp;#123;multipart: true&amp;#125;)); 这样就可以解析form-data g">
 
 
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  224
+                  226
                 </span>
               
 
@@ -434,11 +434,11 @@
       
 
       
-        <h2 id="koa2-formdata接口"><a href="#koa2-formdata接口" class="headerlink" title="koa2 formdata接口"></a>koa2 formdata接口</h2><p>今天在尝试目<br>koa-bodyparser 不解析 form-data接口传过来的参数</p>
+        <h2 id="koa2-formdata接口"><a href="#koa2-formdata接口" class="headerlink" title="koa2 formdata接口"></a>koa2 formdata接口</h2><p>今天在尝试项目<br>koa-bodyparser 不解析 form-data接口传过来的参数</p>
 <p>在网上查了一下解决方案</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="selector-tag">i</span> --save koa-body</span><br></pre></td></tr></table></figure>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> koaBody = <span class="keyword">require</span>(<span class="string">'koa-body'</span>);</span><br><span class="line"></span><br><span class="line">app.<span class="keyword">use</span>(koaBody(&#123;multipart: <span class="keyword">true</span>&#125;));</span><br></pre></td></tr></table></figure>
-<p>这样就可以解析form-</p>
+<p>这样就可以解析form-data</p>
 <h2 id="git问题"><a href="#git问题" class="headerlink" title="git问题"></a>git问题</h2><p>报错：error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required</p>
 <p>解决：git config http.postBuffer  524288000</p>
 <h2 id="验证邮箱以及电话的正则"><a href="#验证邮箱以及电话的正则" class="headerlink" title="验证邮箱以及电话的正则"></a>验证邮箱以及电话的正则</h2><p>邮箱<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">checkMobile</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> regu = <span class="regexp">/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]&#123;2,6&#125;$/</span>;</span><br><span class="line">    <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(regu);</span><br><span class="line">    <span class="keyword">if</span> (re.test(s)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
