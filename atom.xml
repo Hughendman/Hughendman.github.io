@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-05T03:22:21.377Z</updated>
+  <updated>2018-09-11T06:06:52.072Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>项目管理思考</title>
+    <link href="https://hughendman.github.io/post/f4837afa.html"/>
+    <id>https://hughendman.github.io/post/f4837afa.html</id>
+    <published>2018-09-11T04:15:00.000Z</published>
+    <updated>2018-09-11T06:06:52.072Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前言：最近烂在自己手里的项目越来越多，思路也越来越混乱，所以特意去查了一下项目管理，如何解决现在的问题&lt;/p&gt;
+&lt;p&gt;首先是从我老大以及平常学到的东西：&lt;/p&gt;
+&lt;p&gt;1、是否是我的项目&lt;/p&gt;
+&lt;p&gt;背景：接了几个很急项目，但是职责上来说并不是我的工作范围&lt;/p&gt;
+&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="文章" scheme="https://hughendman.github.io/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="文章" scheme="https://hughendman.github.io/tags/%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>form-data接口 git错误 正则验证</title>
     <link href="https://hughendman.github.io/post/f9641aa3.html"/>
     <id>https://hughendman.github.io/post/f9641aa3.html</id>
     <published>2018-09-05T08:15:00.000Z</published>
-    <updated>2018-09-05T03:22:21.377Z</updated>
+    <updated>2018-09-05T03:25:16.508Z</updated>
     
     <summary type="html">
     
@@ -517,33 +547,6 @@
     
     
       <category term="koa2" scheme="https://hughendman.github.io/tags/koa2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>es9</title>
-    <link href="https://hughendman.github.io/post/ea4a72e4.html"/>
-    <id>https://hughendman.github.io/post/ea4a72e4.html</id>
-    <published>2018-07-10T08:15:00.000Z</published>
-    <updated>2018-07-10T09:32:51.842Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;除了es9(es2018)其他只是简单谈谈&lt;/p&gt;
-&lt;h2 id=&quot;es2016&quot;&gt;&lt;a href=&quot;#es2016&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://hughendman.github.io/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://hughendman.github.io/tags/javascript/"/>
     
   </entry>
   

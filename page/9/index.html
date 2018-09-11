@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/f9ae89b2.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/7b25d017.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/f9ae89b2.html" itemprop="url">node版本管理</a></h1>
+                <a class="post-title-link" href="/post/7b25d017.html" itemprop="url">redis</a></h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
                   </a>
                 </span>
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  119
+                  201
                 </span>
               
 
@@ -419,12 +419,15 @@
       
         
           
-          linux下使用nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
-1wget -qO- https://raw.githubusercontent.com/creationi
+          下载需要下载一个redis，或者是连接的那个服务器有redis
+cnpm i redis
+我的本机安装目录C:\Program Files\Redis
+执行：redis-server.exe
+1234567891011121314151617//使用redis，用来缓存数据const redis  
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/f9ae89b2.html#more" rel="contents">
+            <a class="btn" href="/post/7b25d017.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -475,7 +478,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/34655c0e.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/bde7ce9f.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -494,7 +497,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/34655c0e.html" itemprop="url">node 和 模板引擎（jade）</a></h1>
+                <a class="post-title-link" href="/post/bde7ce9f.html" itemprop="url">node（koa2）快速创建项目</a></h1>
         
 
         <div class="post-meta">
@@ -560,7 +563,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178
+                  300
                 </span>
               
 
@@ -576,7 +579,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -599,24 +602,17 @@
       
         
           
-          
-express 框架里内嵌了Jade模板引擎。
+          创建项目（但是不支持热加载）1npm install -g koa-generator   //全局安装
+一键创建项目12345koa2 koa2-testcd koa2-testnpm i
+执行1npm run dev
 
-安装
-npm install jade –global
+这里可能报错，原因是因为需要安装bable
 
-执行
-创建一个 index.jade 的文件，然后执行 jade index.jade
-
-
-这样做就会将jade文件转换为html文件
-
-jade还有一些参数
-jade -P index.j
+1npm install --
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/34655c0e.html#more" rel="contents">
+            <a class="btn" href="/post/bde7ce9f.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -667,7 +663,7 @@ jade -P index.j
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/7e3a5fc6.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/448baf37.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -686,7 +682,7 @@ jade -P index.j
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/7e3a5fc6.html" itemprop="url">node  和 文件（file）</a></h1>
+                <a class="post-title-link" href="/post/448baf37.html" itemprop="url">node框架简要说明（express）</a></h1>
         
 
         <div class="post-meta">
@@ -752,7 +748,7 @@ jade -P index.j
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  160
+                  1,517
                 </span>
               
 
@@ -768,7 +764,7 @@ jade -P index.j
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -791,195 +787,17 @@ jade -P index.j
       
         
           
-          fs文件读取
-实现方法首先创建一个file.txt的文件
+          介绍
+如官网所说要使用koa就要使得node的版本在7以上，但是本人亲测6也是可以的(当然只是一部分，如果要用异步等函数，还是需要升级的)
 
-123456789var fs = require('fs');    fs.readFile('file.txt', 'utf-8', function (err, data) &#123;      if (err) &#123;   
+node 版本管理
+如此那么对于不同版本的node，我们有一种方式可以对其进行管理nvm
+
+安装nvm（还有一种n，暂不做介绍，但是nvm只支持mac以及li
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/7e3a5fc6.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/ea010e66.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/ea010e66.html" itemprop="url">node启动在一个服务中</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  32
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在实验koa2时有这么一句话1app.use(require('koa-static')(__dirname + '/public/static'))
-把打包后的文件放在这里面
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/ea010e66.html#more" rel="contents">
+            <a class="btn" href="/post/448baf37.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1210,7 +1028,7 @@ jade -P index.j
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/82a3d2fb.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/bf9483c3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1229,7 +1047,196 @@ jade -P index.j
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/82a3d2fb.html" itemprop="url">node--require（）为什么是同步的</a></h1>
+                <a class="post-title-link" href="/post/bf9483c3.html" itemprop="url">正则表达基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/正则/" itemprop="url" rel="index">
+                    <span itemprop="name">正则</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  464
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          案例以*开始
+“^The”：表示所有以”The”开始的字符串（”There”，”The cat”等）；
+
+以*结束
+“of despair$”：表示所以以”of despair”结尾的字符串；
+
+严格匹配
+“^abc$”：严格匹配，只有abc自己
+
+包含（可以在中间位置）
+“notice”：表示任何
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/bf9483c3.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/f9ae89b2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/f9ae89b2.html" itemprop="url">node版本管理</a></h1>
         
 
         <div class="post-meta">
@@ -1295,7 +1302,7 @@ jade -P index.j
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  116
+                  119
                 </span>
               
 
@@ -1334,198 +1341,12 @@ jade -P index.j
       
         
           
-          1、因为使用的是CommonJS标准
-2、作为公共依赖的模块，自然要异步加载到位
-3、模块的个数往往有限制，Node会自动缓存已经加载的模块，再加上访问的都是本地文件，产生的IO开销可以忽略不计
-4、Node运行在服务器端，很少遇见需要频繁重启服务的情况。服务启动时候画上几秒也没有关系
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/post/82a3d2fb.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/7b25d017.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yinxs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YINXS的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/7b25d017.html" itemprop="url">redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  201
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          下载需要下载一个redis，或者是连接的那个服务器有redis
-cnpm i redis
-我的本机安装目录C:\Program Files\Redis
-执行：redis-server.exe
-1234567891011121314151617//使用redis，用来缓存数据const redis  
+          linux下使用nvm1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+1wget -qO- https://raw.githubusercontent.com/creationi
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/7b25d017.html#more" rel="contents">
+            <a class="btn" href="/post/f9ae89b2.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1576,7 +1397,7 @@ cnpm i redis
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/1f21691d.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/46cb4dd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1595,7 +1416,7 @@ cnpm i redis
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/1f21691d.html" itemprop="url">Lua语言简介</a></h1>
+                <a class="post-title-link" href="/post/46cb4dd.html" itemprop="url">node编码规范</a></h1>
         
 
         <div class="post-meta">
@@ -1661,7 +1482,7 @@ cnpm i redis
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,002
+                  482
                 </span>
               
 
@@ -1677,7 +1498,7 @@ cnpm i redis
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -1700,13 +1521,16 @@ cnpm i redis
       
         
           
-          简介Lua是一门小巧的脚本语言，由巴西里约热内卢天主教大学的Roberto Ierusalimschy等人于1993年开发，在现代企业开发中Lua通常被作为胶水语言，在游戏领域应用尤为频繁。
-Lua中的数据类型Lua中定义以下几种数据类型
-1、Nilnil是一个特殊的数据类型，它只有一个值，就是ni
+          node编码规范
+一、缩进&gt; 两个空格缩进，而不是tab缩进
+二、变量声明&gt; 每一行声明必须带有var
+三、空格&gt; 在操作符前后需要加空格（+，——，*，%，=等等）。此外小括号前后要加空格
+123if (true) &#123;    // some code&#125;
+四、单
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/1f21691d.html#more" rel="contents">
+            <a class="btn" href="/post/46cb4dd.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1937,7 +1761,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/bf9483c3.html">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/e7d607e7.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yinxs">
@@ -1956,7 +1780,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/bf9483c3.html" itemprop="url">正则表达基础</a></h1>
+                <a class="post-title-link" href="/post/e7d607e7.html" itemprop="url">开发一个自己的Node Web框架</a></h1>
         
 
         <div class="post-meta">
@@ -1991,8 +1815,8 @@ Lua中的数据类型Lua中定义以下几种数据类型
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/正则/" itemprop="url" rel="index">
-                    <span itemprop="name">正则</span>
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
                   </a>
                 </span>
 
@@ -2022,7 +1846,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  464
+                  197
                 </span>
               
 
@@ -2038,7 +1862,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -2061,21 +1885,196 @@ Lua中的数据类型Lua中定义以下几种数据类型
       
         
           
-          案例以*开始
-“^The”：表示所有以”The”开始的字符串（”There”，”The cat”等）；
-
-以*结束
-“of despair$”：表示所以以”of despair”结尾的字符串；
-
-严格匹配
-“^abc$”：严格匹配，只有abc自己
-
-包含（可以在中间位置）
-“notice”：表示任何
+          前言学习一下怎么开发框架，对express和koa2的使用会让你更加得心应手。本文借鉴李锴的文章
+框架的雏形首先构建一个application.js，主要的方法都会在这里声明，构建大致的代码框架
+application.js
+1234567891011121314151617181920212223
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/post/bf9483c3.html#more" rel="contents">
+            <a class="btn" href="/post/e7d607e7.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/2971356.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/2971356.html" itemprop="url">node中的next()用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T11:15:00+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  259
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          next()函数是用来调用下一个中间件的。
+什么是中间件：位于中间，为两侧提供服务的软件
+举个例子
+12345678910111213app.use((ctx,next)=&gt;&#123;    ctx.name = 'yixns',    next();&#125;)app.use((ctx,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/2971356.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2167,7 +2166,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">109</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2178,7 +2177,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2189,7 +2188,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2247,7 +2246,7 @@ Lua中的数据类型Lua中定义以下几种数据类型
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.5k</span>
+    <span title="Site words total count">67.2k</span>
   
 </div>
 
