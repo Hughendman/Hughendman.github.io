@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="python构建微服务方案一架构Nameko + API Swagger 简介Nameko是一个让python程序员关注应用逻辑和测试的微服务框架。 项目1234py -2 -m pip install namekopy -2 -m pip install yagmailcd service nameko run service --broker amqp://guest:guest@localh">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 构建微服务">
+<meta property="og:url" content="https://hughendman.github.io/post/f3250ef9.html">
+<meta property="og:site_name" content="YINXS的博客">
+<meta property="og:description" content="python构建微服务方案一架构Nameko + API Swagger 简介Nameko是一个让python程序员关注应用逻辑和测试的微服务框架。 项目1234py -2 -m pip install namekopy -2 -m pip install yagmailcd service nameko run service --broker amqp://guest:guest@localh">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-12T10:05:18.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 构建微服务">
+<meta name="twitter:description" content="python构建微服务方案一架构Nameko + API Swagger 简介Nameko是一个让python程序员关注应用逻辑和测试的微服务框架。 项目1234py -2 -m pip install namekopy -2 -m pip install yagmailcd service nameko run service --broker amqp://guest:guest@localh">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hughendman.github.io/post/f3250ef9.html"/>
+
+
+
+
+
+  <title>python 构建微服务 | YINXS的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YINXS的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">WEB全栈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/f3250ef9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python 构建微服务</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T16:15:00+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/f3250ef9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/f3250ef9.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,243
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="python构建微服务"><a href="#python构建微服务" class="headerlink" title="python构建微服务"></a>python构建微服务</h1><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>Nameko + API Swagger</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Nameko是一个让python程序员关注应用逻辑和测试的微服务框架。</p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install nameko</span><br><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install yagmail</span><br><span class="line"><span class="keyword">cd</span> service </span><br><span class="line">nameko run service --broker amqp://gues<span class="variable">t:guest</span>@localhost</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install nameko</span><br><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install flask</span><br><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install flasgger</span><br><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/rochacbruno/nameko-example.git</span><br><span class="line"><span class="keyword">cd</span> api</span><br><span class="line">python2 api.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+<p>打开浏览器 </p>
+<p><a href="http://localhost:5000/apidocs/index.html" target="_blank" rel="noopener">http://localhost:5000/apidocs/index.html</a> </p>
+<p><a href="https://github.com/rochacbruno/nameko-example" target="_blank" rel="noopener">git 案例 nameko-example</a></p>
+<h4 id="rabbitMQ"><a href="#rabbitMQ" class="headerlink" title="rabbitMQ"></a>rabbitMQ</h4><p><a href="https://www.cnblogs.com/ericli-ericli/p/5902270.html" target="_blank" rel="noopener">安装-windows下 安装 rabbitMQ 及操作常用命令</a></p>
+<p>安装成功后访问：<a href="http://localhost:15672/" target="_blank" rel="noopener">http://localhost:15672/</a></p>
+<p>rabbitMQ新增用户<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl.<span class="keyword">bat </span><span class="keyword">add_user </span>username password</span><br></pre></td></tr></table></figure></p>
+<p>rabbitMQ查询用户<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl.<span class="keyword">bat </span><span class="keyword">add_user </span>username password</span><br></pre></td></tr></table></figure></p>
+<p>给用户超级管理员角色<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl<span class="selector-class">.bat</span> set_user_tags username administrator</span><br></pre></td></tr></table></figure></p>
+<p>修改密码<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl change_password userName <span class="keyword">new</span><span class="type">Password</span></span><br></pre></td></tr></table></figure></p>
+<p>删除用户<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl<span class="selector-class">.bat</span> delete_user username</span><br></pre></td></tr></table></figure></p>
+<p>权限相关命令<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 设置用户权限</span></span><br><span class="line"></span><br><span class="line">rabbitmqctl  set_permissions  -p  VHostPath <span class="built_in"> User </span> ConfP  WriteP  ReadP</span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看(指定hostpath)所有用户的权限信息</span></span><br><span class="line"></span><br><span class="line">rabbitmqctl  list_permissions  [-p  VHostPath]</span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看指定用户的权限信息</span></span><br><span class="line"></span><br><span class="line">rabbitmqctl  list_user_permissions  User</span><br><span class="line"></span><br><span class="line"><span class="comment">##  清除用户的权限信息</span></span><br><span class="line"></span><br><span class="line">rabbitmqctl  clear_permissions  [-p VHostPath]  User</span><br></pre></td></tr></table></figure></p>
+<h4 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h4><p><a href="http://www.runoob.com/docker/windows-docker-install.html" target="_blank" rel="noopener">docker安装教程</a></p>
+<p>安装完成后记得配置环境变量</p>
+<h4 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">py -<span class="number">2</span> -m pip <span class="keyword">install</span> docker-compose</span><br></pre></td></tr></table></figure>
+<h4 id="flask"><a href="#flask" class="headerlink" title="flask"></a>flask</h4><p>Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。<br>Flask也被称为 “microframework” ，因为它使用简单的核心，用 extension 增加其他功能。Flask没有默认使用的数据库、窗体验证工具。(来自百度)</p>
+<h5 id="初次使用"><a href="#初次使用" class="headerlink" title="初次使用"></a>初次使用</h5><p>flask_test.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route("/")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span>    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello World!"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></p>
+<p>执行<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">py</span> -<span class="number">2</span> -<span class="keyword">m</span> pip install flask</span><br><span class="line"></span><br><span class="line">python2 flask_test.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>打开 <a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a></p>
+<h4 id="flasgger"><a href="#flasgger" class="headerlink" title="flasgger"></a>flasgger</h4><p>flasgger为在flask框架中使用的swagger，flasgger是flask支持的swagger UI，便于调试使用flask框架搭建的web api接口</p>
+<p><a href="https://changsiyuan.github.io/2017/05/20/2017-5-20-flasgger/" target="_blank" rel="noopener">参考文章</a></p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">py -<span class="number">2</span> -m pip <span class="keyword">install</span> flasgger</span><br></pre></td></tr></table></figure>
+<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><p>上面的<a href="http://localhost:5000/apidocs/index.html" target="_blank" rel="noopener">http://localhost:5000/apidocs/index.html</a> 即为案例</p>
+<h5 id="配置解析"><a href="#配置解析" class="headerlink" title="配置解析"></a>配置解析</h5><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@app</span>.route(<span class="string">'/compute'</span>, methods=[<span class="string">'POST'</span>])</span><br><span class="line"><span class="variable">@swag_from</span>(<span class="string">'compute.yml'</span>)</span><br></pre></td></tr></table></figure>
+<p>compute.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Micro</span> <span class="string">Service</span> <span class="string">Based</span> <span class="string">Compute</span> <span class="string">and</span> <span class="string">Mail</span> <span class="string">API</span></span><br><span class="line"><span class="string">This</span> <span class="string">API</span> <span class="string">is</span> <span class="string">made</span> <span class="string">with</span> <span class="string">Flask,</span> <span class="string">Flasgger</span> <span class="string">and</span> <span class="string">Nameko</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">parameters:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">body</span></span><br><span class="line"><span class="attr">    in:</span> <span class="string">body</span></span><br><span class="line"><span class="attr">    required:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    schema:</span></span><br><span class="line"><span class="attr">      id:</span> <span class="string">data</span></span><br><span class="line"><span class="attr">      properties:</span></span><br><span class="line"><span class="attr">        operation:</span></span><br><span class="line"><span class="attr">          type:</span> <span class="string">string</span></span><br><span class="line"><span class="attr">          enum:</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">sum</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">mul</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">sub</span></span><br><span class="line"><span class="bullet">            -</span> <span class="string">div</span></span><br><span class="line"><span class="attr">        email:</span></span><br><span class="line"><span class="attr">          type:</span> <span class="string">string</span></span><br><span class="line"><span class="attr">        value:</span></span><br><span class="line"><span class="attr">          type:</span> <span class="string">integer</span></span><br><span class="line"><span class="attr">        other:</span></span><br><span class="line"><span class="attr">          type:</span> <span class="string">integer</span></span><br><span class="line"><span class="attr">responses:</span></span><br><span class="line">  <span class="number">200</span><span class="string">:</span></span><br><span class="line"><span class="attr">    description:</span> <span class="string">|</span></span><br><span class="line"><span class="string">       Please wait the calculation, you'll receive an email with results</span></span><br></pre></td></tr></table></figure>
+<h6 id="parameters-参数配置"><a href="#parameters-参数配置" class="headerlink" title="parameters :参数配置"></a>parameters :参数配置</h6><pre><code>GET方法：放置url中
+POST方法：放置在schema
+</code></pre><h6 id="responses-返回信息"><a href="#responses-返回信息" class="headerlink" title="responses :返回信息"></a>responses :返回信息</h6><p>在这里介绍一篇文章，<a href="https://hughendman.github.io/post/652bf3bd.html">API文档自动生成工具apiDoc</a></p>
+<h2 id="google-api-python-client"><a href="#google-api-python-client" class="headerlink" title="google-api-python-client"></a>google-api-python-client</h2><p>谷歌正式推出Python版Google API客户端库</p>
+<p><a href="https://github.com/googleapis/google-api-python-client" target="_blank" rel="noopener">git地址</a></p>
+<p>谷歌称，如果开发者想使用Google API构建一个Python应用程序，那么强烈建议使用该客户端库，因为该库可以帮助开发者轻松调用任何RESTful Google API，并抓取返回的数据。此外，该库还可以帮助开发者处理OAuth 2.0验证协议以及所有的错误，而无需写额外的代码。 (<a href="http://www.iteye.com/news/26053" target="_blank" rel="noopener">来自网络</a>)</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> <span class="comment">--upgrade google-api-python-client</span></span><br></pre></td></tr></table></figure>
+<h3 id="版本支持"><a href="#版本支持" class="headerlink" title="版本支持"></a>版本支持</h3><p>Python Version</p>
+<p>Python 2.7, 3.4, 3.5, and 3.6 are fully supported and tested. (来自官网)</p>
+<h2 id="pip网络问题解决"><a href="#pip网络问题解决" class="headerlink" title="pip网络问题解决"></a>pip网络问题解决</h2><p>由于网络原因，需要更改源</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> xlrd <span class="keyword">http</span>://pypi.douban.com/simple/ <span class="comment">--trusted-host pypi.douban.com</span></span><br></pre></td></tr></table></figure>
+<p>永久解决方案：</p>
+<p>在pip安装目录（C:\Python27\pip-9.0.1\pip-9.0.1  这是我的目录）创建（.py）文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line"> </span><br><span class="line">ini=<span class="string">"""[global]</span></span><br><span class="line"><span class="string">index-url = https://pypi.doubanio.com/simple/</span></span><br><span class="line"><span class="string">[install]</span></span><br><span class="line"><span class="string">trusted-host=pypi.doubanio.com</span></span><br><span class="line"><span class="string">"""</span> </span><br><span class="line">pippath=os.environ[<span class="string">"USERPROFILE"</span>]+<span class="string">"\\pip\\"</span> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(pippath): </span><br><span class="line">    os.mkdir(pippath) </span><br><span class="line"> </span><br><span class="line"><span class="keyword">with</span> open(pippath+<span class="string">"pip.ini"</span>,<span class="string">"w+"</span>) <span class="keyword">as</span> f: </span><br><span class="line">    f.write(ini)</span><br></pre></td></tr></table></figure>
+<p>执行，可以解决问题</p>
+<h2 id="兼容python2-7和python3（window版本）"><a href="#兼容python2-7和python3（window版本）" class="headerlink" title="兼容python2.7和python3（window版本）"></a>兼容python2.7和python3（window版本）</h2><p>因为电脑中已经有版本2</p>
+<p>进入：C:\Python27 安装目录下面</p>
+<p>将python.exe改为python2.exe</p>
+<p>执行： python2 -V 查看是否成功</p>
+<p>同理 python 3也是同样操作，安装成功后改为python3.exe（默认安装目录：C:\Users\admin\AppData\Local\Programs\Python\Python37）</p>
+<p>执行： python3 -V 查看是否成功</p>
+<p>加上以下也可以 py 执行<br><figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! python2 or #! python3</span></span><br></pre></td></tr></table></figure></p>
+<p>pip使用如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">py -<span class="number">2</span> -m pip <span class="keyword">install</span> XXXX</span><br><span class="line"></span><br><span class="line">py -<span class="number">3</span> -m pip <span class="keyword">install</span> XXXX</span><br></pre></td></tr></table></figure>
+<h2 id="pip升级"><a href="#pip升级" class="headerlink" title="pip升级"></a>pip升级</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip <span class="keyword">install</span> <span class="comment">--upgrade pip</span></span><br></pre></td></tr></table></figure>
+<h2 id="方案二Sanic"><a href="#方案二Sanic" class="headerlink" title="方案二Sanic"></a>方案二Sanic</h2><p><a href="https://blog.csdn.net/sinat_26917383/article/details/79292506" target="_blank" rel="noopener">模板来源-微服务Sanic制作一个简易本地restful API</a></p>
+<p>Sanic是一个支持 async/await 语法的异步无阻塞框架，Flask的升级版，效率更高，性能会提升不少</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> sanic <span class="keyword">import</span> Sanic</span><br><span class="line"><span class="keyword">from</span> sanic.response <span class="keyword">import</span> text</span><br><span class="line"></span><br><span class="line">app = Sanic()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/")</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> text(<span class="string">'Hello World!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run(host=<span class="string">"0.0.0.0"</span>, port=<span class="number">8000</span>)</span><br></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">py -3 -m pip <span class="keyword">install</span> Sanic</span><br><span class="line">## 如果报错，执行</span><br><span class="line">py <span class="number">-3</span> -m pip <span class="keyword">install</span> <span class="comment">--upgrade pip</span></span><br><span class="line">## https://pypi.org/<span class="keyword">project</span>/Sanic/#files 下载whl文件</span><br><span class="line">py <span class="number">-3</span> -m pip <span class="keyword">install</span> C:\<span class="keyword">Users</span>\<span class="keyword">admin</span>\Downloads\httptools<span class="number">-0.0</span><span class="number">.11</span>.tar.gz</span><br><span class="line">C:\<span class="keyword">Users</span>\<span class="keyword">admin</span>\Downloads\sanic<span class="number">-0.8</span><span class="number">.1</span>-py3-<span class="keyword">none</span>-any.whl</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/f4837afa.html" rel="next" title="项目管理思考">
+                <i class="fa fa-chevron-left"></i> 项目管理思考
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="yinxs" />
+            
+              <p class="site-author-name" itemprop="name">yinxs</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">110</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python构建微服务"><span class="nav-number">1.</span> <span class="nav-text">python构建微服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方案一"><span class="nav-number">1.1.</span> <span class="nav-text">方案一</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构"><span class="nav-number">1.1.1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.1.2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目"><span class="nav-number">1.1.3.</span> <span class="nav-text">项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rabbitMQ"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">rabbitMQ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">docker-compose</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flask"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">flask</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初次使用"><span class="nav-number">1.1.3.4.1.</span> <span class="nav-text">初次使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flasgger"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">flasgger</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装"><span class="nav-number">1.1.3.5.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#案例"><span class="nav-number">1.1.3.5.2.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置解析"><span class="nav-number">1.1.3.5.3.</span> <span class="nav-text">配置解析</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#parameters-参数配置"><span class="nav-number">1.1.3.5.3.1.</span> <span class="nav-text">parameters :参数配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#responses-返回信息"><span class="nav-number">1.1.3.5.3.2.</span> <span class="nav-text">responses :返回信息</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#google-api-python-client"><span class="nav-number">1.2.</span> <span class="nav-text">google-api-python-client</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本支持"><span class="nav-number">1.2.2.</span> <span class="nav-text">版本支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pip网络问题解决"><span class="nav-number">1.3.</span> <span class="nav-text">pip网络问题解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容python2-7和python3（window版本）"><span class="nav-number">1.4.</span> <span class="nav-text">兼容python2.7和python3（window版本）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pip升级"><span class="nav-number">1.5.</span> <span class="nav-text">pip升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案二Sanic"><span class="nav-number">1.6.</span> <span class="nav-text">方案二Sanic</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yinxs</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">68.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>  本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Hughendman',
+            repo: 'Hughendman.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6559418c2c8da3379abf373e0efcb3910990f63a',
+            
+                client_id: 'adee08756dcabcc1f120'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

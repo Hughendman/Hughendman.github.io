@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-11T06:06:52.072Z</updated>
+  <updated>2018-09-12T10:05:18.565Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python 构建微服务</title>
+    <link href="https://hughendman.github.io/post/f3250ef9.html"/>
+    <id>https://hughendman.github.io/post/f3250ef9.html</id>
+    <published>2018-09-12T08:15:00.000Z</published>
+    <updated>2018-09-12T10:05:18.565Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;python构建微服务&quot;&gt;&lt;a href=&quot;#python构建微服务&quot; class=&quot;headerlink&quot; title=&quot;python构建微服务&quot;&gt;&lt;/a&gt;python构建微服务&lt;/h1&gt;&lt;h2 id=&quot;方案一&quot;&gt;&lt;a href=&quot;#方案一&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>项目管理思考</title>
     <link href="https://hughendman.github.io/post/f4837afa.html"/>
     <id>https://hughendman.github.io/post/f4837afa.html</id>
     <published>2018-09-11T04:15:00.000Z</published>
-    <updated>2018-09-11T06:06:52.072Z</updated>
+    <updated>2018-09-11T06:08:53.937Z</updated>
     
     <summary type="html">
     
@@ -520,33 +546,6 @@
     
     
       <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PM2</title>
-    <link href="https://hughendman.github.io/post/1efd976a.html"/>
-    <id>https://hughendman.github.io/post/1efd976a.html</id>
-    <published>2018-07-11T08:15:00.000Z</published>
-    <updated>2018-07-11T03:58:41.185Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;pm2 是一个带有负载均衡功能的Node应用的进程管理器.&lt;/p&gt;
-&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="koa2" scheme="https://hughendman.github.io/categories/koa2/"/>
-    
-    
-      <category term="koa2" scheme="https://hughendman.github.io/tags/koa2/"/>
     
   </entry>
   
