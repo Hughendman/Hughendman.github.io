@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="admin 中文设置在setttings.py下 1234567891011# LANGUAGE_CODE = &apos;en-us&apos;LANGUAGE_CODE = &apos;zh-Hans&apos;# TIME_ZONE = &apos;UTC&apos;TIME_ZONE = &apos;CCT&apos;USE_I18N = TrueUSE_L10N = TrueUSE_TZ = True 访问：http://127.0.0.1:8000/admin/发">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django2.1使用Django重新探索(工具)">
+<meta property="og:url" content="https://hughendman.github.io/post/2a237a1c.html">
+<meta property="og:site_name" content="YINXS的博客">
+<meta property="og:description" content="admin 中文设置在setttings.py下 1234567891011# LANGUAGE_CODE = &apos;en-us&apos;LANGUAGE_CODE = &apos;zh-Hans&apos;# TIME_ZONE = &apos;UTC&apos;TIME_ZONE = &apos;CCT&apos;USE_I18N = TrueUSE_L10N = TrueUSE_TZ = True 访问：http://127.0.0.1:8000/admin/发">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-21T07:45:13.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django2.1使用Django重新探索(工具)">
+<meta name="twitter:description" content="admin 中文设置在setttings.py下 1234567891011# LANGUAGE_CODE = &apos;en-us&apos;LANGUAGE_CODE = &apos;zh-Hans&apos;# TIME_ZONE = &apos;UTC&apos;TIME_ZONE = &apos;CCT&apos;USE_I18N = TrueUSE_L10N = TrueUSE_TZ = True 访问：http://127.0.0.1:8000/admin/发">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hughendman.github.io/post/2a237a1c.html"/>
+
+
+
+
+
+  <title>Django2.1使用Django重新探索(工具) | YINXS的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YINXS的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">WEB全栈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/2a237a1c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django2.1使用Django重新探索(工具)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T16:15:00+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/2a237a1c.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/2a237a1c.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,072
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="admin-中文设置"><a href="#admin-中文设置" class="headerlink" title="admin 中文设置"></a>admin 中文设置</h2><p>在setttings.py下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># LANGUAGE_CODE = 'en-us'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">LANGUAGE_CODE</span> = <span class="string">'zh-Hans'</span></span><br><span class="line"><span class="comment"># TIME_ZONE = 'UTC'</span></span><br><span class="line"><span class="attr">TIME_ZONE</span> = <span class="string">'CCT'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">USE_I18N</span> = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="attr">USE_L10N</span> = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="attr">USE_TZ</span> = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>访问：<a href="http://127.0.0.1:8000/admin/" target="_blank" rel="noopener">http://127.0.0.1:8000/admin/</a><br>发现已经变成中文的了</p>
+<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h3 id="创建普通用户"><a href="#创建普通用户" class="headerlink" title="创建普通用户"></a>创建普通用户</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python3</span> manage.<span class="keyword">py</span> <span class="keyword">shell</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from django<span class="selector-class">.contrib</span><span class="selector-class">.auth</span><span class="selector-class">.models</span> import User</span><br><span class="line">&gt;&gt;&gt; user = User<span class="selector-class">.objects</span><span class="selector-class">.create_user</span>(<span class="string">'yinxss'</span>, <span class="string">'yinxs@126.com'</span>, <span class="string">'12345678'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="创建超级用户"><a href="#创建超级用户" class="headerlink" title="创建超级用户"></a>创建超级用户</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py createsuperuser <span class="attribute">--username</span>=hugh <span class="attribute">--email</span>=hugh@126.com</span><br></pre></td></tr></table></figure>
+<h3 id="更改密码"><a href="#更改密码" class="headerlink" title="更改密码"></a>更改密码</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; from django.contrib.auth.models import User</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; u = User.objects.get(username=<span class="string">'yinxss'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; u.set_password(<span class="string">'zxlkdfjeirr'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; u.save()</span><br></pre></td></tr></table></figure>
+<h3 id="验证用户"><a href="#验证用户" class="headerlink" title="验证用户"></a>验证用户</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="keyword">from</span> django.contrib.auth import authenticate</span><br><span class="line">&gt;&gt;&gt;<span class="built_in"> user </span>= authenticate(<span class="attribute">username</span>=<span class="string">'yinxss'</span>, <span class="attribute">password</span>=<span class="string">'zxlkdfjeirr'</span>)</span><br><span class="line">&gt;&gt;&gt; <span class="builtin-name">print</span>(user)</span><br></pre></td></tr></table></figure>
+<h3 id="权限和认证"><a href="#权限和认证" class="headerlink" title="权限和认证"></a>权限和认证</h3><p>admin管理员的权限：添加、修改、删除。</p>
+<h3 id="默认权限"><a href="#默认权限" class="headerlink" title="默认权限"></a>默认权限</h3><p>当安装了django.contrib.auth应用，对每个已安装的应用都会有三个默认许可–添加、修改、删除。</p>
+<p>当运行manage.py migrate时，管理员对模型的默认权限就会被创建，包括已有的模型和新增的模型。</p>
+<h3 id="web请求的认证"><a href="#web请求的认证" class="headerlink" title="web请求的认证"></a>web请求的认证</h3><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">request</span>.user.is_authenticated:</span><br><span class="line">    # <span class="keyword">Do</span> something <span class="keyword">for</span> authenticated users.</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    # <span class="keyword">Do</span> something <span class="keyword">for</span> anonymous users.</span><br></pre></td></tr></table></figure>
+<h3 id="用户验证"><a href="#用户验证" class="headerlink" title="用户验证"></a>用户验证</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> authenticate, login</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_view</span><span class="params">(request)</span>:</span></span><br><span class="line">    username = request.POST[<span class="string">'username'</span>]</span><br><span class="line">    password = request.POST[<span class="string">'password'</span>]</span><br><span class="line">    user = authenticate(request, username=username, password=password)</span><br><span class="line">    <span class="keyword">if</span> user <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        login(request, user)</span><br><span class="line">        <span class="comment"># Redirect to a success page.</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># Return an 'invalid login' error message.</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户登出"><a href="#用户登出" class="headerlink" title="用户登出"></a>用户登出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> logout</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout_view</span><span class="params">(request)</span>:</span></span><br><span class="line">    logout(request)</span><br><span class="line">    <span class="comment"># Redirect to a success page.</span></span><br></pre></td></tr></table></figure>
+<h3 id="重定向-login-required-装饰器"><a href="#重定向-login-required-装饰器" class="headerlink" title="重定向(login_required 装饰器)"></a>重定向(login_required 装饰器)</h3><p>作用：用户没有登录，跳回登录页面</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">from</span> <span class="selector-tag">django</span><span class="selector-class">.contrib</span><span class="selector-class">.auth</span><span class="selector-class">.decorators</span> <span class="selector-tag">import</span> <span class="selector-tag">login_required</span></span><br><span class="line"> </span><br><span class="line">@<span class="keyword">login_required</span>(<span class="keyword">login_url</span>='/<span class="keyword">login</span>/')</span><br><span class="line"><span class="keyword">def</span> my_view(request):</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h3 id="重定向-LoginRequiredMixin"><a href="#重定向-LoginRequiredMixin" class="headerlink" title="重定向(LoginRequiredMixin)"></a>重定向(LoginRequiredMixin)</h3><p>作用：用户没有登录，跳回登录页面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.mixins <span class="keyword">import</span> LoginRequiredMixin</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyView</span><span class="params">(LoginRequiredMixin, View)</span>:</span></span><br><span class="line">    login_url = <span class="string">'/login/'</span></span><br><span class="line">    redirect_field_name = <span class="string">'redirect_to'</span></span><br></pre></td></tr></table></figure>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Django使用的是Python的内置日志（logging）模块构建自己的日志系统</p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>python日志组成：</p>
+<ul>
+<li>Loggers（记录器）</li>
+<li>Handlers（处理器）</li>
+<li>Filters（过滤器）</li>
+<li>Formatters（格式化器）</li>
+</ul>
+<h4 id="Loggers-记录器"><a href="#Loggers-记录器" class="headerlink" title="Loggers 记录器"></a>Loggers 记录器</h4><p>日志记录器是进入日志系统的入口点。每个日志记录器都是一个有名的‘桶’，将消息写入其中进行处理。<br>记录器具有日志级别属性(log level)。这个日志级别描述日志记录器所处理消息的严重程度。Python定义的以下日志级别：<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DEBUG：用于调试目的的低等级系统信息</span><br><span class="line">INFO：一般的系统信息。</span><br><span class="line">WARNING：描述发生的一个小问题的信息</span><br><span class="line"><span class="symbol">ERROR:</span>描述发生的一个大问题的信息</span><br><span class="line"><span class="symbol">CRITICAL:</span>描述已发生的关键问题的信息。</span><br></pre></td></tr></table></figure></p>
+<p>写入日志记录器的每个消息都是日志记录。每个日志记录都有一个日志级别，指示特定消息的严重程度。日志记录还可以包含描述正在记录的事件的有用元数据。这可能包括详细信息，例如堆栈跟踪或错误代码。<br>当消息被提供给记录器时，将消息的日志级别与记录器的日志级别进行比较。如果消息的日志级别满足或超过记录器本身的日志级别，则消息将进行进一步处理。如果没有，消息将被忽略。<br>一旦日志记录器确定需要处理消息，就会将其传递给处理程序。</p>
+<h4 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a>Handlers</h4><p>处理程序是决定日志记录器中每个消息处理行为的引擎。它描述特定的日志记录行为，例如向屏幕、文件或网络套接字写入消息。<br>与日志记录器一样，处理程序也具有日志级别。如果日志记录的日志级别不满足或超过处理程序的级别，处理程序将忽略消息。<br>日志记录器可以有多个处理程序，每个处理程序可以有不同的日志级别。通过这种方式，可以根据消息的重要性提供不同形式的通知。例如，您可以安装一个将错误和关键消息转发到分页服务的处理程序，而第二个处理程序将所有消息(包括错误和关键消息)记录到一个文件中，以便稍后进行分析。</p>
+<h4 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h4><p>过滤器用于提供对日志记录从日志记录器传递到处理程序过程中的额外控制。<br>默认情况下，满足日志级别要求的任何日志消息都将被处理。但是，通过安装过滤器，您可以在日志记录过程中添加额外的条件。例如，您可以安装一个过滤器，该过滤器只允许发出来自特定源的错误消息。<br>过滤器还可以用于在发出日志记录之前修改日志记录。例如，您可以编写一个过滤器，如果满足特定的一组条件，则将错误日志记录降级为警告记录。<br>过滤器可以安装在记录器或处理器上;可以在一个链中使用多个过滤器来执行多个过滤操作。</p>
+<h4 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a>Formatters</h4><p>最终，需要将日志记录呈现为文本。格式化器描述了文本的精确格式。格式化程序通常由包含日志记录属性(LogRecord attributes)的Python格式化字符串组成;但是，您也可以编写自定义格式化程序来实现特定的格式化行为。</p>
+<h3 id="使用日志"><a href="#使用日志" class="headerlink" title="使用日志"></a>使用日志</h3><p>在setting.py中</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">#导入模块</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> django.utils.log</span><br><span class="line"><span class="keyword">import</span> logging.handlers</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'version'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'disable_existing_loggers'</span>: <span class="literal">True</span>,</span><br><span class="line">    <span class="string">'formatters'</span>: &#123;</span><br><span class="line">       <span class="string">'standard'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'</span>&#125;  #日志格式 </span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'filters'</span>: &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'handlers'</span>: &#123;</span><br><span class="line">        <span class="string">'mail_admins'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'ERROR'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'django.utils.log.AdminEmailHandler'</span>,</span><br><span class="line">            <span class="string">'include_html'</span>: <span class="literal">True</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'default'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>:<span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>:<span class="string">'logging.handlers.RotatingFileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/sourceDns/log/all.log'</span>,     #日志输出文件</span><br><span class="line">            <span class="string">'maxBytes'</span>: <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">5</span>,                  #文件大小 </span><br><span class="line">            <span class="string">'backupCount'</span>: <span class="number">5</span>,                         #备份份数</span><br><span class="line">            <span class="string">'formatter'</span>:<span class="string">'standard'</span>,                   #使用哪种formatters日志格式</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'error'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>:<span class="string">'ERROR'</span>,</span><br><span class="line">            <span class="string">'class'</span>:<span class="string">'logging.handlers.RotatingFileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/sourceDns/log/error.log'</span>,</span><br><span class="line">            <span class="string">'maxBytes'</span>:<span class="number">1024</span>*<span class="number">1024</span>*<span class="number">5</span>,</span><br><span class="line">            <span class="string">'backupCount'</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">'formatter'</span>:<span class="string">'standard'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'console'</span>:&#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.StreamHandler'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'standard'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'request_handler'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>:<span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>:<span class="string">'logging.handlers.RotatingFileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/sourceDns/log/script.log'</span>, </span><br><span class="line">            <span class="string">'maxBytes'</span>: <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">5</span>, </span><br><span class="line">            <span class="string">'backupCount'</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">'formatter'</span>:<span class="string">'standard'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'scprits_handler'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>:<span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>:<span class="string">'logging.handlers.RotatingFileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>:<span class="string">'/sourceDns/log/script.log'</span>, </span><br><span class="line">            <span class="string">'maxBytes'</span>: <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">5</span>, </span><br><span class="line">            <span class="string">'backupCount'</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">'formatter'</span>:<span class="string">'standard'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'loggers'</span>: &#123;</span><br><span class="line">        <span class="string">'django'</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'default'</span>, <span class="string">'console'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="literal">False</span> </span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'django.request'</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'request_handler'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="literal">False</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'scripts'</span>: &#123; </span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'scprits_handler'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'INFO'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="literal">False</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'sourceDns.webdns.views'</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'default'</span>, <span class="string">'error'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="literal">True</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'sourceDns.webdns.util'</span>:&#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'error'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'ERROR'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="literal">True</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在views.py中使用</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">logger</span> = logging.getLogger(<span class="string">'sourceDns.webdns.views'</span>)    <span class="comment">#刚才在setting.py中配置的logger</span></span><br><span class="line"> </span><br><span class="line">try:</span><br><span class="line">    mysql= connectMysql(<span class="string">'127.0.0.1'</span>, <span class="string">'3306'</span>, <span class="string">'david'</span>)</span><br><span class="line">except Exception,e:</span><br><span class="line">            logger.<span class="literal">error</span>(e)        <span class="comment">#直接将错误写入到日志文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h2><h2 id="资讯聚合（RSS-Atom）"><a href="#资讯聚合（RSS-Atom）" class="headerlink" title="资讯聚合（RSS/Atom）"></a>资讯聚合（RSS/Atom）</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>就本质而言，RSS和Atom是一种信息聚合的技术，都是为了提供一种更为方便、高效的互联网信息的发布和共享，用更少的时间分享更多的信息。</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h3><p>Django提供了一个新的类来帮助你管理分页数据，这个类存放在django/core/paginator.py.它可以接收列表、元组或其它可迭代的对象。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from django.core.paginator <span class="keyword">import</span> Paginator, EmptyPage, PageNotAnInteger</span><br><span class="line">from django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"> </span><br><span class="line">def listing(request):</span><br><span class="line">    contact_list = Contacts.objects.all()</span><br><span class="line">    paginator = Paginator(contact_list, <span class="number">25</span>) </span><br><span class="line">    </span><br><span class="line">    # Show <span class="number">25</span> contacts per <span class="built_in">page</span></span><br><span class="line"> </span><br><span class="line">    <span class="built_in">page</span> = request.GET.get(<span class="string">'page'</span>)</span><br><span class="line">    try:</span><br><span class="line">        contacts = paginator.<span class="built_in">page</span>(<span class="built_in">page</span>)</span><br><span class="line">    except PageNotAnInteger:</span><br><span class="line">        # If <span class="built_in">page</span> <span class="keyword">is</span> <span class="built_in">not</span> an <span class="keyword">integer</span>, deliver first <span class="built_in">page</span>.</span><br><span class="line">        contacts = paginator.<span class="built_in">page</span>(<span class="number">1</span>)</span><br><span class="line">    except EmptyPage:</span><br><span class="line">        # If <span class="built_in">page</span> <span class="keyword">is</span> out of range (e.g. <span class="number">9999</span>), deliver last <span class="built_in">page</span> of results.</span><br><span class="line">        contacts = paginator.<span class="built_in">page</span>(paginator.num_pages)</span><br><span class="line"> </span><br><span class="line">    return render(request, <span class="string">'list.html'</span>, &#123;<span class="string">'contacts'</span>: contacts&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> contact <span class="keyword">in</span> contacts %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    </span><span class="comment">&#123;# Each "contact" is a Contact model object. #&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; contact.full_name|<span class="name">upper</span> &#125;&#125;</span><span class="xml"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    ...</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"> </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"step-links"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> contacts.has_previous %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?page=</span></span></span><span class="template-variable">&#123;&#123; contacts.previous_page_number &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>previous<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"> </span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"current"</span>&gt;</span></span></span><br><span class="line"><span class="xml">            Page </span><span class="template-variable">&#123;&#123; contacts.number &#125;&#125;</span><span class="xml"> of </span><span class="template-variable">&#123;&#123; contacts.paginator.num_pages &#125;&#125;</span><span class="xml">.</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"> </span></span><br><span class="line"><span class="xml">        </span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> contacts.has_next %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?page=</span></span></span><span class="template-variable">&#123;&#123; contacts.next_page_number &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>next<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="消息框架"><a href="#消息框架" class="headerlink" title="消息框架"></a>消息框架</h2><h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><h2 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h2><h2 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h2><h2 id="静态文件管理"><a href="#静态文件管理" class="headerlink" title="静态文件管理"></a>静态文件管理</h2><h2 id="数据验证"><a href="#数据验证" class="headerlink" title="数据验证"></a>数据验证</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/qq_33666633/article/details/81953143" target="_blank" rel="noopener">Django2.1 日志 中文文档</a></p>
+<p><a href="https://www.cnblogs.com/luohengstudy/p/6890395.html" target="_blank" rel="noopener">django 日志logging的配置以及处理</a></p>
+<p><a href="https://www.cnblogs.com/kongzhagen/p/6640975.html" target="_blank" rel="noopener">Django之分页功能</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/3f0e5b98.html" rel="next" title="Django2.1使用Django重新探索(模型层)">
+                <i class="fa fa-chevron-left"></i> Django2.1使用Django重新探索(模型层)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="yinxs" />
+            
+              <p class="site-author-name" itemprop="name">yinxs</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">114</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#admin-中文设置"><span class="nav-number">1.</span> <span class="nav-text">admin 中文设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-number">2.</span> <span class="nav-text">认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建普通用户"><span class="nav-number">2.1.</span> <span class="nav-text">创建普通用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建超级用户"><span class="nav-number">2.2.</span> <span class="nav-text">创建超级用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改密码"><span class="nav-number">2.3.</span> <span class="nav-text">更改密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证用户"><span class="nav-number">2.4.</span> <span class="nav-text">验证用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限和认证"><span class="nav-number">2.5.</span> <span class="nav-text">权限和认证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认权限"><span class="nav-number">2.6.</span> <span class="nav-text">默认权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web请求的认证"><span class="nav-number">2.7.</span> <span class="nav-text">web请求的认证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户验证"><span class="nav-number">2.8.</span> <span class="nav-text">用户验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户登出"><span class="nav-number">2.9.</span> <span class="nav-text">用户登出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向-login-required-装饰器"><span class="nav-number">2.10.</span> <span class="nav-text">重定向(login_required 装饰器)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向-LoginRequiredMixin"><span class="nav-number">2.11.</span> <span class="nav-text">重定向(LoginRequiredMixin)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志"><span class="nav-number">3.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">3.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组成"><span class="nav-number">3.2.</span> <span class="nav-text">组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Loggers-记录器"><span class="nav-number">3.2.1.</span> <span class="nav-text">Loggers 记录器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Handlers"><span class="nav-number">3.2.2.</span> <span class="nav-text">Handlers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filters"><span class="nav-number">3.2.3.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Formatters"><span class="nav-number">3.2.4.</span> <span class="nav-text">Formatters</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用日志"><span class="nav-number">3.3.</span> <span class="nav-text">使用日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发送邮件"><span class="nav-number">4.</span> <span class="nav-text">发送邮件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资讯聚合（RSS-Atom）"><span class="nav-number">5.</span> <span class="nav-text">资讯聚合（RSS/Atom）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍-1"><span class="nav-number">5.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">5.2.</span> <span class="nav-text">案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页"><span class="nav-number">6.</span> <span class="nav-text">分页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍-2"><span class="nav-number">6.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">6.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息框架"><span class="nav-number">7.</span> <span class="nav-text">消息框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列化"><span class="nav-number">8.</span> <span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#会话"><span class="nav-number">9.</span> <span class="nav-text">会话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站点地图"><span class="nav-number">10.</span> <span class="nav-text">站点地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态文件管理"><span class="nav-number">11.</span> <span class="nav-text">静态文件管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据验证"><span class="nav-number">12.</span> <span class="nav-text">数据验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">13.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yinxs</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">72.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>  本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Hughendman',
+            repo: 'Hughendman.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6559418c2c8da3379abf373e0efcb3910990f63a',
+            
+                client_id: 'adee08756dcabcc1f120'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

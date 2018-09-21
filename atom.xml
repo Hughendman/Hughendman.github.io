@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-21T05:52:23.136Z</updated>
+  <updated>2018-09-21T07:45:13.496Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django2.1使用Django重新探索(工具)</title>
+    <link href="https://hughendman.github.io/post/2a237a1c.html"/>
+    <id>https://hughendman.github.io/post/2a237a1c.html</id>
+    <published>2018-09-30T08:15:00.000Z</published>
+    <updated>2018-09-21T07:45:13.496Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;admin-中文设置&quot;&gt;&lt;a href=&quot;#admin-中文设置&quot; class=&quot;headerlink&quot; title=&quot;admin 中文设置&quot;&gt;&lt;/a&gt;admin 中文设置&lt;/h2&gt;&lt;p&gt;在setttings.py下&lt;/p&gt;
+&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django2.1使用Django重新探索(模型层)</title>
+    <link href="https://hughendman.github.io/post/3f0e5b98.html"/>
+    <id>https://hughendman.github.io/post/3f0e5b98.html</id>
+    <published>2018-09-22T08:15:00.000Z</published>
+    <updated>2018-09-21T06:25:38.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;模型&quot;&gt;&lt;a href=&quot;#模型&quot; class=&quot;headerlink&quot; title=&quot;模型&quot;&gt;&lt;/a&gt;模型&lt;/h2&gt;&lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django2.1使用Django重新探索(1)</title>
     <link href="https://hughendman.github.io/post/c44a2080.html"/>
     <id>https://hughendman.github.io/post/c44a2080.html</id>
     <published>2018-09-21T08:15:00.000Z</published>
-    <updated>2018-09-21T05:52:23.136Z</updated>
+    <updated>2018-09-21T05:53:49.930Z</updated>
     
     <summary type="html">
     
@@ -48,7 +101,7 @@
     <link href="https://hughendman.github.io/post/218a770a.html"/>
     <id>https://hughendman.github.io/post/218a770a.html</id>
     <published>2018-09-20T08:15:00.000Z</published>
-    <updated>2018-09-21T02:47:02.003Z</updated>
+    <updated>2018-09-21T05:53:49.929Z</updated>
     
     <summary type="html">
     
@@ -483,59 +536,6 @@
 &lt;li&gt;灰度发布&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;蓝绿部署&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue+koa2+mysql</title>
-    <link href="https://hughendman.github.io/post/c688e256.html"/>
-    <id>https://hughendman.github.io/post/c688e256.html</id>
-    <published>2018-07-13T11:15:00.000Z</published>
-    <updated>2018-07-13T08:54:33.650Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;koa2-vue&quot;&gt;&lt;a href=&quot;#koa2-vue&quot; class=&quot;headerlink&quot; title=&quot;koa2_vue&quot;&gt;&lt;/a&gt;koa2_vue&lt;/h1&gt;&lt;p&gt;git：&lt;a href=&quot;mailto:git@github.com&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="koa2" scheme="https://hughendman.github.io/categories/koa2/"/>
-    
-    
-      <category term="koa2" scheme="https://hughendman.github.io/tags/koa2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>API Gateway功能</title>
-    <link href="https://hughendman.github.io/post/b8717e5.html"/>
-    <id>https://hughendman.github.io/post/b8717e5.html</id>
-    <published>2018-07-13T11:15:00.000Z</published>
-    <updated>2018-07-13T09:08:28.165Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;前面两篇从其他地方抄来的文章主要是介绍以下微服务以及API Gateway ，以下就是我实现的API Gateway主要的功能以及实现的思路&lt;/p&gt;
-&lt;h2 id=&quot;技术选型&quot;&gt;&lt;a href=&quot;#技术选型&quot; class=&quot;headerlink&quot;
         
       
     
