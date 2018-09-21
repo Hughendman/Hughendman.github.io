@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-12T10:05:18.565Z</updated>
+  <updated>2018-09-21T05:52:23.136Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django2.1使用Django重新探索(1)</title>
+    <link href="https://hughendman.github.io/post/c44a2080.html"/>
+    <id>https://hughendman.github.io/post/c44a2080.html</id>
+    <published>2018-09-21T08:15:00.000Z</published>
+    <updated>2018-09-21T05:52:23.136Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;为什么是重新探索，这里给一个个人的建议，学习一个新的框架的时候，直接去看官方的文档。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django2.1使用</title>
+    <link href="https://hughendman.github.io/post/218a770a.html"/>
+    <id>https://hughendman.github.io/post/218a770a.html</id>
+    <published>2018-09-20T08:15:00.000Z</published>
+    <updated>2018-09-21T02:47:02.003Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;Python下有许多款不同的 Web
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python 构建微服务</title>
     <link href="https://hughendman.github.io/post/f3250ef9.html"/>
     <id>https://hughendman.github.io/post/f3250ef9.html</id>
     <published>2018-09-12T08:15:00.000Z</published>
-    <updated>2018-09-12T10:05:18.565Z</updated>
+    <updated>2018-09-12T10:18:38.500Z</updated>
     
     <summary type="html">
     
@@ -443,33 +496,6 @@
   </entry>
   
   <entry>
-    <title>API Gateway功能</title>
-    <link href="https://hughendman.github.io/post/b8717e5.html"/>
-    <id>https://hughendman.github.io/post/b8717e5.html</id>
-    <published>2018-07-13T11:15:00.000Z</published>
-    <updated>2018-07-13T09:08:28.165Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;前面两篇从其他地方抄来的文章主要是介绍以下微服务以及API Gateway ，以下就是我实现的API Gateway主要的功能以及实现的思路&lt;/p&gt;
-&lt;h2 id=&quot;技术选型&quot;&gt;&lt;a href=&quot;#技术选型&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue+koa2+mysql</title>
     <link href="https://hughendman.github.io/post/c688e256.html"/>
     <id>https://hughendman.github.io/post/c688e256.html</id>
@@ -496,11 +522,11 @@
   </entry>
   
   <entry>
-    <title>API Gateway</title>
-    <link href="https://hughendman.github.io/post/83d1d1c.html"/>
-    <id>https://hughendman.github.io/post/83d1d1c.html</id>
-    <published>2018-07-13T10:15:00.000Z</published>
-    <updated>2018-07-13T03:54:30.025Z</updated>
+    <title>API Gateway功能</title>
+    <link href="https://hughendman.github.io/post/b8717e5.html"/>
+    <id>https://hughendman.github.io/post/b8717e5.html</id>
+    <published>2018-07-13T11:15:00.000Z</published>
+    <updated>2018-07-13T09:08:28.165Z</updated>
     
     <summary type="html">
     
@@ -508,35 +534,8 @@
       
         
         
-          &lt;h2 id=&quot;API-Gateway&quot;&gt;&lt;a href=&quot;#API-Gateway&quot; class=&quot;headerlink&quot; title=&quot;API Gateway&quot;&gt;&lt;/a&gt;API Gateway&lt;/h2&gt;&lt;p&gt;百度介绍：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微服务</title>
-    <link href="https://hughendman.github.io/post/460c1130.html"/>
-    <id>https://hughendman.github.io/post/460c1130.html</id>
-    <published>2018-07-13T08:15:00.000Z</published>
-    <updated>2018-07-13T03:54:30.027Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;微服务&quot;&gt;&lt;a href=&quot;#微服务&quot; class=&quot;headerlink&quot; title=&quot;微服务&quot;&gt;&lt;/a&gt;微服务&lt;/h2&gt;&lt;p&gt; 微服务架构风格是一种使用一套小服务来开发单个应用的方式途径，每个服务运行在自己的进程中，并使用轻量级机制通信，通常是HTTP
+          &lt;p&gt;前面两篇从其他地方抄来的文章主要是介绍以下微服务以及API Gateway ，以下就是我实现的API Gateway主要的功能以及实现的思路&lt;/p&gt;
+&lt;h2 id=&quot;技术选型&quot;&gt;&lt;a href=&quot;#技术选型&quot; class=&quot;headerlink&quot;
         
       
     
