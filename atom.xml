@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-21T07:45:13.496Z</updated>
+  <updated>2018-09-26T03:40:08.168Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django2.1编写 RESTful API 接口</title>
+    <link href="https://hughendman.github.io/post/1c52887f.html"/>
+    <id>https://hughendman.github.io/post/1c52887f.html</id>
+    <published>2018-10-01T08:15:00.000Z</published>
+    <updated>2018-09-26T03:40:08.168Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django2.1使用Django重新探索(工具)</title>
     <link href="https://hughendman.github.io/post/2a237a1c.html"/>
     <id>https://hughendman.github.io/post/2a237a1c.html</id>
     <published>2018-09-30T08:15:00.000Z</published>
-    <updated>2018-09-21T07:45:13.496Z</updated>
+    <updated>2018-09-21T07:47:57.200Z</updated>
     
     <summary type="html">
     
@@ -48,7 +74,7 @@
     <link href="https://hughendman.github.io/post/3f0e5b98.html"/>
     <id>https://hughendman.github.io/post/3f0e5b98.html</id>
     <published>2018-09-22T08:15:00.000Z</published>
-    <updated>2018-09-21T06:25:38.711Z</updated>
+    <updated>2018-09-21T07:47:57.202Z</updated>
     
     <summary type="html">
     
@@ -514,37 +540,6 @@
     
     
       <category term="node" scheme="https://hughendman.github.io/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>术语总结</title>
-    <link href="https://hughendman.github.io/post/facec4eb.html"/>
-    <id>https://hughendman.github.io/post/facec4eb.html</id>
-    <published>2018-07-16T11:15:00.000Z</published>
-    <updated>2018-07-16T06:12:44.658Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;发布&quot;&gt;&lt;a href=&quot;#发布&quot; class=&quot;headerlink&quot; title=&quot;发布&quot;&gt;&lt;/a&gt;发布&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;蓝绿部署&lt;/li&gt;
-&lt;li&gt;A/B测试&lt;/li&gt;
-&lt;li&gt;灰度发布&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;蓝绿部署&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
