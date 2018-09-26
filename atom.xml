@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-26T08:19:27.030Z</updated>
+  <updated>2018-09-26T09:05:11.881Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 文章转载</title>
+    <link href="https://hughendman.github.io/post/6722e70.html"/>
+    <id>https://hughendman.github.io/post/6722e70.html</id>
+    <published>2018-10-07T08:15:00.000Z</published>
+    <updated>2018-09-26T09:05:11.881Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://github.com/taizilongxu/interview_python&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;转载自&lt;/a&gt;&lt;/p&gt;
+&lt;!-- markdown-toc start - Don&#39;t
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Django 操作数据库的增删改查</title>
@@ -513,32 +540,6 @@
     
     
       <category term="SpringBoot" scheme="https://hughendman.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手把手教你node发送邮件</title>
-    <link href="https://hughendman.github.io/post/cd60cfe6.html"/>
-    <id>https://hughendman.github.io/post/cd60cfe6.html</id>
-    <published>2018-07-20T08:15:00.000Z</published>
-    <updated>2018-07-20T09:51:13.858Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;使用插件nodemailer&quot;&gt;&lt;a href=&quot;#使用插件nodemailer&quot; class=&quot;headerlink&quot; title=&quot;使用插件nodemailer&quot;&gt;&lt;/a&gt;使用插件nodemailer&lt;/h2&gt;&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="node" scheme="https://hughendman.github.io/categories/node/"/>
-    
-    
-      <category term="node" scheme="https://hughendman.github.io/tags/node/"/>
     
   </entry>
   
