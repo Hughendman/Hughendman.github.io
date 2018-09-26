@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-26T03:40:08.168Z</updated>
+  <updated>2018-09-26T08:18:03.722Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django 操作数据库的增删改查</title>
+    <link href="https://hughendman.github.io/post/9ed051d.html"/>
+    <id>https://hughendman.github.io/post/9ed051d.html</id>
+    <published>2018-10-05T08:15:00.000Z</published>
+    <updated>2018-09-26T08:18:03.722Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;创建应用&quot;&gt;&lt;a href=&quot;#创建应用&quot; class=&quot;headerlink&quot; title=&quot;创建应用&quot;&gt;&lt;/a&gt;创建应用&lt;/h3&gt;&lt;h4 id=&quot;创建一个应用vacation&quot;&gt;&lt;a href=&quot;#创建一个应用vacation&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django2.1编写 RESTful API 接口</title>
     <link href="https://hughendman.github.io/post/1c52887f.html"/>
     <id>https://hughendman.github.io/post/1c52887f.html</id>
     <published>2018-10-01T08:15:00.000Z</published>
-    <updated>2018-09-26T03:40:08.168Z</updated>
+    <updated>2018-09-26T03:41:49.352Z</updated>
     
     <summary type="html">
     
@@ -504,33 +530,6 @@
         
         
           &lt;h2 id=&quot;使用插件nodemailer&quot;&gt;&lt;a href=&quot;#使用插件nodemailer&quot; class=&quot;headerlink&quot; title=&quot;使用插件nodemailer&quot;&gt;&lt;/a&gt;使用插件nodemailer&lt;/h2&gt;&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="node" scheme="https://hughendman.github.io/categories/node/"/>
-    
-    
-      <category term="node" scheme="https://hughendman.github.io/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>API文档自动生成工具apiDoc</title>
-    <link href="https://hughendman.github.io/post/652bf3bd.html"/>
-    <id>https://hughendman.github.io/post/652bf3bd.html</id>
-    <published>2018-07-19T10:15:00.000Z</published>
-    <updated>2018-07-19T10:34:52.340Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;最近写项目的时候不打算一边写接口一边写前端，感觉这样写很混乱，所以打算先把后端的接口完成，前端先放在后面，但是写完了接口时经常发现自己忘记写了哪些，所以要写一个API的文档，下面我来介绍一个非常方便的工具，API文档自动生成工具apiDoc。&lt;/p&gt;
-&lt;h2
         
       
     
