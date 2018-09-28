@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-09-26T09:05:11.881Z</updated>
+  <updated>2018-09-28T09:42:42.563Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>API接口加密策略</title>
+    <link href="https://hughendman.github.io/post/bc72157a.html"/>
+    <id>https://hughendman.github.io/post/bc72157a.html</id>
+    <published>2018-10-10T08:15:00.000Z</published>
+    <updated>2018-09-28T09:42:42.563Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;转载-Api接口加密策略&quot;&gt;&lt;a href=&quot;#转载-Api接口加密策略&quot; class=&quot;headerlink&quot; title=&quot;转载-Api接口加密策略&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python 文章转载</title>
     <link href="https://hughendman.github.io/post/6722e70.html"/>
     <id>https://hughendman.github.io/post/6722e70.html</id>
     <published>2018-10-07T08:15:00.000Z</published>
-    <updated>2018-09-26T09:05:11.881Z</updated>
+    <updated>2018-09-26T09:06:44.518Z</updated>
     
     <summary type="html">
     
@@ -505,32 +531,6 @@
         
         
           &lt;h3 id=&quot;eclipse没有提示解决&quot;&gt;&lt;a href=&quot;#eclipse没有提示解决&quot; class=&quot;headerlink&quot; title=&quot;eclipse没有提示解决&quot;&gt;&lt;/a&gt;eclipse没有提示解决&lt;/h3&gt;&lt;p&gt;点击window =&amp;gt;
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://hughendman.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://hughendman.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速创建springboot项目(1)</title>
-    <link href="https://hughendman.github.io/post/f7ca40ba.html"/>
-    <id>https://hughendman.github.io/post/f7ca40ba.html</id>
-    <published>2018-07-24T08:15:00.000Z</published>
-    <updated>2018-07-25T06:25:05.670Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;idea&quot;&gt;&lt;a href=&quot;#idea&quot; class=&quot;headerlink&quot; title=&quot;idea&quot;&gt;&lt;/a&gt;idea&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.imooc.com/video/13590&quot; target=&quot;_blank&quot;
         
       
     
