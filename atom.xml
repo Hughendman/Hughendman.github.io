@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-10-11T07:40:43.576Z</updated>
+  <updated>2018-10-18T03:11:19.050Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>flask搭建REST应用(1)</title>
+    <link href="https://hughendman.github.io/post/add72f50.html"/>
+    <id>https://hughendman.github.io/post/add72f50.html</id>
+    <published>2018-10-17T08:15:00.000Z</published>
+    <updated>2018-10-18T03:11:19.050Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="flask" scheme="https://hughendman.github.io/categories/flask/"/>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/flask/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+      <category term="flask" scheme="https://hughendman.github.io/tags/flask/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Docker + Superset</title>
     <link href="https://hughendman.github.io/post/4fbb2b9c.html"/>
     <id>https://hughendman.github.io/post/4fbb2b9c.html</id>
     <published>2018-10-11T08:15:00.000Z</published>
-    <updated>2018-10-11T07:40:43.576Z</updated>
+    <updated>2018-10-11T08:38:18.134Z</updated>
     
     <summary type="html">
     
@@ -47,7 +77,7 @@
     <link href="https://hughendman.github.io/post/24650887.html"/>
     <id>https://hughendman.github.io/post/24650887.html</id>
     <published>2018-10-10T08:15:00.000Z</published>
-    <updated>2018-10-11T07:41:02.052Z</updated>
+    <updated>2018-10-11T08:38:18.135Z</updated>
     
     <summary type="html">
     
@@ -514,32 +544,6 @@
     
     
       <category term="SpringBoot" scheme="https://hughendman.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JWT（JSON Web Tokens）</title>
-    <link href="https://hughendman.github.io/post/a13f356a.html"/>
-    <id>https://hughendman.github.io/post/a13f356a.html</id>
-    <published>2018-07-27T08:15:00.000Z</published>
-    <updated>2018-07-27T03:23:38.164Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;JWT&quot;&gt;&lt;a href=&quot;#JWT&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="server" scheme="https://hughendman.github.io/categories/server/"/>
-    
-    
-      <category term="server" scheme="https://hughendman.github.io/tags/server/"/>
     
   </entry>
   
