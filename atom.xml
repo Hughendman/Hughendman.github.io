@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-10-18T03:16:37.189Z</updated>
+  <updated>2018-10-18T06:25:37.638Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>flask搭建REST应用(1)</title>
-    <link href="https://hughendman.github.io/post/add72f50.html"/>
-    <id>https://hughendman.github.io/post/add72f50.html</id>
-    <published>2018-10-17T08:15:00.000Z</published>
-    <updated>2018-10-18T03:16:37.189Z</updated>
+    <title>flask插件（3）</title>
+    <link href="https://hughendman.github.io/post/d70bcc7a.html"/>
+    <id>https://hughendman.github.io/post/d70bcc7a.html</id>
+    <published>2018-10-18T08:15:00.000Z</published>
+    <updated>2018-10-18T06:25:37.638Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+          &lt;h3 id=&quot;Flask-appbuilder&quot;&gt;&lt;a href=&quot;#Flask-appbuilder&quot; class=&quot;headerlink&quot; title=&quot;Flask-appbuilder&quot;&gt;&lt;/a&gt;Flask-appbuilder&lt;/h3&gt;&lt;h4 id=&quot;介绍&quot;&gt;&lt;a
         
       
     
@@ -47,11 +47,11 @@
   </entry>
   
   <entry>
-    <title>flask插件（3）</title>
-    <link href="https://hughendman.github.io/post/d70bcc7a.html"/>
-    <id>https://hughendman.github.io/post/d70bcc7a.html</id>
+    <title>flask搭建REST应用(1)</title>
+    <link href="https://hughendman.github.io/post/add72f50.html"/>
+    <id>https://hughendman.github.io/post/add72f50.html</id>
     <published>2018-10-17T08:15:00.000Z</published>
-    <updated>2018-10-18T06:19:01.855Z</updated>
+    <updated>2018-10-18T03:16:37.189Z</updated>
     
     <summary type="html">
     
@@ -59,7 +59,7 @@
       
         
         
-          &lt;h3 id=&quot;Flask-appbuilder&quot;&gt;&lt;a href=&quot;#Flask-appbuilder&quot; class=&quot;headerlink&quot; title=&quot;Flask-appbuilder&quot;&gt;&lt;/a&gt;Flask-appbuilder&lt;/h3&gt;&lt;h4 id=&quot;介绍&quot;&gt;&lt;a
+          &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
