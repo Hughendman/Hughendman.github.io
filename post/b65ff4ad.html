@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="flask,python" />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="YINXS的博客">
-<meta property="og:url" content="https://hughendman.github.io/tags/flask/index.html">
+<meta name="description" content="数据库类型   数据库 命令     MySQL pip install PyMySQL   Postgres pip install psycopg2   Presto pip install pyhive   Oracle pip install cx_Oracle   sqlite 短文本   Redshift pip install sqlalchemy-redshift   MSSQL">
+<meta name="keywords" content="flask,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flask连接数据库(2)">
+<meta property="og:url" content="https://hughendman.github.io/post/b65ff4ad.html">
 <meta property="og:site_name" content="YINXS的博客">
+<meta property="og:description" content="数据库类型   数据库 命令     MySQL pip install PyMySQL   Postgres pip install psycopg2   Presto pip install pyhive   Oracle pip install cx_Oracle   sqlite 短文本   Redshift pip install sqlalchemy-redshift   MSSQL">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-18T06:31:37.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YINXS的博客">
+<meta name="twitter:title" content="flask连接数据库(2)">
+<meta name="twitter:description" content="数据库类型   数据库 命令     MySQL pip install PyMySQL   Postgres pip install psycopg2   Presto pip install pyhive   Oracle pip install cx_Oracle   sqlite 短文本   Redshift pip install sqlalchemy-redshift   MSSQL">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://hughendman.github.io/tags/flask/"/>
+  <link rel="canonical" href="https://hughendman.github.io/post/b65ff4ad.html"/>
 
 
 
 
 
-  <title>标签: flask | YINXS的博客</title>
+  <title>flask连接数据库(2) | YINXS的博客</title>
   
 
 
@@ -142,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,110 +285,286 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>flask<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/b65ff4ad.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/d70bcc7a.html" itemprop="url">
-              
-                <span itemprop="name">flask插件（3）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">flask连接数据库(2)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-18T16:15:00+08:00"
-              content="2018-10-18" >
-          10-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T20:15:00+08:00">
+                2018-10-17
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/flask/" itemprop="url" rel="index">
+                    <span itemprop="name">flask</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/flask/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/b65ff4ad.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/b65ff4ad.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  569
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/b65ff4ad.html" itemprop="url">
-              
-                <span itemprop="name">flask连接数据库(2)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-17T20:15:00+08:00"
-              content="2018-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/add72f50.html" itemprop="url">
-              
-                <span itemprop="name">flask搭建REST应用(1)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-17T16:15:00+08:00"
-              content="2018-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h3 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h3><table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL</td>
+<td>pip install PyMySQL</td>
+</tr>
+<tr>
+<td>Postgres</td>
+<td>pip install psycopg2</td>
+</tr>
+<tr>
+<td>Presto</td>
+<td>pip install pyhive</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>pip install cx_Oracle</td>
+</tr>
+<tr>
+<td>sqlite</td>
+<td>短文本</td>
+</tr>
+<tr>
+<td>Redshift</td>
+<td>pip install sqlalchemy-redshift</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>pip install pymssql</td>
+</tr>
+<tr>
+<td>Impala</td>
+<td>pip install impyla</td>
+</tr>
+<tr>
+<td>SparkSQL</td>
+<td>pip install pyhive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><p>pip install PyMySQL</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="meta"># 打开数据库连接</span></span><br><span class="line"><span class="title">db</span> = pymysql.connect(<span class="string">"localhost"</span>,<span class="string">"testuser"</span>,<span class="string">"test123"</span>,<span class="string">"TESTDB"</span> )</span><br><span class="line"> </span><br><span class="line"><span class="meta"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line"><span class="title">cursor</span> = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="meta"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line"><span class="title">cursor</span>.execute(<span class="string">"SELECT VERSION()"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line"><span class="class"><span class="keyword">data</span> = cursor.fetchone()</span></span><br><span class="line"> </span><br><span class="line"><span class="title">print</span> (<span class="string">"Database version : %s "</span> % <span class="class"><span class="keyword">data</span>)</span></span><br><span class="line"> </span><br><span class="line"><span class="meta"># 关闭数据库连接</span></span><br><span class="line"><span class="title">db</span>.close()</span><br></pre></td></tr></table></figure>
+<p>插入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(<span class="string">"localhost"</span>,<span class="string">"testuser"</span>,<span class="string">"test123"</span>,<span class="string">"TESTDB"</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用cursor()方法获取操作游标 </span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># SQL 插入语句</span></span><br><span class="line">sql = <span class="string">"""INSERT INTO EMPLOYEE(FIRST_NAME,</span></span><br><span class="line"><span class="string">         LAST_NAME, AGE, SEX, INCOME)</span></span><br><span class="line"><span class="string">         VALUES ('Mac', 'Mohan', 20, 'M', 2000)"""</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">   <span class="comment"># 执行sql语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 提交到数据库执行</span></span><br><span class="line">   db.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">   <span class="comment"># 如果发生错误则回滚</span></span><br><span class="line">   db.rollback()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure></p>
+<p>查询</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line"><span class="attr">db</span> = pymysql.connect(<span class="string">"localhost"</span>,<span class="string">"testuser"</span>,<span class="string">"test123"</span>,<span class="string">"TESTDB"</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用cursor()方法获取操作游标 </span></span><br><span class="line"><span class="attr">cursor</span> = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># SQL 查询语句</span></span><br><span class="line"><span class="attr">sql</span> = <span class="string">"SELECT * FROM EMPLOYEE \</span></span><br><span class="line"><span class="string">       WHERE INCOME &gt; '%d'"</span> % (<span class="number">1000</span>)</span><br><span class="line">try:</span><br><span class="line">   <span class="comment"># 执行SQL语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 获取所有记录列表</span></span><br><span class="line">   <span class="attr">results</span> = cursor.fetchall()</span><br><span class="line">   for row <span class="keyword">in</span> results:</span><br><span class="line">      <span class="attr">fname</span> = row[<span class="number">0</span>]</span><br><span class="line">      <span class="attr">lname</span> = row[<span class="number">1</span>]</span><br><span class="line">      <span class="attr">age</span> = row[<span class="number">2</span>]</span><br><span class="line">      <span class="attr">sex</span> = row[<span class="number">3</span>]</span><br><span class="line">      <span class="attr">income</span> = row[<span class="number">4</span>]</span><br><span class="line">       <span class="comment"># 打印结果</span></span><br><span class="line">      print (<span class="string">"fname=%s,lname=%s,age=%d,sex=%s,income=%d"</span> % \</span><br><span class="line">             (fname, lname, age, sex, income ))</span><br><span class="line">except:</span><br><span class="line">   print (<span class="string">"Error: unable to fetch data"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+<h3 id="Postgres"><a href="#Postgres" class="headerlink" title="Postgres"></a>Postgres</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import psycopg2</span><br><span class="line">import psycopg2.extras</span><br><span class="line">conn = psycopg2.connect(<span class="attribute">host</span>=’localhost’, <span class="attribute">port</span>=port, <span class="attribute">user</span>=’root’, <span class="attribute">password</span>=’abcd234’, <span class="attribute">database</span>=’database’)</span><br><span class="line">cursor = conn.cursor(<span class="attribute">cursor_factory</span>=psycopg2.extras.DictCursor)</span><br><span class="line"><span class="comment">#执行SQL脚本 </span></span><br><span class="line">cursor.execute(‘SELECT * <span class="keyword">FROM</span> test WHERE id &gt; %s;’, (5,)) </span><br><span class="line"><span class="comment">#查看生成的sql脚本</span></span><br><span class="line">cursor.mogrify(‘SELECT * <span class="keyword">FROM</span> test WHERE a = %s <span class="keyword">AND</span> b = %s;’, (‘a’, ‘b’))</span><br><span class="line"><span class="comment">#插入数据</span></span><br><span class="line">cursor.execute(‘INSERT INTO test (a, b) VALUES (%s, %s) RETURNING id;’, (‘a’, ‘b’))</span><br><span class="line">item = cursor.fetchone()</span><br><span class="line"><span class="builtin-name">print</span> item[0] #这里就是刚才插入的记录的ID</span><br></pre></td></tr></table></figure>
+<h3 id="flask-sqlalchemy"><a href="#flask-sqlalchemy" class="headerlink" title="flask-sqlalchemy"></a>flask-sqlalchemy</h3><p>Flask拥有丰富的扩展组件，数据库管理方面Flask-SQLAlchemy简化了数据库管理的操作</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> flask-sqlalchemy</span><br></pre></td></tr></table></figure>
+<p>在以后的文章中我还会继续介绍</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/flask/" rel="tag"># flask</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/add72f50.html" rel="next" title="flask搭建REST应用(1)">
+                <i class="fa fa-chevron-left"></i> flask搭建REST应用(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/d70bcc7a.html" rel="prev" title="flask插件（3）">
+                flask插件（3） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -391,6 +572,18 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -411,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -483,6 +685,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库类型"><span class="nav-number">1.</span> <span class="nav-text">数据库类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql"><span class="nav-number">2.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Postgres"><span class="nav-number">3.</span> <span class="nav-text">Postgres</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask-sqlalchemy"><span class="nav-number">4.</span> <span class="nav-text">flask-sqlalchemy</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -652,6 +870,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -698,6 +920,34 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Hughendman',
+            repo: 'Hughendman.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6559418c2c8da3379abf373e0efcb3910990f63a',
+            
+                client_id: 'adee08756dcabcc1f120'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
