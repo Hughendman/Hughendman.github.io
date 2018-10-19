@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-10-18T06:26:05.168Z</updated>
+  <updated>2018-10-19T09:44:31.957Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flask appbuilder的使用(4)</title>
+    <link href="https://hughendman.github.io/post/93fb4cf0.html"/>
+    <id>https://hughendman.github.io/post/93fb4cf0.html</id>
+    <published>2018-10-20T08:15:00.000Z</published>
+    <updated>2018-10-19T09:44:31.957Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="flask" scheme="https://hughendman.github.io/categories/flask/"/>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/flask/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+      <category term="flask" scheme="https://hughendman.github.io/tags/flask/"/>
+    
+  </entry>
   
   <entry>
     <title>flask插件（3）</title>
@@ -111,7 +141,7 @@
     <link href="https://hughendman.github.io/post/16b57b0d.html"/>
     <id>https://hughendman.github.io/post/16b57b0d.html</id>
     <published>2018-10-16T12:15:00.000Z</published>
-    <updated>2018-10-19T08:54:44.017Z</updated>
+    <updated>2018-10-19T08:56:38.536Z</updated>
     
     <summary type="html">
     
@@ -521,32 +551,6 @@
         
         
           &lt;h3 id=&quot;项目环境&quot;&gt;&lt;a href=&quot;#项目环境&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://hughendman.github.io/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="https://hughendman.github.io/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在linux下部署PHP项目</title>
-    <link href="https://hughendman.github.io/post/8197eef2.html"/>
-    <id>https://hughendman.github.io/post/8197eef2.html</id>
-    <published>2018-08-09T08:15:00.000Z</published>
-    <updated>2018-08-10T02:18:06.633Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;安装httpd&quot;&gt;&lt;a href=&quot;#安装httpd&quot; class=&quot;headerlink&quot; title=&quot;安装httpd&quot;&gt;&lt;/a&gt;安装httpd&lt;/h3&gt;&lt;h4 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot;
         
       
     
