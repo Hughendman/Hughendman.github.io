@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-10-19T09:44:31.957Z</updated>
+  <updated>2018-10-22T06:16:12.430Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://hughendman.github.io/post/0.html"/>
+    <id>https://hughendman.github.io/post/0.html</id>
+    <published>2018-10-22T06:16:27.861Z</published>
+    <updated>2018-10-22T06:16:12.430Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: Flask 项目目录结构(0)&lt;br&gt;categories: [flask,python]&lt;br&gt;tags: [flask,python]&lt;br&gt;keywords: [flask,python]&lt;br&gt;date: 2018-10-16
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>flask appbuilder的使用(4)</title>
     <link href="https://hughendman.github.io/post/93fb4cf0.html"/>
     <id>https://hughendman.github.io/post/93fb4cf0.html</id>
     <published>2018-10-20T08:15:00.000Z</published>
-    <updated>2018-10-19T09:44:31.957Z</updated>
+    <updated>2018-10-19T11:01:26.630Z</updated>
     
     <summary type="html">
     
@@ -120,36 +143,6 @@
         
         
           &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="flask" scheme="https://hughendman.github.io/categories/flask/"/>
-    
-      <category term="python" scheme="https://hughendman.github.io/categories/flask/python/"/>
-    
-    
-      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
-    
-      <category term="flask" scheme="https://hughendman.github.io/tags/flask/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flask 项目目录结构(0)</title>
-    <link href="https://hughendman.github.io/post/16b57b0d.html"/>
-    <id>https://hughendman.github.io/post/16b57b0d.html</id>
-    <published>2018-10-16T12:15:00.000Z</published>
-    <updated>2018-10-19T08:56:38.536Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;flask-目录架构&quot;&gt;&lt;a href=&quot;#flask-目录架构&quot; class=&quot;headerlink&quot; title=&quot;flask 目录架构&quot;&gt;&lt;/a&gt;flask 目录架构&lt;/h2&gt;&lt;h3 id=&quot;git地址&quot;&gt;&lt;a href=&quot;#git地址&quot;
         
       
     
