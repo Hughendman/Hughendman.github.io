@@ -83,7 +83,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="YINXS的博客">
-<meta property="og:url" content="https://hughendman.github.io/tags/Superset/index.html">
+<meta property="og:url" content="https://hughendman.github.io/tags/superset/index.html">
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://hughendman.github.io/tags/Superset/"/>
+  <link rel="canonical" href="https://hughendman.github.io/tags/superset/"/>
 
 
 
 
 
-  <title>标签: Superset | YINXS的博客</title>
+  <title>标签: superset | YINXS的博客</title>
   
 
 
@@ -287,7 +287,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Superset<small>标签</small>
+        <h1>superset<small>标签</small>
         </h1>
       </div>
 
@@ -299,37 +299,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/post/4fbb2b9c.html" itemprop="url">
+            <a class="post-title-link" href="/post/dd3da07a.html" itemprop="url">
               
-                <span itemprop="name">Docker + Superset</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-11T16:15:00+08:00"
-              content="2018-10-11" >
-          10-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/24650887.html" itemprop="url">
-              
-                <span itemprop="name">Superset搭建及其简单使用</span>
+                <span itemprop="name">探索superset源码（深度汉化）</span>
               
             </a>
         
@@ -337,9 +309,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-10T16:15:00+08:00"
-              content="2018-10-10" >
-          10-10
+              datetime="2018-10-30T16:15:00+08:00"
+              content="2018-10-30" >
+          10-30
         </time>
       </div>
 
@@ -403,7 +375,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -414,7 +386,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -425,7 +397,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -483,7 +455,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.3k</span>
+    <span title="Site words total count">115.4k</span>
   
 </div>
 
@@ -976,6 +948,49 @@
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+'.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
