@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="YINXS的博客">
 <meta property="og:description" content="如何开发使用虚拟环境12345678910111213141516171819202122232425262728pip install virtualenvvirtualenv -p python3 venvcd venv/Scripts.\activatepip install supersetpip install &quot;markdown&amp;lt;3.0.0&quot; superset# Create a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-30T09:16:29.180Z">
+<meta property="og:updated_time" content="2018-10-30T09:26:25.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索superset源码（深度汉化）">
 <meta name="twitter:description" content="如何开发使用虚拟环境12345678910111213141516171819202122232425262728pip install virtualenvvirtualenv -p python3 venvcd venv/Scripts.\activatepip install supersetpip install &quot;markdown&amp;lt;3.0.0&quot; superset# Create a">
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  422
+                  424
                 </span>
               
 
@@ -469,12 +469,12 @@
 <p>后台修改完成</p>
 <h4 id="前台react汉化"><a href="#前台react汉化" class="headerlink" title="前台react汉化"></a>前台react汉化</h4><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd translations<span class="symbol">\z</span>h<span class="symbol">\L</span>C_MESSAGES</span><br><span class="line">修改messages.json文件</span><br></pre></td></tr></table></figure>
 <p>将其放在初始化的位置</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> build</span></span><br></pre></td></tr></table></figure>
 <p>注意：旧版本的react和新版本的react目录结构不同</p>
 <p>旧版本：\superset\assets\javascript</p>
 <p>新版本：\superset\static\assets\src</p>
 <p>修改\superset\static\assets\src\i18n.jsx</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Jed <span class="keyword">from</span> <span class="string">'jed'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> DEFAULT_LANGUAGE_PACK = <span class="string">"替换这个值"</span></span><br></pre></td></tr></table></figure>
+<p>打包<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">run</span><span class="bash"> build</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="深度汉化git"><a href="#深度汉化git" class="headerlink" title="深度汉化git"></a>深度汉化git</h4><p><a href="https://github.com/Hughendman/superset_zh" target="_blank" rel="noopener">深度汉化git-点击</a></p>
 
       
