@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-10-30T09:31:44.915Z</updated>
+  <updated>2018-11-01T06:34:06.029Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>开发流程</title>
+    <link href="https://hughendman.github.io/post/56b47d41.html"/>
+    <id>https://hughendman.github.io/post/56b47d41.html</id>
+    <published>2018-11-01T04:15:00.000Z</published>
+    <updated>2018-11-01T06:34:06.029Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;发现现在的项目开发流程有好多问题。我从网上找了几篇文章，总结一些，关于如何更加高效率、高产出、高效益的方法&lt;/p&gt;
+&lt;h2 id=&quot;web应用开发标准流程（来自慕课网Python-Quant）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="文章" scheme="https://hughendman.github.io/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="文章" scheme="https://hughendman.github.io/tags/%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>探索superset源码（深度汉化）</title>
     <link href="https://hughendman.github.io/post/dd3da07a.html"/>
     <id>https://hughendman.github.io/post/dd3da07a.html</id>
     <published>2018-10-31T08:15:00.000Z</published>
-    <updated>2018-10-30T09:31:44.915Z</updated>
+    <updated>2018-10-30T09:32:11.458Z</updated>
     
     <summary type="html">
     
@@ -542,32 +569,6 @@
     
     
       <category term="文章" scheme="https://hughendman.github.io/tags/%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>form-data接口 git错误 正则验证</title>
-    <link href="https://hughendman.github.io/post/f9641aa3.html"/>
-    <id>https://hughendman.github.io/post/f9641aa3.html</id>
-    <published>2018-09-05T08:15:00.000Z</published>
-    <updated>2018-09-05T03:25:16.508Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;koa2-formdata接口&quot;&gt;&lt;a href=&quot;#koa2-formdata接口&quot; class=&quot;headerlink&quot; title=&quot;koa2 formdata接口&quot;&gt;&lt;/a&gt;koa2
-        
-      
-    
-    </summary>
-    
-      <category term="node" scheme="https://hughendman.github.io/categories/node/"/>
-    
-    
-      <category term="node" scheme="https://hughendman.github.io/tags/node/"/>
     
   </entry>
   
