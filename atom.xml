@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-11-01T06:36:06.048Z</updated>
+  <updated>2018-11-07T03:02:00.774Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas使用</title>
+    <link href="https://hughendman.github.io/post/80bbe987.html"/>
+    <id>https://hughendman.github.io/post/80bbe987.html</id>
+    <published>2018-11-07T08:15:00.000Z</published>
+    <updated>2018-11-07T03:02:00.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt; pandas 是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。&lt;/p&gt;
+&lt;h2 id=&quot;数据结构&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>开发流程</title>
@@ -280,32 +307,6 @@
   </entry>
   
   <entry>
-    <title>API接口加密策略</title>
-    <link href="https://hughendman.github.io/post/bc72157a.html"/>
-    <id>https://hughendman.github.io/post/bc72157a.html</id>
-    <published>2018-10-10T08:15:00.000Z</published>
-    <updated>2018-09-28T09:44:02.256Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;转载-Api接口加密策略&quot;&gt;&lt;a href=&quot;#转载-Api接口加密策略&quot; class=&quot;headerlink&quot; title=&quot;转载-Api接口加密策略&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Superset搭建及其简单使用</title>
     <link href="https://hughendman.github.io/post/24650887.html"/>
     <id>https://hughendman.github.io/post/24650887.html</id>
@@ -328,6 +329,32 @@
     
     
       <category term="Superset" scheme="https://hughendman.github.io/tags/Superset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>API接口加密策略</title>
+    <link href="https://hughendman.github.io/post/bc72157a.html"/>
+    <id>https://hughendman.github.io/post/bc72157a.html</id>
+    <published>2018-10-10T08:15:00.000Z</published>
+    <updated>2018-09-28T09:44:02.256Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;转载-Api接口加密策略&quot;&gt;&lt;a href=&quot;#转载-Api接口加密策略&quot; class=&quot;headerlink&quot; title=&quot;转载-Api接口加密策略&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="微服务" scheme="https://hughendman.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="微服务" scheme="https://hughendman.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -539,36 +566,6 @@
     
     
       <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目管理思考</title>
-    <link href="https://hughendman.github.io/post/f4837afa.html"/>
-    <id>https://hughendman.github.io/post/f4837afa.html</id>
-    <published>2018-09-11T04:15:00.000Z</published>
-    <updated>2018-09-11T06:08:53.937Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;前言：最近烂在自己手里的项目越来越多，思路也越来越混乱，所以特意去查了一下项目管理，如何解决现在的问题&lt;/p&gt;
-&lt;p&gt;首先是从我老大以及平常学到的东西：&lt;/p&gt;
-&lt;p&gt;1、是否是我的项目&lt;/p&gt;
-&lt;p&gt;背景：接了几个很急项目，但是职责上来说并不是我的工作范围&lt;/p&gt;
-&lt;p&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="文章" scheme="https://hughendman.github.io/categories/%E6%96%87%E7%AB%A0/"/>
-    
-    
-      <category term="文章" scheme="https://hughendman.github.io/tags/%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
