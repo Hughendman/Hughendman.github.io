@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="YINXS的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="修改字符串的大小写title()1print(&apos;abcd&apos;.title()) 输出 1Abcd upper()1print(&apos;abcd&apos;.upper()) 输出 1ABCD lower()1print(&apos;ABCD&apos;.lower()) 输出 1abcd 列表1name = [&apos;name1&apos;,&apos;name2&apos;,&apos;name3&apos;] 添加元素(append)1name.append(&apos;name4&apos;) 12pr">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从头到尾学Python">
+<meta property="og:url" content="https://hughendman.github.io/post/dcb6e033.html">
+<meta property="og:site_name" content="YINXS的博客">
+<meta property="og:description" content="修改字符串的大小写title()1print(&apos;abcd&apos;.title()) 输出 1Abcd upper()1print(&apos;abcd&apos;.upper()) 输出 1ABCD lower()1print(&apos;ABCD&apos;.lower()) 输出 1abcd 列表1name = [&apos;name1&apos;,&apos;name2&apos;,&apos;name3&apos;] 添加元素(append)1name.append(&apos;name4&apos;) 12pr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-10T06:35:13.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从头到尾学Python">
+<meta name="twitter:description" content="修改字符串的大小写title()1print(&apos;abcd&apos;.title()) 输出 1Abcd upper()1print(&apos;abcd&apos;.upper()) 输出 1ABCD lower()1print(&apos;ABCD&apos;.lower()) 输出 1abcd 列表1name = [&apos;name1&apos;,&apos;name2&apos;,&apos;name3&apos;] 添加元素(append)1name.append(&apos;name4&apos;) 12pr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hughendman.github.io/post/dcb6e033.html"/>
+
+
+
+
+
+  <title>从头到尾学Python | YINXS的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/Hughendman/Hughendman.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YINXS的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">WEB全栈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hughendman.github.io/post/dcb6e033.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yinxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YINXS的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从头到尾学Python</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T16:15:00+08:00">
+                2018-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/dcb6e033.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/dcb6e033.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,325
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="修改字符串的大小写"><a href="#修改字符串的大小写" class="headerlink" title="修改字符串的大小写"></a>修改字符串的大小写</h3><h4 id="title"><a href="#title" class="headerlink" title="title()"></a>title()</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'abcd'</span>.title()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Abcd</span></span><br></pre></td></tr></table></figure>
+<h4 id="upper"><a href="#upper" class="headerlink" title="upper()"></a>upper()</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'abcd'</span>.upper()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ABCD</span></span><br></pre></td></tr></table></figure>
+<h4 id="lower"><a href="#lower" class="headerlink" title="lower()"></a>lower()</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'ABCD'</span>.lower()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">abcd</span></span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span> = [<span class="string">'name1'</span>,<span class="string">'name2'</span>,<span class="string">'name3'</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="添加元素-append"><a href="#添加元素-append" class="headerlink" title="添加元素(append)"></a>添加元素(append)</h4><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">name</span>.<span class="built_in">append</span>(<span class="string">'name4'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">print</span>(name[3]) </span><br><span class="line"><span class="comment"># name4</span></span><br></pre></td></tr></table></figure>
+<h4 id="插入元素-insert"><a href="#插入元素-insert" class="headerlink" title="插入元素(insert)"></a>插入元素(insert)</h4><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">name</span>.insert(<span class="number">0</span>,<span class="string">'name0'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">print</span>(name[0)</span><br><span class="line"><span class="comment"># name0</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除元素-del"><a href="#删除元素-del" class="headerlink" title="删除元素(del)"></a>删除元素(del)</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">del</span> name[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="删除元素-pop"><a href="#删除元素-pop" class="headerlink" title="删除元素(pop)"></a>删除元素(pop)</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">name</span>.pop()</span><br><span class="line"><span class="comment"># 删除最后一个元素</span></span><br><span class="line"><span class="built_in">name</span>.pop(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 删除第一个元素</span></span><br></pre></td></tr></table></figure>
+<h4 id="根据值删除元素-remove"><a href="#根据值删除元素-remove" class="headerlink" title="根据值删除元素(remove)"></a>根据值删除元素(remove)</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.<span class="builtin-name">remove</span>(<span class="string">"name0"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="组织列表"><a href="#组织列表" class="headerlink" title="组织列表"></a>组织列表</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="永久排序（sort）"><a href="#永久排序（sort）" class="headerlink" title="永久排序（sort）"></a>永久排序（sort）</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">numbers</span><span class="selector-class">.sort</span>()</span><br></pre></td></tr></table></figure>
+<h5 id="临时排序（sorted）"><a href="#临时排序（sorted）" class="headerlink" title="临时排序（sorted）"></a>临时排序（sorted）</h5><p>临时排序不影响它们在列表中的原始排序顺序<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">numbers</span><span class="selector-class">.sort</span>()</span><br></pre></td></tr></table></figure></p>
+<h5 id="倒着打印（reverse）"><a href="#倒着打印（reverse）" class="headerlink" title="倒着打印（reverse）"></a>倒着打印（reverse）</h5><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers.<span class="keyword">reverse</span>()</span><br></pre></td></tr></table></figure>
+<h5 id="列表长度（len）"><a href="#列表长度（len）" class="headerlink" title="列表长度（len）"></a>列表长度（len）</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">len</span><span class="params">(numbers)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="索引-1返回最后一个元素"><a href="#索引-1返回最后一个元素" class="headerlink" title="索引-1返回最后一个元素"></a>索引-1返回最后一个元素</h4><h3 id="操作列表"><a href="#操作列表" class="headerlink" title="操作列表"></a>操作列表</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nums</span> = [<span class="string">'nums1'</span>,<span class="string">'nums2'</span>,<span class="string">'nums3'</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="遍历列表"><a href="#遍历列表" class="headerlink" title="遍历列表"></a>遍历列表</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="builtin-name">info</span> <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="builtin-name">print</span>(info)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">nums1</span></span><br><span class="line"><span class="symbol">nums2</span></span><br><span class="line"><span class="symbol">nums3</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建数字列表"><a href="#创建数字列表" class="headerlink" title="创建数字列表"></a>创建数字列表</h4><h5 id="使用函数range"><a href="#使用函数range" class="headerlink" title="使用函数range()"></a>使用函数range()</h5><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for <span class="keyword">value</span> <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="keyword">value</span>)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用range-函数创建数字列表"><a href="#使用range-函数创建数字列表" class="headerlink" title="使用range()函数创建数字列表"></a>使用range()函数创建数字列表</h5><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="name">list</span>(<span class="name">range</span>(<span class="number">1</span>,<span class="number">6</span>)))</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure></p>
+<p>指定步长</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="name">list</span>(<span class="name">range</span>(<span class="number">2</span>,<span class="number">11</span>,<span class="number">3</span>)))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="对数字列表执行简单的统计计算"><a href="#对数字列表执行简单的统计计算" class="headerlink" title="对数字列表执行简单的统计计算"></a>对数字列表执行简单的统计计算</h5><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">digits = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line">min(digits)</span><br><span class="line">max(digits)</span><br><span class="line">sun(digits)</span><br></pre></td></tr></table></figure>
+<h5 id="列表解析"><a href="#列表解析" class="headerlink" title="列表解析"></a>列表解析</h5><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">squares = [<span class="keyword">value</span>**<span class="number">2</span> <span class="keyword">for</span> <span class="keyword">value</span> <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>)]</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="使用列表的一部分"><a href="#使用列表的一部分" class="headerlink" title="使用列表的一部分"></a>使用列表的一部分</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span> = [<span class="string">'name0'</span>,<span class="string">'name1'</span>,<span class="string">'name2'</span>,<span class="string">'name3'</span>]</span><br></pre></td></tr></table></figure>
+<h5 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(name[<span class="number">1</span>:<span class="number">3</span>])</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(name[<span class="number">1</span>:])</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(name[:<span class="number">3</span>])</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(name[-<span class="number">1</span>:])</span></span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">'name1</span>', <span class="symbol">'name2</span>']</span><br><span class="line">[<span class="symbol">'name1</span>', <span class="symbol">'name2</span>', <span class="symbol">'name3</span>']</span><br><span class="line">[<span class="symbol">'name0</span>', <span class="symbol">'name1</span>', <span class="symbol">'name2</span>']</span><br><span class="line">[<span class="symbol">'name3</span>']</span><br></pre></td></tr></table></figure>
+<h5 id="遍历切片"><a href="#遍历切片" class="headerlink" title="遍历切片"></a>遍历切片</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="builtin-name">info</span> <span class="keyword">in</span> name[-3:]:</span><br><span class="line">    <span class="builtin-name">print</span>(info)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">name1</span></span><br><span class="line"><span class="symbol">name2</span></span><br><span class="line"><span class="symbol">name3</span></span><br></pre></td></tr></table></figure>
+<h5 id="复制列表"><a href="#复制列表" class="headerlink" title="复制列表"></a>复制列表</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name_re = name[:]</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(name_re)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><h4 id="定义元组"><a href="#定义元组" class="headerlink" title="定义元组"></a>定义元组</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">b</span> = (<span class="number">200.50</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(b[<span class="number">0</span>])</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="遍历元组"><a href="#遍历元组" class="headerlink" title="遍历元组"></a>遍历元组</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b = (200.50)</span><br><span class="line"><span class="keyword">for</span> <span class="builtin-name">info</span> <span class="keyword">in</span> b:</span><br><span class="line">    <span class="builtin-name">print</span>(info)</span><br></pre></td></tr></table></figure>
+<h4 id="修改元组变量"><a href="#修改元组变量" class="headerlink" title="修改元组变量"></a>修改元组变量</h4><p>不能修改元组的元素但是可以重新定义<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">b</span> = (<span class="number">200.50</span>)</span><br><span class="line"><span class="attr">b</span> = (<span class="number">300.50</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><p>注：检测是否相等时考虑大小写</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">相等：==</span><br><span class="line">不相等：!=</span><br><span class="line">多个条件（并且）： <span class="keyword">and</span></span><br><span class="line">多个条件（或者）： <span class="keyword">or</span></span><br><span class="line">特定值在列表： <span class="string">'name1'</span> (<span class="keyword">not</span>) <span class="keyword">in</span> <span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="builtin-name">print</span>(1)</span><br><span class="line">elif <span class="literal">True</span>:</span><br><span class="line">    <span class="builtin-name">print</span>(2)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="builtin-name">print</span>(3)</span><br></pre></td></tr></table></figure>
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'points'</span>:<span class="number">5</span>&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0[<span class="string">'color'</span>])</span></span></span><br><span class="line"><span class="selector-tag">del</span> alien_0[<span class="string">"color"</span>]</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(alien_0)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="遍历字典（items-keys-values-）"><a href="#遍历字典（items-keys-values-）" class="headerlink" title="遍历字典（items(),keys(),values()）"></a>遍历字典（items(),keys(),values()）</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key,<span class="built_in">value</span> <span class="keyword">in</span> alien_0.<span class="keyword">items</span>():</span><br><span class="line">    print(key,<span class="built_in">value</span>)</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">points</span> <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="按照顺序遍历所有键"><a href="#按照顺序遍历所有键" class="headerlink" title="按照顺序遍历所有键"></a>按照顺序遍历所有键</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">key</span> <span class="keyword">in</span> sorted(alien_0.keys()):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">key</span>)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">color</span></span><br><span class="line"><span class="built_in">points</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户输入和while循环"><a href="#用户输入和while循环" class="headerlink" title="用户输入和while循环"></a>用户输入和while循环</h3><h4 id="input"><a href="#input" class="headerlink" title="input()"></a>input()</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = input(<span class="string">"Tell me something, and I will repeat it back to you"</span>)</span><br><span class="line">print(<span class="name">message</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="int-str-类型转换"><a href="#int-str-类型转换" class="headerlink" title="int() str() 类型转换"></a>int() str() 类型转换</h4><h4 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符"></a>求模运算符</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">4%</span><span class="bash">5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 输出4</span></span><br><span class="line"><span class="meta">4%</span><span class="bash">2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 输出0</span></span><br><span class="line"><span class="meta">4%</span><span class="bash">3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 输出1</span></span><br></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">num</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">num</span> &lt;=<span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">num</span>)</span><br><span class="line">    <span class="built_in">num</span>+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="break退出循环"><a href="#break退出循环" class="headerlink" title="break退出循环"></a>break退出循环</h4><h4 id="continue返回循环开头"><a href="#continue返回循环开头" class="headerlink" title="continue返回循环开头"></a>continue返回循环开头</h4><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cats</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+<p>调用：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cats</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="实参和形参"><a href="#实参和形参" class="headerlink" title="实参和形参"></a>实参和形参</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">(username)</span>:</span></span><br><span class="line">    print(<span class="string">"Hello "</span>+username.title()+<span class="string">"!"</span>)</span><br><span class="line"></span><br><span class="line">greet_user(<span class="string">"yinxs"</span>)</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中username是一个形参，而greet_user(“yinxs”)中的yinxs是一个实参</p>
+<h4 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h4><h5 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a>位置实参</h5><p>关联方式是基于实参的顺序，这种关联方式叫位置实参</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">(username,age)</span>:</span></span><br><span class="line">    print(<span class="string">"Hello "</span>+username.title()+<span class="string">"! I am "</span> + str(age))</span><br><span class="line"></span><br><span class="line">greet_user(<span class="string">"yinxs"</span>,<span class="number">25</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a>关键字实参</h5><p>关键字实参是传递给函数的名称-值对。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">(username,age)</span>:</span></span><br><span class="line">    print(<span class="string">"Hello "</span>+username.title()+<span class="string">"! I am "</span> + str(age))</span><br><span class="line"></span><br><span class="line">greet_user(age = <span class="number">25</span>,username = <span class="string">"yinxs"</span>)</span><br></pre></td></tr></table></figure>
+<p>可以设置默认值</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username,<span class="attribute">age</span>=25):</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"Hello "</span>+username.title()+<span class="string">"! I am "</span> + str(age))</span><br><span class="line"></span><br><span class="line">greet_user(<span class="attribute">username</span>=<span class="string">"yinxs"</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username,<span class="attribute">age</span>=23):</span><br><span class="line">    return username</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">print</span>(greet_user(<span class="attribute">username</span>=<span class="string">"yinxs"</span>))</span><br></pre></td></tr></table></figure>
+<h5 id="可选实参"><a href="#可选实参" class="headerlink" title="可选实参"></a>可选实参</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span><span class="params">(first_name,last_name,middle_name=<span class="string">''</span>)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> middle_name:</span><br><span class="line">        full_name = first_name + <span class="string">" "</span> + middle_name + <span class="string">" "</span> + last_name</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        full_name = first_name + <span class="string">" "</span> + last_name</span><br><span class="line">    <span class="keyword">return</span>  full_name</span><br><span class="line">print(get_formatted_name(<span class="string">"jimi"</span>,<span class="string">"Li"</span>))</span><br><span class="line">print(get_formatted_name(<span class="string">"jimi"</span>,<span class="string">"ho"</span>,<span class="string">"Li"</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="传递列表"><a href="#传递列表" class="headerlink" title="传递列表"></a>传递列表</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_users</span><span class="params">(names)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> info <span class="keyword">in</span> names:</span><br><span class="line">        print(info)</span><br><span class="line">greet_users([<span class="string">"yinxs"</span>,<span class="string">"psw"</span>,<span class="string">"cxy"</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="将函数存储在模块中"><a href="#将函数存储在模块中" class="headerlink" title="将函数存储在模块中"></a>将函数存储在模块中</h4><h5 id="导入整个模块"><a href="#导入整个模块" class="headerlink" title="导入整个模块"></a>导入整个模块</h5><p>要让函数是可导入的，得先创建模块<br>greet_users.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">names</span><span class="params">(infos)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> info <span class="keyword">in</span> infos:</span><br><span class="line">        print(info)</span><br></pre></td></tr></table></figure></p>
+<p>在另一个文件中</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> greet_users</span><br><span class="line"></span><br><span class="line"><span class="title">greet_users</span>.names([<span class="string">"yinxs"</span>,<span class="string">"psw"</span>,<span class="string">"cxy"</span>])</span><br></pre></td></tr></table></figure>
+<p>注意： 如果是用的pyCharm记得设置根目录在setting-source中</p>
+<h5 id="导入特定的函数"><a href="#导入特定的函数" class="headerlink" title="导入特定的函数"></a>导入特定的函数</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from greet_users import names</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">names</span><span class="params">([<span class="string">"yinxs"</span>,<span class="string">"psw"</span>,<span class="string">"cxy"</span>])</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="使用as给模块指定别名"><a href="#使用as给模块指定别名" class="headerlink" title="使用as给模块指定别名"></a>使用as给模块指定别名</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> greet_users <span class="keyword">as</span> n</span><br><span class="line"></span><br><span class="line"><span class="title">n</span>.names([<span class="string">"yinxs"</span>,<span class="string">"psw"</span>,<span class="string">"cxy"</span>])</span><br></pre></td></tr></table></figure>
+<h5 id="导入模块中所有函数"><a href="#导入模块中所有函数" class="headerlink" title="导入模块中所有函数"></a>导入模块中所有函数</h5><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> greet_users <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">names([<span class="string">"yinxs"</span>,<span class="string">"psw"</span>,<span class="string">"cxy"</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="函数编写指南"><a href="#函数编写指南" class="headerlink" title="函数编写指南"></a>函数编写指南</h4><ul>
+<li>形参指定默认值时，两边不能有控格。</li>
+<li>如果包含多个函数，可使用两个空行将相邻的函数分开</li>
+<li>代码行长度不要超过79个字符</li>
+</ul>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h4 id="创建和使用类"><a href="#创建和使用类" class="headerlink" title="创建和使用类"></a>创建和使用类</h4><h5 id="创建Dog类"><a href="#创建Dog类" class="headerlink" title="创建Dog类"></a>创建Dog类</h5><p>根据Dog类创建的每个实例都将存储名字和年龄并赋予小哥蹲下和打滚的能力</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name,age)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">        <span class="keyword">self</span>.age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" is now sitting"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll_over</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" rolled over!"</span>)</span><br></pre></td></tr></table></figure>
+<p>方法<strong>init</strong>()：</p>
+<blockquote>
+<p>类中的函数称为方法。<strong>init</strong>()是一个特殊的方法，每当根据Dog类创建实例时，Python都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。在形参中self必不可少，位于开头，它是一个指向实例本身的引用。</p>
+</blockquote>
+<h5 id="根据类创建实例"><a href="#根据类创建实例" class="headerlink" title="根据类创建实例"></a>根据类创建实例</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_dog = Dog(<span class="string">'Bai'</span>,<span class="number">5</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_dog.name)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_dog.age)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_dog.sit()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_dog.roll_over()</span></span>)</span><br></pre></td></tr></table></figure>
+<p>前面两个print中的是访问属性，后面两个print中的是调用方法</p>
+<h4 id="使用类和实例"><a href="#使用类和实例" class="headerlink" title="使用类和实例"></a>使用类和实例</h4><h5 id="指定默认值"><a href="#指定默认值" class="headerlink" title="指定默认值"></a>指定默认值</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name,age)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">        <span class="keyword">self</span>.age = age</span><br><span class="line">        <span class="keyword">self</span>.race = <span class="string">"dog"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" is now sitting"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll_over</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" rolled over!"</span>)</span><br></pre></td></tr></table></figure>
+<p>self.race = “dog” 为默认值</p>
+<h5 id="修改默认值"><a href="#修改默认值" class="headerlink" title="修改默认值"></a>修改默认值</h5><p>直接修改</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">my_dog</span> = Dog(<span class="string">'Bai'</span>,<span class="number">5</span>,<span class="string">'Teddy'</span>)</span><br></pre></td></tr></table></figure>
+<p>通过方法修改</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name,age)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">        <span class="keyword">self</span>.age = age</span><br><span class="line">        <span class="keyword">self</span>.race = <span class="string">"dog"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" is now sitting"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll_over</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="keyword">self</span>.name.title() + <span class="string">" rolled over!"</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change_race</span><span class="params">(<span class="keyword">self</span>,race)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.race = race</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">my_dog</span><span class="selector-class">.change_race</span>(<span class="string">"Teddy"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>一个类继承另一个类</p>
+<h5 id="子类的方法init"><a href="#子类的方法init" class="headerlink" title="子类的方法init()"></a>子类的方法<strong>init</strong>()</h5><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span>  <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,make,model,year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.make = make</span><br><span class="line">        <span class="keyword">self</span>.model = model</span><br><span class="line">        <span class="keyword">self</span>.year = year</span><br><span class="line">        <span class="keyword">self</span>.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_derscriptive_name</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        long_name = str(<span class="keyword">self</span>.year)+ <span class="string">" "</span> + <span class="keyword">self</span>.make + <span class="string">" "</span> + <span class="keyword">self</span>.model</span><br><span class="line">        <span class="keyword">return</span>  long_name.title()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This cat has "</span> + str(<span class="keyword">self</span>.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span><span class="params">(<span class="keyword">self</span>,mileage)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> mileage &gt;= <span class="keyword">self</span>.<span class="symbol">odometer_reading:</span></span><br><span class="line">            <span class="keyword">self</span>.odometer_reading = mileage</span><br><span class="line">        <span class="symbol">else:</span></span><br><span class="line">            print(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span><span class="params">(<span class="keyword">self</span>,miles)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.odometer_reading += miles</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="title">Car</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,make,model,year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">super</span>().__init_<span class="number">_</span>(make,model,year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_tesla = ElectricCar(<span class="string">"tesla"</span>,<span class="string">"model s"</span>,<span class="number">2018</span>)</span><br><span class="line">print(my_tesla.get_derscriptive_name())</span><br></pre></td></tr></table></figure>
+<h6 id="python2-7中的继承"><a href="#python2-7中的继承" class="headerlink" title="python2.7中的继承"></a>python2.7中的继承</h6><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>(<span class="title">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,make,model,year)</span></span><span class="symbol">:</span></span><br><span class="line">        --snip--</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="title">Car</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,make,model,year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">super</span>(ElectricCar,<span class="keyword">self</span>).__init_<span class="number">_</span>(make,model,year)</span><br><span class="line">        --snip--</span><br></pre></td></tr></table></figure>
+<h6 id="将实例用作属性"><a href="#将实例用作属性" class="headerlink" title="将实例用作属性"></a>将实例用作属性</h6><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, make, model, year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.make = make</span><br><span class="line">        <span class="keyword">self</span>.model = model</span><br><span class="line">        <span class="keyword">self</span>.year = year</span><br><span class="line">        <span class="keyword">self</span>.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_derscriptive_name</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        long_name = str(<span class="keyword">self</span>.year) + <span class="string">" "</span> + <span class="keyword">self</span>.make + <span class="string">" "</span> + <span class="keyword">self</span>.model</span><br><span class="line">        <span class="keyword">return</span> long_name.title()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This cat has "</span> + str(<span class="keyword">self</span>.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span><span class="params">(<span class="keyword">self</span>, mileage)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> mileage &gt;= <span class="keyword">self</span>.<span class="symbol">odometer_reading:</span></span><br><span class="line">            <span class="keyword">self</span>.odometer_reading = mileage</span><br><span class="line">        <span class="symbol">else:</span></span><br><span class="line">            print(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span><span class="params">(<span class="keyword">self</span>, miles)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.odometer_reading += miles</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Battery</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,battery_size=<span class="number">70</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.battery_size = battery_size</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">descript_battery</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This car has a "</span> + str(<span class="keyword">self</span>.battery_size) + <span class="string">"-kwh battery."</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="title">Car</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, make, model, year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">super</span>().__init_<span class="number">_</span>( make, model, year)</span><br><span class="line">        <span class="keyword">self</span>.battery = Battery()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_tesla = ElectricCar(<span class="string">"tesla"</span>,<span class="string">"model s"</span>,<span class="number">2018</span>)</span><br><span class="line"></span><br><span class="line">print(my_tesla.get_derscriptive_name())</span><br><span class="line">my_tesla.battery.descript_battery()</span><br></pre></td></tr></table></figure>
+<h4 id="导入类"><a href="#导入类" class="headerlink" title="导入类"></a>导入类</h4><p>car.py<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, make, model, year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.make = make</span><br><span class="line">        <span class="keyword">self</span>.model = model</span><br><span class="line">        <span class="keyword">self</span>.year = year</span><br><span class="line">        <span class="keyword">self</span>.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_derscriptive_name</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        long_name = str(<span class="keyword">self</span>.year) + <span class="string">" "</span> + <span class="keyword">self</span>.make + <span class="string">" "</span> + <span class="keyword">self</span>.model</span><br><span class="line">        <span class="keyword">return</span> long_name.title()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This cat has "</span> + str(<span class="keyword">self</span>.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span><span class="params">(<span class="keyword">self</span>, mileage)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> mileage &gt;= <span class="keyword">self</span>.<span class="symbol">odometer_reading:</span></span><br><span class="line">            <span class="keyword">self</span>.odometer_reading = mileage</span><br><span class="line">        <span class="symbol">else:</span></span><br><span class="line">            print(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span><span class="params">(<span class="keyword">self</span>, miles)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.odometer_reading += miles</span><br></pre></td></tr></table></figure></p>
+<p>在文件中导入：</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from car <span class="keyword">import</span> Car</span><br><span class="line"></span><br><span class="line">my_new<span class="type">_car</span> = Car(<span class="string">"audi"</span>,<span class="string">"a4"</span>,<span class="number">2020</span>)</span><br><span class="line">print(my_new<span class="type">_car</span>.get_derscriptive_name())</span><br><span class="line"></span><br><span class="line">my_new<span class="type">_car</span>.odometer_reading = <span class="number">23</span></span><br><span class="line">my_new<span class="type">_car</span>.read_odometer()</span><br></pre></td></tr></table></figure>
+<h5 id="导入多个类"><a href="#导入多个类" class="headerlink" title="导入多个类"></a>导入多个类</h5><p>car.py<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, make, model, year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.make = make</span><br><span class="line">        <span class="keyword">self</span>.model = model</span><br><span class="line">        <span class="keyword">self</span>.year = year</span><br><span class="line">        <span class="keyword">self</span>.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_derscriptive_name</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        long_name = str(<span class="keyword">self</span>.year) + <span class="string">" "</span> + <span class="keyword">self</span>.make + <span class="string">" "</span> + <span class="keyword">self</span>.model</span><br><span class="line">        <span class="keyword">return</span> long_name.title()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This cat has "</span> + str(<span class="keyword">self</span>.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span><span class="params">(<span class="keyword">self</span>, mileage)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> mileage &gt;= <span class="keyword">self</span>.<span class="symbol">odometer_reading:</span></span><br><span class="line">            <span class="keyword">self</span>.odometer_reading = mileage</span><br><span class="line">        <span class="symbol">else:</span></span><br><span class="line">            print(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span><span class="params">(<span class="keyword">self</span>, miles)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.odometer_reading += miles</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Battery</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,battery_size=<span class="number">70</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.battery_size = battery_size</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">descript_battery</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">        print(<span class="string">"This car has a "</span> + str(<span class="keyword">self</span>.battery_size) + <span class="string">"-kwh battery."</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="title">Car</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, make, model, year)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">super</span>().__init_<span class="number">_</span>( make, model, year)</span><br><span class="line">        <span class="keyword">self</span>.battery = Battery()</span><br></pre></td></tr></table></figure></p>
+<p>导入:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from car import Car,ElectricCar</span><br><span class="line"></span><br><span class="line">my_beetle = Car(<span class="string">"volkswagen"</span>,<span class="string">"beetle"</span>,<span class="number">2019</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_beetle.get_derscriptive_name()</span></span>)</span><br><span class="line"></span><br><span class="line">my_tesla = ElectricCar(<span class="string">"tesla"</span>,<span class="string">"roadster"</span>,<span class="number">2020</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(my_tesla.get_derscriptive_name()</span></span>)</span><br></pre></td></tr></table></figure>
+<h5 id="导入整个模块-1"><a href="#导入整个模块-1" class="headerlink" title="导入整个模块"></a>导入整个模块</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> car</span><br></pre></td></tr></table></figure>
+<h5 id="导入模块中的所有类"><a href="#导入模块中的所有类" class="headerlink" title="导入模块中的所有类"></a>导入模块中的所有类</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">form</span> car <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><h4 id="使用try-except代码块"><a href="#使用try-except代码块" class="headerlink" title="使用try-except代码块"></a>使用try-except代码块</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">5</span>/<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    print(<span class="string">"You can't divide by zero!"</span>)</span><br></pre></td></tr></table></figure>
+<p>失败时无提示<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">5</span>/<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/80bbe987.html" rel="next" title="pandas使用">
+                <i class="fa fa-chevron-left"></i> pandas使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="yinxs" />
+            
+              <p class="site-author-name" itemprop="name">yinxs</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">130</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改字符串的大小写"><span class="nav-number">1.</span> <span class="nav-text">修改字符串的大小写</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#title"><span class="nav-number">1.1.</span> <span class="nav-text">title()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#upper"><span class="nav-number">1.2.</span> <span class="nav-text">upper()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lower"><span class="nav-number">1.3.</span> <span class="nav-text">lower()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加元素-append"><span class="nav-number">2.1.</span> <span class="nav-text">添加元素(append)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素-insert"><span class="nav-number">2.2.</span> <span class="nav-text">插入元素(insert)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素-del"><span class="nav-number">2.3.</span> <span class="nav-text">删除元素(del)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素-pop"><span class="nav-number">2.4.</span> <span class="nav-text">删除元素(pop)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据值删除元素-remove"><span class="nav-number">2.5.</span> <span class="nav-text">根据值删除元素(remove)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组织列表"><span class="nav-number">2.6.</span> <span class="nav-text">组织列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#永久排序（sort）"><span class="nav-number">2.6.1.</span> <span class="nav-text">永久排序（sort）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#临时排序（sorted）"><span class="nav-number">2.6.2.</span> <span class="nav-text">临时排序（sorted）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#倒着打印（reverse）"><span class="nav-number">2.6.3.</span> <span class="nav-text">倒着打印（reverse）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表长度（len）"><span class="nav-number">2.6.4.</span> <span class="nav-text">列表长度（len）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引-1返回最后一个元素"><span class="nav-number">2.7.</span> <span class="nav-text">索引-1返回最后一个元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作列表"><span class="nav-number">3.</span> <span class="nav-text">操作列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历列表"><span class="nav-number">3.1.</span> <span class="nav-text">遍历列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数字列表"><span class="nav-number">3.2.</span> <span class="nav-text">创建数字列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用函数range"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用函数range()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用range-函数创建数字列表"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用range()函数创建数字列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对数字列表执行简单的统计计算"><span class="nav-number">3.2.3.</span> <span class="nav-text">对数字列表执行简单的统计计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表解析"><span class="nav-number">3.2.4.</span> <span class="nav-text">列表解析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用列表的一部分"><span class="nav-number">3.3.</span> <span class="nav-text">使用列表的一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切片"><span class="nav-number">3.3.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#遍历切片"><span class="nav-number">3.3.2.</span> <span class="nav-text">遍历切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复制列表"><span class="nav-number">3.3.3.</span> <span class="nav-text">复制列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元组"><span class="nav-number">4.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义元组"><span class="nav-number">4.1.</span> <span class="nav-text">定义元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历元组"><span class="nav-number">4.2.</span> <span class="nav-text">遍历元组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改元组变量"><span class="nav-number">4.3.</span> <span class="nav-text">修改元组变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件语句"><span class="nav-number">5.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句"><span class="nav-number">5.1.</span> <span class="nav-text">if语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历字典（items-keys-values-）"><span class="nav-number">6.1.</span> <span class="nav-text">遍历字典（items(),keys(),values()）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按照顺序遍历所有键"><span class="nav-number">6.2.</span> <span class="nav-text">按照顺序遍历所有键</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户输入和while循环"><span class="nav-number">7.</span> <span class="nav-text">用户输入和while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#input"><span class="nav-number">7.1.</span> <span class="nav-text">input()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#int-str-类型转换"><span class="nav-number">7.2.</span> <span class="nav-text">int() str() 类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求模运算符"><span class="nav-number">7.3.</span> <span class="nav-text">求模运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环"><span class="nav-number">7.4.</span> <span class="nav-text">while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break退出循环"><span class="nav-number">7.5.</span> <span class="nav-text">break退出循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#continue返回循环开头"><span class="nav-number">7.6.</span> <span class="nav-text">continue返回循环开头</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">8.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实参和形参"><span class="nav-number">8.1.</span> <span class="nav-text">实参和形参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传递实参"><span class="nav-number">8.2.</span> <span class="nav-text">传递实参</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#位置实参"><span class="nav-number">8.2.1.</span> <span class="nav-text">位置实参</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关键字实参"><span class="nav-number">8.2.2.</span> <span class="nav-text">关键字实参</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值"><span class="nav-number">8.2.3.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可选实参"><span class="nav-number">8.2.4.</span> <span class="nav-text">可选实参</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传递列表"><span class="nav-number">8.3.</span> <span class="nav-text">传递列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将函数存储在模块中"><span class="nav-number">8.4.</span> <span class="nav-text">将函数存储在模块中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入整个模块"><span class="nav-number">8.4.1.</span> <span class="nav-text">导入整个模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入特定的函数"><span class="nav-number">8.4.2.</span> <span class="nav-text">导入特定的函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用as给模块指定别名"><span class="nav-number">8.4.3.</span> <span class="nav-text">使用as给模块指定别名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入模块中所有函数"><span class="nav-number">8.4.4.</span> <span class="nav-text">导入模块中所有函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数编写指南"><span class="nav-number">8.5.</span> <span class="nav-text">函数编写指南</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类"><span class="nav-number">9.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建和使用类"><span class="nav-number">9.1.</span> <span class="nav-text">创建和使用类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建Dog类"><span class="nav-number">9.1.1.</span> <span class="nav-text">创建Dog类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根据类创建实例"><span class="nav-number">9.1.2.</span> <span class="nav-text">根据类创建实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用类和实例"><span class="nav-number">9.2.</span> <span class="nav-text">使用类和实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#指定默认值"><span class="nav-number">9.2.1.</span> <span class="nav-text">指定默认值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改默认值"><span class="nav-number">9.2.2.</span> <span class="nav-text">修改默认值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">9.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类的方法init"><span class="nav-number">9.3.1.</span> <span class="nav-text">子类的方法init()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#python2-7中的继承"><span class="nav-number">9.3.1.1.</span> <span class="nav-text">python2.7中的继承</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#将实例用作属性"><span class="nav-number">9.3.1.2.</span> <span class="nav-text">将实例用作属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入类"><span class="nav-number">9.4.</span> <span class="nav-text">导入类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入多个类"><span class="nav-number">9.4.1.</span> <span class="nav-text">导入多个类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入整个模块-1"><span class="nav-number">9.4.2.</span> <span class="nav-text">导入整个模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入模块中的所有类"><span class="nav-number">9.4.3.</span> <span class="nav-text">导入模块中的所有类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">10.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用try-except代码块"><span class="nav-number">10.1.</span> <span class="nav-text">使用try-except代码块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yinxs</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">101.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>  本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Hughendman',
+            repo: 'Hughendman.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '6559418c2c8da3379abf373e0efcb3910990f63a',
+            
+                client_id: 'adee08756dcabcc1f120'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
