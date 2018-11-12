@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-11-10T06:35:13.536Z</updated>
+  <updated>2018-11-12T03:04:11.686Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>less回顾</title>
+    <link href="https://hughendman.github.io/post/41cce60d.html"/>
+    <id>https://hughendman.github.io/post/41cce60d.html</id>
+    <published>2018-11-12T08:15:00.000Z</published>
+    <updated>2018-11-12T03:04:11.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;忘得一干二净，回顾一下&quot;&gt;&lt;a href=&quot;#忘得一干二净，回顾一下&quot; class=&quot;headerlink&quot; title=&quot;忘得一干二净，回顾一下&quot;&gt;&lt;/a&gt;忘得一干二净，回顾一下&lt;/h5&gt;&lt;h3 id=&quot;变量（Variables）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="less" scheme="https://hughendman.github.io/categories/less/"/>
+    
+      <category term="wehotel" scheme="https://hughendman.github.io/categories/less/wehotel/"/>
+    
+    
+      <category term="less" scheme="https://hughendman.github.io/tags/less/"/>
+    
+      <category term="wehotel" scheme="https://hughendman.github.io/tags/wehotel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从头到尾学Python</title>
     <link href="https://hughendman.github.io/post/dcb6e033.html"/>
     <id>https://hughendman.github.io/post/dcb6e033.html</id>
     <published>2018-11-10T08:15:00.000Z</published>
-    <updated>2018-11-10T06:35:13.536Z</updated>
+    <updated>2018-11-10T06:37:10.425Z</updated>
     
     <summary type="html">
     
@@ -531,32 +561,6 @@
         
           &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;为什么是重新探索，这里给一个个人的建议，学习一个新的框架的时候，直接去看官方的文档。&lt;/p&gt;
 &lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django2.1使用</title>
-    <link href="https://hughendman.github.io/post/218a770a.html"/>
-    <id>https://hughendman.github.io/post/218a770a.html</id>
-    <published>2018-09-20T08:15:00.000Z</published>
-    <updated>2018-09-21T05:53:49.929Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;Python下有许多款不同的 Web
         
       
     
