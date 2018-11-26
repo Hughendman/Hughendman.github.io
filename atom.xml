@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hughendman.github.io/"/>
-  <updated>2018-11-12T07:15:58.904Z</updated>
+  <updated>2018-11-26T03:49:09.935Z</updated>
   <id>https://hughendman.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟环境+python版本控制（pyenv,pyvenv）</title>
+    <link href="https://hughendman.github.io/post/d9ace95d.html"/>
+    <id>https://hughendman.github.io/post/d9ace95d.html</id>
+    <published>2018-11-26T08:15:00.000Z</published>
+    <updated>2018-11-26T03:49:09.935Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;与virtualenv不同，如果你使用Python 3，它默认安装了pyvenv,但是pyenv是第三方工具&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>React编码规范（转发）</title>
@@ -545,32 +572,6 @@
         
         
           &lt;h3 id=&quot;创建应用&quot;&gt;&lt;a href=&quot;#创建应用&quot; class=&quot;headerlink&quot; title=&quot;创建应用&quot;&gt;&lt;/a&gt;创建应用&lt;/h3&gt;&lt;h4 id=&quot;创建一个应用vacation&quot;&gt;&lt;a href=&quot;#创建一个应用vacation&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="python" scheme="https://hughendman.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://hughendman.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django2.1编写 RESTful API 接口</title>
-    <link href="https://hughendman.github.io/post/1c52887f.html"/>
-    <id>https://hughendman.github.io/post/1c52887f.html</id>
-    <published>2018-10-01T08:15:00.000Z</published>
-    <updated>2018-09-26T03:41:49.352Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
