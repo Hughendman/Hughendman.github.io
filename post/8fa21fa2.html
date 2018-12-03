@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlab 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
+<meta name="description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlib 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matplotlab(基础)转发">
+<meta property="og:title" content="matplotlib(基础)转发">
 <meta property="og:url" content="https://hughendman.github.io/post/8fa21fa2.html">
 <meta property="og:site_name" content="YINXS的博客">
-<meta property="og:description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlab 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
+<meta property="og:description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlib 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T03:25:59.791Z">
+<meta property="og:updated_time" content="2018-12-03T03:50:18.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="matplotlab(基础)转发">
-<meta name="twitter:description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlab 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
+<meta name="twitter:title" content="matplotlib(基础)转发">
+<meta name="twitter:description" content="原文-Python第三方库matplotlib（2D绘图库）入门与进阶 安装1pip install matplotlib 绘制简单图形根据坐标点绘制12345678910111213import numpy as npimport matplotlib.pyplot as pltx = np.array([1,2,3,4,5,6,7,8])y = np.array([3,5,7,6,2,6,10">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>matplotlab(基础)转发 | YINXS的博客</title>
+  <title>matplotlib(基础)转发 | YINXS的博客</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">matplotlab(基础)转发</h1>
+          <h1 class="post-title" itemprop="name headline">matplotlib(基础)转发</h1>
         
 
         <div class="post-meta">
@@ -435,7 +435,7 @@
 
       
         <p><a href="https://blog.csdn.net/qq_34337272/article/details/79555544" target="_blank" rel="noopener">原文-Python第三方库matplotlib（2D绘图库）入门与进阶</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> matplotlab</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> matplotlib</span><br></pre></td></tr></table></figure>
 <h2 id="绘制简单图形"><a href="#绘制简单图形" class="headerlink" title="绘制简单图形"></a>绘制简单图形</h2><h3 id="根据坐标点绘制"><a href="#根据坐标点绘制" class="headerlink" title="根据坐标点绘制"></a>根据坐标点绘制</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">x = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</span><br><span class="line">y = np.array([<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>])</span><br><span class="line">plt.plot(x,y,'r')# 折线 <span class="number">1</span> x <span class="number">2</span> y <span class="number">3</span> color</span><br><span class="line">plt.plot(x,y,'g',lw=<span class="number">10</span>)# <span class="number">4</span> line w</span><br><span class="line"># 折线 饼状 柱状</span><br><span class="line">x = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</span><br><span class="line">y = np.array([<span class="number">13</span>,<span class="number">25</span>,<span class="number">17</span>,<span class="number">36</span>,<span class="number">21</span>,<span class="number">16</span>,<span class="number">10</span>,<span class="number">15</span>])</span><br><span class="line">plt.bar(x,y,<span class="number">0.2</span>,alpha=<span class="number">1</span>,color='b')</span><br><span class="line"># <span class="number">5</span> color <span class="number">4</span> 透明度 <span class="number">3</span> <span class="number">0.9</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <h3 id="参数为numpy数组时的效果"><a href="#参数为numpy数组时的效果" class="headerlink" title="参数为numpy数组时的效果"></a>参数为numpy数组时的效果</h3><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="built_in">in</span> range(<span class="number">0</span>,<span class="number">15</span>):</span><br><span class="line">    # <span class="number">1</span> 柱状图</span><br><span class="line">    dateOne = np.zeros([<span class="number">2</span>])</span><br><span class="line">    dateOne[<span class="number">0</span>] = i;</span><br><span class="line">    dateOne[<span class="number">1</span>] = i;</span><br><span class="line">    y = np.zeros([<span class="number">2</span>])</span><br><span class="line">    y[<span class="number">0</span>] = <span class="number">10</span></span><br><span class="line">    y[<span class="number">1</span>] = <span class="number">20</span></span><br><span class="line">    plt.plot(dateOne,y,<span class="string">'r'</span>,lw=<span class="number">8</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <h3 id="根据函数图像绘制"><a href="#根据函数图像绘制" class="headerlink" title="根据函数图像绘制"></a>根据函数图像绘制</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">#从<span class="number">-1</span>----<span class="number">-1</span>之间等间隔采<span class="number">66</span>个数.也就是说所画出来的图形是<span class="number">66</span>个点连接得来的</span><br><span class="line">#注意：如果点数过小的话会导致画出来二次函数图像不平滑</span><br><span class="line">x = np.linspace(<span class="number">-1</span>, <span class="number">1</span>,<span class="number">66</span>)</span><br><span class="line"># 绘制y=<span class="number">2</span>x+<span class="number">1</span>函数的图像</span><br><span class="line">y = <span class="number">2</span> * x + <span class="number">1</span></span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"># 绘制x^<span class="number">2</span>函数的图像</span><br><span class="line">y = x**<span class="number">2</span></span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
@@ -481,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/51ee4720.html" rel="next" title="numpy(基础)">
-                <i class="fa fa-chevron-left"></i> numpy(基础)
+              <a href="/post/be8a39c8.html" rel="next" title="vue全局拦截前端错误（前端异常监控系统+ng4）">
+                <i class="fa fa-chevron-left"></i> vue全局拦截前端错误（前端异常监控系统+ng4）
               </a>
             
           </div>
@@ -491,8 +491,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/82a3d2fb.html" rel="prev" title="node--require（）为什么是同步的">
-                node--require（）为什么是同步的 <i class="fa fa-chevron-right"></i>
+              <a href="/post/51ee4720.html" rel="prev" title="numpy(基础)">
+                numpy(基础) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
